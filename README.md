@@ -1,80 +1,63 @@
-# PTA制度・運用研究 — 次世代サイト試作 (v0.1)
+# PTA制度・運用研究 — 新サイト開発（v0.2）
 
-これは **ptaorg.com の置換ではなく、独立した新サイトの検討用プロトタイプ**です。現行 `ptaorg/ptaorg.github.io` に書き込みを行いません。
+`ptaorg.com`とは独立した開発・レビュー用サイトです。**本番公開・マージ・DNS変更は行いません。** 採用案1（市民のためのリサーチガイド）と2026-10-29のUI・UX設計書を基準に、白地・深緑・文章中心の5画面を実装しています。
 
 ## 画面
 
-| URL | 用途 |
+| パス | 用途 |
 |---|---|
-| `/index.html` | 非専門家でも使いやすい入口・目的別導線・検索 |
-| `/explore.html` | 学校・自治体・教育委員会回答の統合検索（絞り込み、URL保存、結果タイプ切替） |
-| `/municipality.html?id=kawaguchi` | 自治体単位の研究概要、学校一覧、公開回答 |
-| `/school.html?url=%2Farchive%2Fkawaguchi%2Fschool-009-es%2F` | 学校別一次資料の所在と公開状況の明示 |
+| `index.html` | 学校検索・地域選択・研究への入口 |
+| `explore.html` | 学校・自治体・行政回答の統合検索 |
+| `municipality.html?id=kawaguchi` | 自治体研究・回答・地域内学校検索 |
+| `school.html?url=%2Farchive%2Fkawaguchi%2Fschool-009-es%2F` | 文書登録・公開状態・既存評価への導線 |
+| `responses.html` | 行政回答データベース |
+| `response.html?id=update-016` | 回答要約と委員会の分析を分けた詳細 |
+| `catalog.html` | JavaScript不要の地域・569校・回答索引 |
 
-`explore.html?q=安行小学校` はサンプル環境で該当学校のみ表示されます。検索と結果の表示順を統合しました。
+検索はEnterまたは検索ボタンで確定します。地域・論点・学校種別・回答種別、種類切替、20件単位のページ送り、条件付きURL、詳細からの検索条件・スクロール復元を備えます。スマートフォンは絞り込みダイアログで条件を編集し、適用してから結果へ戻ります。
 
-## 起動・検証
+## 起動と検証
 
-外部ライブラリやビルド工程は不要です。`file://` では JSON を読み込めないため、HTTP サーバーから開きます。
-
-```bash
-cd ptaorg-site-next
-python3 -m http.server 8765
-# http://localhost:8765/
-```
-
-別のターミナルで：
+外部依存・インストール・ビルドは不要です。Node.js 22以降を使用します（CIは24）。
 
 ```bash
+npm run dev -- --host 0.0.0.0 --port 4173 --strictPort
 npm test
+npm run catalog
 ```
 
-## 公開済み実データの取り込み
+Workのローカルプレビューでは `sites-preview start "$PWD"` を使用します。`/__qa/frame?width=390` は開発サーバー専用のレスポンシブ確認用iframeです。スマートフォン実機のエミュレーションではありません。
 
-**2026-10-28の同期PRで、現行リポジトリが公開している29地域・569校・教育委員会回答72件を `data/research-map-index.json` と `data/board-responses.json` に収録します。** `data/demo.json` は読み込み失敗時の画面確認用フォールバックとして残します。未公開文書原本や非公表メールは含めません。
+## 公開データ
 
-公開されている全データ（現行索引では29地域・569校・72回答）を、既存サイトのローカルGitクローンから取り込みます。
+2026-10-31確認時点の現行サイトの公開JSONのみを使用しています。
+
+- `research-map-index.json`：29地域・569校・登録文書1,601件（既存公開索引を変更せず使用）
+- `board-responses.json`：従来公開回答72件（既存本文・固定URLを変更せず使用）
+- `board-response-updates.json`：公開済み追補67記録。実質回答58件、受付・延期等9件
+- `demo.json`：主要索引の取得失敗時の抜粋フォールバック。表示中の範囲を明示
+
+地域索引に回答主体を追加接続しています。回答だけの地域に学校資料や研究本文があると表示しません。原本非公開の文書にリンクを生成しません。学校の文書名しかない場合は本文検索・内容判断をしません。
+
+既存の公開データを同期する場合：
 
 ```bash
 node scripts/sync-public-data.mjs ../ptaorg.github.io
+npm run catalog
+npm test
 ```
 
-これにより **既存で公開済みの** `data/research-map-index.json` と `data/board-responses.json` のみをコピーします。`data/` 以外の資料、PDF・画像・メールの取り込みは行いません。読み込み時はこの2ファイルを優先し、無い場合のみ抜粋データで動作します。
+同期元は公開済みの3ファイルに限定します。新しい公開データに更新した場合は、ソースblob・件数の固定回帰テストと差分報告も更新してください。PDF、画像、非公開メール、未公開添付、個人連絡先を追加取得する処理はありません。
 
-同期後の結果を原本と照合し、公開・非公開区別を確認してください。現行の `ptaorg.com` はあくまで正本です。
+## 保全とレビュー
 
-## 同期済みデータの検証
+現行の研究本文・学校評価・一次資料・出典は現行サイトを正本としてリンクを保持します。新サイト内の研究整理は既存公開索引の記述を使い、行政回答原文とは区別します。追補は要約のみで、メール原文・署名・非公開添付は含めません。
 
-`npm test` は既存の画面構造・検索回帰に加え、全件索引の件数、学校URLの一意性、公開回答URLのリンク先制限、公開前確認中の文書にダウンロードURLがないことを検査します。GitHub Actions `Site Next checks` はpushとPRでこのテストを実行します。GitHub Pagesへの自動公開は設定しません。
+PR #1の公開データ同期を引き継いだ専用ブランチからのレビュー用PRです。PR #1およびmainへのマージは実施していません。GitHub Actionsはテストのみで、Pagesデプロイはありません。`CNAME`を置かず、HTMLには`noindex,nofollow`を付けています。
 
-今回の同期は新リポジトリに**すでに公開済みの2つのJSONだけ**を複製します。現行リポジトリを編集しません。なお、掲載メタデータは原資料の法的適否や原本の公開許可を保証しません。
+- [差分・実装・検証報告](docs/implementation-review-20261031.md)
+- [デザインQA](design-qa.md)
 
-## 新規リポジトリへの格納
+## 未完了
 
-作成済みリポジトリ：`ptaorg/ptaorg-site-next`。
-GitHub画面で空のリポジトリを作成してから、以下で追加できます。空リポジトリ作成時はREADME・license・gitignoreの自動追加をオフにしてください。
-
-```bash
-cd ptaorg-site-next
-git init -b main
-git add .
-git commit -m "Prototype independent research site with four responsive views"
-git remote add origin https://github.com/ptaorg/ptaorg-site-next.git
-git push -u origin main
-```
-
-GitHub Actionsは `npm test` のみ実施し、**GitHub Pagesへのデプロイやカスタムドメイン指定はしません**。デザイン確定前に `ptaorg.com` のCNAME・DNSを編集しないでください。
-
-## 設計上の原則
-
-- 著者による分析と行政の公開回答、学校文書の登録情報を混同しない。
-- `公開前確認中` のPDF本文やダウンロードリンクを追加しない。
-- 学校・自治体の既存URLを変更せず、旧ページへの安全な参照リンクを保持する。
-- プレビューから本番サイトに書き戻さない。公開済みソースJSONを表示用として読むだけ。
-- 一度に全749+ページを作り直さず、4画面→使い勝手の確認→データ全件同期→その他画面の設計へ進む。
-
-## 未実施
-
-- 現行の全学校別HTML本文、PDF、研究論考の複製・公開
-- 本番公開、ドメイン切替、SEO移行、全URLのリダイレクト
-- ユーザー調査による使いやすさ検証
+研究本文・学校評価・PDFの新サイトへの全文移行、設問単位の固定ID、文書年度等の不足メタ情報の補完、出典URL・日付の独立再照合、実機Safari等での検証、利用者テスト、本番移行・SEO・全URLの移行計画。これらを完了扱いにはしていません。
