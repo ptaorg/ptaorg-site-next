@@ -1,0 +1,26 @@
+name: Site Next checks
+on:
+  push:
+    branches: [main, 'feat/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run Node tests (including full public data validation)
+        run: npm test
+      - name: Check checked-in files and external publication settings
+        shell: bash
+        run: |
+          test ! -f CNAME
+          test ! -e .github/workflows/deploy.yml
+          git diff --check
