@@ -57,6 +57,15 @@ try{
     assert.ok(await page.locator('#municipal-metrics .metric').count()===3);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on municipality');
     await page.screenshot({path:output+'/municipality-'+width+'.png',fullPage:true});
+    await page.goto(url+'articles/pta-unified-legal-theory.html',{waitUntil:'domcontentloaded'});
+    assert.ok(await page.locator('.source-article h2').count()>=10,'migrated core article has full heading hierarchy');
+    assert.ok(await page.locator('.source-article').innerText().then(t=>t.includes('付録D')),'full long-read ending preserved');
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow in migrated long read');
+    await page.screenshot({path:output+'/imported-article-'+width+'.png',fullPage:false});
+    await page.goto(url+'articles/ichinomiya-pta-settlements-20261108.html',{waitUntil:'domcontentloaded'});
+    assert.equal(await page.locator('.source-article img').count(),75);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow in evidence-heavy article');
+    await page.screenshot({path:output+'/imported-ichinomiya-'+width+'.png',fullPage:false});
     await page.goto(url+'article.html',{waitUntil:'networkidle'});
     assert.ok(await page.locator('.article-text section').count()>=6);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on article');
