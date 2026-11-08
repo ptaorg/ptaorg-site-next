@@ -1,0 +1,45 @@
+{
+  "provenance": {
+    "source": "https://ptaorg.com/journal/ichinomiya-pta-settlements-20261108.html",
+    "recordDate": "2026-11-09",
+    "scope": "Only a published study landing page; no school/PDF is imported"
+  },
+  "municipalities": [
+    {
+      "id": "ichinomiya",
+      "name": "一宮市",
+      "prefecture": "愛知県",
+      "prefectureCode": "23",
+      "type": "市",
+      "summary": [
+        "公表済みの「一宮市立小中学校のPTA決算書を読む」を掲載。記事では21校・42件の決算書を分析対象としている。個々の学校資料やPDF原本は、この索引への追加だけでは公開されない。"
+      ],
+      "themes": [
+        "会費徴収",
+        "学校会計",
+        "決算書",
+        "教職員の関与"
+      ],
+      "schools": [],
+      "sources": [
+        {
+          "id": "published-journal",
+          "title": "一宮市立小中学校のPTA決算書を読む",
+          "url": "https://ptaorg.com/journal/ichinomiya-pta-settlements-20261108.html",
+          "date": "2026-11-08",
+          "publisher": "PTA適正化推進委員会",
+          "kind": "article"
+        }
+      ],
+      "articles": [
+        {
+          "title": "一宮市立小中学校のPTA決算書を読む",
+          "url": "https://ptaorg.com/journal/ichinomiya-pta-settlements-20261108.html"
+        }
+      ],
+      "legal": [],
+      "boardResponses": [],
+      "status": "published-study-index"
+    }
+  ]
+}
