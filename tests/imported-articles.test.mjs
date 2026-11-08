@@ -12,7 +12,7 @@ test('source provenance recorded for every linked public research article',()=>{
  assert.equal(manifest.articles.length,27);
  assert.deepEqual(new Set(manifest.articles.map(a=>a.source)),new Set(journal.articles.map(a=>a.url)));
 
- assert.equal(new Set(manifest.articles.map(a=>a.slug)).size,6);
+ assert.equal(new Set(manifest.articles.map(a=>a.slug)).size,manifest.articles.length);
  for(const item of manifest.articles){
   assert.match(item.sourceGitBlobSha,/^[0-9a-f]{40}$/);
   assert.match(item.source,/^https:\/\/ptaorg\.com\/journal\//);
