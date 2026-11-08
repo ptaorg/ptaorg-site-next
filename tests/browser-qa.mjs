@@ -24,7 +24,7 @@ try{
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#home-latest a').count(),5);
     assert.equal(await page.locator('a[href="guides.html"]').count()>0,true,'public legal guide navigation exists');
-    assert.equal(await page.locator('a[href="https://ptaorg.com/ppc-points.html"]').count()>0,true,'PPC guide is prominent below hero');
+    assert.equal(await page.locator('a[href="guides/ppc-points.html"]').count()>0,true,'PPC full guide is prominent below hero');
     assert.match(await page.locator('#home-latest a').first().innerText(),/一宮市/);
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
     assert.equal(await page.locator('#map-frame svg .prefecture').count(),47);
@@ -51,6 +51,17 @@ try{
     assert.equal(await page.locator('.guide-hub-resources a').count(),3);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow on guide at '+width);
     await page.screenshot({path:output+'/guides-'+width+'.png',fullPage:true});
+    for(const [guidePath,expected] of [
+      ['ppc-school-pta-personal-data.html',/個人情報保護委員会/],
+      ['ppc-points.html',/第61条|61条/],
+      ['administrative-materials.html',/文部科学省|横浜市通知/]
+    ]){
+      await page.goto(url+'guides/'+guidePath,{waitUntil:'domcontentloaded'});
+      assert.match(await page.locator('.migrated-guide-body').innerText(),expected,'migrated full source text '+guidePath);
+      assert.ok(await page.locator('.migrated-guide-source a[href^="https://ptaorg.com/"]').count()>0,'source URL preserved');
+      assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'migrated guide must not overflow '+guidePath+' at '+width);
+    }
+
     await page.goto(url+'explore.html?category=%E8%A7%A3%E8%AA%AC&q=%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E5%A7%94%E5%93%A1%E4%BC%9A',{waitUntil:'networkidle'});
     assert.ok(await page.locator('.result-entry').count()>=2,'PPC explanations must be searchable');
     await page.goto(url+'explore.html?q=%E6%A8%AA%E6%B5%9C%E5%B8%82',{waitUntil:'networkidle'});
