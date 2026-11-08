@@ -15,10 +15,11 @@ const safeUrl=(x,onlySite=false)=>{
 };
 let research=null;
 async function load(){
- const [mr,br,jr,ar]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json")]);
- if(!mr.ok||!br.ok||!jr.ok||!ar.ok)throw Error("Published index HTTP error");
- const [map,boards,journal,additions]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json()]);
- if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities))throw Error("Published index structure invalid");
+ const [mr,br,jr,ar,im]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json"),fetch("data/migrated-articles.json")]);
+ if(!mr.ok||!br.ok||!jr.ok||!ar.ok||!im.ok)throw Error("Published index HTTP error");
+ const [map,boards,journal,additions,imported]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json(),im.json()]);
+ if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities)||!Array.isArray(imported.articles))throw Error("Published index structure invalid");
+ const migrated=new Map(imported.articles.map(a=>[a.source,a.destination]));
  const existingIds=new Set(map.municipalities.map(x=>x.id));
  for(const m of additions.municipalities)if(!existingIds.has(m.id)){map.municipalities.push(m);existingIds.add(m.id)}
  const records=[],articleSeen=new Set(),sourceSeen=new Set();
@@ -55,7 +56,8 @@ async function load(){
    if(!href)continue;
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
- research={map,boards,journal,records};
+ for(const record of records)if(record.type==="論考"&&migrated.has(safeUrl(record.href,true)))record.href=migrated.get(safeUrl(record.href,true));
+ research={map,boards,journal,records,migrated};
  return research;
 }
 function updateSelects(){
@@ -147,7 +149,7 @@ function relatedResponses(m){
  });
 }
 function docRow(label,description,url,status){
- const href=safeUrl(url);
+ const href=/^articles\/[a-z0-9-]+\.html$/.test(url||"")?url:safeUrl(url);
  return '<div class="document-row"><span class="doc-icon" aria-hidden="true">▤</span><div><strong>'+esc(label)+'</strong><p>'+esc(description||"")+'</p></div>'+(href?'<a class="doc-action" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">資料を開く ›</a>':(status?'<span class="small-muted">'+esc(status)+'</span>':""))+'</div>';
 }
 function initMunicipality(){
@@ -181,7 +183,7 @@ function initMunicipality(){
  $("#municipal-sources").innerHTML=(sr.join("")+sourceRows.join(""))||'<p class="small-muted">公開索引に行政回答・原資料のリンクは登録されていません。</p>';
  $("#municipal-schools").innerHTML=schools.length?'<div class="school-summary"><h3>登録校 '+schools.length+'校</h3>'+schools.map(s=>'<a href="school.html?url='+encodeURIComponent(s.url)+'">'+esc(s.name)+' <small>登録文書'+(s.documents||[]).length+'件</small> ›</a>').join("")+'</div>':'<p class="small-muted">学校別資料の索引は未収録です。</p>';
  const legal=(m.legal||[]).map(l=>'<div class="legal-card"><h3>'+esc(l.title)+'</h3><p>'+esc(l.text)+'</p></div>').join("");
- const articles=(m.articles||[]).filter(a=>safeUrl(a.url)).map(a=>docRow(a.title,"公開済み論考",a.url)).join("");
+ const articles=(m.articles||[]).filter(a=>safeUrl(a.url)).map(a=>docRow(a.title,"公開済み論考",research.migrated.get(safeUrl(a.url,true))||a.url)).join("");
  $("#municipal-legal").innerHTML=legal+articles||'<p class="small-muted">関連する法的分析の索引は未登録です。</p>';
  $("#muni-themes").innerHTML=(m.themes||[]).slice(0,12).map(s=>'<a href="explore.html?theme='+encodeURIComponent(s)+'">'+esc(s)+' <span>›</span></a>').join("");
  $("#muni-source-link").href=safeUrl(m.url)||"explore.html?region="+encodeURIComponent(m.prefecture);

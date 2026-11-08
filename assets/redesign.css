@@ -84,3 +84,64 @@
 
 /* Remove historic inset guide strokes that obscure the real Japan geography. */
 .map-frame svg.geolonia-svg-map .boundary-line{display:none!important}
+
+/* Imported long-form papers: body content is preserved, only presentation is redesigned. */
+.original-article-heading{margin:12px 0 0;padding:14px 0 26px;border-bottom:1px solid var(--line)}
+.original-article-heading h1{font-size:clamp(28px,3.15vw,42px);font-family:var(--serif);line-height:1.55;margin:0 0 10px;letter-spacing:.005em;max-width:1060px}
+.original-article-heading time{font-size:13px;color:var(--muted)}
+.migrated-article-grid{grid-template-columns:253px minmax(0,1fr);gap:40px}
+.migrated-article-grid .article-toc{max-height:min(780px,calc(100vh - 48px));overflow:auto}
+.migrated-article-grid .article-toc a{font-size:12px;line-height:1.65}
+.source-article{width:100%;min-width:0;max-width:920px;font-size:16px;line-height:2;overflow-wrap:anywhere;word-break:normal}
+.source-article p{font-size:16px;line-height:2;margin:0 0 1.1em}
+.source-article h2{margin:2.1em 0 .75em;font-size:25px;line-height:1.6;border-bottom:1px solid #91aec4;padding:0 0 10px;scroll-margin-top:20px}
+.source-article h2:first-child{margin-top:0}
+.source-article h3{font-size:20px;line-height:1.6;margin:1.7em 0 .7em;color:#153a5b}
+.source-article h4{font-size:17px;line-height:1.6;margin:1.3em 0 .5em}
+.source-article ul,.source-article ol{padding-left:1.6em;margin:14px 0 24px}
+.source-article li{margin:7px 0;font-size:15px;line-height:1.9}
+.source-article a{text-underline-offset:3px;overflow-wrap:anywhere}
+.source-article blockquote{border-left:4px solid #9db6cc;padding:12px 20px;background:#f4f7fa;margin:20px 0}
+.source-article .journal-note,.source-article .journal-verdict,.source-article .journal-document-set,
+.source-article .ich-lead,.source-article .ich-evidence-warning{
+  border:1px solid #d8e3eb;border-left:4px solid #759dbb;background:#f7fafc;border-radius:4px;
+  padding:18px 22px;margin:20px 0;
+}
+.source-article .journal-verdict{background:#edf5fb;border-left-color:#1a547a}
+.source-article .journal-note strong,.source-article .journal-verdict strong{display:block;margin-bottom:6px}
+.source-article .journal-document-set{background:#fbfcfe}
+.source-article .journal-figure,.source-article figure{max-width:100%;margin:23px auto;padding:0;text-align:center}
+.source-article img,.source-article svg,.source-article video{display:block;max-width:100%;height:auto;margin:auto}
+.source-article figcaption{font-size:12px;line-height:1.8;color:var(--muted);margin:10px auto 0;text-align:left}
+.source-article table{display:block;width:100%;max-width:100%;border-collapse:collapse;overflow-x:auto;margin:22px 0;border:1px solid #d6e0e8;font-size:13px}
+.source-article th,.source-article td{border:1px solid #d6e0e8;padding:11px 14px;vertical-align:top;line-height:1.8;min-width:115px;white-space:normal}
+.source-article th{background:#eaf1f7;font-weight:700}
+.source-article pre{max-width:100%;overflow-x:auto;background:#edf2f5;padding:13px;border-radius:5px}
+.source-article hr{border:0;border-top:1px solid var(--line);margin:28px 0}
+.source-article .journal-article-toc,.source-article .chapter-flow,.source-article .ich-toc{display:none}
+.source-article .journal-action-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.source-article .journal-action-links>a{display:block;border:1px solid #ccdae6;padding:12px;border-radius:4px;text-decoration:none}
+.source-article .journal-action-links span{display:block;color:var(--muted);font-size:12px;line-height:1.7}
+.source-article .journal-source-direct{background:#f7f9fb;border:1px solid #d9e3ec;padding:12px;margin:10px 0}
+.source-article .ich-stats{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.source-article .ich-stats li{border:1px solid var(--line);background:#f0f5fa;border-radius:5px;padding:13px;margin:0;font-size:12px}
+.source-article .ich-stats strong{display:block;font-size:21px;color:#0d4268}
+.source-article .ich-finding{border:1px solid #d6e1ea;border-left:4px solid #678aaa;border-radius:6px;padding:16px 20px;margin:28px 0}
+.source-article .ich-A{border-left-color:#bb624b}
+.source-article .ich-B{border-left-color:#c69235}
+.source-article .ich-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.source-article .ich-figs img{width:100%;height:auto}
+.source-article .ich-laws,.source-article .ich-axes,.source-article .ich-meta{background:#f4f8fb;padding:11px 15px;margin:12px 0}
+@media(max-width:900px){.migrated-article-grid{grid-template-columns:210px minmax(0,1fr);gap:23px}}
+@media(max-width:760px){
+ .original-article-heading h1{font-size:28px}
+ .migrated-article-grid{grid-template-columns:1fr;gap:20px}
+ .migrated-article-grid .article-rail{position:static}
+ .migrated-article-grid .article-toc{max-height:250px;overflow-y:auto}
+ .source-article h2{font-size:22px}
+ .source-article p{font-size:16px}
+ .source-article .journal-action-links,.source-article .ich-stats{grid-template-columns:1fr 1fr}
+ .source-article .ich-figs{grid-template-columns:1fr}
+ .source-article .journal-note,.source-article .journal-document-set,.source-article .ich-finding{padding:14px}
+}
+@media(max-width:390px){.source-article .ich-stats,.source-article .journal-action-links{grid-template-columns:1fr}}
