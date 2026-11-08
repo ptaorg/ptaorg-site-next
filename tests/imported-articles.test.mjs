@@ -58,7 +58,7 @@ test('key source statements and evidentiary qualifications remain visible in the
  }
 });
 
-test('published asset dependency inventory covers migrated originals without republishing binaries',()=>{
+test('published asset dependency inventory covers migrated originals and restricts reviewed copies',()=>{
  const inventory=JSON.parse(file('data/public-asset-dependencies.json'));
  assert.equal(inventory.assets.length,92);
  assert.equal(inventory.sourceCommitSha,manifest.sourceCommitSha);
@@ -69,7 +69,7 @@ test('published asset dependency inventory covers migrated originals without rep
    const item=lookup.get(path);
    assert.ok(item,'Missing publicly referenced asset in inventory: '+article.slug+' '+path);
    assert.ok(item.usedBy.includes(article.slug));
-   assert.equal(item.reviewStatus,'pending-republication-review');
+   assert.equal(item.reviewStatus, path==='/assets/diagrams/yokohama-notice-structure.svg' ? 'republished-verified-identical' : 'pending-republication-review');
    assert.match(item.sourceGitBlobSha,/^[a-f0-9]{40}$/);
    assert.ok(item.bytes>0);
   }
