@@ -17,10 +17,10 @@ try{
     const page=await browser.newPage({viewport:{width,height:850},deviceScaleFactor:1});
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(url+'index.html',{waitUntil:'networkidle'});
-    await page.locator('#count-regions').getByText('30').waitFor({timeout:15000});
+    await page.locator('#count-regions').getByText('31').waitFor({timeout:15000});
     await page.waitForFunction(()=>document.querySelectorAll('#map-frame svg [data-code]').length===47,{timeout:15000});
-    assert.equal(await page.locator('#count-regions').innerText(),'30');
-    assert.equal(await page.locator('#count-schools').innerText(),'590');
+    assert.equal(await page.locator('#count-regions').innerText(),'31');
+    assert.equal(await page.locator('#count-schools').innerText(),'656');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#home-latest a').count(),5);
     assert.equal(await page.locator('a[href="guides.html"]').count()>0,true,'public legal guide navigation exists');
@@ -80,8 +80,8 @@ try{
     assert.ok(await page.locator('.result-entry').count()>0,'public Ichinomiya study must be searchable');
     await page.goto(url+'municipality.html?id=ichinomiya',{waitUntil:'networkidle'});
     assert.equal(await page.locator('#muni-name').innerText(),'一宮市');
-    assert.match(await page.locator('#municipal-schools').innerText(),/登録校 21校/);
-    assert.equal(await page.locator('#municipal-schools a').count(),21);
+    assert.match(await page.locator('#municipal-schools').innerText(),/登録校 61校/);
+    assert.equal(await page.locator('#municipal-schools a').count(),61);
     assert.equal(await page.locator('#municipal-sources a[href^="https://drive.google.com/file/d/"]').count(),42);
     assert.equal(await page.locator('#municipal-legal a[href="ichinomiya-review.html"]').count(),1);
     await page.goto(url+'ichinomiya-review.html',{waitUntil:'networkidle'});
@@ -96,9 +96,22 @@ try{
     await page.screenshot({path:output+'/ichinomiya-review-'+width+'.png',fullPage:false});
     await page.locator('#ich-school-q').fill('');
 
+    await page.goto(url+'municipality.html?id=kakamigahara',{waitUntil:'networkidle'});
+    assert.equal(await page.locator('#muni-name').innerText(),'各務原市');
+    assert.match(await page.locator('#municipal-schools').innerText(),/登録校 26校/);
+    assert.equal(await page.locator('#municipal-schools a').count(),26);
+    await page.goto(url+'school.html?url=kakamigahara-research-1',{waitUntil:'networkidle'});
+    await page.locator('.school-evidence-finding').first().waitFor({timeout:15000});
+    assert.match(await page.locator('#school-name').innerText(),/那加第一小学校/);
+    assert.match(await page.locator('#school-evidence-content').innerText(),/最長子/);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Kakamigahara legal school mobile layout');
+    await page.goto(url+'school.html?url=ichinomiya-research-2310133',{waitUntil:'networkidle'});
+    await page.locator('#school-evidence-status').getByText(/引継ぎ|原文/).waitFor({timeout:15000});
+    assert.match(await page.locator('#school-name').innerText(),/葉栗小学校/);
     await page.goto(url+'school.html?url=ichinomiya-original-20',{waitUntil:'networkidle'});
     assert.match(await page.locator('#school-name').innerText(),/奥小/);
     assert.equal(await page.locator('#school-documents a[href^="https://drive.google.com/file/d/"]').count(),2);
+    assert.equal(await page.locator('#school-evidence-content .school-evidence-analysis').count()>=0,true);
     assert.equal(await page.locator('#school-documents a[href^="ichinomiya-review.html#school-"]').count(),1);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on school original PDF list');
     await page.goto(url+'municipality.html?id=yokohama',{waitUntil:'networkidle'});
