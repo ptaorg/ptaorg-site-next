@@ -142,6 +142,119 @@
       ],
       "destination": "articles/ichinomiya-pta-settlements-20261108.html",
       "date": "2026-11-08"
+    },
+    {
+      "slug": "school-pta-fee-public-duty-mic-mext-ppc-20261016",
+      "source": "https://ptaorg.com/journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html",
+      "sourceGitBlobSha": "4d3f4980b66471c43e9a5142d50b8fac3af675a8",
+      "articleBodyOriginalChars": 28617,
+      "sectionCount": 13,
+      "images": 0,
+      "rootResourceReferencesRewritten": 1,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/school-pta-fee-public-duty-mic-mext-ppc-20261016.html",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "pta-fee-delegation-origin-local-government-law-20261016",
+      "source": "https://ptaorg.com/journal/pta-fee-delegation-origin-local-government-law-20261016.html",
+      "sourceGitBlobSha": "1b2a50cd53acd831e1acdbd425d057645fc4dda8",
+      "articleBodyOriginalChars": 45289,
+      "sectionCount": 12,
+      "images": 0,
+      "rootResourceReferencesRewritten": 5,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/pta-fee-delegation-origin-local-government-law-20261016.html",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "shiga-pta-audit-circular-reasoning-20261013",
+      "source": "https://ptaorg.com/journal/shiga-pta-audit-circular-reasoning-20261013.html",
+      "sourceGitBlobSha": "afd09e02b6bd7281e2e8dfb1e1cd19c7bb0f5c24",
+      "articleBodyOriginalChars": 42586,
+      "sectionCount": 37,
+      "images": 0,
+      "rootResourceReferencesRewritten": 0,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/shiga-pta-audit-circular-reasoning-20261013.html",
+      "date": "2026-10-13"
+    },
+    {
+      "slug": "matsuyama-pta-fee-unification-20261013",
+      "source": "https://ptaorg.com/journal/matsuyama-pta-fee-unification-20261013.html",
+      "sourceGitBlobSha": "e7866b12d5e6151f8c14addefc5f6ffd0ed6e75e",
+      "articleBodyOriginalChars": 20246,
+      "sectionCount": 18,
+      "images": 0,
+      "rootResourceReferencesRewritten": 0,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/matsuyama-pta-fee-unification-20261013.html",
+      "date": "2026-10-13"
+    },
+    {
+      "slug": "setagaya-pta-information-separation",
+      "source": "https://ptaorg.com/journal/setagaya-pta-information-separation.html",
+      "sourceGitBlobSha": "30a67057507a80bcad46af498a8dec32f7f9508a",
+      "articleBodyOriginalChars": 19814,
+      "sectionCount": 13,
+      "images": 4,
+      "rootResourceReferencesRewritten": 8,
+      "dependentPublicAssetPaths": [
+        "/assets/images/setagaya-pta-separation/setagaya-pta-guide-202604-p6.png",
+        "/assets/images/setagaya-pta-separation/setagaya-20251209-p3.png",
+        "/assets/images/ppc-points/ppc-page-05-school-point1.png",
+        "/assets/images/ppc-points/ppc-page-08-temporary-note.png"
+      ],
+      "destination": "articles/setagaya-pta-information-separation.html",
+      "date": "2026-10-10"
+    },
+    {
+      "slug": "social-education-law-pta-boundary",
+      "source": "https://ptaorg.com/journal/social-education-law-pta-boundary.html",
+      "sourceGitBlobSha": "3f10075b6d923358852a3b18833e9175d9ce3a64",
+      "articleBodyOriginalChars": 8702,
+      "sectionCount": 10,
+      "images": 2,
+      "rootResourceReferencesRewritten": 7,
+      "dependentPublicAssetPaths": [
+        "/assets/images/social-education-law-pta/03-related-org.webp",
+        "/assets/images/social-education-law-pta/04-facilities.webp"
+      ],
+      "destination": "articles/social-education-law-pta-boundary.html",
+      "date": "2026-10-03"
+    },
+    {
+      "slug": "mext-jri-pta-good-practice-legal-scope",
+      "source": "https://ptaorg.com/journal/mext-jri-pta-good-practice-legal-scope.html",
+      "sourceGitBlobSha": "8f887e0cf6e8db0075526bcc49138c3961903e9d",
+      "articleBodyOriginalChars": 12471,
+      "sectionCount": 10,
+      "images": 4,
+      "rootResourceReferencesRewritten": 11,
+      "dependentPublicAssetPaths": [
+        "/assets/images/mext-jri-pta-scope/jri-q12-q13-p84.webp",
+        "/assets/images/mext-jri-pta-scope/jri-q16-p85.webp",
+        "/assets/images/mext-jri-pta-scope/ppc-review-order-p5-p8.webp",
+        "/assets/images/mext-jri-pta-scope/jri-nishinogawa-p21.webp",
+        "/assets/documents/MEXT_JRI_PTA_investigation_20261002.zip"
+      ],
+      "destination": "articles/mext-jri-pta-good-practice-legal-scope.html",
+      "date": "2026-10-03"
+    },
+    {
+      "slug": "shinjuku-2020-pta-nonmember-data",
+      "source": "https://ptaorg.com/journal/shinjuku-2020-pta-nonmember-data.html",
+      "sourceGitBlobSha": "1bd6d170c8ff982e9cb498a29aa3a0ac4b538df7",
+      "articleBodyOriginalChars": 14880,
+      "sectionCount": 10,
+      "images": 2,
+      "rootResourceReferencesRewritten": 4,
+      "dependentPublicAssetPaths": [
+        "/assets/images/shinjuku-2020/minutes-p28.png",
+        "/assets/images/shinjuku-2020/minutes-p29.png"
+      ],
+      "destination": "articles/shinjuku-2020-pta-nonmember-data.html",
+      "date": "2026-10-02"
     }
   ]
 }
