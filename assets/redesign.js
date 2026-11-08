@@ -57,6 +57,18 @@ async function load(){
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
  for(const record of records)if(record.type==="論考"&&migrated.has(safeUrl(record.href,true)))record.href=migrated.get(safeUrl(record.href,true));
+ if($("#result-list")){
+  const paths=[1,2,3,4,5,6].map(i=>"data/fulltext-"+i+".json");
+  try{
+   const responses=await Promise.all(paths.map(p=>fetch(p)));
+   if(responses.some(r=>!r.ok))throw Error("Full-text index unavailable");
+   const parts=await Promise.all(responses.map(r=>r.json()));
+   if(parts.some(p=>!Array.isArray(p.articles)||p.sourceCommit!==imported.sourceCommitSha))throw Error("Full-text metadata mismatch");
+   const contents=new Map(parts.flatMap(p=>p.articles).map(p=>[p.destination,p.text]));
+   for(const record of records)if(record.type==="論考"&&contents.has(record.href))record.searchBody=contents.get(record.href);
+   if(records.filter(r=>r.type==="論考"&&r.searchBody).length!==imported.articles.length)throw Error("Full-text index incomplete");
+  }catch(e){console.warn("Metadata-only search fallback.",e);}
+ }
  research={map,boards,journal,records,migrated,imported};
  return research;
 }
@@ -220,9 +232,21 @@ function filtered(params){
   if(params.category&&params.category!==r.type)return false;
   if(params.region&&params.region!==r.pref)return false;
   const text=norm([r.title,r.type,r.pref,r.description,...(r.themes||[])].join(" "));
-  if(params.theme&&!text.includes(norm(params.theme)))return false;
-  return terms.every(t=>text.includes(t));
+  const haystack=text+" "+norm(r.searchBody||"");
+  if(params.theme&&!haystack.includes(norm(params.theme)))return false;
+  return terms.every(t=>haystack.includes(t));
  });
+}
+function searchExcerpt(record,query){
+ if(record.type!=="論考"||!record.searchBody)return "";
+ const terms=norm(query||"").split(" ").filter(Boolean);
+ if(!terms.length)return "";
+ const text=record.searchBody,normalized=norm(text);
+ let index=-1;
+ for(const term of terms){const i=normalized.indexOf(term);if(i>=0&&(index<0||i<index))index=i}
+ if(index<0)return "";
+ const from=Math.max(0,index-52),to=Math.min(text.length,index+115);
+ return (from?"…":"")+text.slice(from,to)+(to<text.length?"…":"");
 }
 function initExplore(){
  const list=$("#result-list");if(!list)return;
@@ -239,7 +263,7 @@ function initExplore(){
    if(tab)params.category=tab;
    const matches=filtered(params),current=matches.slice(0,offset+25);
    $("#result-count").textContent=matches.length.toLocaleString("ja-JP")+"件";
-   list.innerHTML=current.length?current.map(r=>'<article class="result-entry"><div><span class="eyetag">'+esc(r.type)+'</span><h2><a href="'+esc(r.href)+'">'+esc(r.title)+'</a></h2><p>'+esc(r.pref)+(r.description?"／"+esc(r.description):"")+'</p></div><a class="doc-action" href="'+esc(r.href)+'">詳細 ›</a></article>').join(""):'<div class="empty-result">該当する資料はありません。</div>';
+   list.innerHTML=current.length?current.map(r=>'<article class="result-entry"><div><span class="eyetag">'+esc(r.type)+'</span><h2><a href="'+esc(r.href)+'">'+esc(r.title)+'</a></h2><p>'+esc(r.pref)+(r.description?"／"+esc(r.description):"")+'</p>'+(searchExcerpt(r,params.q)?'<p class="match-excerpt">'+esc(searchExcerpt(r,params.q))+'</p>':"")+'</div><a class="doc-action" href="'+esc(r.href)+'">詳細 ›</a></article>').join(""):'<div class="empty-result">該当する資料はありません。</div>';
    more.hidden=current.length===matches.length;
    for(const t of tabs)t.setAttribute("aria-pressed",String(t.dataset.type===tab));
    const query=new URLSearchParams(Object.entries(params).filter(([k,v])=>v));

@@ -48,6 +48,9 @@ try{
     const count=await page.locator('#result-count').innerText();
     assert.ok(/^\d+件$/.test(count),'real search count: '+count);
     assert.ok(await page.locator('.result-entry').count()>0,'Yokohama returns records');
+    await page.goto(url+'explore.html?category=%E8%AB%96%E8%80%83&q=%E5%9C%B0%E6%96%B9%E8%87%AA%E6%B2%BB%E6%B3%95235',{waitUntil:'networkidle'});
+    assert.ok(await page.locator('.result-entry').count()>0,'Japanese full-text article lookup');
+    assert.ok(await page.locator('.match-excerpt').count()>0,'matched excerpt');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on search');
     await page.goto(url+'explore.html?q=%E4%B8%80%E5%AE%AE%E5%B8%82',{waitUntil:'networkidle'});
     assert.ok(await page.locator('.result-entry').count()>0,'public Ichinomiya study must be searchable');
