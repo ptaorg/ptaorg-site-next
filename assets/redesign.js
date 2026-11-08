@@ -151,15 +151,15 @@ function initMunicipality(){
  const sources=(m.sources||[]).filter(x=>x.url&&safeUrl(x.url));
  const schools=m.schools||[];
  const els={
-  "#muni-crumb":m.name,"#muni-name":m.name,"#muni-intro":(m.summary||[])[0]||"",
+  "#muni-crumb":m.name,"#muni-name":m.name,"#muni-intro":"",
   "#muni-summary":(m.summary||[]).join("\n")||m.name+"の調査記録",
   "#muni-pref":m.prefecture,"#muni-info-name":m.name,"#muni-info-schools":schools.length+"校"
  };
  for(const [sel,val] of Object.entries(els)){$(sel).textContent=val}
  const metrics=[
-  ["行政回答",related.length+"件"],
-  ["学校索引",schools.length+"校"],
-  ["関連原資料",sources.filter(s=>s.kind==="primary").length+"件"]
+  ["公開回答登録",related.length+"件"],
+  ["学校索引",schools.length?schools.length+"校":"—"],
+  ["公開資料リンク",sources.length+"件"]
  ];
  $("#municipal-metrics").innerHTML=metrics.map(x=>'<div class="metric"><strong>'+esc(x[1])+'</strong><span>'+esc(x[0])+'</span></div>').join("");
  const sr=related.map(r=>docRow(r.municipality+" 教育委員会回答",[r.date,(r.topics||[]).slice(0,2).join("・")].filter(Boolean).join("／"),r.url));
