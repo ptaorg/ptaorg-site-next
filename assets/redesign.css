@@ -81,3 +81,6 @@
  .map-frame{min-height:310px}
  .map-frame svg.geolonia-svg-map{max-height:420px}
 }
+
+/* Remove historic inset guide strokes that obscure the real Japan geography. */
+.map-frame svg.geolonia-svg-map .boundary-line{display:none!important}
