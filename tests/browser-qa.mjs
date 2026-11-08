@@ -23,6 +23,8 @@ try{
     assert.equal(await page.locator('#count-schools').innerText(),'590');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#home-latest a').count(),5);
+    assert.equal(await page.locator('a[href="guides.html"]').count()>0,true,'public legal guide navigation exists');
+    assert.equal(await page.locator('a[href="https://ptaorg.com/ppc-points.html"]').count()>0,true,'PPC guide is prominent below hero');
     assert.match(await page.locator('#home-latest a').first().innerText(),/一宮市/);
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
     assert.equal(await page.locator('#map-frame svg .prefecture').count(),47);
@@ -43,6 +45,14 @@ try{
       await page.waitForURL(/explore\.html\?region=/);
       assert.match(page.url(),/region=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C/);
     }
+    await page.goto(url+'guides.html',{waitUntil:'networkidle'});
+    assert.match(await page.locator('.guide-hub-ppc').innerText(),/個人情報保護法61条/);
+    assert.match(await page.locator('.guide-hub-ppc').innerText(),/個人情報保護法69条/);
+    assert.equal(await page.locator('.guide-hub-resources a').count(),3);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow on guide at '+width);
+    await page.screenshot({path:output+'/guides-'+width+'.png',fullPage:true});
+    await page.goto(url+'explore.html?category=%E8%A7%A3%E8%AA%AC&q=%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E4%BF%9D%E8%AD%B7%E5%A7%94%E5%93%A1%E4%BC%9A',{waitUntil:'networkidle'});
+    assert.ok(await page.locator('.result-entry').count()>=2,'PPC explanations must be searchable');
     await page.goto(url+'explore.html?q=%E6%A8%AA%E6%B5%9C%E5%B8%82',{waitUntil:'networkidle'});
     await page.locator('#result-count').waitFor({state:'visible'});
     const count=await page.locator('#result-count').innerText();
