@@ -20,7 +20,7 @@ try{
     await page.locator('#count-regions').getByText('30').waitFor({timeout:15000});
     await page.waitForFunction(()=>document.querySelectorAll('#map-frame svg [data-code]').length===47,{timeout:15000});
     assert.equal(await page.locator('#count-regions').innerText(),'30');
-    assert.equal(await page.locator('#count-schools').innerText(),'569');
+    assert.equal(await page.locator('#count-schools').innerText(),'590');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#home-latest a').count(),5);
     assert.match(await page.locator('#home-latest a').first().innerText(),/一宮市/);
@@ -56,7 +56,13 @@ try{
     assert.ok(await page.locator('.result-entry').count()>0,'public Ichinomiya study must be searchable');
     await page.goto(url+'municipality.html?id=ichinomiya',{waitUntil:'networkidle'});
     assert.equal(await page.locator('#muni-name').innerText(),'一宮市');
-    assert.match(await page.locator('#municipal-schools').innerText(),/索引は未収録/);
+    assert.match(await page.locator('#municipal-schools').innerText(),/登録校 21校/);
+    assert.equal(await page.locator('#municipal-schools a').count(),21);
+    assert.equal(await page.locator('#municipal-sources a[href^="https://drive.google.com/file/d/"]').count(),42);
+    await page.goto(url+'school.html?url=ichinomiya-original-20',{waitUntil:'networkidle'});
+    assert.match(await page.locator('#school-name').innerText(),/奥小/);
+    assert.equal(await page.locator('#school-documents a[href^="https://drive.google.com/file/d/"]').count(),2);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on school original PDF list');
     await page.goto(url+'municipality.html?id=yokohama',{waitUntil:'networkidle'});
     assert.equal(await page.locator('#muni-name').innerText(),'横浜市');
     assert.ok(await page.locator('#municipal-metrics .metric').count()===3);
