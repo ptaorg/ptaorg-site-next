@@ -6,7 +6,7 @@ const read=path=>fs.readFileSync(path,"utf8");
 const guides=JSON.parse(read("data/public-guides-index.json")).pages;
 
 test("source-first PPC and legal guides are linked, unique and searchable",()=>{
- assert.equal(guides.length,9);
+ assert.equal(guides.length,17);
  assert.equal(new Set(guides.map(g=>g.id)).size,guides.length);
  assert.equal(new Set(guides.map(g=>g.url)).size,guides.length);
  for(const g of guides){
