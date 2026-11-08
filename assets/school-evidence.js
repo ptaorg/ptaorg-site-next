@@ -18,7 +18,7 @@ function publicDocument(item){
 function entryItem(item,region){
  const source=(region==="kakamigahara"?(item.documents||[]):(item.disclosureFindings||[]));
  const loc=item.locator||"該当箇所の詳細未登録";
- const status=item.originalChecked?"PR #118の原文確認記録":"原文確認状態未登録";
+ const status=item.sourceStatus||(item.originalChecked?"PR #118の原文確認記録":"原文確認状態未登録");
  return '<article class="school-evidence-finding"><h4>'+esc(item.title||"調査記録")+'</h4><p class="school-evidence-locator">'+esc(loc)+'　／　'+esc(status)+'</p><p>'+esc(item.summary||"概要未登録")+'</p>'+(item.unknown?'<p class="school-evidence-unknown"><strong>未確認：</strong>'+esc(item.unknown)+'</p>':"")+'</article>';
 }
 function render(item,region){
@@ -34,7 +34,7 @@ function render(item,region){
  if(findings.length){
   html+='<h3>開示原文の該当箇所（'+findings.length+'件）</h3>'+findings.map(x=>entryItem(x,region)).join("");
  }else{
-  html+='<p class="school-evidence-unknown">この学校は資料目録に登録済みですが、原文の個別確認記録はまだ収録されていません。学校固有の適法・違法の判断は保留します。</p>';
+  html+='<p class="school-evidence-unknown">'+(region==="ichinomiya"&&(item.documents||[]).some(d=>d.verified===true)?"開示PDFの指定箇所を直接確認した記録はありません。上記の学校公表資料と、未公開の開示原本は区別しています。":"この学校は資料目録に登録済みですが、原文の個別確認記録はまだ収録されていません。学校固有の適法・違法の判断は保留します。")+'</p>';
  }
  if(analyses.length){
   html+='<h3>学校側の法的検討</h3><ol class="school-evidence-analysis">'+analyses.map((x,i)=>'<li><strong>'+esc(labels[i]||"追加論点")+'</strong><p>'+esc(x)+'</p></li>').join("")+'</ol>';
