@@ -3905,7 +3905,12 @@
             "unknown": "加入・非加入の判定と実際の引落記録。",
             "originalChecked": true,
             "date": "2025-05-01",
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 2,
+            "sourcePageEnd": 2,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -3915,7 +3920,12 @@
             "unknown": "契約作成日の判読、令和7年度の契約継続・解約、職務命令。",
             "originalChecked": true,
             "date": null,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 1,
+            "sourcePageEnd": 1,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 5,
@@ -3932,7 +3942,8 @@
           "facts": "学校の前期集金案内は団体会費を併記し、契約書は校長への集金等の委任を記載する。",
           "unknowns": "契約継続、最長子登録と引落し、従事者・勤務時間。",
           "followUp": "契約の年度別効力、口座・徴収対象一覧の管理主体、受諾の根拠規定を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "2",
@@ -3947,7 +3958,12 @@
             "summary": "口座登録書式に、加入する場合にPTAの口数欄に1を記入する旨を記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 5,
+            "sourcePageEnd": 5,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -3956,7 +3972,12 @@
             "summary": "第1条は、候補業務のうち当事者が都度協議して定める一部を委任すると規定。会費集金・督促のほか、物品と団体に関わる個人情報の管理も候補に含める。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 2,
+            "sourcePageEnd": 2,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 8,
@@ -3975,7 +3996,8 @@
           "facts": "「令和7年度学校徴収金案内等」PDF5頁の口座登録書式は、加入する場合にPTAの口数欄へ「1」を記入するよう求める。「業務委任契約書等」PDF2頁第1条は都度協議して定める業務の一部を対象とし、会費の集金・督促や団体に関わる個人情報の管理等を候補に挙げる。",
           "unknowns": "都度協議の結果、実際の受任範囲、非加入者の振替除外、振替実績、口座登録情報の提供先は未確認。",
           "followUp": "都度協議書・受任決裁、口数欄の利用目的及び記録先、振替対象から非加入者を除く手順、金額・入金先を確認できる処理記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "3",
@@ -3990,7 +4012,12 @@
             "summary": "校外生活安全委員について、町内の最高学年の保護者から選出すると記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 4,
+            "sourcePageEnd": 4,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -3999,7 +4026,12 @@
             "summary": "校長名の口座振替案内は銀行発行の収納予定表を参照するよう求め、教材費等の費目を示す。この頁だけではPTA会費の振替額を確定できない。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 1,
+            "sourcePageEnd": 1,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4008,7 +4040,12 @@
             "summary": "翌年度の全役員の立候補を希望確認調査書で募り、定員超過時は候補者の話合いで決めると記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 2,
+            "sourcePageEnd": 2,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4017,7 +4054,12 @@
             "summary": "校長名の口座振替案内は銀行発行の収納予定表を参照するよう求め、費用3～6の内訳を示す。この頁だけではPTA会費の振替額を確定できない。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 6,
+            "sourcePageEnd": 6,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4026,7 +4068,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 3,
+            "sourcePageEnd": 3,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 11,
@@ -4043,7 +4090,8 @@
           "facts": "「令和6年度入会案内・説明書等」PDF4頁は町内の最高学年の保護者から校外生活安全委員を選ぶ旨を記載。「令和7年度入会案内・説明書等」PDF2頁は翌年度の役員の立候補を募り、定員超過時は候補者の話合いとする。学校徴収金案内の令和6年度PDF1頁・令和7年度PDF6頁は銀行の収納予定表を参照する形式。「業務委任契約書等」PDF3頁第1条は会費集金・督促、経理、通帳等の保管、文書配布を掲げる。",
           "unknowns": "校外生活安全委員・役員の選出対象に非加入者を含めたか、希望確認票の回収主体、団体会費の振替額と入金先、教職員の実施事務は未確認。",
           "followUp": "希望確認票の配布・回収手順、選出対象を抽出したデータと根拠、収納予定表の費目・入金口座、受任決裁と職務分担を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "4",
@@ -4080,7 +4128,8 @@
               "url": "https://edu-kakamigahara.com/ozakisho/from-pta/"
             }
           ]
-        }
+        },
+        "sourceReviewStatus": "市の提出資料一覧表では『PTAなし』と明記。外部団体の具体的な事務の存在を認定しない。"
       },
       {
         "id": "5",
@@ -4110,7 +4159,8 @@
               "url": "https://edu-kakamigahara.com/inanisho/page-22548/"
             }
           ]
-        }
+        },
+        "sourceReviewStatus": "市の提出資料一覧表では『PTAなし』と明記。外部団体の具体的な事務の存在を認定しない。"
       },
       {
         "id": "6",
@@ -4140,7 +4190,8 @@
               "url": "https://edu-kakamigahara.com/inahisho/20240911_25404/"
             }
           ]
-        }
+        },
+        "sourceReviewStatus": "市の提出資料一覧表では『PTAなし』と明記。外部団体の具体的な事務の存在を認定しない。"
       },
       {
         "id": "7",
@@ -4155,7 +4206,12 @@
             "summary": "翌年度役員を公募し、在校きょうだいのいる保護者の本人提出と、新入生の園児名・住所・連絡先等を記した書類の学校への提出を案内。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 18,
+            "sourcePageEnd": 18,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4164,7 +4220,12 @@
             "summary": "PTA会費は月300円、最長子のみ振替と記載。給食費は市の登録口座から振り替えると区分。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 9,
+            "sourcePageEnd": 9,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4173,7 +4234,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 4,
+            "sourcePageEnd": 4,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 16,
@@ -4190,7 +4256,8 @@
           "facts": "「令和7年度入会案内・説明書等」PDF18頁は令和8年度役員の立候補募集。園児名・住所・連絡先等を学校宛てに提出する経路を案内する。「令和7年度学校徴収金案内等」PDF9頁は団体会費月300円を「最長子のみ」振替とし、給食費は市の登録口座から振替と区分する。「業務委任契約書等」PDF4頁第1条は会費集金・督促、経理、文書配布等を掲げる。",
           "unknowns": "公募書類の受領者、保管・転送・廃棄、応募先として案内された学校の連絡手段の管理、口座振替の実績・非加入除外は未確認。",
           "followUp": "公募用書類の受付・回付手順と保存期間、学校宛て連絡経路の管理規程、団体会費の収納フローと振替除外手順を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "8",
@@ -4205,7 +4272,12 @@
             "summary": "入学式当日にクラス委員を選出し、調査書の未提出・記入漏れは選出対象とする旨を案内。立候補、話合い、くじ引きを記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 13,
+            "sourcePageEnd": 13,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4214,7 +4286,12 @@
             "summary": "団体会長名で、会員が納める会費の集金について案内。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 4,
+            "sourcePageEnd": 4,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4224,7 +4301,12 @@
             "date": "2025-02-07",
             "summary": "新1年生の保護者宛てに、入学式当日にクラス委員を選出することと、立候補・免除の申出方法を案内。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 23,
+            "sourcePageEnd": 23,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4233,7 +4315,12 @@
             "summary": "団体会長名の案内は、他の学校徴収金と同時に引き落とし、団体名義の口座へ直接入金する仕組みと説明。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 10,
+            "sourcePageEnd": 10,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4243,7 +4330,12 @@
             "date": "2023-02-10",
             "summary": "団体会長と校長間で集金・督促、経理、通帳等の保管、文書の配布回収を委任。期間と継続の条項を確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 5,
+            "sourcePageEnd": 5,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 20,
@@ -4260,7 +4352,8 @@
           "facts": "「令和6年度入会案内・説明書等」PDF13頁は入学式当日のクラス委員選出と調査書の未提出・記入漏れの扱いを案内し、令和7年度同資料PDF23頁にも入学式当日の選出、立候補・免除の手続がある。「令和7年度学校徴収金案内等」PDF10頁は学校徴収金と同時に引き落とし、団体名義の口座へ直接入金する仕組みと説明。「業務委任契約書等」PDF5頁には集金・督促、経理、通帳等の保管、文書の配布回収の条項がある。",
           "unknowns": "未提出者の実際の選出扱い、非加入世帯の除外、調査書の回収主体、名簿との照合、令和7年度の引落・入金実績は未確認。",
           "followUp": "両年度の選出対象リストの作成経路、学校と団体間の調査書の引渡し記録、振替依頼データの作成担当、契約継続記録と入金処理を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "9",
@@ -4276,7 +4369,12 @@
             "date": "2024-11-22",
             "summary": "校長と団体会長名の12月分の振替案内に会費6か月分1,800円を記載し、振替不能時の学校への納入を案内。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 5,
+            "sourcePageEnd": 5,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4285,7 +4383,12 @@
             "summary": "本部役員を全員立候補で募り、複数候補の場合は現本部役員会で抽選。不足する場合は別の候補者選出手続に進むと記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 25,
+            "sourcePageEnd": 25,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4294,7 +4397,12 @@
             "summary": "PTA会費は最長子のみ5月と12月に6か月ずつ、教材費は現金で集めると案内。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 11,
+            "sourcePageEnd": 11,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4303,7 +4411,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 6,
+            "sourcePageEnd": 6,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 24,
@@ -4322,7 +4435,8 @@
           "facts": "「令和6年度学校徴収金案内等」PDF5頁は校長と団体会長の連名で12月分の会費6か月分1,800円を記載し、振替不能時は学校への納入を案内。令和7年度同資料PDF11頁は最長子のみ5月・12月に6か月ずつ集めるとする。「令和7年度入会案内・説明書等」PDF25頁は本部役員を立候補で募り、複数候補は現本部役員会で抽選とする。「業務委任契約書等」PDF6頁第1条には会費集金・督促等の委任条項がある。",
           "unknowns": "非加入者の除外、学校による現金受領・領収書発行、振替不能時の学校口座利用と資金移動、役員応募書類の取扱者は未確認。",
           "followUp": "振替不能時の納入・領収・引渡し記録、加入・最長子照合の担当とデータ出所、役員募集の受付・抽選時の学校関与を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "10",
@@ -4337,7 +4451,12 @@
             "summary": "選挙管理委員と育成会本部役員が選出事務に関与し、立候補申出用紙等を全学年のPTA保護者に配ると記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 19,
+            "sourcePageEnd": 19,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4347,7 +4466,12 @@
             "date": "2024-04-22",
             "summary": "学校集金の振替案内に団体会費年額2,400円、長子のみ、5月一括集金を記載。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 6,
+            "sourcePageEnd": 6,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4357,7 +4481,12 @@
             "unknown": "実施日、出席・欠席者の実際の取扱いと学校側の関与。",
             "originalChecked": true,
             "date": null,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 34,
+            "sourcePageEnd": 35,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4367,7 +4496,12 @@
             "date": null,
             "summary": "学校集金の口座振替案内にPTA会費年額2,400円を計上。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 12,
+            "sourcePageEnd": 12,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4377,7 +4511,12 @@
             "unknown": "令和7年度の継続・解約及び実際の職員への割当て。",
             "originalChecked": true,
             "date": "2022-12-09",
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 7,
+            "sourcePageEnd": 7,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 28,
@@ -4394,7 +4533,8 @@
           "facts": "役員免除の手続、学校集金案内、会費等の委任契約に別々の記載がある。",
           "unknowns": "免除理由を回収・公表した実績と主体、学校による情報取扱い、口座と送金。",
           "followUp": "免除書類の配布・保管・閲覧の経路、学校の関与を決めた文書、徴収・会計記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "11",
@@ -4409,7 +4549,12 @@
             "summary": "会則は会費、寄付金等を経費の財源とし、児童が複数在籍する場合は最長子のみ納入すると規定。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 24,
+            "sourcePageEnd": 24,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4418,7 +4563,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 8,
+            "sourcePageEnd": 8,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 32,
@@ -4435,7 +4585,8 @@
           "facts": "「令和6年度入会案内・説明書等」PDF24頁の会則は会費・寄付金等を経費の財源とし、児童が複数在籍する場合は「最長子のみ」納入すると規定。「業務委任契約書等」PDF8頁第1条には会費集金・督促、経理、印鑑・出納簿・通帳の保管、文書配布の委任記載がある。",
           "unknowns": "会則に沿う実際の徴収方式、最長子の確認に使う情報の出所、非加入者の除外、契約の継続と帳簿・通帳の保管者は未確認。",
           "followUp": "当該年度の徴収案内、加入・最長子の判定手順、契約の効力期間と受任決裁、団体会計の入出金・保管担当を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "12",
@@ -4450,7 +4601,12 @@
             "summary": "加入意思の回答と通学班編成用の連絡先提出を区別し、後者は全員に求める。会費は1世帯月額340円、複数在籍時は最長子のみと記載。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 30,
+            "sourcePageEnd": 30,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会申込書等",
@@ -4459,7 +4615,12 @@
             "summary": "加入する・加入しないの二択。通学班の連絡先届は全員記入、氏名・住所・電話番号等を求め、上下を切らずに提出するよう指示。",
             "unknown": "実際の配布・提出、加入を希望しなかった者の取扱い。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "application-r6",
+            "sourcePageStart": 1,
+            "sourcePageEnd": 1,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4469,7 +4630,12 @@
             "date": "2024-05-01",
             "summary": "学校集金の案内にPTA会費月額340円・年額4,080円、6月と11月に6か月分ずつ登録口座から集金と記載。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 7,
+            "sourcePageEnd": 7,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4478,7 +4644,12 @@
             "summary": "加入の有無を別紙で回答する一方、通学班編成の連絡先は加入の有無にかかわらず全員から求めると記載。世帯会費は月額340円。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 37,
+            "sourcePageEnd": 37,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会申込書等",
@@ -4487,7 +4658,12 @@
             "summary": "加入する・加入しないの二択。下段の通学班連絡先届は全員記入とし、氏名、性別、住所等を求め、上下を切らずに提出するよう指示。",
             "unknown": "実際の配布・提出、加入を希望しなかった者の取扱い。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "application-r7",
+            "sourcePageStart": 1,
+            "sourcePageEnd": 1,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4497,7 +4673,12 @@
             "date": "2025-05-01",
             "summary": "学校集金の案内にPTA会費月額340円・年額4,080円、6月と11月に6か月分ずつ登録口座から集金と記載。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 13,
+            "sourcePageEnd": 13,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4506,7 +4687,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 9,
+            "sourcePageEnd": 9,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 34,
@@ -4523,7 +4709,8 @@
           "facts": "加入意思確認欄と通学班連絡先欄が同じ用紙にあり、通学班欄は全員の提出を求める。",
           "unknowns": "各欄の受取先、保存・提供経路、非加入世帯の実際の徴収。",
           "followUp": "両欄の利用目的、実際に受け取った主体、非加入世帯の徴収除外を示す記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "13",
@@ -4538,7 +4725,12 @@
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
             "textVerified": true,
-            "summary": "役員・委員の選出要領は、本部役員を校区から7名選ぶとし、新1年生は入学説明会時に選出すると記載。"
+            "summary": "役員・委員の選出要領は、本部役員を校区から7名選ぶとし、新1年生は入学説明会時に選出すると記載。",
+            "bundleId": "intake-r6",
+            "sourcePageStart": 33,
+            "sourcePageEnd": 34,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4547,7 +4739,12 @@
             "summary": "PTA会費は月350円で5月・10月に6か月分ずつ。教材費とともに年2回振替と記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 9,
+            "sourcePageEnd": 9,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4556,7 +4753,12 @@
             "summary": "加入は任意と記載し、学年単位で毎年1月に次年度の委員を選出すると説明。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 43,
+            "sourcePageEnd": 43,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4565,7 +4767,12 @@
             "summary": "PTA会費は月350円で5月・10月に6か月分ずつ。教材費とともに年2回振替と記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 14,
+            "sourcePageEnd": 14,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4574,7 +4781,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 10,
+            "sourcePageEnd": 10,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 38,
@@ -4591,7 +4803,8 @@
           "facts": "「令和6年度入会案内・説明書等」PDF33–34頁は本部役員を校区から7名選出し、新1年生は入学説明会時に選出する手順を記載。令和7年度同資料PDF43頁には「PTA加入は任意」との説明がある。学校徴収金案内の令和6年度PDF9頁・令和7年度PDF14頁は会費月350円を5月・10月に各6か月分、教材費とともに振替とする。「業務委任契約書等」PDF10頁第1条には会費集金・督促等の記載がある。",
           "unknowns": "説明会での役員選出への教職員関与、非加入者の選出・振替からの除外、実際の振替や名簿の利用・提供は未確認。",
           "followUp": "説明会の進行表・選出の実施主体、加入確認と選出対象の確定手順、振替データ作成者・資金の入金先・受任決裁を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "14",
@@ -4608,7 +4821,12 @@
             "originalChecked": true,
             "textVerified": true,
             "date": "2025年10月吉日",
-            "targetYear": 8
+            "targetYear": 8,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 47,
+            "sourcePageEnd": 47,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4617,7 +4835,12 @@
             "summary": "学校徴収金案内にPTA会費年4,800円を掲載し、別頁の集金表では長子のみと表示。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 15,
+            "sourcePageEnd": 16,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4626,7 +4849,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 11,
+            "sourcePageEnd": 11,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 42,
@@ -4645,7 +4873,8 @@
           "facts": "「令和7年度入会案内・説明書等」PDF47頁は令和8年度新1年生の学級委員選出を入学説明会の後半に予定し、事前調査票と欠席者の委任状を求める。同頁で参照する調査票には令和7年度の記載がある。「令和7年度学校徴収金案内等」PDF15–16頁は会費年4,800円、集金表に「長子のみ」と記載。「業務委任契約書等」PDF11頁第1条には会費集金・督促、経理等の委任記載がある。",
           "unknowns": "実際に配付された調査票の版・年度、欠席時委任状の回収・保管、非加入者の選出・徴収対象からの除外、口座への入金実績は未確認。",
           "followUp": "令和8年度に使用した調査票と説明会の進行表、委任状の回収・廃棄手順、長子の判定方法、振替データと受任決裁を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "15",
@@ -4661,7 +4890,12 @@
             "date": "2024-05-01",
             "summary": "5月分学校集金案内は、会費1,500円を教材費等と併記し、4〜9月分と説明。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 10,
+            "sourcePageEnd": 10,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4671,7 +4905,12 @@
             "date": "2025-01-24",
             "summary": "新1年生向けに入学式後の学級委員・補欠の選出を案内。立候補がいない場合のくじと、欠席者も対象に加わる旨を記載。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 52,
+            "sourcePageEnd": 52,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4680,7 +4919,12 @@
             "summary": "学校集金表に教材費・校外学習費とPTA会費を併記。会費は月250円とし、転入月に応じた額や集金対象月を説明。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 18,
+            "sourcePageEnd": 21,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4689,7 +4933,12 @@
             "unknown": "締結時の授権根拠、実際の受任範囲・履行、更新又は解約の状況。",
             "originalChecked": true,
             "textVerified": true,
-            "summary": "団体の会費集金・督促、経理、印鑑・出納簿・預金通帳の保管管理、団体文書の配布を校長に委任する条項がある。"
+            "summary": "団体の会費集金・督促、経理、印鑑・出納簿・預金通帳の保管管理、団体文書の配布を校長に委任する条項がある。",
+            "bundleId": "delegation",
+            "sourcePageStart": 12,
+            "sourcePageEnd": 12,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 47,
@@ -4706,7 +4955,8 @@
           "facts": "団体本部「新一年生学級委員選出について」（令和7年1月24日、資料①令和7年度版52頁）は、入学式終了後に学級委員・補欠各1名を選び、立候補者がいなければくじとし、「当日欠席された場合も選出対象に加わります」と案内する。学校の5月分学校集金案内（資料④令和6年度版10頁）は4～9月分の会費1,500円を計上し、令和7年度版18～21頁は月250円を教材費等と併記する。業務委任契約書等（資料③12頁、第1条）には校長への会費集金・督促、経理、通帳等の保管管理、文書配布の委任がある。",
           "unknowns": "当日のくじと欠席者・非会員の取扱い、候補者名簿の作成主体、会費の実振替と督促、職員の関与・指示は未確認。",
           "followUp": "教育委員会に、役員選出の会場使用決裁、候補者の抽出基準と匿名化した選出記録、月250円の徴収対象者決定と振替・未納処理の記録、校長の受任決裁・公法上の根拠を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "16",
@@ -4723,7 +4973,12 @@
             "summary": "令和6年度の提出区分に、令和7年度新入学児童の保護者向け案内を収録。給食費は公会計とし、教材費等とPTA会費は学校で集金する旨を記載。",
             "originalChecked": true,
             "targetYear": 7,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 17,
+            "sourcePageEnd": 17,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4732,7 +4987,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 13,
+            "sourcePageEnd": 13,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 51,
@@ -4749,7 +5009,8 @@
           "facts": "「学費等口座振替依頼書」の提出について（令和6年10月21日、資料④令和6年度版17頁）は令和7年度新入学児童の保護者向けで、給食費を公会計として区別し、教材費・校外活動費・PTA会費等を学校で集金すると案内する。業務委任契約書等（資料③13頁、第1条）は会費集金・督促、経理、通帳等の保管と文書配布を委任事項に掲げる。提出資料一覧⑤ではこの徴収案内は令和6年度欄にあり、令和7年度の徴収案内欄には提出記録がない。",
           "unknowns": "案内に従い令和7年度新入学世帯から会費を実際に振り替えたか、非会員をどう除外したか、契約の有効期間と職員の受任後の処理は未確認。",
           "followUp": "教育委員会に、令和7年度新入学世帯向けの説明・加入確認書式、徴収対象者の決裁と匿名化した振替記録、口座の名義と送金先、契約継続・解約記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "17",
@@ -4764,7 +5025,12 @@
             "summary": "会則に、経費を会費等で賄い、会費は会員1人月額300円とする条項がある。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 40,
+            "sourcePageEnd": 40,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4773,7 +5039,12 @@
             "summary": "会則の経費条項は、団体の経費を会費その他の収入で賄うと規定。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 53,
+            "sourcePageEnd": 53,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4782,7 +5053,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 14,
+            "sourcePageEnd": 14,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 53,
@@ -4799,7 +5075,8 @@
           "facts": "中央小学校PTA規約（資料①令和6年度版40頁、令和7年度版53頁）は会費を定め、令和7年度版53頁の第4条は在籍児童の保護者と学校職員を会員とする。事務局は学校に置くとされ、同頁の役員規定には校長・教頭・教務主任が掲げられている。業務委任契約書等（資料③14頁、第1条）には会費集金・督促、経理、通帳等の保管と文書配布の委任がある。提出資料一覧⑤では両年度とも徴収案内欄に提出記録がない。",
           "unknowns": "規約とは別の加入確認、規約に掲げる教職員の実際の職務、名簿の入手経路、契約に基づく徴収の有無、会計の区分は未確認。",
           "followUp": "教育委員会に、任意加入を示した案内と意思確認書式、学校事務局設置の決裁、役員就任の立場と勤務区分、名簿取扱記録および契約の履行を示す資料を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "18",
@@ -4814,7 +5091,12 @@
             "summary": "集金表にPTAと生徒会を別費目として記載し、就学援助の案内にはPTA会費も記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 19,
+            "sourcePageEnd": 19,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4823,7 +5105,12 @@
             "summary": "口座振替予定表にPTAと生徒会の費目を分けて表示し、就学援助の案内にはPTA会費も記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 22,
+            "sourcePageEnd": 22,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4832,7 +5119,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 15,
+            "sourcePageEnd": 15,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 57,
@@ -4849,7 +5141,8 @@
           "facts": "学校集金の案内（資料④令和6年度版19頁・令和7年度版22頁）はPTAと生徒会を別費目で振替予定表に載せ、就学援助の案内にもPTA会費を記載する。令和7年度版22頁には、引落しができない場合に学校が「未納のお知らせ」を渡し、保護者が現金を学校へ納入する手続が記載される。業務委任契約書等（資料③15頁、第1条）には会費集金・督促、経理、通帳等の管理と文書配布の委任がある。",
           "unknowns": "非会員の除外、PTA会費分の実際の振替・現金受領、就学援助と会費の精算経路、団体への情報共有は未確認。",
           "followUp": "教育委員会に、振替対象を確定した主体と基準、匿名化した学校未納通知・現金受領記録、会費分の帳簿・入金先、就学援助の精算方式と情報の共有先を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "19",
@@ -4864,7 +5157,12 @@
             "summary": "次年度新1年生の役員選出では事前確認票でのみ立候補・免除申請を受け付け、候補多数の場合は抽選と案内。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 50,
+            "sourcePageEnd": 50,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4873,7 +5171,12 @@
             "summary": "校長名の年間集金予定表にPTAを掲載。引落不能時は学校から未納通知を出し、保護者が学校に現金納入する手続を記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 23,
+            "sourcePageEnd": 23,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4882,7 +5185,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 16,
+            "sourcePageEnd": 16,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 60,
@@ -4899,7 +5207,8 @@
           "facts": "新入生向け役員選出案内（資料①令和6年度版50頁）は、事前確認票で立候補・免除申請を受け付け、候補多数の場合は抽選すると記載する。「学校集金について（お願い）」（資料④令和7年度版23頁）は校長名で、PTA会費を年間振替予定に載せ、振替不能時に「未納のお知らせ」を出して学校に現金で納入するよう案内する。業務委任契約書等（資料③16頁、第1条）は会費集金・督促、経理、通帳等の管理と文書配布を委任事項に掲げる。",
           "unknowns": "事前確認票の回収主体、免除申請情報の扱い、入会確認の方法、振替不能時に学校で会費分を実際に受領したかは未確認。",
           "followUp": "教育委員会に、会費を学校の集金予定に載せた決裁、請求データの作成主体・会費分の入金先、現金受領・送金記録、事前確認票の保管・引渡しの記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "20",
@@ -4922,7 +5231,8 @@
           "facts": "市の「公文書公開請求提出資料」（資料⑤1頁、20行目）は「稲羽中学校（PTAなし）」とし、同校分の契約書等・徴収案内は今回の提出記録にない。市PTA連合会「令和6年度各務原市PTA連合会表彰」（PDF1頁、№12・13）には同校PTAの過年度役員歴が掲載される。市の2023年12月26日定期監査・行政監査（PDF2頁）は同校を監査対象に含む。",
           "unknowns": "提出一覧の「PTAなし」の基準日と理由、旧団体の存続・解散・後継組織、会計や名簿の承継の有無は未確認。",
           "followUp": "教育委員会に、一覧の基準日、把握している団体の再編・終了記録、旧団体の資金・資料の引渡しや処分に学校が関わった場合の決裁・帳簿を照会する。"
-        }
+        },
+        "sourceReviewStatus": "市の提出資料一覧表では『PTAなし』と明記。外部団体の具体的な事務の存在を認定しない。"
       },
       {
         "id": "21",
@@ -4937,7 +5247,12 @@
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
             "textVerified": true,
-            "summary": "規約は在籍生徒の保護者と教職員を会員とする記載を置き、役員・専門委員の選出方法を別条で定める。"
+            "summary": "規約は在籍生徒の保護者と教職員を会員とする記載を置き、役員・専門委員の選出方法を別条で定める。",
+            "bundleId": "intake-r6",
+            "sourcePageStart": 52,
+            "sourcePageEnd": 52,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4946,7 +5261,12 @@
             "summary": "6月10日の学校徴収金振替の金額明細に、教材費等と並べてPTA会費欄を設ける。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 20,
+            "sourcePageEnd": 20,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会案内・説明書等",
@@ -4955,7 +5275,12 @@
             "summary": "小中学校の役員選出免除規定に、選出時の必要事項をPTAカードに記録し、共用する旨の記載がある。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r7",
+            "sourcePageStart": 64,
+            "sourcePageEnd": 64,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -4964,7 +5289,12 @@
             "summary": "PTA会費は月175円の半年分1,050円を最長子のみ振り替えると記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 24,
+            "sourcePageEnd": 24,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -4973,7 +5303,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 17,
+            "sourcePageEnd": 17,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 63,
@@ -4992,7 +5327,8 @@
           "facts": "川島中学校PTA規約（資料①令和6年度版52頁、第4条・第27条）は在籍生徒の保護者・教職員を会員とする記載と選出規定を置く。令和7年度版64頁の小中学校の役員選出免除規定は必要事項をPTAカードに記録して共用するとする。「6月分学校徴収金振替のお知らせ」（資料④令和7年度版24頁）は月175円の半年分1,050円を「最長子のみ」振り替え、振替不能時には学校口座への入金を案内する。業務委任契約書等（資料③17頁、第1条）には集金・督促と経理等の委任がある。",
           "unknowns": "会員と非会員の区分、最長子の判定資料、カードの管理者・閲覧者、会費分の学校口座への実入金・送金は未確認。",
           "followUp": "教育委員会に、最長子判定と加入確認の手順、PTAカードの記入欄・共有範囲、振替不能時の会費受領の決裁と帳簿、学校職員への指示記録を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "22",
@@ -5007,7 +5343,12 @@
             "summary": "学校徴収金の説明でPTA会費を団体の活動費とし、徴収表には全学年の費目として掲載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 21,
+            "sourcePageEnd": 22,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5016,7 +5357,12 @@
             "summary": "学校徴収金の説明でPTA会費を団体の活動費とし、徴収表には全学年の費目として掲載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 25,
+            "sourcePageEnd": 26,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -5025,7 +5371,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 18,
+            "sourcePageEnd": 18,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 67,
@@ -5044,7 +5395,8 @@
           "facts": "学校徴収金案内等（資料④令和6年度版21～22頁・令和7年度版25～26頁）は団体の活動費としてPTA会費を説明し、学校集金の各学年の費目に掲載する。令和7年度版26頁は会費3,600円を計上する。業務委任契約書等（資料③18頁、第1条）は会費集金・督促、経理、通帳等の保管、団体文書の配布の委任を記載する。",
           "unknowns": "各年度の実際の振替対象、非会員の除外、入金口座の名義、団体への送金・振替不能時の処理は未確認。",
           "followUp": "教育委員会に、3,600円の請求対象の確定方法、学校と団体の台帳の照合手続、匿名化した振替結果と口座・送金記録、会費処理の決裁を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "23",
@@ -5059,7 +5411,12 @@
             "summary": "新1年生の役員を各学級1名選出し、立候補で不足する場合にくじ引きを行うと案内。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 55,
+            "sourcePageEnd": 55,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "入会申込書等",
@@ -5069,7 +5426,12 @@
             "unknown": "実際の配布・提出、加入を希望しなかった者の取扱い。",
             "originalChecked": true,
             "textVerified": true,
-            "targetYear": 7
+            "targetYear": 7,
+            "bundleId": "application-r6",
+            "sourcePageStart": 2,
+            "sourcePageEnd": 2,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5078,7 +5440,12 @@
             "summary": "学校徴収金案内でPTA会費を団体の活動費とし、金額表には全学年の費目として掲載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 23,
+            "sourcePageEnd": 24,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5087,7 +5454,12 @@
             "summary": "学校徴収金案内でPTA会費を団体の活動費とし、金額表には全学年の費目として掲載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 27,
+            "sourcePageEnd": 28,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -5096,7 +5468,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 19,
+            "sourcePageEnd": 19,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 70,
@@ -5113,7 +5490,8 @@
           "facts": "加入と地区委員への情報提供を分けた選択欄があり、書類は小学校担任への提出を求める。",
           "unknowns": "担任からの引渡し、非加入理由の保存、会費徴収の実施。",
           "followUp": "両校の教育委員会側の所掌、取得・移転・廃棄記録、当番や徴収の対象の決め方を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "24",
@@ -5129,7 +5507,12 @@
             "date": "2024-05-01",
             "summary": "学校徴収金の案内に会費月額300円、5月と10月に各6か月分を集金と記載。振替不能時の指定口座への振込を案内。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 25,
+            "sourcePageEnd": 25,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5138,7 +5521,12 @@
             "summary": "PTA会費は月300円で、5月に4～9月分、10月に10～3月分を集めると記載。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 29,
+            "sourcePageEnd": 29,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -5147,7 +5535,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 20,
+            "sourcePageEnd": 20,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 73,
@@ -5166,7 +5559,8 @@
           "facts": "学校徴収金の案内（資料④令和6年度版25頁、令和7年度版29頁）は会費を月300円とし、5月と10月に各6か月分を集金すると記載する。令和7年度版29頁では振替不能時に学校指定口座へ振り込むよう案内し、30頁には「学費等口座振替依頼書」がある。業務委任契約書等（資料③20頁、第1条）は会費集金・督促、経理、通帳等の管理と文書配布を委任事項とする。",
           "unknowns": "振替依頼書の実際の利用範囲、対象者を決めた主体、不能時の実際の会費入金、学校・金融機関・団体の間で共有した情報は未確認。",
           "followUp": "教育委員会に、振替依頼書の利用目的の説明文、会費対象者と学校集金データの突合手順、匿名化した振替・不能通知・精算記録、学校指定口座で会費を扱う権限を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "25",
@@ -5181,7 +5575,12 @@
             "summary": "入退会の自由と当時の加入率98％を案内し、本部役員の事前立候補や、校区単位の一斉選出への変更を説明。加入率は文書上の説明。",
             "unknown": "実際の配布・選出と、学校職員による事務の有無。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "intake-r6",
+            "sourcePageStart": 57,
+            "sourcePageEnd": 57,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5190,7 +5589,12 @@
             "summary": "年間振替表にPTA会費を併記。別通知は、非加入世帯の口座振替額からPTA会費を除くと説明。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r6",
+            "sourcePageStart": 27,
+            "sourcePageEnd": 28,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "学校徴収金案内等",
@@ -5199,7 +5603,12 @@
             "summary": "年間振替表にPTA会費を併記。別通知は、非加入世帯は会費を徴収せず、合計額から会費を除いて振り替えると説明。",
             "unknown": "対象者、振替実績、非会員の除外、口座・金銭移動の記録。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "collection-r7",
+            "sourcePageStart": 31,
+            "sourcePageEnd": 32,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           },
           {
             "title": "業務委任契約書等",
@@ -5208,7 +5617,12 @@
             "summary": "第1条に、団体の会費集金・督促、経理、印鑑・出納簿・通帳の保管、団体文書の配布に関する委任を記載。",
             "unknown": "実際に受任・実施した業務、受任期間後の継続の有無、学校側の公法上の根拠は未確認。",
             "originalChecked": true,
-            "textVerified": true
+            "textVerified": true,
+            "bundleId": "delegation",
+            "sourcePageStart": 21,
+            "sourcePageEnd": 21,
+            "sourceVerification": "bundled-pdf-sha256-and-page-bounds",
+            "sourceStatus": "旧PRの原文記載確認記録。今回、合冊原本のファイルSHA-256・ページ範囲を照合。未公開原本のURLは未登録。"
           }
         ],
         "reportPage": 76,
@@ -5225,7 +5639,8 @@
           "facts": "両年度の集金案内は非加入世帯の振替額から会費を除くと説明する。",
           "unknowns": "除外判定に使った記録、情報授受の有無、実際の振替結果。",
           "followUp": "会員情報の出所、振替対象を決める担当者、引落結果と会計区分を照会する。"
-        }
+        },
+        "sourceReviewStatus": "合冊原本のファイルSHA-256・ページ数・参照範囲を確認。個別記載の本文確認記録は旧PR #118から引継ぎ。全ページの独立読解・一般公開の適否審査は未完了。"
       },
       {
         "id": "26",
@@ -5255,7 +5670,8 @@
               "url": "https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/019/704/tokushi_atochi_keikaku.pdf"
             }
           ]
-        }
+        },
+        "sourceReviewStatus": "当該学校の学校別開示原本は市の提出資料一覧表に掲載されていない。外部団体の具体的な事務・関与状況は未確認。"
       }
     ]
   }
