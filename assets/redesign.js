@@ -57,7 +57,7 @@ async function load(){
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
  for(const record of records)if(record.type==="論考"&&migrated.has(safeUrl(record.href,true)))record.href=migrated.get(safeUrl(record.href,true));
- research={map,boards,journal,records,migrated};
+ research={map,boards,journal,records,migrated,imported};
  return research;
 }
 function updateSelects(){
@@ -136,9 +136,17 @@ function initHome(){
  $("#count-regions").textContent=research.map.municipalities.length.toLocaleString("ja-JP");
  $("#count-schools").textContent=research.map.municipalities.reduce((n,m)=>n+(m.schools||[]).length,0).toLocaleString("ja-JP");
  $("#count-responses").textContent=research.boards.responses.length.toLocaleString("ja-JP");
- const prioritized=["yokohama","atsugi","kawaguchi","matsuyama","osaka","archive-imizu"];
- const sorted=[...research.map.municipalities].sort((a,b)=>prioritized.indexOf(a.id)===-1?1:prioritized.indexOf(b.id)===-1?-1:prioritized.indexOf(a.id)-prioritized.indexOf(b.id));
+ const prioritized=["yokohama","ichinomiya","atsugi","kawaguchi","matsuyama","osaka","archive-imizu"];
+ const rank=id=>{const n=prioritized.indexOf(id);return n>=0?n:prioritized.length};
+ const sorted=[...research.map.municipalities].sort((a,b)=>rank(a.id)-rank(b.id)||a.name.localeCompare(b.name,"ja"));
  $("#home-regions").innerHTML=sorted.slice(0,8).map(m=>'<a class="row-link" href="municipality.html?id='+encodeURIComponent(m.id)+'"><strong>'+esc(m.name)+'</strong><span>'+esc((m.themes||[]).slice(0,2).join("・")||"自治体資料")+'</span><b>›</b></a>').join("");
+ const titles=new Map(research.journal.articles.map(x=>[x.url,x.title]));
+ const latest=research.imported.articles
+  .filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date||"")&&/^articles\/[a-z0-9-]+\.html$/.test(x.destination))
+  .sort((a,b)=>b.date.localeCompare(a.date)||a.slug.localeCompare(b.slug))
+  .slice(0,5);
+ const latestEl=$("#home-latest");
+ if(latestEl)latestEl.innerHTML=latest.map(x=>'<a href="'+esc(x.destination)+'"><time datetime="'+esc(x.date)+'">'+esc(x.date)+'</time><strong>'+esc(titles.get(x.source)||x.slug)+'</strong></a>').join("");
  initMap();
 }
 function relatedResponses(m){

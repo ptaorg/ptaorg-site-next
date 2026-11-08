@@ -22,6 +22,8 @@ try{
     assert.equal(await page.locator('#count-regions').innerText(),'30');
     assert.equal(await page.locator('#count-schools').innerText(),'569');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
+    assert.equal(await page.locator('#home-latest a').count(),5);
+    assert.match(await page.locator('#home-latest a').first().innerText(),/一宮市/);
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
     assert.equal(await page.locator('#map-frame svg .prefecture').count(),47);
     assert.equal(await page.locator('#map-frame svg.geolonia-svg-map').count(),1);

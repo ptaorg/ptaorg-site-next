@@ -154,3 +154,9 @@
  .migrated-article-grid .article-toc.is-open{display:block}
  .migrated-article-grid .article-rail{gap:0}
 }
+
+/* Latest published journal links with dates derived from source metadata. */
+.home-latest a{display:grid;grid-template-columns:86px minmax(0,1fr);gap:10px;align-items:start;padding:12px 14px;border-top:1px solid var(--line);text-decoration:none;color:#183d5d}
+.home-latest a:hover{background:#f4f8fc}
+.home-latest time{font-size:11px;color:#5e7488;white-space:nowrap;padding-top:2px}
+.home-latest strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13px;line-height:1.55;font-weight:650}
