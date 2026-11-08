@@ -15,10 +15,12 @@ const safeUrl=(x,onlySite=false)=>{
 };
 let research=null;
 async function load(){
- const [mr,br]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json")]);
- if(!mr.ok||!br.ok)throw Error("Published index HTTP error");
- const [map,boards]=await Promise.all([mr.json(),br.json()]);
- if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses))throw Error("Published index structure invalid");
+ const [mr,br,jr,ar]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json")]);
+ if(!mr.ok||!br.ok||!jr.ok||!ar.ok)throw Error("Published index HTTP error");
+ const [map,boards,journal,additions]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json()]);
+ if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities))throw Error("Published index structure invalid");
+ const existingIds=new Set(map.municipalities.map(x=>x.id));
+ for(const m of additions.municipalities)if(!existingIds.has(m.id)){map.municipalities.push(m);existingIds.add(m.id)}
  const records=[],articleSeen=new Set(),sourceSeen=new Set();
  for(const m of map.municipalities){
   const themes=Array.isArray(m.themes)?m.themes:[];
@@ -41,12 +43,19 @@ async function load(){
     records.push({title:source.title||"原資料",type:"原資料",pref:m.prefecture||"",description:[source.publisher,source.date].filter(Boolean).join("／"),themes,href:url});
   }
  }
+ for(const a of journal.articles){
+  const href=safeUrl(a.url,true);
+  if(!href||articleSeen.has(href))continue;
+  articleSeen.add(href);
+  const pref=a.title.includes("一宮市")?"愛知県":a.title.includes("各務原市")?"岐阜県":"";
+  records.push({title:a.title,type:"論考",pref,description:a.description||"公開済み論考",themes:[],href});
+ }
  for(const r of boards.responses){
    const href=safeUrl(r.url,true);
    if(!href)continue;
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
- research={map,boards,records};
+ research={map,boards,journal,records};
  return research;
 }
 function updateSelects(){
