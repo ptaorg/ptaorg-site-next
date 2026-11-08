@@ -54,11 +54,11 @@ function updateSelects(){
  for(const select of $$('select[name="region"]')){
   const old=select.value,first=select.options[0].textContent;
   select.replaceChildren(new Option(first,""));
-  for(const name of prefectures)if(present.has(name))select.add(new Option(name,name));
-  if(old&&present.has(old))select.value=old;
+  for(const name of prefectures)select.add(new Option(name,name));
+  if(old&&prefectures.includes(old))select.value=old;
   else if(new URLSearchParams(location.search).has("region")){
    const p=new URLSearchParams(location.search).get("region");
-   if(present.has(p))select.value=p;
+   if(prefectures.includes(p))select.value=p;
   }
  }
  const qs=new URLSearchParams(location.search);
