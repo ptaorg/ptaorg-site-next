@@ -172,3 +172,46 @@ test("the remaining two schools show public reports without claiming disclosure 
  assert.ok(js.includes("item.sourceStatus"));
  assert.ok(js.includes("weblog(?:\\/\\d+)?"));
 });
+
+test("Kakamigahara source-ledger file hashes and 78 page references are bounded",()=>{
+ const ledger=JSON.parse(read("data/kakamigahara-source-ledger.json"));
+ assert.equal(ledger.schemaVersion,1);
+ assert.equal(ledger.sourceBundles.length,8);
+ assert.equal(ledger.sourceBundles.reduce((n,s)=>n+s.pages,0),206);
+ assert.equal(ledger.schoolReferences.length,78);
+ assert.equal(new Set(ledger.schoolReferences.map(x=>x.school)).size,21);
+ assert.equal(kak.schools.length,26);
+ const bundles=new Map(ledger.sourceBundles.map(s=>[s.id,s]));
+ assert.equal(bundles.size,8);
+ for(const source of ledger.sourceBundles){
+  assert.match(source.sha256,/^[a-f0-9]{64}$/);
+  assert.ok(source.bytes>0&&source.pages>0);
+  assert.equal(source.url,null,"unreviewed originals may not be exposed as public URLs");
+  assert.match(source.releaseStatus,/not-publicly-published/);
+ }
+ const checks=new Set;
+ for(const row of data.cohorts.kakamigahara){
+  for(const item of row.documents||[]){
+   const found=ledger.schoolReferences.filter(x=>x.school===row.name&&x.originalLocator===item.locator);
+   assert.equal(found.length,1,row.name+" "+item.locator);
+   const ref=found[0], bundle=bundles.get(ref.bundleId);
+   assert.ok(bundle,ref.bundleId);
+   assert.equal(item.bundleId,ref.bundleId);
+   assert.equal(item.sourcePageStart,ref.pageStart);
+   assert.equal(item.sourcePageEnd,ref.pageEnd);
+   assert.ok(ref.pageStart>=1&&ref.pageEnd>=ref.pageStart&&ref.pageEnd<=bundle.pages);
+   assert.equal(item.sourceVerification,"bundled-pdf-sha256-and-page-bounds");
+   assert.equal(ref.independentPageTextRecheck,false);
+   assert.equal(item.url,undefined,"no unapproved Drive link is stored on public school records");
+   checks.add(row.name+"|"+ref.bundleId+"|"+ref.pageStart+"|"+ref.pageEnd);
+  }
+ }
+ assert.equal(checks.size,78);
+ const noDocs=data.cohorts.kakamigahara.filter(x=>!(x.documents||[]).length);
+ assert.equal(noDocs.length,5);
+ assert.ok(noDocs.every(x=>x.sourceReviewStatus));
+ const script=read("assets/school-evidence.js");
+ assert.ok(script.includes("合冊PDF："));
+ assert.ok(script.includes("原本は未公開"));
+ assert.ok(script.includes("item.sourceReviewStatus"));
+});
