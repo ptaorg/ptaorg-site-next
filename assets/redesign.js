@@ -57,9 +57,10 @@ async function load(){
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
  for(const g of guides.pages){
-  const url=safeUrl(g.url,true);
-  if(!url)continue;
-  records.push({title:g.title,type:"解説",pref:"",description:g.description||"",themes:g.themes||[],href:url});
+  const original=safeUrl(g.url,true);
+  if(!original)continue;
+  const destination=/^guides\/[a-z0-9-]+\.html$/.test(g.destination||"")?g.destination:original;
+  records.push({title:g.title,type:"解説",pref:"",description:g.description||"",themes:g.themes||[],href:destination,originalUrl:original});
  }
  for(const record of records)if(record.type==="論考"&&migrated.has(safeUrl(record.href,true)))record.href=migrated.get(safeUrl(record.href,true));
  if($("#result-list")){
@@ -73,6 +74,17 @@ async function load(){
    for(const record of records)if(record.type==="論考"&&contents.has(record.href))record.searchBody=contents.get(record.href);
    if(records.filter(r=>r.type==="論考"&&r.searchBody).length!==imported.articles.length)throw Error("Full-text index incomplete");
   }catch(e){console.warn("Metadata-only search fallback.",e);}
+ }
+ if($("#result-list")){
+  try{
+   const gr=await fetch("data/fulltext-guides.json");
+   if(!gr.ok)throw Error("Guidance full-text index unavailable");
+   const data=await gr.json();
+   if(!Array.isArray(data.guides))throw Error("Guidance index invalid");
+   const guideByPath=new Map(data.guides.map(g=>[g.destination,g]));
+   for(const r of records)if(r.type==="解説"&&guideByPath.has(r.href))r.searchBody=guideByPath.get(r.href).text;
+   if(records.filter(r=>r.type==="解説"&&r.searchBody).length!==guides.pages.length)throw Error("Guidance full-text coverage incomplete");
+  }catch(e){console.warn("Guidance search fallback.",e)}
  }
  research={map,boards,journal,records,migrated,imported,guides};
  return research;
