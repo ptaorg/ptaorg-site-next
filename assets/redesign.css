@@ -195,3 +195,23 @@
 .guide-hub-shortcuts a:hover{background:#edf5fa}
 @media(max-width:1050px){.guide-hub-steps{grid-template-columns:repeat(3,minmax(0,1fr))}.guide-hub-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.guide-hub-ppc{padding:19px 17px;margin-top:20px}.guide-hub-steps{grid-template-columns:1fr}.guide-hub-resources,.guide-hub-cards{grid-template-columns:1fr}.guide-hub-intro{padding-bottom:26px}.guide-hub-intro p{font-size:14px}.guide-hub-ppc h2{font-size:22px}}
+
+/* School-by-school public-source investigations imported from PR #118 */
+.school-evidence-section{margin:28px 0 48px;min-width:0}
+.school-evidence-section .section-title h2{font-size:21px;line-height:1.5}
+.school-evidence-section h3{font-size:18px;color:#153e5b;margin:24px 0 11px}
+.school-evidence-section p{overflow-wrap:anywhere}
+.school-evidence-provenance{background:#eef4f9;border-left:3px solid #34668b;padding:12px 15px;border-radius:3px;color:#35556e;font-size:12px;line-height:1.85;margin:14px 0}
+.school-evidence-finding{border:1px solid #d4e1eb;background:#fff;padding:14px 18px;margin:10px 0;border-radius:5px}
+.school-evidence-finding h4{font-size:15px;line-height:1.6;margin:0 0 7px;color:#153e5b}
+.school-evidence-finding p{line-height:1.8;margin:8px 0;font-size:13px}
+.school-evidence-finding .school-evidence-locator{font-size:12px;color:#54718a}
+.school-evidence-unknown{font-size:13px;color:#536879;background:#f4f6f8;border-radius:4px;padding:10px 12px;line-height:1.75}
+.school-evidence-analysis{list-style:decimal;padding-left:24px;counter-reset:none}
+.school-evidence-analysis li{padding:8px 9px 10px;line-height:1.75}
+.school-evidence-analysis li strong{color:#204f73;font-size:14px}
+.school-evidence-analysis li p{font-size:13px;margin:4px 0 0}
+.school-evidence-evaluation{padding:14px 18px;background:#f7fafc;border:1px solid #d3e1ed;border-radius:5px}
+.school-evidence-evaluation h3{margin-top:0}
+.school-evidence-evaluation p{font-size:13px;line-height:1.8}
+@media(max-width:700px){.school-evidence-finding{padding:12px}.school-evidence-evaluation{padding:12px}.school-evidence-analysis{padding-left:22px}}
