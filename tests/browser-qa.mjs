@@ -120,7 +120,7 @@ try{
     assert.match(await page.locator('#school-evidence-content').innerText(),/最長子/);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Kakamigahara legal school mobile layout');
     await page.goto(url+'school.html?url=ichinomiya-research-2310133',{waitUntil:'networkidle'});
-    await page.locator('#school-evidence-status').getByText(/引継ぎ|原文/).waitFor({timeout:15000});
+    await page.locator('#school-evidence-content .school-evidence-provenance').first().waitFor({timeout:15000});
     assert.match(await page.locator('#school-name').innerText(),/葉栗小学校/);
     await page.goto(url+'school.html?url=ichinomiya-original-20',{waitUntil:'networkidle'});
     assert.match(await page.locator('#school-name').innerText(),/奥小/);
