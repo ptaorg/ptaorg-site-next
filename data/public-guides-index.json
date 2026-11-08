@@ -1,5 +1,5 @@
 {
-  "description": "Public legal guidance, source-reading instructions and PPC explanations from the existing official website",
+  "description": "Public legal guidance migrated into next-generation site with source-provenance and original URL retention",
   "source": "https://ptaorg.com/",
   "pages": [
     {
@@ -14,7 +14,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/ppc-points.html",
+      "sourceBlobSha": "ccfe013054423003b06be0d8b735d425bf236901",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-02",
@@ -27,7 +30,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/ppc-school-pta-personal-data.html",
+      "sourceBlobSha": "27b628983a6ad987b99bc44b7caaa8b929b73c75",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-03",
@@ -41,7 +47,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/pta-membership-optin.html",
+      "sourceBlobSha": "4ffdce232d9c20a837884aafb14515f15ceeffa2",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-04",
@@ -55,7 +64,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-board.html",
+      "sourceBlobSha": "c40ef7cbfbd268de2ea5c44336656d0f5e35f918",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-05",
@@ -68,7 +80,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/education-board-responsibility.html",
+      "sourceBlobSha": "48ac82b762236ba086dd1788da2d6250b0a97771",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-06",
@@ -82,7 +97,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/report.html",
+      "sourceBlobSha": "65cc752e6fa1119a05617867203fd05481d3538b",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-07",
@@ -95,7 +113,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-research.html",
+      "sourceBlobSha": "3d2322488ac959973467b995304780fd4d409aa1",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-08",
@@ -109,7 +130,10 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/administrative-materials.html",
+      "sourceBlobSha": "2ae45234415a327cd1709cb720341af38630b72a",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     },
     {
       "id": "guide-09",
@@ -123,7 +147,11 @@
       "publisher": "PTA適正化推進委員会",
       "type": "解説",
       "scope": "全国",
-      "original": "現行サイトの公開解説ページ。新サイトへの全文移行ではない。"
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-pta.html",
+      "sourceBlobSha": "b07d6c308c7dbdb36852bbbb42ecf50dac4f0986",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
     }
-  ]
+  ],
+  "migrationUpdated": "2026-11-09"
 }
