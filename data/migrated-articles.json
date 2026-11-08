@@ -353,6 +353,85 @@
       ],
       "destination": "articles/nonmember-info.html",
       "date": "2026-08-23"
+    },
+    {
+      "slug": "pta-shokumu-sennen-gimu",
+      "source": "https://ptaorg.com/journal/pta-shokumu-sennen-gimu.html",
+      "sourceGitBlobSha": "e430ecb5e13e414e5ffae509b74b23276d04fc50",
+      "articleBodyOriginalChars": 18957,
+      "sectionCount": 18,
+      "images": 3,
+      "rootResourceReferencesRewritten": 17,
+      "dependentPublicAssetPaths": [
+        "/assets/images/article35/jichisho-1964-full.png",
+        "/assets/docs/article35/jichiro-mext-2012.pdf",
+        "/assets/images/article35/mext-2006-duty.webp",
+        "/assets/images/article35/jichiro-mext-2012.webp"
+      ],
+      "destination": "articles/pta-shokumu-sennen-gimu.html",
+      "date": ""
+    },
+    {
+      "slug": "school-fee-separation",
+      "source": "https://ptaorg.com/journal/school-fee-separation.html",
+      "sourceGitBlobSha": "a7a8864ba6aa4ed51aa0b10fa390277475251e30",
+      "articleBodyOriginalChars": 6907,
+      "sectionCount": 16,
+      "images": 0,
+      "rootResourceReferencesRewritten": 6,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/school-fee-separation.html",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "work-style-reform",
+      "source": "https://ptaorg.com/journal/work-style-reform.html",
+      "sourceGitBlobSha": "34c062955ec1dbba86e9a4a808d9f61d9d9656eb",
+      "articleBodyOriginalChars": 6924,
+      "sectionCount": 14,
+      "images": 0,
+      "rootResourceReferencesRewritten": 7,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/work-style-reform.html",
+      "date": "2026-07-19"
+    },
+    {
+      "slug": "school-collection-model-comparison",
+      "source": "https://ptaorg.com/journal/school-collection-model-comparison.html",
+      "sourceGitBlobSha": "b8face3a79b56bc3cf14460fb6e916cf71b24dae",
+      "articleBodyOriginalChars": 5611,
+      "sectionCount": 10,
+      "images": 0,
+      "rootResourceReferencesRewritten": 7,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/school-collection-model-comparison.html",
+      "date": "2026-08-22"
+    },
+    {
+      "slug": "judicial-reality-pta-cases",
+      "source": "https://ptaorg.com/journal/judicial-reality-pta-cases.html",
+      "sourceGitBlobSha": "8a74efed2e075341912f2b029490ce4aa530122b",
+      "articleBodyOriginalChars": 5851,
+      "sectionCount": 10,
+      "images": 0,
+      "rootResourceReferencesRewritten": 8,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/judicial-reality-pta-cases.html",
+      "date": "2026-07-19"
+    },
+    {
+      "slug": "pta-final-point-ptf",
+      "source": "https://ptaorg.com/journal/pta-final-point-ptf.html",
+      "sourceGitBlobSha": "cbc988a5330ed4227488d6c63228ae710f6f361c",
+      "articleBodyOriginalChars": 4720,
+      "sectionCount": 8,
+      "images": 0,
+      "rootResourceReferencesRewritten": 11,
+      "dependentPublicAssetPaths": [
+        "/assets/documents/journal/pta-final-point-ptf.pdf"
+      ],
+      "destination": "articles/pta-final-point-ptf.html",
+      "date": "2026-07-19"
     }
   ]
 }
