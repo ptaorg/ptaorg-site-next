@@ -229,6 +229,7 @@ function initMunicipality(){
  const legal=(m.legal||[]).map(l=>'<div class="legal-card"><h3>'+esc(l.title)+'</h3><p>'+esc(l.text)+'</p></div>').join("");
  const articles=(m.articles||[]).filter(a=>safeUrl(a.url)).map(a=>docRow(a.title,"公開済み論考",research.migrated.get(safeUrl(a.url,true))||a.url)).join("");
  $("#municipal-legal").innerHTML=legal+articles||'<p class="small-muted">関連する法的分析の索引は未登録です。</p>';
+ if(m.id==="ichinomiya")$("#municipal-legal").insertAdjacentHTML("afterbegin",'<div class="legal-card"><h3>21校・開示原本42件の学校別検証</h3><p>全370ページの概観と、法的根拠の確認事項を原本のページ番号に結び付けて整理。プライバシー確認未了の事項は区別しています。</p><p><a href="ichinomiya-review.html">学校別検証と原本の所在を見る ›</a></p></div>');
  $("#muni-themes").innerHTML=(m.themes||[]).slice(0,12).map(s=>'<a href="explore.html?theme='+encodeURIComponent(s)+'">'+esc(s)+' <span>›</span></a>').join("");
  $("#muni-source-link").href=safeUrl(m.url)||"explore.html?region="+encodeURIComponent(m.prefecture);
 }
@@ -250,6 +251,7 @@ function initSchool(){
  if(verifiedOriginals.length===2){
   $("#school-documents").innerHTML=verifiedOriginals.map(s=>docRow(s.fiscalYear+"決算に関する開示原本",s.originalFileName+"／該当 "+s.pdfPage+"／SHA-256 "+s.sha256,s.url)).join("");
   $("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="https://ptaorg.com/data/ichinomiya-original-pdf-sha256-20261109.json" target="_blank" rel="noopener noreferrer">PDFのSHA-256検証台帳 ›</a></p>');
+  $("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="ichinomiya-review.html#school-'+encodeURIComponent(entry.name)+'">原本PDFを踏まえた学校別の法的評価・確認事項 ›</a></p>');
  }else{
   $("#school-documents").innerHTML=docs.map(d=>docRow(d.title,"文書目録／"+(d.status||"公開状態未確認"),"",d.status||"未確認")).join("")||'<p class="small-muted">登録文書はありません。</p>';
   if(muni.id!=="ichinomiya"){
