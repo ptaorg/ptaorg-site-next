@@ -13,7 +13,7 @@
       "prefectureCode": "23",
       "type": "市",
       "summary": [
-        "公表済みの「一宮市立小中学校のPTA決算書を読む」を掲載。記事では21校・42件の決算書を分析対象としている。個々の学校資料やPDF原本は、この索引への追加だけでは公開されない。"
+        "一宮市の開示原本42件（21校、令和5・6年度決算に関係する資料）を学校別・年度別に確認できる。各PDFは既存の公開閲覧設定を確認したGoogle Drive原本へ直接リンクする。"
       ],
       "themes": [
         "会費徴収",
@@ -21,7 +21,407 @@
         "決算書",
         "教職員の関与"
       ],
-      "schools": [],
+      "schools": [
+        {
+          "name": "奥小",
+          "type": "小学校",
+          "url": "ichinomiya-original-20",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_令和6年度一宮市立奥小学校PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-19",
+              "pages": "p2, p8"
+            },
+            {
+              "title": "令和6年度・会計資料（2_令和7年度一宮市立奥小学校PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-20",
+              "pages": "p2, p8"
+            }
+          ]
+        },
+        {
+          "name": "開明小",
+          "type": "小学校",
+          "url": "ichinomiya-original-38",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-31",
+              "pages": "p4–p5"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-32",
+              "pages": "p4–p5"
+            }
+          ]
+        },
+        {
+          "name": "貴船小",
+          "type": "小学校",
+          "url": "ichinomiya-original-2",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_令和6年度PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-03",
+              "pages": "p2"
+            },
+            {
+              "title": "令和6年度・会計資料（2_令和7年度PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-04",
+              "pages": "p2"
+            }
+          ]
+        },
+        {
+          "name": "宮西小",
+          "type": "小学校",
+          "url": "ichinomiya-original-1",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-01",
+              "pages": "p2"
+            },
+            {
+              "title": "令和6年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-02",
+              "pages": "p2, p3"
+            }
+          ]
+        },
+        {
+          "name": "今伊勢小",
+          "type": "小学校",
+          "url": "ichinomiya-original-19",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_令和6年度PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-17",
+              "pages": "p3–p5"
+            },
+            {
+              "title": "令和6年度・会計資料（2_令和7年度PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-18",
+              "pages": "p3–p5"
+            }
+          ]
+        },
+        {
+          "name": "小信中島小",
+          "type": "小学校",
+          "url": "ichinomiya-original-35",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-29",
+              "pages": "p16, p17"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-30",
+              "pages": "p13, p14"
+            }
+          ]
+        },
+        {
+          "name": "浅井中小",
+          "type": "小学校",
+          "url": "ichinomiya-original-31",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-27",
+              "pages": "p4, p5"
+            },
+            {
+              "title": "令和6年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-28",
+              "pages": "p4, p5"
+            }
+          ]
+        },
+        {
+          "name": "浅井南小",
+          "type": "小学校",
+          "url": "ichinomiya-original-14",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-11",
+              "pages": "p2, p3"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-12",
+              "pages": "p2, p3"
+            }
+          ]
+        },
+        {
+          "name": "浅野小",
+          "type": "小学校",
+          "url": "ichinomiya-original-10",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-05",
+              "pages": "p3, p4"
+            },
+            {
+              "title": "令和6年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-06",
+              "pages": "p3, p4"
+            }
+          ]
+        },
+        {
+          "name": "大和西小",
+          "type": "小学校",
+          "url": "ichinomiya-original-18",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_令和5年度 会計決算報告.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-15",
+              "pages": "単独ファイル"
+            },
+            {
+              "title": "令和6年度・会計資料（1_令和6年度 会計決算報告.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-16",
+              "pages": "単独ファイル"
+            }
+          ]
+        },
+        {
+          "name": "大和中",
+          "type": "中学校",
+          "url": "ichinomiya-original-59",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-41",
+              "pages": "p3"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-42",
+              "pages": "p2"
+            }
+          ]
+        },
+        {
+          "name": "丹陽西小",
+          "type": "小学校",
+          "url": "ichinomiya-original-12",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_令和6年度PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-07",
+              "pages": "p2, p3"
+            },
+            {
+              "title": "令和6年度・会計資料（1_令和7年度PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-08",
+              "pages": "p2, p3"
+            }
+          ]
+        },
+        {
+          "name": "丹陽南小",
+          "type": "小学校",
+          "url": "ichinomiya-original-13",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_一宮市立丹陽南小学校PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-09",
+              "pages": "p3, p4"
+            },
+            {
+              "title": "令和6年度・会計資料（1_一宮市立丹陽南小学校PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-10",
+              "pages": "p3, p4"
+            }
+          ]
+        },
+        {
+          "name": "中島小",
+          "type": "小学校",
+          "url": "ichinomiya-original-22",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_令和6年度　PTA・同窓会総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-23",
+              "pages": "p3, p4"
+            },
+            {
+              "title": "令和6年度・会計資料（2_令和7年度　PTA・同窓会総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-24",
+              "pages": "p3, p4"
+            }
+          ]
+        },
+        {
+          "name": "南部中",
+          "type": "中学校",
+          "url": "ichinomiya-original-53",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-37",
+              "pages": "p2"
+            },
+            {
+              "title": "令和6年度・会計資料（2_PTA総会要項.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-38",
+              "pages": "p2"
+            }
+          ]
+        },
+        {
+          "name": "萩原小",
+          "type": "小学校",
+          "url": "ichinomiya-original-21",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_令和6年度一宮市立萩原小学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-21",
+              "pages": "p2"
+            },
+            {
+              "title": "令和6年度・会計資料（2_令和7年度一宮市立萩原小学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-22",
+              "pages": "p2"
+            }
+          ]
+        },
+        {
+          "name": "富士小",
+          "type": "小学校",
+          "url": "ichinomiya-original-25",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-25",
+              "pages": "なし"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-26",
+              "pages": "p3–p5"
+            }
+          ]
+        },
+        {
+          "name": "北部中",
+          "type": "中学校",
+          "url": "ichinomiya-original-51",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_一宮市立北部中学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-35",
+              "pages": "p2, p3"
+            },
+            {
+              "title": "令和6年度・会計資料（2_一宮市立北部中学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-36",
+              "pages": "p2, p3"
+            }
+          ]
+        },
+        {
+          "name": "北方小",
+          "type": "小学校",
+          "url": "ichinomiya-original-16",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-13",
+              "pages": "p3"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会資料.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-14",
+              "pages": "p3"
+            }
+          ]
+        },
+        {
+          "name": "木曽川西小",
+          "type": "小学校",
+          "url": "ichinomiya-original-41",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（2_木曽川西小学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-33",
+              "pages": "p7"
+            },
+            {
+              "title": "令和6年度・会計資料（2_木曽川西小学校PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-34",
+              "pages": "p6"
+            }
+          ]
+        },
+        {
+          "name": "葉栗中",
+          "type": "中学校",
+          "url": "ichinomiya-original-54",
+          "documents": [
+            {
+              "title": "令和5年度・会計資料（1_ PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-39",
+              "pages": "p2"
+            },
+            {
+              "title": "令和6年度・会計資料（1_PTA総会.pdf）",
+              "status": "公開済み原本",
+              "sourceId": "ichinomiya-settlement-40",
+              "pages": "p2"
+            }
+          ]
+        }
+      ],
       "sources": [
         {
           "id": "published-journal",
