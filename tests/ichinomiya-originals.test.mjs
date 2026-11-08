@@ -19,6 +19,10 @@ test("42 direct PDF links for 21 Ichinomiya schools, two source years each",()=>
   assert.ok(s.pdfPage);
   assert.ok(s.originalFileName.endsWith(".pdf"));
   assert.ok(s.verification.includes("anyone:reader"));
+  assert.match(s.sha256,/^[a-f0-9]{64}$/);
+  assert.ok(Number.isSafeInteger(s.sizeBytes) && s.sizeBytes>0);
+  assert.ok(Number.isSafeInteger(s.pdfPages) && s.pdfPages>0);
+  assert.equal(s.hashManifestUrl,"https://ptaorg.com/data/ichinomiya-original-pdf-sha256-20261109.json");
   const years=bySchool.get(s.school)||new Set();
   years.add(s.disclosureYear);bySchool.set(s.school,years);
  }
@@ -30,4 +34,13 @@ test("new-site research data and article link to the published original catalog"
  assert.match(html,/data-public-originals="2026-11-09"/);
  assert.match(html,/municipality\.html\?id=ichinomiya/);
  assert.match(html,/ptaorg\.com\/journal\/ichinomiya-pta-settlements-20261108\.html#original-pdfs/);
+});
+
+
+test("Ichinomiya PDF hashes and page/byte totals match original retrieval registry",()=>{
+ assert.equal(originals.reduce((total,x)=>total+x.sizeBytes,0),109632392);
+ assert.equal(originals.reduce((total,x)=>total+x.pdfPages,0),370);
+ assert.equal(new Set(originals.map(x=>x.sha256)).size,42);
+ assert.equal(originals.find(x=>x.school==="宮西小"&&x.disclosureYear==="R6").sha256,
+  "acc70f9d9957f4bdb0f030199758fb7938e5ba51bf140d77e32dee291ec9dc16");
 });
