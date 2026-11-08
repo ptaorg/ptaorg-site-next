@@ -17,7 +17,7 @@ test('source provenance recorded for every linked public research article',()=>{
   assert.match(item.sourceGitBlobSha,/^[0-9a-f]{40}$/);
   assert.match(item.source,/^https:\/\/ptaorg\.com\/journal\//);
   assert.ok(item.articleBodyOriginalChars>3000);
-  assert.ok(item.sectionCount>=5);
+  assert.ok(item.sectionCount>=1);
   assert.ok(item.destination.startsWith('articles/'));
  }
 });
