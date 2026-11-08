@@ -215,3 +215,6 @@
 .school-evidence-evaluation h3{margin-top:0}
 .school-evidence-evaluation p{font-size:13px;line-height:1.8}
 @media(max-width:700px){.school-evidence-finding{padding:12px}.school-evidence-evaluation{padding:12px}.school-evidence-analysis{padding-left:22px}}
+
+.board-updates-home-link{display:inline-flex;align-items:center;color:#174c72;text-decoration:underline;text-underline-offset:3px;font-size:13px;font-weight:700;margin:4px 0 15px}
+.board-updates-home-link:hover{color:#0b344f}
