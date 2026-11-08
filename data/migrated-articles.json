@@ -432,6 +432,54 @@
       ],
       "destination": "articles/pta-final-point-ptf.html",
       "date": "2026-07-19"
+    },
+    {
+      "slug": "mext-not-public",
+      "source": "https://ptaorg.com/journal/mext-not-public.html",
+      "sourceGitBlobSha": "e2f350b4d3ebfd54a691df5779464029f5d76463",
+      "articleBodyOriginalChars": 3604,
+      "sectionCount": 11,
+      "images": 0,
+      "rootResourceReferencesRewritten": 2,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/mext-not-public.html",
+      "date": "2026-08-27"
+    },
+    {
+      "slug": "pta-administrative-minutes",
+      "source": "https://ptaorg.com/journal/pta-administrative-minutes.html",
+      "sourceGitBlobSha": "126bccd698f3c750db55b036f183d64cd9ab9930",
+      "articleBodyOriginalChars": 8366,
+      "sectionCount": 4,
+      "images": 0,
+      "rootResourceReferencesRewritten": 5,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/pta-administrative-minutes.html",
+      "date": "2026-07-19"
+    },
+    {
+      "slug": "pta-legal-structure-education-administration",
+      "source": "https://ptaorg.com/journal/pta-legal-structure-education-administration.html",
+      "sourceGitBlobSha": "31ef07d9ce34bce13ce7f499c892b3a4d4bc8ebc",
+      "articleBodyOriginalChars": 7375,
+      "sectionCount": 9,
+      "images": 0,
+      "rootResourceReferencesRewritten": 2,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/pta-legal-structure-education-administration.html",
+      "date": "2026-09-17"
+    },
+    {
+      "slug": "pta-legal-structure-references",
+      "source": "https://ptaorg.com/journal/pta-legal-structure-references.html",
+      "sourceGitBlobSha": "c29cc87b124fa31e99393ab9f7d4736616a02423",
+      "articleBodyOriginalChars": 4046,
+      "sectionCount": 6,
+      "images": 0,
+      "rootResourceReferencesRewritten": 1,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/pta-legal-structure-references.html",
+      "date": "2026-09-17"
     }
   ]
 }

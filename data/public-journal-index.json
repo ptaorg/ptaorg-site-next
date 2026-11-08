@@ -4,7 +4,8 @@
     "repository": "ptaorg/ptaorg.github.io",
     "type": "published-links",
     "lastReviewed": "2026-11-09",
-    "notice": "リンクは公開済み記事。個別本文・PDFの移行を意味しない。"
+    "notice": "リンクは公開済み記事。個別本文・PDFの移行を意味しない。",
+    "supplement": "4 additional distinct publicly published journal articles not linked from the journal portal; 4 legacy redirect pages and the core-papers index were intentionally excluded"
   },
   "articles": [
     {
@@ -141,6 +142,26 @@
       "title": "横浜市教育委員会通知「学教第1965号」の意義",
       "url": "https://ptaorg.com/journal/yokohama-notice-1965.html",
       "description": "任意加入、入会届、個人情報同意、会費説明、非加入家庭配慮を確認する詳細ページです。"
+    },
+    {
+      "title": "「PTA業務は公務ではない」とする文科省通話記録の読み方",
+      "url": "https://ptaorg.com/journal/mext-not-public.html",
+      "description": ""
+    },
+    {
+      "title": "PTAをめぐる行政会議録・議事録",
+      "url": "https://ptaorg.com/journal/pta-administrative-minutes.html",
+      "description": ""
+    },
+    {
+      "title": "PTA運営の法的構造と教育行政の確認責任",
+      "url": "https://ptaorg.com/journal/pta-legal-structure-education-administration.html",
+      "description": ""
+    },
+    {
+      "title": "参考文献・引用法令・判例一覧（総覧）",
+      "url": "https://ptaorg.com/journal/pta-legal-structure-references.html",
+      "description": ""
     }
   ]
 }
