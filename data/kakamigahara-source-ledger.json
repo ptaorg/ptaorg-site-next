@@ -3,7 +3,7 @@
   "reviewDate": "2026-11-09",
   "sourceType": "各務原市の公文書公開請求に係る合冊PDF。PDFはDriveから一時取得してファイルを改変せずSHA-256・ページ数を確認。",
   "publicationStatus": "公開前保留。原本の全ページ個人情報・著作権・公開権限の審査未完。共有権限不変更。外部から到達可能な個別原本URLは未登録。",
-  "pageVerificationScope": "各頁の存在とファイル単位のSHA-256を確認。全78件の該当文章を独立に再読解したという主張ではない。内容記録はPR #118から引継ぎ。",
+  "pageVerificationScope": "全78参照の頁存在とファイルSHA-256を確認。うち3参照・計4頁について独立の画像読解で原文記載を再確認。残り75参照は旧PR #118の本文記録引継ぎであり再読解完了ではない。",
   "sourceBundles": [
     {
       "id": "intake-r6",
@@ -278,7 +278,10 @@
       "descriptionStatus": "PR #118から引継いだ本文確認記録",
       "sourceFileHashVerified": true,
       "sourcePageBoundsVerified": true,
-      "independentPageTextRecheck": false
+      "independentPageTextRecheck": true,
+      "reviewDate": "2026-11-09",
+      "reviewNote": "団体会長名の集金案内は、学校徴収金と同時に団体会費を引き落とし、団体名義の口座へ直接入金する仕組みと説明。「学校徴収金とは別に取り扱うのが本来」と明記。",
+      "reviewMethod": "原本PDF指定ページの画像表示・独立読解"
     },
     {
       "school": "鵜沼第一小学校",
@@ -374,7 +377,10 @@
       "descriptionStatus": "PR #118から引継いだ本文確認記録",
       "sourceFileHashVerified": true,
       "sourcePageBoundsVerified": true,
-      "independentPageTextRecheck": false
+      "independentPageTextRecheck": true,
+      "reviewDate": "2026-11-09",
+      "reviewNote": "選出方法の免除条件9は病気・家庭環境等を含む理由を選挙管理委員会で審議。条件10は免除希望の理由を出席者の前で示し挙手による8割以上の同意を求め、欠席者は担当が理由を代読する旨。欠席委任状の不提出に関する一任扱いも記載。",
+      "reviewMethod": "原本PDF指定ページの画像表示・独立読解"
     },
     {
       "school": "鵜沼第三小学校",
@@ -482,7 +488,10 @@
       "descriptionStatus": "PR #118から引継いだ本文確認記録",
       "sourceFileHashVerified": true,
       "sourcePageBoundsVerified": true,
-      "independentPageTextRecheck": false
+      "independentPageTextRecheck": true,
+      "reviewDate": "2026-11-09",
+      "reviewNote": "加入意思確認は「加入する・加入しない」の二択。1枚の用紙の下段に通学班編成の連絡先届出を置き、加入の有無にかかわらず全員記入を求め、児童氏名・性別・保護者氏名・住所・電話番号を列挙。",
+      "reviewMethod": "原本PDF指定ページの画像表示・独立読解"
     },
     {
       "school": "八木山小学校",
