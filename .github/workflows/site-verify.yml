@@ -16,6 +16,16 @@ jobs:
           node-version: "22"
       - name: Run site tests
         run: npm test
+      - name: Fetch pinned public source articles
+        uses: actions/checkout@v4
+        with:
+          repository: ptaorg/ptaorg.github.io
+          ref: a1deb9ff2580b37ac69bb56bef3089d73f82c75b
+          path: original-public-site
+          sparse-checkout: journal
+          persist-credentials: false
+      - name: Verify source text and provenance
+        run: node scripts/verify-source-articles.mjs original-public-site
       - name: Validate static page links and accessibility basics
         run: |
           node --check assets/redesign.js

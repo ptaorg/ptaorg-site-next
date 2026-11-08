@@ -9,7 +9,7 @@ const manifest=JSON.parse(file('data/migrated-articles.json'));
 test('source provenance recorded for every linked public research article',()=>{
  const journal=JSON.parse(file('data/public-journal-index.json'));
  assert.equal(manifest.articles.length,journal.articles.length);
- assert.equal(manifest.articles.length,27);
+ assert.equal(manifest.articles.length,31);
  assert.deepEqual(new Set(manifest.articles.map(a=>a.source)),new Set(journal.articles.map(a=>a.url)));
 
  assert.equal(new Set(manifest.articles.map(a=>a.slug)).size,manifest.articles.length);
