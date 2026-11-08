@@ -44,3 +44,19 @@ test("Ichinomiya PDF hashes and page/byte totals match original retrieval regist
  assert.equal(originals.find(x=>x.school==="宮西小"&&x.disclosureYear==="R6").sha256,
   "acc70f9d9957f4bdb0f030199758fb7938e5ba51bf140d77e32dee291ec9dc16");
 });
+
+test("21 Ichinomiya school views expose exactly two public original PDF records each",()=>{
+ assert.equal(ichinomiya.schools.length,21);
+ assert.equal(new Set(ichinomiya.schools.map(s=>s.url)).size,21);
+ for(const school of ichinomiya.schools){
+  assert.match(school.url,/^ichinomiya-original-\d+$/);
+  assert.equal(school.documents.length,2);
+  const sources=originals.filter(o=>o.school===school.name);
+  assert.equal(sources.length,2);
+  assert.deepEqual(new Set(school.documents.map(d=>d.sourceId)),new Set(sources.map(s=>s.id)));
+ }
+ const script=fs.readFileSync("assets/redesign.js","utf8");
+ assert.ok(script.includes('muni.id==="ichinomiya"'));
+ assert.ok(script.includes('verifiedOriginals.length===2'));
+ assert.ok(script.includes('if(muni.id!=="ichinomiya")'));
+});
