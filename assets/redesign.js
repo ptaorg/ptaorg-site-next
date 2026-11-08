@@ -15,10 +15,10 @@ const safeUrl=(x,onlySite=false)=>{
 };
 let research=null;
 async function load(){
- const [mr,br,jr,ar,im,gr]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json"),fetch("data/migrated-articles.json"),fetch("data/public-guides-index.json")]);
- if(!mr.ok||!br.ok||!jr.ok||!ar.ok||!im.ok||!gr.ok)throw Error("Published index HTTP error");
- const [map,boards,journal,additions,imported,guides]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json(),im.json(),gr.json()]);
- if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities)||!Array.isArray(imported.articles)||!Array.isArray(guides.pages))throw Error("Published index structure invalid");
+ const [mr,br,jr,ar,im,gr,ur]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json"),fetch("data/migrated-articles.json"),fetch("data/public-guides-index.json"),fetch("data/pr118-board-updates.json")]);
+ if(!mr.ok||!br.ok||!jr.ok||!ar.ok||!im.ok||!gr.ok||!ur.ok)throw Error("Published index HTTP error");
+ const [map,boards,journal,additions,imported,guides,updates]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json(),im.json(),gr.json(),ur.json()]);
+ if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities)||!Array.isArray(imported.articles)||!Array.isArray(guides.pages)||!Array.isArray(updates.records))throw Error("Published index structure invalid");
  const migrated=new Map(imported.articles.map(a=>[a.source,a.destination]));
  const existingIds=new Set(map.municipalities.map(x=>x.id));
  for(const m of additions.municipalities)if(!existingIds.has(m.id)){map.municipalities.push(m);existingIds.add(m.id)}
@@ -50,6 +50,10 @@ async function load(){
   articleSeen.add(href);
   const pref=a.title.includes("一宮市")?"愛知県":a.title.includes("各務原市")?"岐阜県":"";
   records.push({title:a.title,type:"論考",pref,description:a.description||"公開済み論考",themes:[],href});
+ }
+ for(const r of updates.records){
+  if(!/^update-[\w-]+$/.test(r.id||""))continue;
+  records.push({title:r.municipality+" 教育委員会追加回答・回答状況",type:"行政回答追補",pref:r.prefecture||"",description:[r.date,r.status,r.countAsResponse?"追加実質回答":"準備・辞退等"].filter(Boolean).join("／"),themes:r.topics||[],href:"board-updates.html#"+r.id,searchBody:[r.questionSummary,r.adminSummary,(r.researchIssues||[]).join(" ")].join(" ")});
  }
  for(const r of boards.responses){
    const href=safeUrl(r.url,true);
@@ -86,7 +90,7 @@ async function load(){
    if(records.filter(r=>r.type==="解説"&&r.searchBody).length!==guides.pages.length)throw Error("Guidance full-text coverage incomplete");
   }catch(e){console.warn("Guidance search fallback.",e)}
  }
- research={map,boards,journal,records,migrated,imported,guides};
+ research={map,boards,journal,records,migrated,imported,guides,updates};
  return research;
 }
 function updateSelects(){
@@ -229,6 +233,10 @@ function initMunicipality(){
  const legal=(m.legal||[]).map(l=>'<div class="legal-card"><h3>'+esc(l.title)+'</h3><p>'+esc(l.text)+'</p></div>').join("");
  const articles=(m.articles||[]).filter(a=>safeUrl(a.url)).map(a=>docRow(a.title,"公開済み論考",research.migrated.get(safeUrl(a.url,true))||a.url)).join("");
  $("#municipal-legal").innerHTML=legal+articles||'<p class="small-muted">関連する法的分析の索引は未登録です。</p>';
+ const updatesFor=research.updates.records.filter(r=>norm(r.municipality)===norm(m.name));
+ if(updatesFor.length){
+  $("#municipal-legal").insertAdjacentHTML("afterbegin",'<div class="legal-card"><h3>教育委員会の追加回答・回答状況</h3><p>回答要約と準備・辞退等を区別した追補記録 '+updatesFor.length+'件。原メールや未公開添付は転載しません。</p><p><a href="board-updates.html?municipality='+encodeURIComponent(m.name)+'">この自治体の追加回答を確認 ›</a></p></div>');
+ }
  if(m.id==="ichinomiya")$("#municipal-legal").insertAdjacentHTML("afterbegin",'<div class="legal-card"><h3>21校・開示原本42件の学校別検証</h3><p>全370ページの概観と、法的根拠の確認事項を原本のページ番号に結び付けて整理。プライバシー確認未了の事項は区別しています。</p><p><a href="ichinomiya-review.html">学校別検証と原本の所在を見る ›</a></p></div>');
  $("#muni-themes").innerHTML=(m.themes||[]).slice(0,12).map(s=>'<a href="explore.html?theme='+encodeURIComponent(s)+'">'+esc(s)+' <span>›</span></a>').join("");
  $("#muni-source-link").href=safeUrl(m.url)||"explore.html?region="+encodeURIComponent(m.prefecture);
@@ -272,7 +280,7 @@ function filtered(params){
  });
 }
 function searchExcerpt(record,query){
- if(record.type!=="論考"||!record.searchBody)return "";
+ if(!["論考","行政回答追補"].includes(record.type)||!record.searchBody)return "";
  const terms=norm(query||"").split(" ").filter(Boolean);
  if(!terms.length)return "";
  const text=record.searchBody,normalized=norm(text);
