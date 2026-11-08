@@ -83,9 +83,23 @@ try{
     assert.match(await page.locator('#municipal-schools').innerText(),/登録校 21校/);
     assert.equal(await page.locator('#municipal-schools a').count(),21);
     assert.equal(await page.locator('#municipal-sources a[href^="https://drive.google.com/file/d/"]').count(),42);
+    assert.equal(await page.locator('#municipal-legal a[href="ichinomiya-review.html"]').count(),1);
+    await page.goto(url+'ichinomiya-review.html',{waitUntil:'networkidle'});
+    await page.locator('.ich-school-item').first().waitFor({timeout:15000});
+    assert.equal(await page.locator('.ich-school-item').count(),21);
+    assert.equal(await page.locator('.ich-review-source a[href^="https://drive.google.com/file/d/"]').count(),42);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no mobile overflow on Ichinomiya evidence review');
+    await page.locator('#ich-school-q').fill('木曽川西小');
+    assert.equal(await page.locator('.ich-school-item').count(),1);
+    await page.locator('.ich-school-item summary').click();
+    assert.match(await page.locator('.ich-school-item').innerText(),/妊婦|妊娠/);
+    await page.screenshot({path:output+'/ichinomiya-review-'+width+'.png',fullPage:false});
+    await page.locator('#ich-school-q').fill('');
+
     await page.goto(url+'school.html?url=ichinomiya-original-20',{waitUntil:'networkidle'});
     assert.match(await page.locator('#school-name').innerText(),/奥小/);
     assert.equal(await page.locator('#school-documents a[href^="https://drive.google.com/file/d/"]').count(),2);
+    assert.equal(await page.locator('#school-documents a[href^="ichinomiya-review.html#school-"]').count(),1);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on school original PDF list');
     await page.goto(url+'municipality.html?id=yokohama',{waitUntil:'networkidle'});
     assert.equal(await page.locator('#muni-name').innerText(),'横浜市');
