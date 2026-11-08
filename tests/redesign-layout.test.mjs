@@ -23,7 +23,7 @@ test('the home hero and navy search are separate sibling blocks',()=>{
 test('the source SVG has all prefectures with data-name and codes',()=>{
  const m=read('assets/japan-prefectures.svg');
  assert.equal((m.match(/data-code="/g)||[]).length,47);
- assert.match(m,/CC0 1\.0 Universal/);
+ assert.match(m,/Geolonia/);
 });
 test('no unpublished PDF href is constructed in the renderer',()=>{
  const js=read('assets/redesign.js');

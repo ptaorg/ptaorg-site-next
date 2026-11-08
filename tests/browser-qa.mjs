@@ -25,6 +25,9 @@ try{
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
     assert.equal(await page.locator('#map-frame svg .prefecture').count(),47);
     assert.equal(await page.locator('#map-frame svg.geolonia-svg-map').count(),1);
+    await page.evaluate(()=>document.fonts.ready);
+    const heroFont = await page.locator('.hero h1').evaluate(el=>getComputedStyle(el).fontFamily);
+    assert.ok(heroFont.includes('Noto Serif JP'),'hero must prioritize Japanese Mincho');
     const style=await page.locator('#map-frame svg .prefecture').first().evaluate(el=>getComputedStyle(el).fill);
     assert.match(style,/rgb\(/);
     const hero=await page.locator('.hero').boundingBox();

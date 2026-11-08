@@ -23,7 +23,7 @@ test('approved hero stays above separate navy search section',()=>{
 test('map is bundled and has 47 clickable prefecture paths',()=>{
  const svg=read('assets/japan-prefectures.svg');
  assert.equal((svg.match(/data-code="/g)||[]).length,47);
- assert.match(svg,/CC0 1\.0 Universal/);
+ assert.match(svg,/Geolonia/);
  const js=read('assets/redesign.js');
  assert.match(js,/new DOMParser\(\)/);
  assert.match(js,/data-code/);

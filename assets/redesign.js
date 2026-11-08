@@ -98,7 +98,7 @@ async function initMap(){
   const doc=new DOMParser().parseFromString(raw,"image/svg+xml");
   const svg=doc.querySelector("svg");
   if(!svg||doc.querySelector("parsererror"))throw Error("SVG malformed");
-  // Controlled, pinned source is a static CC0 asset. Never accept document-provided scripts.
+  // Controlled, pinned source is a licensed Geolonia map asset. Never accept document-provided scripts.
   for(const node of $$("script,foreignObject",svg))node.remove();
   for(const path of $$("[data-code]",svg)){
     const pref=prefectures[Number(path.getAttribute("data-code"))-1];
