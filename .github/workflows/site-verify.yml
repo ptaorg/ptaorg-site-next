@@ -1,0 +1,24 @@
+name: Next site verification
+on:
+  pull_request:
+  push:
+    branches:
+      - redesign/bc-public-data-20261108
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run site tests
+        run: npm test
+      - name: Validate static page links and accessibility basics
+        run: |
+          node --check assets/redesign.js
+          test -s assets/japan-prefectures.svg
+          test -s data/research-map-index.json
+          test -s data/board-responses.json
