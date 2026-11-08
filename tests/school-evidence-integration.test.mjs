@@ -21,8 +21,8 @@ test("61 Ichinomiya and 26 Kakamigahara school records are integrated exactly on
   assert.equal(new Set(municipality.schools.map(s=>normalize(s.name))).size,municipality.schools.length);
   for(const row of cohort) assert.equal(municipality.schools.filter(s=>normalize(s.name)===normalize(row.name)).length,1,row.name);
  }
- assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),191);
- assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,33);
+ assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),195);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,36);
  assert.equal(data.cohorts.kakamigahara.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,26);
 });
 
@@ -74,7 +74,7 @@ test("7 public-school documents support explicitly provisional six-stage analyse
   assert.match(record.analysis[3],/61条/,record.name);
   assert.match(record.analysis[4],/69条/,record.name);
  }
- assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,28);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,25);
  const yamato=records.find(s=>s.name==="大和東小学校");
  assert.equal(yamato.documents[0].year,2025);
  const js=read("assets/school-evidence.js");
@@ -82,4 +82,21 @@ test("7 public-school documents support explicitly provisional six-stage analyse
  assert.ok(js.includes("本文の具体的な記載は未確認"));
  assert.ok(js.includes("schoolPublicUrl"));
  assert.ok(js.includes("旧PRの本文表示確認記録"));
+});
+
+test("three original-PDF page reviews are explicitly limited and provenance-checked",()=>{
+ const names=["尾西第三中学校","千秋東小学校","北方小学校"];
+ for(const name of names){
+  const record=data.cohorts.ichinomiya.find(s=>s.name===name);
+  assert.equal(record.analysis.length,6,name);
+  assert.match(record.analysisBasis,/指定ページを画像で直接読解/,name);
+  assert.match(record.evaluation.unknowns,/実施|実行|名簿|所掌|公務/,name);
+  for(const finding of record.disclosureFindings){
+   assert.equal(finding.originalChecked,true,name);
+   assert.match(finding.sourceSha256,/^[0-9a-f]{64}$/,name);
+   assert.match(finding.sourceStatus,/該当頁を今回画像で直接確認/,name);
+   assert.equal(finding.sourceUrl,undefined,"no unverified Drive disclosure URLs");
+  }
+ }
+ assert.match(data.cohorts.ichinomiya.find(s=>s.name==="尾西第三中学校").disclosureFindings[0].summary,/将来形.*提供.*完了記録ではない/);
 });
