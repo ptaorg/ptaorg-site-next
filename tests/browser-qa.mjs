@@ -23,6 +23,10 @@ try{
     assert.equal(await page.locator('#count-schools').innerText(),'569');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
+    assert.equal(await page.locator('#map-frame svg .prefecture').count(),47);
+    assert.equal(await page.locator('#map-frame svg.geolonia-svg-map').count(),1);
+    const style=await page.locator('#map-frame svg .prefecture').first().evaluate(el=>getComputedStyle(el).fill);
+    assert.match(style,/rgb\(/);
     const hero=await page.locator('.hero').boundingBox();
     const search=await page.locator('.archive-search').boundingBox();
     assert.ok(search.y>=hero.y+hero.height-1,'search must start below full hero');

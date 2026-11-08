@@ -18,3 +18,66 @@
 .related-article-links a{background:#fff;border:1px solid #cddbe7;padding:16px 14px;border-radius:5px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#153f64;text-decoration:none;font-weight:700;font-size:13px;line-height:1.6}
 .related-article-links a:hover{background:#f8fbff;border-color:#88a9c4}
 @media(max-width:760px){.article-rail{position:static}.related-article-links{grid-template-columns:1fr}.related-articles{margin-bottom:30px;padding:15px}}
+
+
+/* Approved classical Japanese Mincho typography: avoid sans-serif fallback on Linux browsers. */
+:root{
+ --serif:"Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho","Hiragino Mincho Pro",serif;
+ --sans:"Noto Sans JP","Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+.hero h1{
+ font-family:var(--serif);
+ font-weight:700;
+ font-size:clamp(34px,3.55vw,49px);
+ line-height:1.47;
+ letter-spacing:.015em;
+ color:#142236;
+ text-wrap:pretty;
+}
+.brand strong{font-family:var(--serif);font-weight:700;letter-spacing:0}
+.municipality-hero h1,.article-masthead h1,.section-title h2{font-family:var(--serif)}
+/* True geographical prefecture outlines, replacing the distorted block-map art. */
+.map-frame{
+ background:#f5f9fc;
+ border:1px solid #d4e2ed;
+ border-radius:9px;
+ min-height:510px;
+ padding:14px 12px;
+ overflow:hidden;
+}
+.map-frame svg.geolonia-svg-map{
+ width:100%;
+ max-width:100%;
+ height:auto;
+ max-height:525px;
+ display:block;
+}
+.map-frame svg.geolonia-svg-map .prefecture{
+ fill:#d9e4ed;
+ stroke:#fff;
+ stroke-width:1.15px;
+ cursor:pointer;
+ transition:fill .15s ease, stroke .15s ease;
+}
+.map-frame svg.geolonia-svg-map .prefecture.has-records{fill:#3a759d}
+.map-frame svg.geolonia-svg-map .prefecture:hover,
+.map-frame svg.geolonia-svg-map .prefecture:focus-visible{
+ fill:#f39a48;
+ stroke:#173a56;
+ outline:none;
+ stroke-width:1.8px;
+}
+.map-frame svg.geolonia-svg-map .prefecture :is(path,polygon,polyline){
+ fill:inherit;
+ stroke:inherit;
+}
+.map-frame svg.geolonia-svg-map .boundary-line{stroke:#a9bfd0;stroke-width:2}
+.map-layout{grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr)}
+.map-credit{font-size:11px;text-align:right;color:#5b7285;margin:7px 0 0}
+.map-credit a{color:#4a6479}
+@media(max-width:760px){
+ .hero h1{font-size:clamp(30px,8vw,39px);line-height:1.5}
+ .map-layout{grid-template-columns:1fr}
+ .map-frame{min-height:310px}
+ .map-frame svg.geolonia-svg-map{max-height:420px}
+}
