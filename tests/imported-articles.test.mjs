@@ -57,3 +57,23 @@ test('key source statements and evidentiary qualifications remain visible in the
   for(const phrase of phrases)assert.ok(html.includes(phrase),slug+' missing: '+phrase);
  }
 });
+
+test('published asset dependency inventory covers migrated originals without republishing binaries',()=>{
+ const inventory=JSON.parse(file('data/public-asset-dependencies.json'));
+ assert.equal(inventory.assets.length,92);
+ assert.equal(inventory.sourceCommitSha,manifest.sourceCommitSha);
+ const lookup=new Map(inventory.assets.map(a=>[a.path,a]));
+ assert.equal(lookup.size,inventory.assets.length);
+ for(const article of manifest.articles){
+  for(const path of article.dependentPublicAssetPaths){
+   const item=lookup.get(path);
+   assert.ok(item,'Missing publicly referenced asset in inventory: '+article.slug+' '+path);
+   assert.ok(item.usedBy.includes(article.slug));
+   assert.equal(item.reviewStatus,'pending-republication-review');
+   assert.match(item.sourceGitBlobSha,/^[a-f0-9]{40}$/);
+   assert.ok(item.bytes>0);
+  }
+ }
+ assert.ok(lookup.has('/assets/img/building.png'));
+ assert.ok(lookup.has('/assets/img/glasses-book.png'));
+});
