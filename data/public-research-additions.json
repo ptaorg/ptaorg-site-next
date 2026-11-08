@@ -3,7 +3,18 @@
     "source": "https://ptaorg.com/journal/ichinomiya-pta-settlements-20261108.html",
     "recordDate": "2026-11-09",
     "scope": "Only a published study landing page; no school/PDF is imported",
-    "note": "一宮市21校42件の学校別原本は既存共有設定がanyone:readerと個別確認したDrive原本URLのみを登録。PDF本文・未公開ファイルは取り込まない。"
+    "note": "一宮市21校42件の学校別原本は既存共有設定がanyone:readerと個別確認したDrive原本URLのみを登録。PDF本文・未公開ファイルは取り込まない。",
+    "supplementaryCohorts": {
+      "source": "ptaorg/ptaorg.github.io PR #118",
+      "branch": "review/site-evidence-integration-20261108",
+      "sourceBlobSha": "2829b5aef9265d19266a8cf1736b2bc4ace39978",
+      "checkedSchools": 87,
+      "ichinomiyaRecords": 61,
+      "kakamigaharaRecords": 26,
+      "existingVerifiedOriginalsPreserved": 42,
+      "addedSchools": 66,
+      "notes": "学校別要約は公開原本URLを保証せず、PR #118に記載された確認記録を引き継いだもの。"
+    }
   },
   "municipalities": [
     {
@@ -13,7 +24,8 @@
       "prefectureCode": "23",
       "type": "市",
       "summary": [
-        "一宮市の開示原本42件（21校、令和5・6年度決算に関係する資料）を学校別・年度別に確認できる。各PDFは既存の公開閲覧設定を確認したGoogle Drive原本へ直接リンクする。"
+        "一宮市の開示原本42件（21校、令和5・6年度決算に関係する資料）を学校別・年度別に確認できる。各PDFは既存の公開閲覧設定を確認したGoogle Drive原本へ直接リンクする。",
+        "2026年11月9日：PR #118の一宮市全61校の学校別資料記録を新サイト索引へ統合。うち21校42件はDrive原本URLを確認済み、残りの原本はURL・公開適否を別途検証。"
       ],
       "themes": [
         "会費徴収",
@@ -40,6 +52,19 @@
               "pages": "p2, p8"
             }
           ]
+        },
+        {
+          "name": "奥中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320068",
+          "schoolId": "2320068",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "開明小",
@@ -80,6 +105,19 @@
           ]
         },
         {
+          "name": "起小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310164",
+          "schoolId": "2310164",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "宮西小",
           "type": "小学校",
           "url": "ichinomiya-original-1",
@@ -97,6 +135,32 @@
               "pages": "p2, p3"
             }
           ]
+        },
+        {
+          "name": "向山小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310144",
+          "schoolId": "2310144",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "黒田小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310171",
+          "schoolId": "2310171",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "今伊勢小",
@@ -118,6 +182,45 @@
           ]
         },
         {
+          "name": "今伊勢西小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310140",
+          "schoolId": "2310140",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "今伊勢中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320067",
+          "schoolId": "2320067",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "三条小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310165",
+          "schoolId": "2310165",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "小信中島小",
           "type": "小学校",
           "url": "ichinomiya-original-35",
@@ -135,6 +238,162 @@
               "pages": "p13, p14"
             }
           ]
+        },
+        {
+          "name": "神山小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310132",
+          "schoolId": "2310132",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "瀬部小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310146",
+          "schoolId": "2310146",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "西成小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310145",
+          "schoolId": "2310145",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "西成中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320062",
+          "schoolId": "2320062",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "西成東小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310139",
+          "schoolId": "2310139",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "西成東部中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320071",
+          "schoolId": "2320071",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "赤見小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310147",
+          "schoolId": "2310147",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "千秋小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310156",
+          "schoolId": "2310156",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "千秋中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320070",
+          "schoolId": "2320070",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "千秋東小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310163",
+          "schoolId": "2310163",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "千秋南小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310157",
+          "schoolId": "2310157",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "浅井中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320064",
+          "schoolId": "2320064",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "浅井中小",
@@ -175,6 +434,19 @@
           ]
         },
         {
+          "name": "浅井北小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310151",
+          "schoolId": "2310151",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "浅野小",
           "type": "小学校",
           "url": "ichinomiya-original-10",
@@ -192,6 +464,32 @@
               "pages": "p3, p4"
             }
           ]
+        },
+        {
+          "name": "大志小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310143",
+          "schoolId": "2310143",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "大徳小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310170",
+          "schoolId": "2310170",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "大和西小",
@@ -232,6 +530,58 @@
           ]
         },
         {
+          "name": "大和東小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310136",
+          "schoolId": "2310136",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "大和南小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310161",
+          "schoolId": "2310161",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "大和南中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320072",
+          "schoolId": "2320072",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "丹陽小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310134",
+          "schoolId": "2310134",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "丹陽西小",
           "type": "小学校",
           "url": "ichinomiya-original-12",
@@ -249,6 +599,19 @@
               "pages": "p2, p3"
             }
           ]
+        },
+        {
+          "name": "丹陽中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320063",
+          "schoolId": "2320063",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "丹陽南小",
@@ -289,6 +652,45 @@
           ]
         },
         {
+          "name": "中部中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320059",
+          "schoolId": "2320059",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "朝日西小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310168",
+          "schoolId": "2310168",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "朝日東小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310167",
+          "schoolId": "2310167",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "南部中",
           "type": "中学校",
           "url": "ichinomiya-original-53",
@@ -325,6 +727,58 @@
               "pages": "p2"
             }
           ]
+        },
+        {
+          "name": "萩原中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320069",
+          "schoolId": "2320069",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "尾西第一中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320073",
+          "schoolId": "2320073",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "尾西第三中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320075",
+          "schoolId": "2320075",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "尾西第二中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320074",
+          "schoolId": "2320074",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         },
         {
           "name": "富士小",
@@ -384,6 +838,32 @@
           ]
         },
         {
+          "name": "北方中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320065",
+          "schoolId": "2320065",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "末広小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310159",
+          "schoolId": "2310159",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "木曽川西小",
           "type": "小学校",
           "url": "ichinomiya-original-41",
@@ -403,6 +883,45 @@
           ]
         },
         {
+          "name": "木曽川中学校",
+          "type": "中学校",
+          "url": "ichinomiya-research-2320076",
+          "schoolId": "2320076",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "木曽川東小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310172",
+          "schoolId": "2310172",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "葉栗小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310133",
+          "schoolId": "2310133",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
           "name": "葉栗中",
           "type": "中学校",
           "url": "ichinomiya-original-54",
@@ -420,6 +939,19 @@
               "pages": "p2"
             }
           ]
+        },
+        {
+          "name": "葉栗北小学校",
+          "type": "小学校",
+          "url": "ichinomiya-research-2310160",
+          "schoolId": "2310160",
+          "documents": [
+            {
+              "title": "公開請求資料の学校別確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
         }
       ],
       "sources": [
@@ -1323,6 +1855,433 @@
       "legal": [],
       "boardResponses": [],
       "status": "published-study-index"
+    },
+    {
+      "id": "kakamigahara",
+      "name": "各務原市",
+      "prefecture": "岐阜県",
+      "prefectureCode": "21",
+      "type": "市",
+      "summary": [
+        "市立26校の索引。提出資料一覧は小中25校を対象とし、うち21校の契約書等を記録しています。"
+      ],
+      "themes": [
+        "PTA任意加入",
+        "PTA会費の学校徴収",
+        "情報公開・審査請求",
+        "委任契約による公務化"
+      ],
+      "status": "学校別開示資料の引継ぎ記録・公開前確認中",
+      "legal": [
+        {
+          "title": "主体の分離",
+          "text": "公立学校・教育委員会と、任意加入の私的団体は別主体です。"
+        },
+        {
+          "title": "事務の帰属",
+          "text": "入退会、会費徴収・未納管理、役員選出、団体会計は原則として団体固有の事務です。"
+        },
+        {
+          "title": "学校の所掌事務・権限",
+          "text": "学校側が実際に担う作業を特定し、その作業を公務として行う具体的な授権規定と例外の適用を確認します。委任契約や校務分掌だけで公法上の権限は生じません。"
+        },
+        {
+          "title": "個人情報保護法61条",
+          "text": "学校の所掌事務・業務の範囲を確かめた後、個人情報の保有の必要性と具体的な利用目的を確認します。"
+        },
+        {
+          "title": "個人情報保護法69条",
+          "text": "学校内部の利用と外部提供を分け、目的外の利用・提供があれば、臨時的な例外に当たるかと各号の要件を確認します。"
+        },
+        {
+          "title": "服務・会計",
+          "text": "担当者、勤務時間、職務命令、口座名義、督促、返金、送金と記録を分けて確認します。"
+        },
+        {
+          "title": "総合評価",
+          "text": "市の提出一覧、契約書、学校の実際の処理、教育委員会による権限の説明を別々に評価します。"
+        }
+      ],
+      "schools": [
+        {
+          "name": "那加第一小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-1",
+          "schoolId": "1",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "那加第二小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-2",
+          "schoolId": "2",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "那加第三小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-3",
+          "schoolId": "3",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "尾崎小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-4",
+          "schoolId": "4",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "稲羽西小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-5",
+          "schoolId": "5",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "稲羽東小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-6",
+          "schoolId": "6",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "川島小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-7",
+          "schoolId": "7",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "鵜沼第一小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-8",
+          "schoolId": "8",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "鵜沼第二小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-9",
+          "schoolId": "9",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "鵜沼第三小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-10",
+          "schoolId": "10",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "緑苑小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-11",
+          "schoolId": "11",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "八木山小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-12",
+          "schoolId": "12",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "陵南小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-13",
+          "schoolId": "13",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "各務小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-14",
+          "schoolId": "14",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "蘇原第一小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-15",
+          "schoolId": "15",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "蘇原第二小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-16",
+          "schoolId": "16",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "中央小学校",
+          "type": "小学校",
+          "url": "kakamigahara-research-17",
+          "schoolId": "17",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "那加中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-18",
+          "schoolId": "18",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "桜丘中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-19",
+          "schoolId": "19",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "稲羽中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-20",
+          "schoolId": "20",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "川島中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-21",
+          "schoolId": "21",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "鵜沼中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-22",
+          "schoolId": "22",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "緑陽中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-23",
+          "schoolId": "23",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "蘇原中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-24",
+          "schoolId": "24",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "中央中学校",
+          "type": "中学校",
+          "url": "kakamigahara-research-25",
+          "schoolId": "25",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        },
+        {
+          "name": "各務原特別支援学校",
+          "type": "特別支援学校",
+          "url": "kakamigahara-research-26",
+          "schoolId": "26",
+          "documents": [
+            {
+              "title": "学校徴収金案内・業務委任契約などの原本確認記録",
+              "status": "原本URL未公開・内容は引継ぎ記録"
+            }
+          ],
+          "cohortReference": "pr118-school-evidence.json"
+        }
+      ],
+      "sources": [
+        {
+          "id": "roster",
+          "title": "各務原市立学校紹介",
+          "url": "https://www.city.kakamigahara.lg.jp/kodomo/gakkou/1022425.html",
+          "publisher": "各務原市",
+          "date": "2024-07-12",
+          "kind": "primary",
+          "verification": "市立小学校17校、中学校8校、特別支援学校1校を掲載。"
+        },
+        {
+          "id": "ppc",
+          "title": "公立学校とPTAの間で個人情報のやり取りをするためのポイント",
+          "url": "https://www.ppc.go.jp/files/pdf/202603_school_pta_pd_point.pdf",
+          "publisher": "個人情報保護委員会",
+          "date": "2026-03",
+          "kind": "primary",
+          "verification": "公立学校側の所掌事務、利用目的、利用・提供の確認順序を示す。"
+        },
+        {
+          "id": "audit-2023",
+          "title": "2023年12月26日 定期監査・行政監査",
+          "url": "https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/008/393/2023.teikan3.pdf",
+          "publisher": "各務原市監査委員",
+          "date": "2023-12-26",
+          "kind": "primary",
+          "verification": "公開原本で監査対象校と学校徴収金に関する着眼点を確認。"
+        },
+        {
+          "id": "audit-2024",
+          "title": "2024年12月26日 定期監査・行政監査",
+          "url": "https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/008/393/reiwa3kai.pdf",
+          "publisher": "各務原市監査委員",
+          "date": "2024-12-26",
+          "kind": "primary",
+          "verification": "公開原本で監査対象校と学校徴収金に関する着眼点を確認。"
+        }
+      ],
+      "articles": [],
+      "boardResponses": []
     }
   ]
 }
