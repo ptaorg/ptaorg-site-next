@@ -145,7 +145,7 @@ test("nine additional school original rules retain fact/authority/privacy separa
   assert.equal(s.disclosureFindings[0].originalChecked,true,name);
   assert.match(s.disclosureFindings[0].sourceSha256,/^[0-9a-f]{64}$/,name);
   assert.match(s.analysisBasis,/指定ページを画像で直接照合/,name);
-  assert.match(s.analysis[2],/権限|所掌事務/,name);
+  assert.match(s.analysis[2],/権限|所掌事務|具体的根拠/,name);
   assert.match(s.analysis[3],/61条/,name);
   assert.match(s.analysis[4],/69条/,name);
   assert.equal(s.disclosureFindings[0].sourceUrl,undefined,"unapproved original links must not be published");
