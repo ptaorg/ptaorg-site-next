@@ -222,7 +222,7 @@ function initSchool(){
  $("#school-subtitle").textContent=muni.prefecture+" "+muni.name;
  $("#school-region").innerHTML='<a href="municipality.html?id='+encodeURIComponent(muni.id)+'">'+esc(muni.name)+' ›</a>';
  const docs=entry.documents||[];
- const verifiedOriginals=muni.id==="ichinomiya"?(muni.sources||[]).filter(s=>s.kind==="primary"&&s.school===entry.name&&/^https:\/\/drive\.google\.com\/file\/d\/[\\w-]+\/view$/.test(s.url||"")&&/^[a-f0-9]{64}$/.test(s.sha256||"")):[];
+ const verifiedOriginals=muni.id==="ichinomiya"?(muni.sources||[]).filter(s=>s.kind==="primary"&&s.school===entry.name&&/^https:\/\/drive\.google\.com\/file\/d\/[\w-]+\/view$/.test(s.url||"")&&/^[a-f0-9]{64}$/.test(s.sha256||"")):[];
  if(verifiedOriginals.length===2){
   $("#school-documents").innerHTML=verifiedOriginals.map(s=>docRow(s.fiscalYear+"決算に関する開示原本",s.originalFileName+"／該当 "+s.pdfPage+"／SHA-256 "+s.sha256,s.url)).join("");
   $("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="https://ptaorg.com/data/ichinomiya-original-pdf-sha256-20261109.json" target="_blank" rel="noopener noreferrer">PDFのSHA-256検証台帳 ›</a></p>');
