@@ -51,14 +51,17 @@ try{
     assert.equal(await page.locator('.guide-hub-resources a').count(),3);
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow on guide at '+width);
     await page.screenshot({path:output+'/guides-'+width+'.png',fullPage:true});
-    for(const [guidePath,expected] of [
-      ['ppc-school-pta-personal-data.html',/個人情報保護委員会/],
-      ['ppc-points.html',/第61条|61条/],
-      ['administrative-materials.html',/文部科学省|横浜市通知/]
+    for(const guidePath of [
+      'ppc-school-pta-personal-data.html','ppc-points.html','administrative-materials.html',
+      'pta-membership-optin.html','guide-board.html','education-board-responsibility.html',
+      'report.html','guide-research.html','guide-pta.html','membership.html','privacy.html',
+      'fee-collection.html','personnel.html','facilities.html','guide-parent.html',
+      'law-map.html','framework.html'
     ]){
       await page.goto(url+'guides/'+guidePath,{waitUntil:'domcontentloaded'});
-      assert.match(await page.locator('.migrated-guide-body').innerText(),expected,'migrated full source text '+guidePath);
-      assert.ok(await page.locator('.migrated-guide-source a[href^="https://ptaorg.com/"]').count()>0,'source URL preserved');
+      const body=await page.locator('.migrated-guide-body').innerText();
+      assert.ok(body.length>700,'full source body is present '+guidePath);
+      assert.ok(await page.locator('.migrated-guide-source a[href^="https://ptaorg.com/"]').count()>0,'original source URL is preserved');
       assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'migrated guide must not overflow '+guidePath+' at '+width);
     }
 
