@@ -15,10 +15,10 @@ const safeUrl=(x,onlySite=false)=>{
 };
 let research=null;
 async function load(){
- const [mr,br,jr,ar,im]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json"),fetch("data/migrated-articles.json")]);
- if(!mr.ok||!br.ok||!jr.ok||!ar.ok||!im.ok)throw Error("Published index HTTP error");
- const [map,boards,journal,additions,imported]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json(),im.json()]);
- if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities)||!Array.isArray(imported.articles))throw Error("Published index structure invalid");
+ const [mr,br,jr,ar,im,gr]=await Promise.all([fetch("data/research-map-index.json"),fetch("data/board-responses.json"),fetch("data/public-journal-index.json"),fetch("data/public-research-additions.json"),fetch("data/migrated-articles.json"),fetch("data/public-guides-index.json")]);
+ if(!mr.ok||!br.ok||!jr.ok||!ar.ok||!im.ok||!gr.ok)throw Error("Published index HTTP error");
+ const [map,boards,journal,additions,imported,guides]=await Promise.all([mr.json(),br.json(),jr.json(),ar.json(),im.json(),gr.json()]);
+ if(!Array.isArray(map.municipalities)||!Array.isArray(boards.responses)||!Array.isArray(journal.articles)||!Array.isArray(additions.municipalities)||!Array.isArray(imported.articles)||!Array.isArray(guides.pages))throw Error("Published index structure invalid");
  const migrated=new Map(imported.articles.map(a=>[a.source,a.destination]));
  const existingIds=new Set(map.municipalities.map(x=>x.id));
  for(const m of additions.municipalities)if(!existingIds.has(m.id)){map.municipalities.push(m);existingIds.add(m.id)}
@@ -56,6 +56,11 @@ async function load(){
    if(!href)continue;
    records.push({title:r.municipality+" 教育委員会回答",type:"行政回答",pref:r.prefecture||"",description:[r.date,(r.topics||[]).slice(0,3).join("・")].filter(Boolean).join("／"),themes:r.topics||[],href});
  }
+ for(const g of guides.pages){
+  const url=safeUrl(g.url,true);
+  if(!url)continue;
+  records.push({title:g.title,type:"解説",pref:"",description:g.description||"",themes:g.themes||[],href:url});
+ }
  for(const record of records)if(record.type==="論考"&&migrated.has(safeUrl(record.href,true)))record.href=migrated.get(safeUrl(record.href,true));
  if($("#result-list")){
   const paths=[1,2,3,4,5,6].map(i=>"data/fulltext-"+i+".json");
@@ -69,7 +74,7 @@ async function load(){
    if(records.filter(r=>r.type==="論考"&&r.searchBody).length!==imported.articles.length)throw Error("Full-text index incomplete");
   }catch(e){console.warn("Metadata-only search fallback.",e);}
  }
- research={map,boards,journal,records,migrated,imported};
+ research={map,boards,journal,records,migrated,imported,guides};
  return research;
 }
 function updateSelects(){
@@ -92,6 +97,13 @@ function updateSelects(){
 }
 function initNav(){
  const t=$(".menu-toggle"),n=$(".site-nav");
+ if(n&&!n.querySelector('a[href="guides.html"]')){
+  const entry=document.createElement("a");
+  entry.href=location.pathname.includes("/articles/")?"../guides.html":"guides.html";
+  entry.textContent="法令・資料解説";
+  const before=n.querySelector('a[aria-label="検索"]');
+  n.insertBefore(entry,before||n.lastElementChild);
+ }
  if(t&&n)t.addEventListener("click",()=>{const state=n.classList.toggle("is-open");t.setAttribute("aria-expanded",String(state))});
 }
 function mapLink(pref){return "explore.html?region="+encodeURIComponent(pref)}
