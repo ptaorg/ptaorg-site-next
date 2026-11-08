@@ -22,7 +22,7 @@ test("61 Ichinomiya and 26 Kakamigahara school records are integrated exactly on
   for(const row of cohort) assert.equal(municipality.schools.filter(s=>normalize(s.name)===normalize(row.name)).length,1,row.name);
  }
  assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),191);
- assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,26);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,33);
  assert.equal(data.cohorts.kakamigahara.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,26);
 });
 
@@ -59,4 +59,27 @@ test("school pages visibly separate copied source statements, analysis and unkno
  assert.ok(js.includes("学校側の法的検討"));
  assert.ok(js.includes("法令上の権限"));
  assert.ok(!js.includes("window.open("));
+});
+
+test("7 public-school documents support explicitly provisional six-stage analyses",()=>{
+ const supported=["大和東小学校","中島小学校","葉栗北小学校","三条小学校","小信中島小学校","朝日西小学校","尾西第一中学校"];
+ const records=data.cohorts.ichinomiya.filter(s=>supported.includes(s.name));
+ assert.equal(records.length,7);
+ for(const record of records){
+  assert.equal(record.analysis.length,6,record.name);
+  assert.ok(record.documents.some(doc=>doc.verified===true&&doc.url?.startsWith("https://ichinomiya.schoolweb.ne.jp/")),record.name);
+  assert.match(record.analysisBasis,/独立再照合.*意味しない/,record.name);
+  assert.ok(record.evaluation.facts&&record.evaluation.unknowns&&record.evaluation.followUp,record.name);
+  assert.match(record.analysis[2],/権限|所掌|根拠/,record.name);
+  assert.match(record.analysis[3],/61条/,record.name);
+  assert.match(record.analysis[4],/69条/,record.name);
+ }
+ assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,28);
+ const yamato=records.find(s=>s.name==="大和東小学校");
+ assert.equal(yamato.documents[0].year,2025);
+ const js=read("assets/school-evidence.js");
+ assert.ok(js.includes("学校公表資料（開示原本とは別）"));
+ assert.ok(js.includes("本文の具体的な記載は未確認"));
+ assert.ok(js.includes("schoolPublicUrl"));
+ assert.ok(js.includes("旧PRの本文表示確認記録"));
 });
