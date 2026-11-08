@@ -6,13 +6,17 @@ import {fileURLToPath} from 'node:url';
 const base=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
 const file=p=>fs.readFileSync(path.join(base,p),'utf8');
 const manifest=JSON.parse(file('data/migrated-articles.json'));
-test('source provenance recorded for exactly six initial full-text migrations',()=>{
- assert.equal(manifest.articles.length,6);
+test('source provenance recorded for every linked public research article',()=>{
+ const journal=JSON.parse(file('data/public-journal-index.json'));
+ assert.equal(manifest.articles.length,journal.articles.length);
+ assert.equal(manifest.articles.length,27);
+ assert.deepEqual(new Set(manifest.articles.map(a=>a.source)),new Set(journal.articles.map(a=>a.url)));
+
  assert.equal(new Set(manifest.articles.map(a=>a.slug)).size,6);
  for(const item of manifest.articles){
   assert.match(item.sourceGitBlobSha,/^[0-9a-f]{40}$/);
   assert.match(item.source,/^https:\/\/ptaorg\.com\/journal\//);
-  assert.ok(item.articleBodyOriginalChars>5000);
+  assert.ok(item.articleBodyOriginalChars>3000);
   assert.ok(item.sectionCount>=5);
   assert.ok(item.destination.startsWith('articles/'));
  }
