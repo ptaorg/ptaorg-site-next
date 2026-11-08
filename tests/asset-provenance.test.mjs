@@ -14,7 +14,7 @@ const reviewed=new Set([
 ]);
 
 function gitBlobSha(buffer){
-  return crypto.createHash("sha1").update(`blob ${buffer.length}\\0`).update(buffer).digest("hex");
+  return crypto.createHash("sha1").update(Buffer.from(`blob ${buffer.length}`)).update(Buffer.from([0])).update(buffer).digest("hex");
 }
 
 test("only 3 individually reviewed, existing public diagrams/illustrations are republished",()=>{
