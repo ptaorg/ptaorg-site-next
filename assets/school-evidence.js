@@ -4,6 +4,16 @@ const el=id=>document.getElementById(id);
 const esc=value=>String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
 const norm=value=>String(value??"").normalize("NFKC").replace(/学校$/,"").replace(/\s/g,"");
 const labels=["主体の分離","事務の帰属","学校側の公法上の根拠","個人情報保護法61条","個人情報保護法69条","教職員の服務・会計"];
+// The master PDFs are not publicly released. Show names/page references only.
+const sourceBundleLabels={
+ "intake-r6":"①令和6年度入会案内・説明書等",
+ "intake-r7":"①令和7年度入会案内・説明書等",
+ "application-r6":"②令和6年度入会申込書等",
+ "application-r7":"②令和7年度入会申込書等",
+ "delegation":"③契約書等",
+ "collection-r6":"④令和6年度学校徴収金案内等",
+ "collection-r7":"④令和7年度学校徴収金案内等"
+};
 // Public school links are deliberately distinct from unpublished disclosure originals.
 const schoolPublicUrl=value=>/^https:\/\/ichinomiya\.schoolweb\.ne\.jp\/\d+\/(?:download\/document\/\d+|weblog(?:\/\d+)?|page\/pta)(?:[?#][^"<>]*)?$/.test(String(value||""))?value:"";
 function publicDocument(item){
@@ -19,17 +29,20 @@ function entryItem(item,region){
  const source=(region==="kakamigahara"?(item.documents||[]):(item.disclosureFindings||[]));
  const loc=item.locator||"該当箇所の詳細未登録";
  const status=item.sourceStatus||(item.originalChecked?"PR #118の原文確認記録":"原文確認状態未登録");
- return '<article class="school-evidence-finding"><h4>'+esc(item.title||"調査記録")+'</h4><p class="school-evidence-locator">'+esc(loc)+'　／　'+esc(status)+'</p><p>'+esc(item.summary||"概要未登録")+'</p>'+(item.unknown?'<p class="school-evidence-unknown"><strong>未確認：</strong>'+esc(item.unknown)+'</p>':"")+'</article>';
+ const sourceLabel=region==="kakamigahara"&&item.bundleId?sourceBundleLabels[item.bundleId]:"";
+ const pdfSource=sourceLabel?'<p class="school-evidence-locator">合冊PDF：'+esc(sourceLabel)+'／第'+esc(item.sourcePageStart)+(item.sourcePageEnd>item.sourcePageStart?'～'+esc(item.sourcePageEnd):'')+'頁（原本ファイルSHA-256・ページ範囲照合済／原本は未公開）</p>':"";
+ return '<article class="school-evidence-finding"><h4>'+esc(item.title||"調査記録")+'</h4><p class="school-evidence-locator">'+esc(loc)+'　／　'+esc(status)+'</p>'+pdfSource+'<p>'+esc(item.summary||"概要未登録")+'</p>'+(item.unknown?'<p class="school-evidence-unknown"><strong>未確認：</strong>'+esc(item.unknown)+'</p>':"")+'</article>';
 }
 function render(item,region){
  const panel=el("school-evidence-content"),status=el("school-evidence-status");
  const findings=region==="kakamigahara"?(item.documents||[]):(item.disclosureFindings||[]);
  const analyses=item.analysis||[],evaluation=item.evaluation||null;
- status.textContent="PR #118で作成された学校別開示資料の確認記録です。原資料の所在・掲載頁と実際の運用を区別し、未確認の学校側権限を適法と断定しません。";
+ status.textContent=region==="kakamigahara"?"各務原市の合冊原本8点・計206頁のファイル同一性と、学校別参照ページの範囲を照合しました。原文の内容は旧PRの確認記録を引き継いでおり、全件独立読解・公開可否は未完了です。":"PR #118で作成された学校別開示資料の確認記録です。原資料の所在・掲載頁と実際の運用を区別し、未確認の学校側権限を適法と断定しません。";
  let html='<div class="school-evidence-provenance">原資料の個別URLが公開確認されていない記録は、開示PDFへのリンクを作っていません。原文の引継ぎ確認記録と、新サイト側で直接照合した原本は別管理です。</div>';
  if(region==="ichinomiya"&&(item.documents||[]).length){
   html+='<h3>学校公表資料（開示原本とは別）</h3>'+(item.documents||[]).map(publicDocument).join("");
  }
+ if(item.sourceReviewStatus)html+='<p class="school-evidence-provenance">'+esc(item.sourceReviewStatus)+'</p>';
  if(item.analysisBasis)html+='<p class="school-evidence-provenance">'+esc(item.analysisBasis)+'</p>';
  if(findings.length){
   html+='<h3>開示原文の該当箇所（'+findings.length+'件）</h3>'+findings.map(x=>entryItem(x,region)).join("");
