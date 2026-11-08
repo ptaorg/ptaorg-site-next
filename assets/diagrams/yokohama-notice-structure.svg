@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">横浜市通知の構成</title>
+  <desc id="desc">通知本文、別紙1、別紙2を、入会意思、個人情報、会費説明、非加入家庭配慮、学校とPTAの関係へつなぐ図。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:1.4}.head{fill:#0f2742}.gold{fill:#c49a2c}.green{fill:#15803d}.muted{fill:#64748b}.text{fill:#172033;font-family:'Noto Sans JP','Hiragino Sans','Meiryo',sans-serif}.serif{font-family:'Noto Serif JP','Hiragino Mincho ProN','Yu Mincho',serif}.label{font-size:15px;font-weight:800}.small{font-size:13px}.tiny{font-size:12px}.title{font-size:24px;font-weight:900}.line{stroke:#94a3b8;stroke-width:2;fill:none}.arrow{stroke:#c49a2c;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#c49a2c"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="920" height="420" rx="18"/>
+  <text x="42" y="50" class="text serif title">横浜市通知は「3点セット」だけでなく、5領域を同時に整理する資料</text>
+  <text x="42" y="78" class="text small muted">通知本文、別紙1、別紙2を分けて確認すると、学校とPTAが直すべき範囲が見えやすくなります。</text>
+
+  <rect x="42" y="112" width="235" height="124" rx="12" class="panel"/>
+  <rect x="42" y="112" width="235" height="38" rx="12" class="head"/>
+  <text x="62" y="137" class="text label" fill="#fff">通知本文</text>
+  <text x="62" y="174" class="text small">PTAは任意団体</text>
+  <text x="62" y="198" class="text small">入会には意思確認が必要</text>
+  <text x="62" y="222" class="text small">PTA役員と確認・共有</text>
+
+  <rect x="342" y="112" width="235" height="124" rx="12" class="panel"/>
+  <rect x="342" y="112" width="235" height="38" rx="12" fill="#14532d"/>
+  <text x="362" y="137" class="text label" fill="#fff">別紙1</text>
+  <text x="362" y="174" class="text small">5項目の問合せと対応</text>
+  <text x="362" y="198" class="text small">任意加入・個人情報</text>
+  <text x="362" y="222" class="text small">会費・非加入家庭配慮</text>
+
+  <rect x="642" y="112" width="235" height="124" rx="12" class="panel"/>
+  <rect x="642" y="112" width="235" height="38" rx="12" fill="#7a5c00"/>
+  <text x="662" y="137" class="text label" fill="#fff">別紙2</text>
+  <text x="662" y="174" class="text small">加入届・同意書ひな型</text>
+  <text x="662" y="198" class="text small">会費納入の意思確認欄</text>
+  <text x="662" y="222" class="text small">PTAが直接取得する前提</text>
+
+  <path d="M277 174 H342" class="arrow"/>
+  <path d="M577 174 H642" class="arrow"/>
+
+  <rect x="72" y="294" width="140" height="66" rx="10" class="panel"/>
+  <text x="142" y="321" text-anchor="middle" class="text label">入会意思</text>
+  <text x="142" y="345" text-anchor="middle" class="text tiny muted">加入届・意思確認</text>
+
+  <rect x="230" y="294" width="140" height="66" rx="10" class="panel"/>
+  <text x="300" y="321" text-anchor="middle" class="text label">個人情報</text>
+  <text x="300" y="345" text-anchor="middle" class="text tiny muted">利用目的・本人同意</text>
+
+  <rect x="388" y="294" width="140" height="66" rx="10" class="panel"/>
+  <text x="458" y="321" text-anchor="middle" class="text label">会費説明</text>
+  <text x="458" y="345" text-anchor="middle" class="text tiny muted">学校納入金と区別</text>
+
+  <rect x="546" y="294" width="140" height="66" rx="10" class="panel"/>
+  <text x="616" y="321" text-anchor="middle" class="text label">非加入配慮</text>
+  <text x="616" y="345" text-anchor="middle" class="text tiny muted">児童生徒の不利益防止</text>
+
+  <rect x="704" y="294" width="140" height="66" rx="10" class="panel"/>
+  <text x="774" y="321" text-anchor="middle" class="text label">公私分離</text>
+  <text x="774" y="345" text-anchor="middle" class="text tiny muted">学校代行の見直し</text>
+
+  <path d="M460 236 C460 260 142 262 142 294" class="line"/>
+  <path d="M460 236 C460 260 300 262 300 294" class="line"/>
+  <path d="M460 236 V294" class="line"/>
+  <path d="M460 236 C460 260 616 262 616 294" class="line"/>
+  <path d="M460 236 C460 260 774 262 774 294" class="line"/>
+</svg>
