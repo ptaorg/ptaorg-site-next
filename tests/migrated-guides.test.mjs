@@ -5,9 +5,9 @@ const read=p=>readFileSync(p,"utf8");
 const catalogue=JSON.parse(read("data/public-guides-index.json")).pages;
 const fulltext=JSON.parse(read("data/fulltext-guides.json")).guides;
 
-test("nine legal/PPC source guides have full migration and provenance",()=>{
- assert.equal(catalogue.length,9);
- assert.equal(fulltext.length,9);
+test("17 legal/PPC source guides have full migration and provenance",()=>{
+ assert.equal(catalogue.length,17);
+ assert.equal(fulltext.length,17);
  const paths=new Set();
  for(const guide of catalogue){
    assert.match(guide.destination,/^guides\/[\w-]+\.html$/);
