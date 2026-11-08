@@ -157,6 +157,9 @@ function initMunicipality(){
  if(!m){name.textContent="該当する自治体がありません";return}
  document.title=m.name+"｜PTA適正化推進委員会";
  const related=relatedResponses(m);
+ const linkedReplies=(m.boardResponses||[]).filter(x=>safeUrl(x.url,true))
+  .filter(x=>!related.some(r=>safeUrl(r.url,true)===safeUrl(x.url,true)))
+  .map(x=>({municipality:m.name,topics:[],date:x.date,url:x.url,title:x.title}));
  const sources=(m.sources||[]).filter(x=>x.url&&safeUrl(x.url));
  const schools=m.schools||[];
  const els={
@@ -166,15 +169,17 @@ function initMunicipality(){
  };
  for(const [sel,val] of Object.entries(els)){$(sel).textContent=val}
  const metrics=[
-  ["公開回答登録",related.length+"件"],
+  ["公開回答索引",related.length+linkedReplies.length?(related.length+linkedReplies.length)+"件":"—"],
   ["学校索引",schools.length?schools.length+"校":"—"],
   ["公開資料リンク",sources.length+"件"]
  ];
  $("#municipal-metrics").innerHTML=metrics.map(x=>'<div class="metric"><strong>'+esc(x[1])+'</strong><span>'+esc(x[0])+'</span></div>').join("");
- const sr=related.map(r=>docRow(r.municipality+" 教育委員会回答",[r.date,(r.topics||[]).slice(0,2).join("・")].filter(Boolean).join("／"),r.url));
- const sourceRows=sources.map(s=>docRow(s.title,[s.publisher,s.date].filter(Boolean).join("／"),s.url));
+ const sr=[...related,...linkedReplies].map(r=>docRow(r.title||r.municipality+" 教育委員会回答",[r.date,(r.topics||[]).slice(0,2).join("・")].filter(Boolean).join("／"),r.url));
+ const responseUrls=new Set([...related,...linkedReplies].map(r=>safeUrl(r.url,true)));
+ const sourceRows=sources.filter(x=>!responseUrls.has(safeUrl(x.url,true)))
+  .map(s=>docRow(s.title,[s.publisher,s.date].filter(Boolean).join("／"),s.url));
  $("#municipal-sources").innerHTML=(sr.join("")+sourceRows.join(""))||'<p class="small-muted">公開索引に行政回答・原資料のリンクは登録されていません。</p>';
- $("#municipal-schools").innerHTML=schools.length?'<div class="school-summary"><h3>登録校 '+schools.length+'校</h3>'+schools.map(s=>'<a href="school.html?url='+encodeURIComponent(s.url)+'">'+esc(s.name)+' <small>登録文書'+(s.documents||[]).length+'件</small> ›</a>').join("")+'</div>':'<p class="small-muted">学校別の登録資料はありません。</p>';
+ $("#municipal-schools").innerHTML=schools.length?'<div class="school-summary"><h3>登録校 '+schools.length+'校</h3>'+schools.map(s=>'<a href="school.html?url='+encodeURIComponent(s.url)+'">'+esc(s.name)+' <small>登録文書'+(s.documents||[]).length+'件</small> ›</a>').join("")+'</div>':'<p class="small-muted">学校別資料の索引は未収録です。</p>';
  const legal=(m.legal||[]).map(l=>'<div class="legal-card"><h3>'+esc(l.title)+'</h3><p>'+esc(l.text)+'</p></div>').join("");
  const articles=(m.articles||[]).filter(a=>safeUrl(a.url)).map(a=>docRow(a.title,"公開済み論考",a.url)).join("");
  $("#municipal-legal").innerHTML=legal+articles||'<p class="small-muted">関連する法的分析の索引は未登録です。</p>';
