@@ -255,6 +255,104 @@
       ],
       "destination": "articles/shinjuku-2020-pta-nonmember-data.html",
       "date": "2026-10-02"
+    },
+    {
+      "slug": "tamano-chuo-pta-establishment",
+      "source": "https://ptaorg.com/journal/tamano-chuo-pta-establishment.html",
+      "sourceGitBlobSha": "c1234a89cd7a8978ef082bb9281fd1bb8c05e102",
+      "articleBodyOriginalChars": 13052,
+      "sectionCount": 9,
+      "images": 7,
+      "rootResourceReferencesRewritten": 26,
+      "dependentPublicAssetPaths": [
+        "/assets/images/tamano-chuo-pta/committee-mandate.webp",
+        "/assets/images/tamano-chuo-pta/membership-debate.webp",
+        "/assets/images/tamano-chuo-pta/membership-result.webp",
+        "/assets/images/tamano-chuo-pta/school-accounting.webp",
+        "/assets/images/tamano-chuo-pta/fees-and-privacy.webp",
+        "/assets/images/tamano-chuo-pta/privacy-deletion.webp",
+        "/assets/images/tamano-chuo-pta/condolence-draft.webp"
+      ],
+      "destination": "articles/tamano-chuo-pta-establishment.html",
+      "date": "2026-10-02"
+    },
+    {
+      "slug": "misaki-public-accounting-pta-fee",
+      "source": "https://ptaorg.com/journal/misaki-public-accounting-pta-fee.html",
+      "sourceGitBlobSha": "19e7aab3df1a8abffca614f4afaa6db4926500a2",
+      "articleBodyOriginalChars": 9548,
+      "sectionCount": 13,
+      "images": 0,
+      "rootResourceReferencesRewritten": 5,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/misaki-public-accounting-pta-fee.html",
+      "date": "2026-09-02"
+    },
+    {
+      "slug": "kawasaki-pta-fee-school-duty",
+      "source": "https://ptaorg.com/journal/kawasaki-pta-fee-school-duty.html",
+      "sourceGitBlobSha": "99f432b2e1d1c5e2ef1e89dca2afd45b2cc42c47",
+      "articleBodyOriginalChars": 8932,
+      "sectionCount": 11,
+      "images": 0,
+      "rootResourceReferencesRewritten": 5,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/kawasaki-pta-fee-school-duty.html",
+      "date": "2026-08-29"
+    },
+    {
+      "slug": "pta-membership-optin-record",
+      "source": "https://ptaorg.com/journal/pta-membership-optin-record.html",
+      "sourceGitBlobSha": "400008bf31fb02f4a3254e87f0b57b040857ecf4",
+      "articleBodyOriginalChars": 10144,
+      "sectionCount": 10,
+      "images": 0,
+      "rootResourceReferencesRewritten": 7,
+      "dependentPublicAssetPaths": [],
+      "destination": "articles/pta-membership-optin-record.html",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "consumer-contract",
+      "source": "https://ptaorg.com/journal/consumer-contract.html",
+      "sourceGitBlobSha": "e9eaf1e5507062d40a5d757cbe43905cd6570276",
+      "articleBodyOriginalChars": 14195,
+      "sectionCount": 18,
+      "images": 0,
+      "rootResourceReferencesRewritten": 12,
+      "dependentPublicAssetPaths": [
+        "/assets/docs/yokohama-notice-1965-complete.pdf"
+      ],
+      "destination": "articles/consumer-contract.html",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "optout-invalidity",
+      "source": "https://ptaorg.com/journal/optout-invalidity.html",
+      "sourceGitBlobSha": "620b3b71bd74cc74f47d8949dedfe5faf94fd7b8",
+      "articleBodyOriginalChars": 7502,
+      "sectionCount": 15,
+      "images": 0,
+      "rootResourceReferencesRewritten": 10,
+      "dependentPublicAssetPaths": [
+        "/assets/docs/yokohama-notice-1965-complete.pdf"
+      ],
+      "destination": "articles/optout-invalidity.html",
+      "date": "2026-08-23"
+    },
+    {
+      "slug": "nonmember-info",
+      "source": "https://ptaorg.com/journal/nonmember-info.html",
+      "sourceGitBlobSha": "a8d003715e1892f58d2856473d3e96bbaec6bfcd",
+      "articleBodyOriginalChars": 8377,
+      "sectionCount": 16,
+      "images": 0,
+      "rootResourceReferencesRewritten": 8,
+      "dependentPublicAssetPaths": [
+        "/assets/docs/yokohama-notice-1965-complete.pdf"
+      ],
+      "destination": "articles/nonmember-info.html",
+      "date": "2026-08-23"
     }
   ]
 }
