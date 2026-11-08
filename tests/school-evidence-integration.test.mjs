@@ -201,12 +201,21 @@ test("Kakamigahara source-ledger file hashes and 78 page references are bounded"
    assert.equal(item.sourcePageEnd,ref.pageEnd);
    assert.ok(ref.pageStart>=1&&ref.pageEnd>=ref.pageStart&&ref.pageEnd<=bundle.pages);
    assert.equal(item.sourceVerification,"bundled-pdf-sha256-and-page-bounds");
-   assert.equal(ref.independentPageTextRecheck,false);
+   if(ref.independentPageTextRecheck){
+    assert.equal(item.independentlyTextReviewed,true);
+    assert.match(ref.reviewNote,/./);
+    assert.equal(ref.reviewMethod,"原本PDF指定ページの画像表示・独立読解");
+   }else assert.equal(item.independentlyTextReviewed,undefined);
    assert.equal(item.url,undefined,"no unapproved Drive link is stored on public school records");
    checks.add(row.name+"|"+ref.bundleId+"|"+ref.pageStart+"|"+ref.pageEnd);
   }
  }
  assert.equal(checks.size,78);
+ const reviewed=ledger.schoolReferences.filter(x=>x.independentPageTextRecheck);
+ assert.equal(reviewed.length,3);
+ assert.equal(reviewed.reduce((n,r)=>n+r.pageEnd-r.pageStart+1,0),4);
+ assert.deepEqual(new Set(reviewed.map(x=>x.school)),new Set(["鵜沼第三小学校","鵜沼第一小学校","八木山小学校"]));
+ assert.ok(ledger.pageVerificationScope.includes("残り75参照"));
  const noDocs=data.cohorts.kakamigahara.filter(x=>!(x.documents||[]).length);
  assert.equal(noDocs.length,5);
  assert.ok(noDocs.every(x=>x.sourceReviewStatus));
