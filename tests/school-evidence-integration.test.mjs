@@ -212,10 +212,10 @@ test("Kakamigahara source-ledger file hashes and 78 page references are bounded"
  }
  assert.equal(checks.size,78);
  const reviewed=ledger.schoolReferences.filter(x=>x.independentPageTextRecheck);
- assert.equal(reviewed.length,3);
- assert.equal(reviewed.reduce((n,r)=>n+r.pageEnd-r.pageStart+1,0),4);
- assert.deepEqual(new Set(reviewed.map(x=>x.school)),new Set(["鵜沼第三小学校","鵜沼第一小学校","八木山小学校"]));
- assert.ok(ledger.pageVerificationScope.includes("残り75参照"));
+ assert.equal(reviewed.length,8);
+ assert.equal(reviewed.reduce((n,r)=>n+r.pageEnd-r.pageStart+1,0),9);
+ assert.deepEqual(new Set(reviewed.map(x=>x.school)),new Set(["鵜沼第三小学校","鵜沼第一小学校","八木山小学校","緑陽中学校","川島中学校","那加第一小学校","那加第二小学校"]));
+ assert.ok(ledger.pageVerificationScope.includes("残り70参照"));
  const noDocs=data.cohorts.kakamigahara.filter(x=>!(x.documents||[]).length);
  assert.equal(noDocs.length,5);
  assert.ok(noDocs.every(x=>x.sourceReviewStatus));
