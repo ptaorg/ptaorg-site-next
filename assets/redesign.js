@@ -222,9 +222,17 @@ function initSchool(){
  $("#school-subtitle").textContent=muni.prefecture+" "+muni.name;
  $("#school-region").innerHTML='<a href="municipality.html?id='+encodeURIComponent(muni.id)+'">'+esc(muni.name)+' ›</a>';
  const docs=entry.documents||[];
- $("#school-documents").innerHTML=docs.map(d=>docRow(d.title,"文書目録／"+(d.status||"公開状態未確認"),"",d.status||"未確認")).join("")||'<p class="small-muted">登録文書はありません。</p>';
- const orig=safeUrl(entry.url,true);
- if(orig)$("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="'+esc(orig)+'" target="_blank" rel="noopener noreferrer">現行サイトの学校別資料ページ ›</a></p>');
+ const verifiedOriginals=muni.id==="ichinomiya"?(muni.sources||[]).filter(s=>s.kind==="primary"&&s.school===entry.name&&/^https:\/\/drive\.google\.com\/file\/d\/[\\w-]+\/view$/.test(s.url||"")&&/^[a-f0-9]{64}$/.test(s.sha256||"")):[];
+ if(verifiedOriginals.length===2){
+  $("#school-documents").innerHTML=verifiedOriginals.map(s=>docRow(s.fiscalYear+"決算に関する開示原本",s.originalFileName+"／該当 "+s.pdfPage+"／SHA-256 "+s.sha256,s.url)).join("");
+  $("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="https://ptaorg.com/data/ichinomiya-original-pdf-sha256-20261109.json" target="_blank" rel="noopener noreferrer">PDFのSHA-256検証台帳 ›</a></p>');
+ }else{
+  $("#school-documents").innerHTML=docs.map(d=>docRow(d.title,"文書目録／"+(d.status||"公開状態未確認"),"",d.status||"未確認")).join("")||'<p class="small-muted">登録文書はありません。</p>';
+  if(muni.id!=="ichinomiya"){
+   const orig=safeUrl(entry.url,true);
+   if(orig)$("#school-documents").insertAdjacentHTML("beforeend",'<p><a href="'+esc(orig)+'" target="_blank" rel="noopener noreferrer">現行サイトの学校別資料ページ ›</a></p>');
+  }
+ }
 }
 function filtered(params){
  const terms=norm(params.q||"").split(" ").filter(Boolean);
