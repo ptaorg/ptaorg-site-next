@@ -21,8 +21,8 @@ test("61 Ichinomiya and 26 Kakamigahara school records are integrated exactly on
   assert.equal(new Set(municipality.schools.map(s=>normalize(s.name))).size,municipality.schools.length);
   for(const row of cohort) assert.equal(municipality.schools.filter(s=>normalize(s.name)===normalize(row.name)).length,1,row.name);
  }
- assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),198);
- assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,39);
+ assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),201);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,42);
  assert.equal(data.cohorts.kakamigahara.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,26);
 });
 
@@ -74,7 +74,7 @@ test("7 public-school documents support explicitly provisional six-stage analyse
   assert.match(record.analysis[3],/61条/,record.name);
   assert.match(record.analysis[4],/69条/,record.name);
  }
- assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,22);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,19);
  const yamato=records.find(s=>s.name==="大和東小学校");
  assert.equal(yamato.documents[0].year,2025);
  const js=read("assets/school-evidence.js");
@@ -115,4 +115,21 @@ test("three further school originals keep agreements and rules distinct from per
  }
  assert.match(data.cohorts.ichinomiya.find(s=>s.name==="西成東小学校").disclosureFindings[0].summary,/規約案.*採択/);
  assert.match(data.cohorts.ichinomiya.find(s=>s.name==="丹陽中学校").disclosureFindings[0].summary,/要保護家庭は免除/);
+});
+
+test("originally unanalysed three schools have source-limited direct PDF reviews",()=>{
+ const names=["葉栗小学校","西成東部中学校","大和西小学校"];
+ for(const name of names){
+  const s=data.cohorts.ichinomiya.find(x=>x.name===name);
+  assert.ok(s,name);
+  assert.equal(s.analysis.length,6,name);
+  assert.equal(s.disclosureFindings.length,1,name);
+  assert.match(s.analysisBasis,/指定ページを画像で直接読解/,name);
+  assert.match(s.disclosureFindings[0].sourceSha256,/^[a-f0-9]{64}$/);
+  assert.equal(s.disclosureFindings[0].originalChecked,true);
+  assert.equal(s.disclosureFindings[0].sourceUrl,undefined);
+  assert.ok(s.evaluation.facts && s.evaluation.unknowns && s.evaluation.followUp);
+ }
+ assert.match(data.cohorts.ichinomiya.find(s=>s.name==="葉栗小学校").disclosureFindings[0].summary,/投票不可/);
+ assert.match(data.cohorts.ichinomiya.find(s=>s.name==="大和西小学校").disclosureFindings[0].summary,/教頭へ報告/);
 });
