@@ -4,6 +4,17 @@ const el=id=>document.getElementById(id);
 const esc=value=>String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
 const norm=value=>String(value??"").normalize("NFKC").replace(/学校$/,"").replace(/\s/g,"");
 const labels=["主体の分離","事務の帰属","学校側の公法上の根拠","個人情報保護法61条","個人情報保護法69条","教職員の服務・会計"];
+// Public school links are deliberately distinct from unpublished disclosure originals.
+const schoolPublicUrl=value=>/^https:\/\/ichinomiya\.schoolweb\.ne\.jp\/\d+\/(?:download\/document\/\d+|weblog\/\d+)(?:[?#][^"<>]*)?$/.test(String(value||""))?value:"";
+function publicDocument(item){
+ const url=schoolPublicUrl(item.url);
+ const verified=item.verified===true;
+ const title=esc(item.title||"学校公表資料");
+ const link=url?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+'</a>':title;
+ const state=verified?"旧PRの本文表示確認記録":"本文の具体的な記載は未確認";
+ return '<article class="school-evidence-finding"><h4>'+link+'</h4><p class="school-evidence-locator">'+esc(item.locator||"該当頁未登録")+' ／ '+esc(state)+'</p>'+
+ (verified&&item.summary?'<p>'+esc(item.summary)+'</p>':'<p class="school-evidence-unknown">原文の個別確認前のため、この資料の内容から学校の行為を認定しません。</p>')+'</article>';
+}
 function entryItem(item,region){
  const source=(region==="kakamigahara"?(item.documents||[]):(item.disclosureFindings||[]));
  const loc=item.locator||"該当箇所の詳細未登録";
@@ -16,6 +27,10 @@ function render(item,region){
  const analyses=item.analysis||[],evaluation=item.evaluation||null;
  status.textContent="PR #118で作成された学校別開示資料の確認記録です。原資料の所在・掲載頁と実際の運用を区別し、未確認の学校側権限を適法と断定しません。";
  let html='<div class="school-evidence-provenance">原資料の個別URLが公開確認されていない記録は、開示PDFへのリンクを作っていません。原文の引継ぎ確認記録と、新サイト側で直接照合した原本は別管理です。</div>';
+ if(region==="ichinomiya"&&(item.documents||[]).length){
+  html+='<h3>学校公表資料（開示原本とは別）</h3>'+(item.documents||[]).map(publicDocument).join("");
+ }
+ if(item.analysisBasis)html+='<p class="school-evidence-provenance">'+esc(item.analysisBasis)+'</p>';
  if(findings.length){
   html+='<h3>開示原文の該当箇所（'+findings.length+'件）</h3>'+findings.map(x=>entryItem(x,region)).join("");
  }else{
