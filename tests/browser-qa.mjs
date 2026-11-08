@@ -17,8 +17,9 @@ try{
     const page=await browser.newPage({viewport:{width,height:850},deviceScaleFactor:1});
     const errors=[];page.on('pageerror',e=>errors.push(e.message));
     await page.goto(url+'index.html',{waitUntil:'networkidle'});
-    await page.locator('#count-regions').getByText('29').waitFor({timeout:15000});
+    await page.locator('#count-regions').getByText('30').waitFor({timeout:15000});
     await page.waitForFunction(()=>document.querySelectorAll('#map-frame svg [data-code]').length===47,{timeout:15000});
+    assert.equal(await page.locator('#count-regions').innerText(),'30');
     assert.equal(await page.locator('#count-schools').innerText(),'569');
     assert.equal(await page.locator('#count-responses').innerText(),'72');
     assert.equal(await page.locator('#map-frame svg [data-code]').count(),47);
@@ -39,6 +40,11 @@ try{
     assert.ok(/^\d+件$/.test(count),'real search count: '+count);
     assert.ok(await page.locator('.result-entry').count()>0,'Yokohama returns records');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on search');
+    await page.goto(url+'explore.html?q=%E4%B8%80%E5%AE%AE%E5%B8%82',{waitUntil:'networkidle'});
+    assert.ok(await page.locator('.result-entry').count()>0,'public Ichinomiya study must be searchable');
+    await page.goto(url+'municipality.html?id=ichinomiya',{waitUntil:'networkidle'});
+    assert.equal(await page.locator('#muni-name').innerText(),'一宮市');
+    assert.match(await page.locator('#municipal-schools').innerText(),/索引は未収録/);
     await page.goto(url+'municipality.html?id=yokohama',{waitUntil:'networkidle'});
     assert.equal(await page.locator('#muni-name').innerText(),'横浜市');
     assert.ok(await page.locator('#municipal-metrics .metric').count()===3);
