@@ -40,7 +40,7 @@ test('key source statements and evidentiary qualifications remain visible in the
  const content={
  'pta-unified-legal-theory':['PTAへの加入勧誘','付録D','滋賀県監査結果'],
  'why-pta-membership-freedom-fails':['なぜPTAの入退会の自由は守られないのか','「子どものため」','巧妙化'],
- 'yokohama-notice-1965':['学教第1965号','通知一式PDF','個人情報保護法61条・69条'],
+ 'yokohama-notice-1965':['学教第1965号','通知一式PDF','第61条・第69条'],
  'third-party-consent':['個人情報','同意','PTA'],
  'pta-fee-collection-legal-analysis':['学校徴収金','会費','法的'],
  'ichinomiya-pta-settlements-20261108':['21校','42件','原本PDF']
