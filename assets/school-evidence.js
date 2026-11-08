@@ -5,13 +5,13 @@ const esc=value=>String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;"
 const norm=value=>String(value??"").normalize("NFKC").replace(/学校$/,"").replace(/\s/g,"");
 const labels=["主体の分離","事務の帰属","学校側の公法上の根拠","個人情報保護法61条","個人情報保護法69条","教職員の服務・会計"];
 // Public school links are deliberately distinct from unpublished disclosure originals.
-const schoolPublicUrl=value=>/^https:\/\/ichinomiya\.schoolweb\.ne\.jp\/\d+\/(?:download\/document\/\d+|weblog\/\d+)(?:[?#][^"<>]*)?$/.test(String(value||""))?value:"";
+const schoolPublicUrl=value=>/^https:\/\/ichinomiya\.schoolweb\.ne\.jp\/\d+\/(?:download\/document\/\d+|weblog(?:\/\d+)?|page\/pta)(?:[?#][^"<>]*)?$/.test(String(value||""))?value:"";
 function publicDocument(item){
  const url=schoolPublicUrl(item.url);
  const verified=item.verified===true;
  const title=esc(item.title||"学校公表資料");
  const link=url?'<a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+title+'</a>':title;
- const state=verified?"旧PRの本文表示確認記録":"本文の具体的な記載は未確認";
+ const state=item.sourceStatus||(verified?"旧PRの本文表示確認記録":"本文の具体的な記載は未確認");
  return '<article class="school-evidence-finding"><h4>'+link+'</h4><p class="school-evidence-locator">'+esc(item.locator||"該当頁未登録")+' ／ '+esc(state)+'</p>'+
  (verified&&item.summary?'<p>'+esc(item.summary)+'</p>':'<p class="school-evidence-unknown">原文の個別確認前のため、この資料の内容から学校の行為を認定しません。</p>')+'</article>';
 }
