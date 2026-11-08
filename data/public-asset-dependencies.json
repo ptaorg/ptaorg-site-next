@@ -2,8 +2,8 @@
   "sourceRepository": "ptaorg/ptaorg.github.io",
   "sourceCommitSha": "a1deb9ff2580b37ac69bb56bef3089d73f82c75b",
   "lastAudited": "2026-11-09",
-  "status": "inventory-only; no raw file bytes copied",
-  "shaNote": "Git blob SHA-1 records provenance; byte-for-byte SHA-256 verification is required when files are copied into the new site",
+  "status": "inventory: 3 audited public decorative/diagram assets replicated; other 89 assets remain unpublished in new repo",
+  "shaNote": "Source Git blob SHA-1 is recorded for provenance. Republished assets are tested for exact Git-blob byte identity with pinned source. Other assets require privacy/rights review and SHA-256 comparison before any reuse.",
   "assets": [
     {
       "path": "/assets/diagrams/yokohama-notice-structure.svg",
@@ -14,7 +14,8 @@
       "usedBy": [
         "yokohama-notice-1965"
       ],
-      "reviewStatus": "pending-republication-review"
+      "reviewStatus": "republished-verified-identical",
+      "verification": "pinned-source-git-blob-sha-verified; public non-personal illustration"
     },
     {
       "path": "/assets/docs/article35/jichiro-mext-2012.pdf",
@@ -336,7 +337,8 @@
       "usedBy": [
         "top-hero"
       ],
-      "reviewStatus": "pending-republication-review"
+      "reviewStatus": "republished-verified-identical",
+      "verification": "pinned-source-git-blob-sha-verified; public non-personal illustration"
     },
     {
       "path": "/assets/img/glasses-book.png",
@@ -348,7 +350,8 @@
         "top-feature",
         "article-example"
       ],
-      "reviewStatus": "pending-republication-review"
+      "reviewStatus": "republished-verified-identical",
+      "verification": "pinned-source-git-blob-sha-verified; public non-personal illustration"
     },
     {
       "path": "/assets/research/ichinomiya-20261108/asa6_3.jpg",
