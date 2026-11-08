@@ -58,7 +58,16 @@ try{
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow on municipality');
     await page.screenshot({path:output+'/municipality-'+width+'.png',fullPage:true});
     await page.goto(url+'articles/pta-unified-legal-theory.html',{waitUntil:'domcontentloaded'});
+    assert.equal(await page.locator('section.archive-search').count(),1);
     assert.ok(await page.locator('.source-article h2').count()>=10,'migrated core article has full heading hierarchy');
+    if(width===390){
+      const toc = page.locator('#imported-toc');
+      assert.equal(await toc.isVisible(),false,'mobile table of contents collapsed');
+      await page.locator('.toc-mobile-toggle').click();
+      assert.equal(await toc.isVisible(),true,'mobile table of contents expands');
+      await page.locator('.toc-mobile-toggle').click();
+      assert.equal(await toc.isVisible(),false,'mobile table of contents collapses');
+    }
     assert.ok(await page.locator('.source-article').innerText().then(t=>t.includes('付録D')),'full long-read ending preserved');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no overflow in migrated long read');
     await page.screenshot({path:output+'/imported-article-'+width+'.png',fullPage:false});

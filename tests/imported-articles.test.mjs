@@ -27,6 +27,9 @@ test('every imported page retains original article structure, tables and images'
   assert.match(html,/noindex,nofollow/);
   assert.match(html,/assets\/redesign\.css/);
   assert.match(html,/source-article/);
+  assert.match(html,/class="archive-search"/);
+  assert.match(html,/class="toc-mobile-toggle"/);
+  assert.match(html,/action="\.\.\/explore\.html"/);
   assert.ok(html.includes('data-source-slug="'+item.slug+'"'));
   assert.equal((html.match(/<main\b/g)||[]).length,1);
   assert.equal((html.match(/<footer\b/g)||[]).length,1);

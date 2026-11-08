@@ -145,3 +145,12 @@
  .source-article .journal-note,.source-article .journal-document-set,.source-article .ich-finding{padding:14px}
 }
 @media(max-width:390px){.source-article .ich-stats,.source-article .journal-action-links{grid-template-columns:1fr}}
+
+/* A compact toggle avoids placing a tall table of contents ahead of the prose on phones. */
+.toc-mobile-toggle{display:none}
+@media(max-width:760px){
+ .toc-mobile-toggle{display:flex;width:100%;padding:12px 15px;align-items:center;justify-content:space-between;background:#eaf2f9;color:#153e5f;font-size:16px;font-weight:700;border:1px solid var(--line);border-radius:5px;text-align:left}
+ .migrated-article-grid .article-toc{display:none;max-height:250px;overflow-y:auto;border-radius:0 0 5px 5px}
+ .migrated-article-grid .article-toc.is-open{display:block}
+ .migrated-article-grid .article-rail{gap:0}
+}

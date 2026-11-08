@@ -249,13 +249,22 @@ function initExplore(){
  more.addEventListener("click",()=>{offset+=25;draw(false)});
  draw();
 }
+function initArticleToc(){
+ const toggle=$(".toc-mobile-toggle"),toc=$("#imported-toc");
+ if(!toggle||!toc)return;
+ toggle.addEventListener("click",()=>{
+  const expanded=toggle.getAttribute("aria-expanded")==="true";
+  toggle.setAttribute("aria-expanded",String(!expanded));
+  toc.classList.toggle("is-open",!expanded);
+ });
+}
 function initTopSearch(){
  const top=$(".search-form");if(!top)return;
  const qs=new URLSearchParams(location.search);
  for(const name of ["q","category","region","theme"]){const field=top.elements.namedItem(name);if(field&&qs.has(name))field.value=qs.get(name)}
 }
 document.addEventListener("DOMContentLoaded",async()=>{
- initNav();
+ initNav();initArticleToc();
  try{
   await load();
   updateSelects();
