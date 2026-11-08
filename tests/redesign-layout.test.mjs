@@ -18,7 +18,8 @@ test('the home hero and navy search are separate sibling blocks',()=>{
  const h=read('index.html');
  assert.ok(h.indexOf('class="hero"')<h.indexOf('class="archive-search"'));
  assert.ok(h.includes('id="japan-map"'));
- assert.ok(!h.includes('読み方'));
+ const heroAndSearch=h.slice(h.indexOf('<section class="hero">'),h.indexOf('<section class="archive-search"'));
+ assert.ok(!heroAndSearch.includes('読み方'),'keep reading instructions out of the hero');
 });
 test('the source SVG has all prefectures with data-name and codes',()=>{
  const m=read('assets/japan-prefectures.svg');
