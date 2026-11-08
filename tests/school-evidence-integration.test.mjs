@@ -21,8 +21,8 @@ test("61 Ichinomiya and 26 Kakamigahara school records are integrated exactly on
   assert.equal(new Set(municipality.schools.map(s=>normalize(s.name))).size,municipality.schools.length);
   for(const row of cohort) assert.equal(municipality.schools.filter(s=>normalize(s.name)===normalize(row.name)).length,1,row.name);
  }
- assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),201);
- assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,42);
+ assert.equal(data.cohorts.ichinomiya.reduce((n,s)=>n+(s.disclosureFindings||[]).length,0),210);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,51);
  assert.equal(data.cohorts.kakamigahara.filter(s=>Array.isArray(s.analysis)&&s.analysis.length>0).length,26);
 });
 
@@ -74,7 +74,7 @@ test("7 public-school documents support explicitly provisional six-stage analyse
   assert.match(record.analysis[3],/61条/,record.name);
   assert.match(record.analysis[4],/69条/,record.name);
  }
- assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,19);
+ assert.equal(data.cohorts.ichinomiya.filter(s=>!(s.analysis||[]).length).length,10);
  const yamato=records.find(s=>s.name==="大和東小学校");
  assert.equal(yamato.documents[0].year,2025);
  const js=read("assets/school-evidence.js");
@@ -132,4 +132,24 @@ test("originally unanalysed three schools have source-limited direct PDF reviews
  }
  assert.match(data.cohorts.ichinomiya.find(s=>s.name==="葉栗小学校").disclosureFindings[0].summary,/投票不可/);
  assert.match(data.cohorts.ichinomiya.find(s=>s.name==="大和西小学校").disclosureFindings[0].summary,/教頭へ報告/);
+});
+
+test("nine additional school original rules retain fact/authority/privacy separation",()=>{
+ const names=["神山小学校","向山小学校","浅野小学校","丹陽小学校","浅井南小学校","今伊勢西小学校","朝日東小学校","黒田小学校","大和南中学校"];
+ assert.equal(names.length,9);
+ for(const name of names){
+  const s=data.cohorts.ichinomiya.find(z=>z.name===name);
+  assert.ok(s,name);
+  assert.equal(s.analysis.length,6,name);
+  assert.equal(s.disclosureFindings.length,1,name);
+  assert.equal(s.disclosureFindings[0].originalChecked,true,name);
+  assert.match(s.disclosureFindings[0].sourceSha256,/^[0-9a-f]{64}$/,name);
+  assert.match(s.analysisBasis,/指定ページを画像で直接照合/,name);
+  assert.match(s.analysis[2],/権限|所掌事務/,name);
+  assert.match(s.analysis[3],/61条/,name);
+  assert.match(s.analysis[4],/69条/,name);
+  assert.equal(s.disclosureFindings[0].sourceUrl,undefined,"unapproved original links must not be published");
+ }
+ assert.match(data.cohorts.ichinomiya.find(z=>z.name==="丹陽小学校").disclosureFindings[0].title,/（案）/);
+ assert.match(data.cohorts.ichinomiya.find(z=>z.name==="今伊勢西小学校").disclosureFindings[0].summary,/学校からの情報取得元.*明記されていない/);
 });
