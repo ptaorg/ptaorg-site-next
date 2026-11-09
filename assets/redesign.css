@@ -218,3 +218,26 @@
 
 .board-updates-home-link{display:inline-flex;align-items:center;color:#174c72;text-decoration:underline;text-underline-offset:3px;font-size:13px;font-weight:700;margin:4px 0 15px}
 .board-updates-home-link:hover{color:#0b344f}
+
+/* Original approved homepage composition: editorial lead before the regional map */
+body[data-page="home"] .hero{background:linear-gradient(105deg,#f4f9fe 0%,#fbfdff 43%,#d9e9f5 100%)}
+body[data-page="home"] .hero-image{width:61%;background-size:100% 100%,auto 132%;background-position:center,right center;opacity:.96}
+body[data-page="home"] .hero h1{font-family:var(--serif);font-weight:700;letter-spacing:-.015em;line-height:1.42;max-width:610px}
+body[data-page="home"] .hero p{color:#263d52;max-width:565px}
+body[data-page="home"] .archive-search{padding-block:19px 15px}
+body[data-page="home"] .quick-nav{margin-top:7px;padding-bottom:13px}
+body[data-page="home"] .quick-nav a{min-height:82px}
+body[data-page="home"] .home-feature-layout{grid-template-columns:minmax(0,1.65fr) minmax(285px,.75fr);gap:26px}
+body[data-page="home"] .stats-side-panel .archive-metrics{display:grid;grid-template-columns:1fr;gap:0;margin:0;padding:5px 16px}
+body[data-page="home"] .stats-side-panel .metric{display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:center;gap:16px;background:#fff;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:11px 2px;text-align:left}
+body[data-page="home"] .stats-side-panel .metric:last-child{border-bottom:0}
+body[data-page="home"] .stats-side-panel .metric strong{font-family:var(--serif);font-size:25px;line-height:1.15}
+body[data-page="home"] .stats-side-panel .metric span{font-size:13px;color:#304c63}
+body[data-page="home"] .map-section{margin-top:15px;border-top:1px solid var(--line)}
+@media(max-width:760px){
+ body[data-page="home"] .hero{min-height:350px}
+ body[data-page="home"] .hero-image{width:90%;opacity:.22;background-size:100% 100%,auto 130%}
+ body[data-page="home"] .hero .wrap{padding-block:50px}
+ body[data-page="home"] .home-feature-layout{grid-template-columns:1fr}
+ body[data-page="home"] .quick-nav a{min-height:66px}
+}
