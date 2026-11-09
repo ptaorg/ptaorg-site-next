@@ -33,6 +33,9 @@ test('the homepage keeps the initially approved research-institution visual',()=
  for(const title of ['全国調査','自治体・学校の資料','行政の回答','法的分析','論考'])
   assert.ok(nav.includes('<strong>'+title+'</strong>'),title);
  assert.equal((nav.match(/<strong>/g)||[]).length,5);
+ assert.ok(home.indexOf('class="home-feature-layout"') < home.indexOf('id="japan-map"'),'keep editorial research before the map');
+ assert.match(home,/<aside><div class="side-panel stats-side-panel">/);
+ assert.match(home,/<h2>公開データの状況<\/h2>/);
 });
 test('the source SVG has all prefectures with data-name and codes',()=>{
  const m=read('assets/japan-prefectures.svg');
