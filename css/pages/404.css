@@ -16,7 +16,7 @@
       sans-serif;
     line-height: 1.8;
   }
-  .legacy main {
+  .legacy .legacy-main {
     max-width: 820px;
     background: #fff;
     border: 1px solid #dbe4ee;
@@ -62,7 +62,7 @@
     background: #ea580c;
   }
   @media (max-width: 640px) {
-    .legacy main {
+    .legacy .legacy-main {
       padding: 30px 24px;
     }
     .legacy .links {

@@ -814,7 +814,7 @@
     border-bottom: 1px solid #cfd8e2;
     padding: 18px 0 24px;
   }
-  .legacy.guide-pta-editorial main a:hover,.legacy.guide-pta-editorial main button:hover,.legacy.guide-pta-editorial main summary:hover {
+  .legacy.guide-pta-editorial .legacy-main a:hover,.legacy.guide-pta-editorial .legacy-main button:hover,.legacy.guide-pta-editorial .legacy-main summary:hover {
     transform: none;
     box-shadow: none;
   }

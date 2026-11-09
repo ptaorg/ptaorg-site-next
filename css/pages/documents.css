@@ -297,7 +297,7 @@
     border-radius: 0;
     box-shadow: none;
   }
-  .legacy.documents-editorial main a:hover {
+  .legacy.documents-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

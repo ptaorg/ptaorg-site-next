@@ -173,12 +173,12 @@
     margin-bottom: 0;
   }
 
-  .legacy .research-editorial main a {
+  .legacy .research-editorial .legacy-main a {
     color: #174d78;
     text-underline-offset: 0.18em;
   }
 
-  .legacy .research-editorial main a:hover {
+  .legacy .research-editorial .legacy-main a:hover {
     color: #0d385b;
   }
 

@@ -88,7 +88,7 @@
     document.querySelectorAll('[data-topic-select]').forEach(sel=>TOPICS.forEach(t=>sel.add(new Option(t.label,t.id))));
   }
   function writeCounts(){
-    const n={regions:data.map.municipalities.length,schools:allSchools().length,responses:data.responses.responses.length};
+    const n={regions:data.map.municipalities.length,schools:allSchools().length,responses:data.responses.responses.length,journal:(data.journal.articles||[]).length};
     document.querySelectorAll('[data-stat]').forEach(e=>{const v=n[e.dataset.stat];if(v!=null)e.textContent=v.toLocaleString('ja-JP');});
     const d=data.map.updated;document.querySelectorAll('[data-index-date]').forEach(e=>{e.textContent=data.demo?'画面確認用の抜粋データ':(d?`${d}時点の公開済み索引`:'公開済み索引');});
     const note=document.getElementById('data-note');
@@ -97,6 +97,38 @@
   const label = (text,kind='') => `<span class="label ${kind?'label-'+kind:''}">${esc(text)}</span>`;
 
   /* ---------- home ---------- */
+
+  /* ---------- Japan map (Geolonia SVG) with pins ---------- */
+  const NS='http://www.w3.org/2000/svg';
+  let svgText=null,pinsData=null;
+  const getSvg=async()=>svgText||(svgText=(await (await fetch(ROOT+'assets/map/japan-prefectures.svg')).text()).replace(/^<\?xml[^>]*>\s*/,''));
+  const getPins=async()=>pinsData||(pinsData=await (await fetch(ROOT+'data/map-pins.json')).json().catch(()=>({prefs:{},regions:{},responses:{}})));
+  function addPin(svg,x,y,r,cls,title,href,label){
+    const g=document.createElementNS(NS,href?'a':'g');if(href)g.setAttribute('href',href);
+    const c=document.createElementNS(NS,'path');
+    // teardrop pin whose tip sits on (x,y)
+    c.setAttribute('d',`M${x} ${y} c ${-r*0.9} ${-r*1.4} ${-r*1.6} ${-r*2.1} ${-r*1.6} ${-r*3} a ${r*1.6} ${r*1.6} 0 1 1 ${r*3.2} 0 c 0 ${r*0.9} ${-r*0.7} ${r*1.6} ${-r*1.6} ${r*3} z`);
+    c.setAttribute('class',cls);c.setAttribute('stroke-width',String(r*0.35));
+    const dot=document.createElementNS(NS,'circle');dot.setAttribute('cx',x);dot.setAttribute('cy',y-r*3);dot.setAttribute('r',r*0.6);dot.setAttribute('fill','#fff');
+    const t=document.createElementNS(NS,'title');t.textContent=title;g.append(t,c,dot);
+    if(label){const tx=document.createElementNS(NS,'text');tx.setAttribute('x',x+r*2);tx.setAttribute('y',y-r*2.6);tx.setAttribute('class','map-pin-label');tx.setAttribute('font-size',String(r*2.6));tx.textContent=label;g.append(tx);}
+    svg.append(g);return g;
+  }
+  function zoomTo(svg,g,factor){
+    const r=g.getBoundingClientRect();const m=svg.getScreenCTM();if(!m||!r.width)return null;const inv=m.inverse();
+    const pt=(x,y)=>{const p=svg.createSVGPoint();p.x=x;p.y=y;return p.matrixTransform(inv);};
+    const a=pt(r.left,r.top),b=pt(r.right,r.bottom);const w=b.x-a.x,h=b.y-a.y;const size=Math.max(w,h)*factor+40;
+    svg.setAttribute('viewBox',`${a.x+w/2-size*0.62} ${a.y+h/2-size/2} ${size*1.24} ${size}`);svg.setAttribute('preserveAspectRatio','xMidYMid slice');return size;
+  }
+  async function renderMapEl(el){
+    try{
+      el.innerHTML=await getSvg();const svg=el.querySelector('svg');if(!svg)return;
+      const pref=el.dataset.mapPref;const code=PREFS.indexOf(pref)+1;const g=code?svg.querySelector(`.prefecture[data-code="${code}"]`):null;
+      let size=1000;if(g){g.classList.add('is-target');size=zoomTo(svg,g,2.4)||1000;}
+      const pin=(el.dataset.mapPin||'').split(',').map(Number);
+      if(pin.length===2&&pin.every(Number.isFinite))addPin(svg,pin[0],pin[1],size*0.012,'map-pin',`${el.dataset.mapLabel||pref}（概略位置）`,null,el.dataset.mapLabel||'');
+    }catch{el.remove();}
+  }
   async function renderMap(){
     const box=document.querySelector('[data-japan-map]');const grid=document.querySelector('[data-pref-grid]');
     const active=prefsWithData();const count=p=>data.map.municipalities.filter(m=>m.prefecture===p).length;
@@ -104,13 +136,15 @@
     const note=document.querySelector('[data-pref-note]');if(note)note.textContent=`公開索引のある都道府県：${active.length}／47`;
     if(!box)return;
     try{
-      const svg=await (await fetch(ROOT+'assets/map/japan-prefectures.svg')).text();
-      box.innerHTML=svg.replace(/^<\?xml[^>]*>\s*/,'');
+      box.innerHTML=await getSvg();
       box.querySelectorAll('.prefecture').forEach(g=>{
         const name=PREFS[Number(g.dataset.code)-1];if(!name)return;
         const t=document.createElementNS('http://www.w3.org/2000/svg','title');t.textContent=active.includes(name)?`${name}（${count(name)}地域）`:name;g.prepend(t);
         if(active.includes(name)){g.classList.add('has-data');g.addEventListener('click',()=>{location.href=`explore.html?pref=${encodeURIComponent(name)}`;});}
       });
+      const svg=box.querySelector('svg');const pins=await getPins();
+      for(const r of data.responses.responses||[]){const xy=pins.responses[String(r.no)];if(xy)addPin(svg,xy[0],xy[1],4.2,'map-pin-resp',`${r.municipality}：教育委員会の回答`,safeSourceLink(r.url));}
+      for(const m of data.map.municipalities){const xy=pins.regions[m.id]||pins.prefs[m.prefecture];if(xy)addPin(svg,xy[0],xy[1],5.2,'map-pin',`${m.name}：自治体の調査${(m.schools||[]).length?`・学校資料${m.schools.length}校`:''}`,regionLink(m.id));}
     }catch(e){box.textContent='地図を読み込めませんでした。右の一覧から選択できます。';}
   }
   function renderHome(){
@@ -199,7 +233,7 @@
     const schoolRows=schools.map((s,i)=>{const st=schoolStatus(s);return `<tr${i>=SHOW?' class="is-extra" hidden':''}><th scope="row"><a href="${schoolLink(s.url)}">${esc(s.name)}</a></th><td>${esc(s.type||'—')}</td><td>${(s.documents||[]).length}件</td><td>${label(st,st==='公開前確認中'?'caution':'')}</td></tr>`;}).join('');
     root.innerHTML=`
     <section class="page-hero">
-      <div class="page-hero-map" aria-hidden="true" data-pref-map></div>
+      <div class="page-hero-map" aria-hidden="true" data-map data-map-pref="${esc(m.prefecture)}" data-map-label="${esc(m.name)}"></div>
       <div class="container">
         <nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="explore.html?tab=municipality">全国調査</a></li>${isPref?'':`<li><a href="explore.html?pref=${encodeURIComponent(m.prefecture)}">${esc(m.prefecture)}</a></li>`}<li aria-current="page">${esc(m.name)}</li></ol></nav>
         <span class="label">自治体別調査</span>
@@ -260,7 +294,7 @@
     const all=root.querySelector('[data-show-all]');if(all)all.addEventListener('click',()=>{root.querySelectorAll('tr.is-extra').forEach(tr=>{tr.hidden=false;});all.remove();});
     const tabs=[...root.querySelectorAll('.page-tabs a')];tabs.forEach(a=>a.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('is-active',x===a));}));
     if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)tabs.forEach(x=>x.classList.toggle('is-active',x.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-30% 0px -60% 0px'});root.querySelectorAll('.detail-section').forEach(s=>io.observe(s));}
-    prefMap(root.querySelector('[data-pref-map]'),m.prefecture);
+    getPins().then(p=>{const el=root.querySelector('[data-map]');const xy=p.regions[m.id]||p.prefs[m.prefecture];if(xy)el.dataset.mapPin=xy.join(',');renderMapEl(el);});
   }
 
   /* ---------- school ---------- */
@@ -270,7 +304,7 @@
     document.title=`${s.name}｜学校別資料｜PTA適正化推進委員会`;
     const docs=s.documents||[];const peers=allSchools().filter(x=>x.regionId===s.regionId&&x.url!==s.url).slice(0,6);
     root.innerHTML=`
-    <section class="page-hero page-hero-plain"><div class="container">
+    <section class="page-hero"><div class="page-hero-map" aria-hidden="true" data-map data-map-pref="${esc(s.regionPrefecture)}" data-map-label="${esc(s.regionName)}"></div><div class="container">
       <nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="explore.html?tab=school">学校の資料</a></li><li><a href="${regionLink(s.regionId)}">${esc(s.regionName)}</a></li><li aria-current="page">${esc(s.name)}</li></ol></nav>
       <span class="label">学校別資料</span><h1>${esc(s.name)}</h1>
       <p class="page-lead">${esc(s.regionPrefecture)}${esc(s.regionName===s.regionPrefecture?'':s.regionName)}の${esc(s.type||'学校')}。PTA関係文書の登録状況を示します。</p>
@@ -289,11 +323,18 @@
         </section>
       </aside>
     </div></div>`;
+    getPins().then(p=>{const el=root.querySelector('[data-map]');const xy=p.regions[s.regionId]||p.prefs[s.regionPrefecture];if(xy)el.dataset.mapPin=xy.join(',');renderMapEl(el);});
   }
 
+  function tocSpy(){
+    const links=[...document.querySelectorAll('.side-toc a[href^="#"]')];if(!links.length||!('IntersectionObserver' in window))return;
+    const map=new Map(links.map(a=>[decodeURIComponent(a.getAttribute('href').slice(1)),a]));
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('is-active'));const a=map.get(e.target.id);if(a)a.classList.add('is-active');}}),{rootMargin:'-15% 0px -70% 0px'});
+    map.forEach((a,id)=>{const t=document.getElementById(id);if(t)io.observe(t);});
+  }
   async function init(){
     chrome();
-    if(document.body.dataset.page==='legacy')return;
+    if(document.body.dataset.page==='legacy'){document.querySelectorAll('[data-map]').forEach(renderMapEl);tocSpy();return;}
     try{data=await loadData();fillSelects();writeCounts();const p=document.body.dataset.page;
       if(p==='home')renderHome();if(p==='explore')renderExplorer();if(p==='municipality')renderMunicipality();if(p==='school')renderSchool();
     }catch(e){console.error('Failed to load public site data:',e);const t=document.getElementById('data-note')||document.getElementById('municipality-root')||document.getElementById('school-root');if(t)t.textContent='データを読み込めませんでした。HTTPサーバー経由で開いてください。';}

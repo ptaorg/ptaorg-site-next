@@ -17,7 +17,7 @@
   text-wrap: pretty;
 }
 
-.legacy[data-content-mode="prose"] :where(main, body > article, section) > p {
+.legacy[data-content-mode="prose"] :where(.legacy-main, body > article, section) > p {
   max-width: 78ch;
 }
 
@@ -280,7 +280,7 @@
   --prose-highlight-soft: rgba(212, 175, 55, 0.24);
 }
 
-.legacy[data-content-mode="prose"] main h3::after {
+.legacy[data-content-mode="prose"] .legacy-main h3::after {
   content: "";
   display: block;
   width: 4.75rem;
@@ -290,7 +290,7 @@
   background: var(--prose-highlight-gold);
 }
 
-.legacy[data-content-mode="prose"] main :where(
+.legacy[data-content-mode="prose"] .legacy-main :where(
   .support-payment-card,
   .region-map-card,
   .search-results-dropdown,
@@ -301,7 +301,7 @@
   display: none;
 }
 
-.legacy[data-content-mode="prose"] main :where(p, li, dd) > strong {
+.legacy[data-content-mode="prose"] .legacy-main :where(p, li, dd) > strong {
   background-image: linear-gradient(
     to top,
     var(--prose-highlight-soft) 0,
@@ -313,7 +313,7 @@
   box-decoration-break: clone;
 }
 
-.legacy[data-content-mode="prose"] main :where(
+.legacy[data-content-mode="prose"] .legacy-main :where(
   .psc-audit-status,
   .psc-audit-badge,
   .badge,
@@ -329,7 +329,7 @@
 }
 
 @media (max-width: 700px) {
-  .legacy[data-content-mode="prose"] main h3::after {
+  .legacy[data-content-mode="prose"] .legacy-main h3::after {
     width: 3.75rem;
     height: 2px;
     margin-top: 0.34rem;
@@ -337,16 +337,16 @@
 }
 
 @media print {
-  .legacy[data-content-mode="prose"] main h3::after {
+  .legacy[data-content-mode="prose"] .legacy-main h3::after {
     background: #666;
   }
-  .legacy[data-content-mode="prose"] main :where(p, li, dd) > strong {
+  .legacy[data-content-mode="prose"] .legacy-main :where(p, li, dd) > strong {
     background-image: none;
   }
 }
 
 /* Site-wide chapter heading labels: compact, text-width, and distinct from cards/tools. */
-.legacy[data-content-mode="prose"] main h2:not(:where(
+.legacy[data-content-mode="prose"] .legacy-main h2:not(:where(
   .hero h2,
   nav h2,
   form h2,
@@ -384,7 +384,7 @@
 }
 
 @media (max-width: 640px) {
-  .legacy[data-content-mode="prose"] main h2:not(:where(
+  .legacy[data-content-mode="prose"] .legacy-main h2:not(:where(
     .hero h2,
     nav h2,
     form h2,
@@ -412,7 +412,7 @@
 }
 
 @media print {
-  .legacy[data-content-mode="prose"] main h2:not(:where(
+  .legacy[data-content-mode="prose"] .legacy-main h2:not(:where(
     .hero h2,
     nav h2,
     form h2,
@@ -521,7 +521,7 @@
 
 
 /* Editorial panels are article sections, not tool/card panels. */
-.legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+.legacy[data-content-mode="prose"] .legacy-main .editorial-panel > h2 {
   display: inline-block !important;
   width: max-content !important;
   max-width: 100% !important;
@@ -541,7 +541,7 @@
 }
 
 @media (max-width: 640px) {
-  .legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+  .legacy[data-content-mode="prose"] .legacy-main .editorial-panel > h2 {
     margin: 1.4rem 0 .85rem !important;
     padding: 6px 9px 7px !important;
     font-size: .98rem !important;
@@ -550,7 +550,7 @@
 }
 
 @media print {
-  .legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+  .legacy[data-content-mode="prose"] .legacy-main .editorial-panel > h2 {
     background: #fff !important;
     color: #111 !important;
     border-color: #777 !important;

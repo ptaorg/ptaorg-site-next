@@ -837,7 +837,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .legacy.personnel-editorial main figure,.legacy.facilities-editorial main figure,.legacy.fee-editorial main figure {
+  .legacy.personnel-editorial .legacy-main figure,.legacy.facilities-editorial .legacy-main figure,.legacy.fee-editorial .legacy-main figure {
     margin: 34px auto;
     padding: 0;
     background: transparent;
@@ -845,14 +845,14 @@
     border-radius: 0;
     box-shadow: none;
   }
-  .legacy.personnel-editorial main figure img,.legacy.facilities-editorial main figure img,.legacy.fee-editorial main figure img {
+  .legacy.personnel-editorial .legacy-main figure img,.legacy.facilities-editorial .legacy-main figure img,.legacy.fee-editorial .legacy-main figure img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 0;
     box-shadow: none;
   }
-  .legacy.personnel-editorial main a:hover,.legacy.facilities-editorial main a:hover,.legacy.fee-editorial main a:hover {
+  .legacy.personnel-editorial .legacy-main a:hover,.legacy.facilities-editorial .legacy-main a:hover,.legacy.fee-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

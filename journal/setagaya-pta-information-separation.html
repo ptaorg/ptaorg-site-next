@@ -55,7 +55,7 @@
   <script defer src="../assets/app.js"></script><script defer src="../assets/legacy.js"></script>
 </head>
 <body data-page="legacy" data-section="journal" data-root="../">
-  <a class="skip-link" href="#main-content">本文へ移動</a>
+  <a class="skip-link" href="#main">本文へ移動</a>
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-logo" viewBox="0 0 40 36"><path d="M20 1 2 9.5V12h36V9.5Z" fill="currentColor"/><rect x="5" y="14" width="4" height="15" fill="currentColor"/><rect x="13" y="14" width="4" height="15" fill="currentColor"/><rect x="23" y="14" width="4" height="15" fill="currentColor"/><rect x="31" y="14" width="4" height="15" fill="currentColor"/><rect x="2" y="31" width="36" height="4" fill="currentColor"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -71,6 +71,11 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Zm10-14 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 <div class="dev-strip"><div class="container">新サイト開発版｜<span data-index-date>2026-10-26時点の公開済み索引</span>を表示しています。公開前確認中の原本は掲載していません。</div></div>
@@ -131,12 +136,26 @@
     </nav>
   </div>
 </header>
-<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">世田谷区のPTA改革はどこまで進んだのか 学校保有情報の遮断が、PTAの入退会の自由を実質的…</li></ol></nav></div></div>
-<div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-10-10"><div class="legacy-body journal-article-main current-location-enabled">
+<main id="main">
+<div class="container"><form class="search-panel search-panel-bar" action="../explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="../explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>
+<section class="article-hero"><div class="container">
+<nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">世田谷区のPTA改革はどこまで進んだのか 学校保有情報の遮断が、PTAの入退会の自由を実質的…</li></ol></nav>
+<div class="article-hero-grid"><div class="article-hero-text">
+<span class="label">行政資料・学校PTA実務の検証</span>
+<h1>世田谷区のPTA改革はどこまで進んだのか 学校保有情報の遮断が、PTAの入退会の自由を実質的に保障する仕組み</h1>
+<p class="article-meta"><span><svg aria-hidden="true"><use href="#i-calendar"/></svg>2026-10-10</span><span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span><span class="label">論考</span></p>
+<p class="page-meta">PTA適正化推進委員会｜2026年10月10日 一次資料分析 独立論考</p>
+</div>
+<div class="article-visual"><img src="../assets/img/research-book.webp" alt="" width="278" height="157"></div>
+</div></div></section>
+<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>
+<div class="container"><div class="article-layout"><aside class="article-side"><nav class="side-box side-toc" aria-label="目次"><h2><svg aria-hidden="true"><use href="#i-list"/></svg>目次</h2><ol class="toc-list"><li><a href="#introduction"><span class="toc-no">01</span><span>はじめに――PTAの任意加入を実現するために、本当に必要なこと</span></a></li><li><a href="#chapter-1"><span class="toc-no">02</span><span>1．2025年11月10日――学務課長が問題にしたのは会費の一括収納だけではない</span></a></li><li><a href="#chapter-2"><span class="toc-no">03</span><span>2．学校情報を遮断すると、なぜ自動加入が成立しなくなるのか</span></a></li><li><a href="#chapter-3"><span class="toc-no">04</span><span>3．世田谷区は、すでに任意加入の原則を明文化している</span></a></li><li><a href="#chapter-4"><span class="toc-no">05</span><span>4．2025年10月から12月――独自徴収への移行と学校モールの方針変更</span></a></li><li><a href="#chapter-5"><span class="toc-no">06</span><span>5．学校モールの「分離」は、何を分離したのか</span></a></li><li><a href="#chapter-6"><span class="toc-no">07</span><span>6．個人情報保護委員会の2026年3月資料と符合する問題構造</span></a></li><li><a href="#chapter-7"><span class="toc-no">08</span><span>7．実際に任意加入を進めたPTAでは何が起きているのか</span></a></li><li><a href="#chapter-8"><span class="toc-no">09</span><span>8．教育委員会は、加入率の低下を想定しているのか</span></a></li><li><a href="#chapter-9"><span class="toc-no">10</span><span>9．学校が情報を利用しなければ、PTAはどう変わるのか</span></a></li><li><a href="#chapter-10"><span class="toc-no">11</span><span>10．世田谷区方式の評価を確定するために必要な証拠</span></a></li><li><a href="#conclusion"><span class="toc-no">12</span><span>おわりに――PTAの任意加入は、学校情報の遮断によって実質化する</span></a></li><li><a href="#sources"><span class="toc-no">13</span><span>主要資料・出典</span></a></li></ol></nav>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-doc"/></svg>関連資料</h2><ul class="side-links"><li><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/matsuyama-pta-fee-unification-20261013.html">公会計化の名で、なぜPTA会費まで集めるのか<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/shiga-pta-audit-circular-reasoning-20261013.html">100の屁理屈と循環論法――滋賀県PTA住民監査請求は行政の急所を突いた<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal.html">論考一覧<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li></ul></section>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-tag"/></svg>関連する論点</h2><div class="chip-row"><a class="chip" href="../membership.html">任意加入・退会</a><a class="chip" href="../fee-collection.html">会費徴収</a><a class="chip" href="../privacy.html">個人情報の利用</a><a class="chip" href="../personnel.html">教職員の関与</a><a class="chip" href="../facilities.html">学校施設・媒体</a><a class="chip" href="../framework.html">学校とPTAの境界</a></div></section></aside><div class="article-main"><details class="toc-mobile"><summary>このページの目次（13項目）</summary><ol class="toc-list"><li><a href="#introduction">はじめに――PTAの任意加入を実現するために、本当に必要なこと</a></li><li><a href="#chapter-1">1．2025年11月10日――学務課長が問題にしたのは会費の一括収納だけではない</a></li><li><a href="#chapter-2">2．学校情報を遮断すると、なぜ自動加入が成立しなくなるのか</a></li><li><a href="#chapter-3">3．世田谷区は、すでに任意加入の原則を明文化している</a></li><li><a href="#chapter-4">4．2025年10月から12月――独自徴収への移行と学校モールの方針変更</a></li><li><a href="#chapter-5">5．学校モールの「分離」は、何を分離したのか</a></li><li><a href="#chapter-6">6．個人情報保護委員会の2026年3月資料と符合する問題構造</a></li><li><a href="#chapter-7">7．実際に任意加入を進めたPTAでは何が起きているのか</a></li><li><a href="#chapter-8">8．教育委員会は、加入率の低下を想定しているのか</a></li><li><a href="#chapter-9">9．学校が情報を利用しなければ、PTAはどう変わるのか</a></li><li><a href="#chapter-10">10．世田谷区方式の評価を確定するために必要な証拠</a></li><li><a href="#conclusion">おわりに――PTAの任意加入は、学校情報の遮断によって実質化する</a></li><li><a href="#sources">主要資料・出典</a></li></ol></details><div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-10-10"><div class="legacy-body journal-article-main current-location-enabled">
 
 
-<main id="main-content">
-<section class="journal-article-hero"><div class="journal-article-wrap"><p class="journal-eyebrow">行政資料・学校PTA実務の検証</p><h1>世田谷区のPTA改革はどこまで進んだのか<br/><span>学校保有情報の遮断が、PTAの入退会の自由を実質的に保障する仕組み</span></h1><div class="journal-article-meta"><span>PTA適正化推進委員会｜2026年10月10日</span><span>一次資料分析</span><span>独立論考</span></div></div></section>
+<div class="legacy-main" id="main-content">
+
 <section class="journal-article-body"><div class="journal-article-wrap"><article id="article-original-text">
 <h2 id="introduction">はじめに――PTAの任意加入を実現するために、本当に必要なこと</h2>
 <p>PTAの任意加入をめぐる議論では、入会申込書の導入や会則の改正、保護者への説明方法などが注目されやすい。</p>
@@ -384,9 +403,14 @@
 <p class="journal-source-direct"><a class="ext-link-mark" href="https://info.gakko-mall.com/faq-cat/faq-teacher/" rel="noopener noreferrer" target="_blank">https://info.gakko-mall.com/faq-cat/faq-teacher/</a></p>
 <p>児童マスタ登録、PTA会費の集金等に関する一般向け説明。世田谷区向け改修後の専用仕様とは区別して参照する。</p>
 <p>*本稿は公開された行政資料、議会会議録及び学校・PTA資料に基づく制度分析である。個々の学校やPTAについて、未確認の事務処理を行っていると断定するものではない。法的評価と公開資料から確認できる事実を区別し、未公開の運用資料については今後の検証課題としている。*</p>
-</article></div></section></main>
+</article></div></section></div>
 
-</div></div>
+</div></div></div></div><nav class="pager" aria-label="前後のページ">
+<a class="button button-secondary" href="../journal/why-pta-membership-freedom-fails.html"><svg class="flip" aria-hidden="true"><use href="#i-chevron"/></svg><span><small>前へ</small>なぜPTAの入退会の自由は守られないのか</span></a>
+<a class="button button-secondary" href="../journal/shiga-pta-audit-circular-reasoning-20261013.html"><span><small>次へ</small>100の屁理屈と循環論法――滋賀県PTA住民監査請求は行…</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+</nav>
+<section class="readmore"><h2><svg aria-hidden="true"><use href="#i-book"/></svg>あわせて読みたい</h2><div class="readmore-grid"><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></section></div>
+</main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-org">

@@ -13,7 +13,7 @@
     padding: 40px 24px;
     border-bottom: 5px solid #d4af37;
   }
-  .legacy main {
+  .legacy .legacy-main {
     max-width: 980px;
     margin: auto;
     padding: 34px 24px;
@@ -83,7 +83,7 @@
     .legacy {
       background: #fff;
     }
-    .legacy main {
+    .legacy .legacy-main {
       max-width: none;
     }
     .legacy .box {

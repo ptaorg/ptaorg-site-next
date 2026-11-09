@@ -3392,7 +3392,7 @@
 
   /* Stage3: proper-management / archive readability refinements */
   .legacy .proper-management-page .pm-main,.legacy 
-  .national-archive-page main {
+  .national-archive-page .legacy-main {
     background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
   }
   .legacy .national-archive-page #archive-reading-method .editorial-panel {
@@ -3854,16 +3854,14 @@
   }
 
   /* Page rhythm */
-  .legacy main {
+  .legacy .legacy-main {
     isolation: isolate;
   }
-  .legacy main > section:not([class]),.legacy 
-  main > .container,.legacy 
-  main > .wrap {
+  .legacy .legacy-main > section:not([class]),.legacy .legacy-main > .container,.legacy .legacy-main > .wrap {
     margin-top: 44px;
     margin-bottom: 44px;
   }
-  .legacy main > section:not([class]) {
+  .legacy .legacy-main > section:not([class]) {
     width: min(calc(100% - 48px), 1120px);
     margin-left: auto;
     margin-right: auto;
@@ -3873,23 +3871,22 @@
     border-radius: 0;
     box-shadow: none;
   }
-  .legacy main > section:not([class]) + section:not([class]) {
+  .legacy .legacy-main > section:not([class]) + section:not([class]) {
     margin-top: 28px;
   }
-  .legacy main > section:not([class]) h2,.legacy 
-  main > section:not([class]) h3 {
+  .legacy .legacy-main > section:not([class]) h2,.legacy .legacy-main > section:not([class]) h3 {
     font-family: "Noto Serif JP", serif;
     color: var(--deep);
     letter-spacing: 0.02em;
   }
-  .legacy main > section:not([class]) h2 {
+  .legacy .legacy-main > section:not([class]) h2 {
     position: relative;
     padding-bottom: 14px;
     margin-bottom: 18px;
     font-size: clamp(1.35rem, 2.3vw, 2rem);
     line-height: 1.45;
   }
-  .legacy main > section:not([class]) h2::after {
+  .legacy .legacy-main > section:not([class]) h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -3899,12 +3896,11 @@
     border-radius: 999px;
     background: linear-gradient(90deg, var(--deep), var(--accent));
   }
-  .legacy main > section:not([class]) p,.legacy 
-  main > section:not([class]) li {
+  .legacy .legacy-main > section:not([class]) p,.legacy .legacy-main > section:not([class]) li {
     color: #26364b;
     line-height: 2;
   }
-  .legacy main > section:not([class]) p + p {
+  .legacy .legacy-main > section:not([class]) p + p {
     margin-top: 1rem;
   }
 
@@ -4113,10 +4109,10 @@
   .legacy .board-guide-section.alt {
     background: linear-gradient(180deg, #f3f7fb 0%, #eef4f9 100%);
   }
-  .legacy .guide-board-page main > section:not([class]),.legacy:not(.journal-page):not(.national-archive-page):not(
+  .legacy .guide-board-page .legacy-main > section:not([class]),.legacy:not(.journal-page):not(.national-archive-page):not(
       .proper-management-page
     )
-    main
+    .legacy-main
     > section:not([class]) {
     scroll-margin-top: 96px;
   }
@@ -4214,7 +4210,7 @@
     .container-narrow {
       width: min(calc(100% - 28px), 100%);
     }
-    .legacy main > section:not([class]) {
+    .legacy .legacy-main > section:not([class]) {
       width: min(calc(100% - 28px), 100%);
       padding: 26px 18px;
       border-radius: 0;
@@ -5449,23 +5445,23 @@
     line-height: 1.38 !important;
     letter-spacing: -0.012em !important;
   }
-  .legacy main h2 {
+  .legacy .legacy-main h2 {
     font-size: var(--type-section-title) !important;
     line-height: 1.48 !important;
     letter-spacing: -0.006em !important;
   }
-  .legacy main h3 {
+  .legacy .legacy-main h3 {
     font-size: var(--type-subsection-title) !important;
     line-height: 1.55 !important;
     letter-spacing: 0 !important;
   }
-  .legacy main h4 {
+  .legacy .legacy-main h4 {
     font-size: 1rem !important;
     line-height: 1.6 !important;
   }
 
   /* The PPC legal route remains the page's focal point, without shouting. */
-  .legacy.ppc-editorial main h2.ppc-core-title {
+  .legacy.ppc-editorial .legacy-main h2.ppc-core-title {
     font-size: clamp(1.9rem, 3.1vw, 2.65rem) !important;
     line-height: 1.32 !important;
   }
@@ -5582,7 +5578,7 @@
   /* Open content layout
    Content collections should read as one continuous document.  Reserve framed
    surfaces for controls, forms, media, maps, and genuinely independent tools. */
-  .legacy main
+  .legacy .legacy-main
     :where(
       .card,
       .article-card,
@@ -5627,7 +5623,7 @@
     transform: none;
   }
 
-  .legacy main
+  .legacy .legacy-main
     :where(
       .cards,
       .card-grid,
@@ -5651,7 +5647,7 @@
     border-top: 2px solid var(--navy, #102a43);
   }
 
-  .legacy main
+  .legacy .legacy-main
     :where(
       .card,
       .article-card,
@@ -5672,7 +5668,7 @@
   }
 
   /* Keep restrained emphasis without turning notes into floating cards. */
-  .legacy main
+  .legacy .legacy-main
     :where(
       .editorial-panel,
       .editorial-section,

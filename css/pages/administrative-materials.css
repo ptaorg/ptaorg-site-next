@@ -417,7 +417,7 @@
     color: #465768;
   }
 
-  .legacy .admin-materials-editorial main a:hover {
+  .legacy .admin-materials-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

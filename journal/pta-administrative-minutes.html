@@ -73,6 +73,11 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Zm10-14 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 <div class="dev-strip"><div class="container">新サイト開発版｜<span data-index-date>2026-10-26時点の公開済み索引</span>を表示しています。公開前確認中の原本は掲載していません。</div></div>
@@ -133,24 +138,27 @@
     </nav>
   </div>
 </header>
-<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">PTAをめぐる行政会議録・議事録</li></ol></nav></div></div>
-<div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-07-19"><div class="legacy-body journal-article-main current-location-enabled">
-
-
 <main id="main">
-<section class="journal-article-hero">
-<div class="journal-article-wrap">
+<div class="container"><form class="search-panel search-panel-bar" action="../explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="../explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>
+<section class="article-hero"><div class="container">
+<nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">PTAをめぐる行政会議録・議事録</li></ol></nav>
+<div class="article-hero-grid"><div class="article-hero-text">
+<span class="label">論考</span>
 <h1>PTAをめぐる行政会議録・議事録</h1>
-<p>加入、会費徴収、個人情報、教職員関与、学校との境界が行政内部でどのように語られているか</p>
-<div class="journal-article-meta">
-<span>調査報告</span>
-<span>2026年7月</span>
-<span>教育委員会会議録</span>
-<span>地方議会</span>
-<span>社会教育委員会議</span>
+<p class="page-lead">加入、会費徴収、個人情報、教職員関与、学校との境界が行政内部でどのように語られているか</p>
+<p class="article-meta"><span><svg aria-hidden="true"><use href="#i-calendar"/></svg>2026-07-19</span><span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span><span class="label">論考</span></p>
+<p class="page-meta">調査報告 2026年7月 教育委員会会議録 地方議会 社会教育委員会議</p>
 </div>
-</div>
-</section>
+<div class="article-visual"><img src="../assets/img/research-book.webp" alt="" width="278" height="157"></div>
+</div></div></section>
+<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>
+<div class="container"><div class="article-layout"><aside class="article-side"><nav class="side-box side-toc" aria-label="目次"><h2><svg aria-hidden="true"><use href="#i-list"/></svg>目次</h2><ol class="toc-list"><li><a href="#sec-1"><span class="toc-no">01</span><span>特に重要な会議録</span></a></li><li><a href="#sec-2"><span class="toc-no">02</span><span>行政の認識や問題点が表れている資料</span></a></li><li><a href="#sec-3"><span class="toc-no">03</span><span>現時点で特に使えるもの</span></a></li><li><a href="#related-pages-title"><span class="toc-no">04</span><span>関連する整理</span></a></li></ol></nav>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-doc"/></svg>関連資料</h2><ul class="side-links"><li><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/matsuyama-pta-fee-unification-20261013.html">公会計化の名で、なぜPTA会費まで集めるのか<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/shiga-pta-audit-circular-reasoning-20261013.html">100の屁理屈と循環論法――滋賀県PTA住民監査請求は行政の急所を突いた<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal.html">論考一覧<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li></ul></section>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-tag"/></svg>関連する論点</h2><div class="chip-row"><a class="chip" href="../membership.html">任意加入・退会</a><a class="chip" href="../fee-collection.html">会費徴収</a><a class="chip" href="../privacy.html">個人情報の利用</a><a class="chip" href="../personnel.html">教職員の関与</a><a class="chip" href="../facilities.html">学校施設・媒体</a><a class="chip" href="../framework.html">学校とPTAの境界</a></div></section></aside><div class="article-main"><details class="toc-mobile"><summary>このページの目次（4項目）</summary><ol class="toc-list"><li><a href="#sec-1">特に重要な会議録</a></li><li><a href="#sec-2">行政の認識や問題点が表れている資料</a></li><li><a href="#sec-3">現時点で特に使えるもの</a></li><li><a href="#related-pages-title">関連する整理</a></li></ol></details><div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-07-19"><div class="legacy-body journal-article-main current-location-enabled">
+
+
+<div class="legacy-main">
+
 <section class="journal-article-body">
 <div class="journal-article-wrap">
 <article>
@@ -160,7 +168,7 @@
 <p>会議録中の発言・報告と、本稿による評価は区別して読む必要がある。最終的な法的評価は、会議録だけでなく、関係法令、通知、実際の運用文書と照合して行う。</p>
 </div>
 <p>かなりあります。第一陣として、<strong>単なるPTA行事紹介ではなく、行政が加入・会費・個人情報・学校関与について発言している会議録</strong>を抽出しました。</p>
-<h2>特に重要な会議録</h2>
+<h2 id="sec-1">特に重要な会議録</h2>
 <h3>1　品川区教育委員会「令和6年第7回定例会」2024年6月11日</h3>
 <p>荏原平塚学園PTAについて、次の事実を教育委員会事務局が確認しています。</p>
 <ul>
@@ -239,7 +247,7 @@
 <p>との発言があります。</p>
 <p><strong>PTA会費を学校から分離する理由が、任意性だけでなく会計・服務・内部統制上の危険として行政会議で説明されている資料</strong>です。</p>
 <p><a class="ext-link-mark" href="https://www.city.osaka.lg.jp/kyoiku/page/0000363983.html" rel="noopener noreferrer" target="_blank">大阪市教育委員会会議録を開く</a></p>
-<h2>行政の認識や問題点が表れている資料</h2>
+<h2 id="sec-2">行政の認識や問題点が表れている資料</h2>
 <h3>8　日野町教育委員会「平成30年6月定例会」2018年6月25日</h3>
 <p>就学援助規則に「PTA会費」と明記することの是非を議論しています。</p>
 <p>委員からは、</p>
@@ -282,7 +290,7 @@
 <p>市PTA連絡協議会への分担金は児童生徒の世帯数を基礎にし、教員数は算定に含めない一方、各単位PTAでは教員からもPTA会費を集めていると事務局が説明しています。</p>
 <p>教職員の加入意思確認、職務と会員活動の区別、市P連分担金と単位PTA会費の算定構造を調査する手掛かりになります。</p>
 <p><a class="ext-link-mark" href="https://www.city.nagaokakyo.lg.jp/0000015193.html" rel="noopener noreferrer" target="_blank">長岡京市教育委員会会議録を開く</a></p>
-<h2>現時点で特に使えるもの</h2>
+<h2 id="sec-3">現時点で特に使えるもの</h2>
 <p>法的・行政的な資料価値が高い順に見ると、</p>
 <p><strong>品川区</strong><br/>加入意思なし、学校納付金引落し、くじ引き、校長関与を教育委員会が事実確認。</p>
 <p><strong>松阪市</strong><br/>個人情報提供に関する請願として、加入・非加入者数まで審議。</p>
@@ -305,9 +313,14 @@
 </article>
 </div>
 </section>
-</main>
+</div>
 
-</div></div>
+</div></div></div></div><nav class="pager" aria-label="前後のページ">
+<a class="button button-secondary" href="../journal/yokohama-notice-1965.html"><svg class="flip" aria-hidden="true"><use href="#i-chevron"/></svg><span><small>前へ</small>横浜市教育委員会通知「学教第1965号」の意義</span></a>
+<a class="button button-secondary" href="../journal/pta-unified-legal-theory.html"><span><small>次へ</small>現行法体系と整合するPTA運営の基本モデル</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+</nav>
+<section class="readmore"><h2><svg aria-hidden="true"><use href="#i-book"/></svg>あわせて読みたい</h2><div class="readmore-grid"><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></section></div>
+</main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-org">

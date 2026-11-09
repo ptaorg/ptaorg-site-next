@@ -462,13 +462,13 @@
   }
 
   /* Page-specific styles for guideline.html */
-  .legacy.guideline-editorial main > .wrap:first-child {
+  .legacy.guideline-editorial .legacy-main > .wrap:first-child {
     display: none;
   }
   .legacy.guideline-editorial .section-kicker {
     display: none;
   }
-  .legacy.guideline-editorial .gl-wrap,.legacy.guideline-editorial main > section > .wrap {
+  .legacy.guideline-editorial .gl-wrap,.legacy.guideline-editorial .legacy-main > section > .wrap {
     width: min(calc(100% - 40px), 920px);
     max-width: 920px;
   }
@@ -517,12 +517,12 @@
     border-bottom: 1px solid #c6a34b;
     padding: 24px 0;
   }
-  .legacy.guideline-editorial main a:hover {
+  .legacy.guideline-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }
   @media (max-width: 700px) {
-    .legacy.guideline-editorial .gl-wrap,.legacy.guideline-editorial main > section > .wrap {
+    .legacy.guideline-editorial .gl-wrap,.legacy.guideline-editorial .legacy-main > section > .wrap {
       width: min(calc(100% - 30px), 920px);
     }
   }

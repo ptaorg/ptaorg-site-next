@@ -18,8 +18,7 @@
     padding: 54px 20px 50px;
     border-bottom: 5px solid #d4af37;
   }
-  .legacy .wrap,.legacy 
-  main {
+  .legacy .wrap,.legacy .legacy-main {
     max-width: 1040px;
     margin: 0 auto;
   }
@@ -42,7 +41,7 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
   }
-  .legacy main {
+  .legacy .legacy-main {
     padding: 34px 20px 68px;
   }
   .legacy h1 {
@@ -242,7 +241,7 @@
     .legacy header {
       padding: 38px 18px 36px;
     }
-    .legacy main {
+    .legacy .legacy-main {
       padding: 24px 16px 50px;
     }
     .legacy .card {

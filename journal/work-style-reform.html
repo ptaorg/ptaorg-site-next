@@ -62,6 +62,11 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Zm10-14 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 <div class="dev-strip"><div class="container">新サイト開発版｜<span data-index-date>2026-10-26時点の公開済み索引</span>を表示しています。公開前確認中の原本は掲載していません。</div></div>
@@ -122,22 +127,26 @@
     </nav>
   </div>
 </header>
-<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">働き方改革から見たPTA会費代理徴収の限界</li></ol></nav></div></div>
-<div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-07-19"><div class="legacy-body journal-article-main current-location-enabled">
-
 <main id="main">
-<section class="journal-article-hero">
-<div class="journal-article-wrap">
+<div class="container"><form class="search-panel search-panel-bar" action="../explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="../explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>
+<section class="article-hero"><div class="container">
+<nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="../index.html">トップ</a></li><li><a href="../journal.html">論考</a></li><li aria-current="page">働き方改革から見たPTA会費代理徴収の限界</li></ol></nav>
+<div class="article-hero-grid"><div class="article-hero-text">
+<span class="label">論考</span>
 <h1>働き方改革から見たPTA会費代理徴収の限界</h1>
-<p>学校徴収金でさえ、教職員負担の軽減や透明性の観点から公会計化・学校経由しない支払いが進められています。私団体であるPTA会費を学校事務に残す説明は、より厳しく問われます。</p>
-<div class="journal-article-meta">
-<span>働き方改革</span>
-<span>学校徴収金</span>
-<span>PTA会費</span>
-<span>教職員関与</span>
+<p class="page-lead">学校徴収金でさえ、教職員負担の軽減や透明性の観点から公会計化・学校経由しない支払いが進められています。私団体であるPTA会費を学校事務に残す説明は、より厳しく問われます。</p>
+<p class="article-meta"><span><svg aria-hidden="true"><use href="#i-calendar"/></svg>2026-06-01</span><span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span><span class="label">論考</span></p>
+<p class="page-meta">働き方改革 学校徴収金 PTA会費 教職員関与</p>
 </div>
-</div>
-</section>
+<div class="article-visual"><img src="../assets/img/research-book.webp" alt="" width="278" height="157"></div>
+</div></div></section>
+<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>
+<div class="container"><div class="article-layout"><aside class="article-side"><nav class="side-box side-toc" aria-label="目次"><h2><svg aria-hidden="true"><use href="#i-list"/></svg>目次</h2><ol class="toc-list"><li><a href="#sec-1"><span class="toc-no">01</span><span>序章 教員の時間は、誰の事務に使われているか</span></a></li><li><a href="#sec-2"><span class="toc-no">02</span><span>第1章 学校徴収金の扱いが示す方向</span></a></li><li><a href="#sec-3"><span class="toc-no">03</span><span>第2章 中教審の仕分けにPTA事務を当てはめる</span></a></li><li><a href="#sec-4"><span class="toc-no">04</span><span>第3章 「昔からの助け合い」論の検討</span></a></li><li><a href="#sec-5"><span class="toc-no">05</span><span>第4章 服務の整理——地方公務員法35条との関係</span></a></li><li><a href="#sec-6"><span class="toc-no">06</span><span>第5章 「効率化して残す」路線がたどる袋小路</span></a></li><li><a href="#sec-7"><span class="toc-no">07</span><span>第6章 分離は教職員を守る</span></a></li><li><a href="#sec-8"><span class="toc-no">08</span><span>第7章 分離はPTAをも強くする</span></a></li><li><a href="#sec-9"><span class="toc-no">09</span><span>第8章 移行の手順——働き方改革の文脈を追い風にする</span></a></li><li><a href="#sec-10"><span class="toc-no">10</span><span>第9章 実務で確認する質問</span></a></li><li><a href="#sec-11"><span class="toc-no">11</span><span>第10章 結論——楽にする改革ではなく、やめる改革へ</span></a></li><li><a href="#sec-12"><span class="toc-no">12</span><span>よくある質問</span></a></li><li><a href="#sec-13"><span class="toc-no">13</span><span>提出文書へつなぐ</span></a></li><li><a href="#sec-14"><span class="toc-no">14</span><span>主な根拠資料</span></a></li></ol></nav>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-doc"/></svg>関連資料</h2><ul class="side-links"><li><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/matsuyama-pta-fee-unification-20261013.html">公会計化の名で、なぜPTA会費まで集めるのか<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal/shiga-pta-audit-circular-reasoning-20261013.html">100の屁理屈と循環論法――滋賀県PTA住民監査請求は行政の急所を突いた<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="../journal.html">論考一覧<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li></ul></section>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-tag"/></svg>関連する論点</h2><div class="chip-row"><a class="chip" href="../membership.html">任意加入・退会</a><a class="chip" href="../fee-collection.html">会費徴収</a><a class="chip" href="../privacy.html">個人情報の利用</a><a class="chip" href="../personnel.html">教職員の関与</a><a class="chip" href="../facilities.html">学校施設・媒体</a><a class="chip" href="../framework.html">学校とPTAの境界</a></div></section></aside><div class="article-main"><details class="toc-mobile"><summary>このページの目次（14項目）</summary><ol class="toc-list"><li><a href="#sec-1">序章 教員の時間は、誰の事務に使われているか</a></li><li><a href="#sec-2">第1章 学校徴収金の扱いが示す方向</a></li><li><a href="#sec-3">第2章 中教審の仕分けにPTA事務を当てはめる</a></li><li><a href="#sec-4">第3章 「昔からの助け合い」論の検討</a></li><li><a href="#sec-5">第4章 服務の整理——地方公務員法35条との関係</a></li><li><a href="#sec-6">第5章 「効率化して残す」路線がたどる袋小路</a></li><li><a href="#sec-7">第6章 分離は教職員を守る</a></li><li><a href="#sec-8">第7章 分離はPTAをも強くする</a></li><li><a href="#sec-9">第8章 移行の手順——働き方改革の文脈を追い風にする</a></li><li><a href="#sec-10">第9章 実務で確認する質問</a></li><li><a href="#sec-11">第10章 結論——楽にする改革ではなく、やめる改革へ</a></li><li><a href="#sec-12">よくある質問</a></li><li><a href="#sec-13">提出文書へつなぐ</a></li><li><a href="#sec-14">主な根拠資料</a></li></ol></details><div class="legacy journal-article-main current-location-enabled" data-content-mode="prose" data-reviewed="2026-07-19"><div class="legacy-body journal-article-main current-location-enabled">
+
+<div class="legacy-main">
+
 <section class="journal-article-body">
 <div class="journal-article-wrap">
 <article>
@@ -155,13 +164,13 @@
 <li>確認質問と結論（第10章〜第11章）</li>
 </ol>
 </div>
-<h2>序章　教員の時間は、誰の事務に使われているか</h2>
+<h2 id="sec-1">序章　教員の時間は、誰の事務に使われているか</h2>
 <p>教員の長時間勤務が社会問題として認知されて久しい。中央教育審議会は学校の業務を「学校以外が担うべき業務」「必ずしも教師が担う必要のない業務」「教師の業務だが負担軽減が可能な業務」に仕分けし、文部科学省は業務の削減・移管を繰り返し促してきた。</p>
 <p>この仕分けの光を当てたとき、職員室の中に長年居座ってきた一群の事務が浮かび上がる。PTA会費の徴収と未納管理、PTA文書の印刷・配布・回収、PTA名簿の作成補助、PTA口座の管理補助——いずれも、学校教育そのものではなく、学校とは別の任意団体の内部事務である。</p>
-<h2>第1章　学校徴収金の扱いが示す方向</h2>
+<h2 id="sec-2">第1章　学校徴収金の扱いが示す方向</h2>
 <p>議論の基準点は、学校徴収金の政策的な扱いである。文部科学省は、学校給食費について地方公共団体の会計に組み入れる公会計化を促し、さらに教材費等その他の学校徴収金についても、公会計化や、保護者が学校を経由せず支払う方式への移行を含む負担軽減を求めてきた。</p>
 <p>ここで注意すべきは、学校徴収金は学校教育に必要な費用だという点である。教育に必要な金銭でさえ、教員の本務ではないとして学校の外へ移そうとしている。この方向の中で、教育に必要ですらない任意団体の会費徴収を学校に残すことは、政策の論理と正面から矛盾する。</p>
-<h2>第2章　中教審の仕分けにPTA事務を当てはめる</h2>
+<h2 id="sec-3">第2章　中教審の仕分けにPTA事務を当てはめる</h2>
 <p>中教審の三分類に即して整理すれば、PTA関連の事務は次のように位置づくはずである。</p>
 <ul>
 <li><strong>PTA会費の徴収・管理</strong>——団体自身が担うべき事務。学校以外が担うべき業務の典型。</li>
@@ -170,25 +179,25 @@
 <li><strong>学校とPTAの連絡調整</strong>——地域連携の窓口業務として、限定的に学校側に残り得る。</li>
 </ul>
 <p>つまり、働き方改革の枠組みは、PTA事務の大半を「削減の対象」ではなく「移管の対象」、それも移管先が明確な（PTA自身という）対象として扱うことを求めている。</p>
-<h2>第3章　「昔からの助け合い」論の検討</h2>
+<h2 id="sec-4">第3章　「昔からの助け合い」論の検討</h2>
 <p>代理徴収の維持を支える最有力の論拠は、法律論ではなく情緒論である。「学校とPTAは支え合ってきた」「PTAには学校も世話になっている」——この互酬の感覚は事実の面もあるが、業務の位置づけの曖昧さを正当化しない。</p>
 <p>教職員がPTA事務を担う根拠は、校務としての位置づけか、業務委託等の契約か、職務専念義務の免除か、勤務時間外の私的な協力か、このいずれかでしか説明できない。「お互い様」はこのどれでもない。そして根拠が曖昧なまま事故（誤徴収、情報漏えい、金銭紛失）が起きたとき、責任を負わされるのは、善意で作業してきた個々の教職員である。</p>
-<h2>第4章　服務の整理——地方公務員法35条との関係</h2>
+<h2 id="sec-5">第4章　服務の整理——地方公務員法35条との関係</h2>
 <p>公立学校の教職員は、勤務時間中、職務に専念する義務を負う（地方公務員法35条）。PTA内部事務が校務でないなら、勤務時間中にそれを行うには職務専念義務の免除等の手続が必要になり、校務であると整理するなら、私的団体の内部事務を校務とする根拠が問われる。</p>
 <p>当会の照会に対する回答でも、この整理は分かれている。西宮市のように業務委託契約の受託事務と位置づける例、職専免や兼職の要否を検討するとした例、そもそも教職員は関与しないとする例——共通するのは、「無位置づけのまま続けてよい」とする回答はないことである。</p>
 <p>服務の各論——職務専念義務の構造、職専免・兼職兼業という例外の要件、「校長が認めた」「会則に書いた」が根拠にならない理由——は、別稿「<a href="pta-shokumu-sennen-gimu.html">PTA事務と教職員の職務専念義務</a>」で詳述している。本稿の文脈で確認すべきは、働き方改革（業務の仕分け）と服務規律（時間の使途の規律）が、同じ結論——PTA内部事務を学校から外す——を別々の経路から指していることである。</p>
-<h2>第5章　「効率化して残す」路線がたどる袋小路</h2>
+<h2 id="sec-6">第5章　「効率化して残す」路線がたどる袋小路</h2>
 <p>働き方改革をPTA事務に適用する際、しばしば選ばれるのが効率化路線である。集金袋を口座振替に、紙の名簿を表計算に、印刷配布を学校連絡アプリでの一斉配信に。教職員の作業時間は確かに減る。</p>
 <p>しかし効率化は、混在の構造を温存したまま、その実行コストだけを下げる。むしろ問題を悪化させる面すらある。学校連絡アプリでのPTA通知配信は、学校保有の連絡先の目的外利用を自動化・大規模化する。口座振替への統合は、会費と学校徴収金の分離をいっそう困難にする。効率化された混在は、手作業の混在より解消しにくい。</p>
 <p>働き方改革の本旨は「同じ仕事を楽にやる」ことではなく「学校がやるべきでない仕事をやめる」ことである。PTA事務については、後者しか答えにならない。</p>
 <p>この袋小路は、校務DXの現場で具体的な形を取り始めている。学校連絡アプリでPTA文書を配信し、校務支援システムの帳票でPTA会費を管理し、学校のキャッシュレス収納にPTA会費を載せる——一見スマートなこれらの「効率化」は、学校の情報基盤・徴収基盤とPTA事務の癒着を、紙の時代より深く、不可視な形で固定する。デジタル化された不可分徴収は、解消のコストがより高い不可分徴収である。ツールを入れる前に、そのツールで処理する事務が誰の事務かを仕分けること。DXは分離の後にこそ、PTA自身の道具として活きる。</p>
-<h2>第6章　分離は教職員を守る</h2>
+<h2 id="sec-7">第6章　分離は教職員を守る</h2>
 <p>PTA会費の代理徴収をやめることは、教員の作業時間を減らすだけではない。より本質的には、教職員を法的リスクから外す。会費の誤徴収・未納督促・返還請求・個人情報の流用——これらの紛争が生じたとき、徴収の実務を担っていた教職員と管理職は、当事者として説明を求められる立場に立つ。</p>
 <p>分離後の学校には、この種の紛争が構造的に発生しない。「PTAのことはPTAへ」と言える状態こそが、教職員にとっての最大の負担軽減である。</p>
-<h2>第7章　分離はPTAをも強くする</h2>
+<h2 id="sec-8">第7章　分離はPTAをも強くする</h2>
 <p>PTA側から見ると、代理徴収の喪失は打撃に見える。しかし学校依存の徴収は、PTAから会員との直接の関係を奪ってきた装置でもある。自前で徴収するPTAは、会員が誰かを自分で知り、会費の意味を自分の言葉で説明し、会費額と使途を会員の納得に基づいて決めざるを得なくなる。</p>
 <p>それは負担ではなく、任意加入団体としての自立である。現在は、PTA向けの会費決済サービス、団体名義のネットバンク口座、キャッシュレス集金の選択肢が広がっており、「学校に頼らなければ集められない」という技術的前提は既に崩れている。</p>
-<h2>第8章　移行の手順——働き方改革の文脈を追い風にする</h2>
+<h2 id="sec-9">第8章　移行の手順——働き方改革の文脈を追い風にする</h2>
 <ol>
 <li>学校の業務改善計画・業務仕分けの中に、PTA関連事務を明示的に載せる。</li>
 <li>PTAと学校で、現在学校が担っているPTA事務の棚卸しを行う（徴収・配布・名簿・口座・鍵・印刷等）。</li>
@@ -196,7 +205,7 @@
 <li>経過期間中に残す事務は、業務委託契約・覚書で条件（同意確認・会計区分・責任・情報の扱い）を固定する。</li>
 <li>移管完了後、学校とPTAの関係を連絡調整の窓口に限定して再定義する。</li>
 </ol>
-<h2>第9章　実務で確認する質問</h2>
+<h2 id="sec-10">第9章　実務で確認する質問</h2>
 <ul>
 <li>教職員が担っているPTA関連事務の一覧は作成されているか。</li>
 <li>それぞれの事務の位置づけ（校務・受託・職専免・時間外の私的協力）は文書で説明できるか。</li>
@@ -204,10 +213,10 @@
 <li>学校連絡アプリ・学校口座・学校印刷機のPTA利用は、根拠と範囲が定められているか。</li>
 <li>「効率化」の名で、混在を自動化する変更が進んでいないか。</li>
 </ul>
-<h2>第10章　結論——楽にする改革ではなく、やめる改革へ</h2>
+<h2 id="sec-11">第10章　結論——楽にする改革ではなく、やめる改革へ</h2>
 <p>働き方改革の観点からPTA会費の代理徴収を見たとき、結論は明快である。それは教員の本務ではなく、学校の業務である必要もなく、政策の方向とも整合せず、効率化によって救済することもできない。</p>
 <p>学校は教育に集中し、PTAは自らの会費を自ら集める。この分離は、教職員の時間と法的安全を守り、PTAに自立の基盤を与え、保護者に「学校のお金」と「団体の会費」の区別を返す。働き方改革は、その最後の一押しをする追い風である。</p>
-<h2>よくある質問</h2>
+<h2 id="sec-12">よくある質問</h2>
 <h3>Q1　働き方改革とPTAは、どう関係するのですか。</h3>
 <p>中央教育審議会の答申は、学校・教師の業務を三つに仕分け、学校徴収金の徴収・管理を「基本的には学校以外が担うべき業務」としました。学校自身の徴収金でさえ外す方向なら、別団体であるPTAの会費徴収・名簿管理・文書配布を教員に残す説明は成り立ちません（第1章・第2章）。</p>
 <h3>Q2　教員の負担を減らすために、PTA事務をアプリで効率化するのはだめですか。</h3>
@@ -216,14 +225,14 @@
 <p>学校依存の縮小は、PTAが自らの活動規模を会員の実力に合わせて選び直す機会です。分離はPTAの説明能力と団体自治を強くします（第7章）。移行の設計は<a href="../framework.html">グランドフレームワーク</a>の出口設計を参照してください。</p>
 <h3>Q4　校長に「先生方には手伝わせない」と言われました。これは冷たい対応ですか。</h3>
 <p>いいえ。国の方針と服務規律に沿った、教職員とPTAの双方を守る整理です。学校が担うのは連絡調整と施設・安全の管理であり、PTA内部事務はPTAが担う——この境界の明確化が、持続可能な協力関係の前提です（第6章・第10章）。</p>
-<h2>提出文書へつなぐ</h2>
+<h2 id="sec-13">提出文書へつなぐ</h2>
 <div class="journal-action-links">
 <a href="../fee-collection.html"><strong>会費徴収ページ</strong><span>学校徴収金とPTA会費を分ける実務論点を確認します。</span></a>
 <a href="../personnel.html"><strong>教職員関与ページ</strong><span>職務専念義務、渉外業務、PTA内部事務の分離を確認します。</span></a>
 <a href="../edu-board-separation.html"><strong>教育委員会向け分離指針</strong><span>通知文、全校点検、移行手順の作り方へ進みます。</span></a>
 <a href="../guideline.html#tpl-fee-separation"><strong>PTA会費徴収分離申入書</strong><span>文書、口座、未納管理を分ける申入書です。</span></a>
 </div>
-<h2>主な根拠資料</h2>
+<h2 id="sec-14">主な根拠資料</h2>
 <ul>
 <li><a class="ext-link-mark" href="https://www.mext.go.jp/content/20250616-mxt_zaimu-100002245_2.pdf" rel="noopener noreferrer" target="_blank">学校徴収金の公会計化等の取組の一層の推進について（文部科学省、令和7年4月30日通知）</a></li>
 <li><a class="ext-link-mark" href="https://www.mext.go.jp/content/20201120-mxt_zaimu-000011189_1.pdf" rel="noopener noreferrer" target="_blank">学校徴収金会計業務における教員の負担軽減のための調査研究（文部科学省資料）</a></li>
@@ -234,9 +243,14 @@
 </article>
 </div>
 </section>
-</main>
+</div>
 
-</div></div>
+</div></div></div></div><nav class="pager" aria-label="前後のページ">
+<span></span>
+<a class="button button-secondary" href="../journal/third-party-consent.html"><span><small>次へ</small>学校経由の第三者提供同意とPTA名簿</span><svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+</nav>
+<section class="readmore"><h2><svg aria-hidden="true"><use href="#i-book"/></svg>あわせて読みたい</h2><div class="readmore-grid"><a href="../journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="../journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></section></div>
+</main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-org">

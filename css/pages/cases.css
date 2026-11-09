@@ -272,7 +272,7 @@
     letter-spacing: 0.04em;
   }
 
-  .legacy .cases-editorial main a:hover {
+  .legacy .cases-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

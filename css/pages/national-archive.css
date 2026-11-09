@@ -32,7 +32,7 @@
       sans-serif;
     line-height: 1.9;
   }
-  .legacy .archive-editorial main a,.legacy 
+  .legacy .archive-editorial .legacy-main a,.legacy 
   .archive-editorial .hero a,.legacy 
   .archive-editorial .topbar a,.legacy 
   .archive-editorial .archive-jump a {
@@ -475,7 +475,7 @@
   .legacy .archive-editorial .skip-link:focus {
     transform: translateY(0);
   }
-  .legacy .archive-editorial main {
+  .legacy .archive-editorial .legacy-main {
     display: block;
   }
   .legacy .archive-editorial [id] {

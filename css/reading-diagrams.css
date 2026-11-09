@@ -1,13 +1,13 @@
 /* Scoped editorial refinement: semantic HTML figures remain readable without JS. */
 .legacy[data-reading-design] { --reading-ink:#16334a; --reading-teal:#17675f; --reading-rule:#ccdcd9; }
-.legacy[data-reading-design] main h2:not(:where(nav *, form *, dialog *, .hero *)) {
+.legacy[data-reading-design] .legacy-main h2:not(:where(nav *, form *, dialog *, .hero *)) {
   display:block; width:auto; margin:2.5rem 0 1.25rem; padding:0 0 .85rem;
   border:0; border-bottom:1px solid var(--reading-rule); border-radius:0;
   background:transparent; color:var(--reading-ink) !important; box-shadow:none;
   font-size:clamp(1.25rem,2.1vw,1.75rem); line-height:1.65; letter-spacing:.025em;
 }
-.legacy[data-reading-design] main h3 { line-height:1.75; }
-.legacy[data-reading-design] main a { text-underline-offset:.22em; }
+.legacy[data-reading-design] .legacy-main h3 { line-height:1.75; }
+.legacy[data-reading-design] .legacy-main a { text-underline-offset:.22em; }
 .legacy[data-reading-design] a:focus-visible { outline:3px solid #17675f; outline-offset:4px; }
 .legacy[data-reading-design] .reading-figure {
   box-sizing:border-box; margin:2rem 0 2.5rem; padding:clamp(1rem,3vw,2rem);
@@ -56,7 +56,7 @@
  .legacy[data-reading-design] .reading-figure * { color:#111 !important; }
 }
 /* Older privacy diagrams stay governed by their page stylesheet. */
-.legacy[data-reading-design] main figure.reading-figure { display:block; }
+.legacy[data-reading-design] .legacy-main figure.reading-figure { display:block; }
 
 /* Home whitepaper hierarchy v2 — intentionally visible, without shortening body text. */
 .legacy[data-reading-design].home-page .hc-hero {
@@ -328,7 +328,7 @@
   }
 }
 /* Relationship diagrams: real vector geometry, with a separate narrow layout. */
-.legacy[data-reading-design] main figure.relationship-figure {
+.legacy[data-reading-design] .legacy-main figure.relationship-figure {
  display:block!important; background:#fff!important; border:0!important;
  border-top:2px solid #173650!important; border-bottom:1px solid #d9e5e8!important;
  border-radius:0!important; box-shadow:none!important; padding:24px 0!important;

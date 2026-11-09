@@ -1128,7 +1128,7 @@
   .legacy.guide-board-direct-fixed #board-first-reading {
     display: block;
   }
-  .legacy.guide-board-direct-fixed main,.legacy.guide-board-direct-fixed .board-guide-section,.legacy.guide-board-direct-fixed section {
+  .legacy.guide-board-direct-fixed .legacy-main,.legacy.guide-board-direct-fixed .board-guide-section,.legacy.guide-board-direct-fixed section {
     background: #fff;
   }
   .legacy.guide-board-direct-fixed #board-bluf-v22,.legacy.guide-board-direct-fixed #board-fact-accordion-v31,.legacy.guide-board-direct-fixed .board-guide-section > .wrap,.legacy.guide-board-direct-fixed .board-guide-section .wrap {
@@ -1521,20 +1521,20 @@
     box-shadow: none;
     text-shadow: none;
   }
-  .legacy.guide-board-direct-fixed main a,.legacy.guide-board-direct-fixed main button,.legacy.guide-board-direct-fixed main summary {
+  .legacy.guide-board-direct-fixed .legacy-main a,.legacy.guide-board-direct-fixed .legacy-main button,.legacy.guide-board-direct-fixed .legacy-main summary {
     transition:
       border-color 0.16s ease,
       background-color 0.16s ease,
       color 0.16s ease;
   }
-  .legacy.guide-board-direct-fixed main a:hover,.legacy.guide-board-direct-fixed main button:hover,.legacy.guide-board-direct-fixed main summary:hover {
+  .legacy.guide-board-direct-fixed .legacy-main a:hover,.legacy.guide-board-direct-fixed .legacy-main button:hover,.legacy.guide-board-direct-fixed .legacy-main summary:hover {
     box-shadow: none;
     transform: none;
   }
   .legacy.guide-board-direct-fixed img {
     filter: none;
   }
-  .legacy.guide-board-direct-fixed .page-hero-kicker,.legacy.guide-board-direct-fixed .pta-kicker,.legacy.guide-board-direct-fixed main .section-kicker {
+  .legacy.guide-board-direct-fixed .page-hero-kicker,.legacy.guide-board-direct-fixed .pta-kicker,.legacy.guide-board-direct-fixed .legacy-main .section-kicker {
     display: none;
   }
   .legacy.guide-board-direct-fixed .scope-card-label,.legacy.guide-board-direct-fixed .mou-col-label {
@@ -2046,7 +2046,7 @@
   .legacy.guide-board-editorial .key-materials-grid > a > div {
     padding: 20px 24px;
   }
-  .legacy.guide-board-editorial main a:hover,.legacy.guide-board-editorial main summary:hover {
+  .legacy.guide-board-editorial .legacy-main a:hover,.legacy.guide-board-editorial .legacy-main summary:hover {
     transform: none;
     box-shadow: none;
   }

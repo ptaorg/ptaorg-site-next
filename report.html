@@ -88,7 +88,7 @@
   <script defer src="assets/app.js"></script><script defer src="assets/legacy.js"></script>
 </head>
 <body data-page="legacy" data-section="journal" data-root="">
-  <a class="skip-link" href="#main-content">本文へ移動</a>
+  <a class="skip-link" href="#main">本文へ移動</a>
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-logo" viewBox="0 0 40 36"><path d="M20 1 2 9.5V12h36V9.5Z" fill="currentColor"/><rect x="5" y="14" width="4" height="15" fill="currentColor"/><rect x="13" y="14" width="4" height="15" fill="currentColor"/><rect x="23" y="14" width="4" height="15" fill="currentColor"/><rect x="31" y="14" width="4" height="15" fill="currentColor"/><rect x="2" y="31" width="36" height="4" fill="currentColor"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -104,6 +104,11 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Zm10-14 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 <div class="dev-strip"><div class="container">新サイト開発版｜<span data-index-date>2026-10-26時点の公開済み索引</span>を表示しています。公開前確認中の原本は掲載していません。</div></div>
@@ -164,21 +169,29 @@
     </nav>
   </div>
 </header>
-<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="journal.html">論考</a></li><li aria-current="page">PTA運営の法的構造と是正基準</li></ol></nav></div></div>
-<div class="legacy report-editorial current-location-enabled" data-content-mode="prose" data-reviewed="2026-08-09" data-page-revision="report-20260809-3"><div class="legacy-body report-editorial current-location-enabled">
-
-
-<main class="report-page-main" id="main-content">
-<section aria-labelledby="report-title" class="report-hero">
-<div class="report-shell">
-<p class="report-eyebrow">総合分析レポート</p>
-<h1 id="report-title">PTA運営の法的構造と是正基準</h1>
-<p class="report-deck">明示的な加入意思、会員情報、会費徴収、教職員の職務、学校施設の利用を、別々の注意事項ではなく一つの連続した制度として検証します。結論は、PTAの内部事務をPTAへ戻し、学校が会員・非会員を識別しない構造へ移すことです。</p>
-<p class="report-meta">第2版・公開再検証 2026年8月9日　／　一次資料、行政回答、当委員会の評価を区別して掲載</p>
+<main id="main">
+<div class="container"><form class="search-panel search-panel-bar" action="explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>
+<section class="article-hero"><div class="container">
+<nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="journal.html">論考</a></li><li aria-current="page">PTA運営の法的構造と是正基準</li></ol></nav>
+<div class="article-hero-grid"><div class="article-hero-text">
+<span class="label">総合分析レポート</span>
+<h1>PTA運営の法的構造と是正基準</h1>
+<p class="page-lead">明示的な加入意思、会員情報、会費徴収、教職員の職務、学校施設の利用を、別々の注意事項ではなく一つの連続した制度として検証します。結論は、PTAの内部事務をPTAへ戻し、学校が会員・非会員を識別しない構造へ移すことです。</p>
+<p class="article-meta"><span><svg aria-hidden="true"><use href="#i-calendar"/></svg>2026-08-09</span><span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span><span class="label">論考</span></p>
+<p class="page-meta">第2版・公開再検証 2026年8月9日 ／ 一次資料、行政回答、当委員会の評価を区別して掲載</p>
 </div>
-</section>
+<div class="article-visual"><img src="assets/img/research-book.webp" alt="" width="278" height="157"></div>
+</div></div></section>
+<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>
+<div class="container"><div class="article-layout"><aside class="article-side"><nav class="side-box side-toc" aria-label="目次"><h2><svg aria-hidden="true"><use href="#i-list"/></svg>目次</h2><ol class="toc-list"><li><a href="#executive-conclusion"><span class="toc-no">01</span><span>部分修正ではなく、内部事務の主体をそろえる</span></a></li><li><a href="#operation-chain"><span class="toc-no">02</span><span>五つの問題は、一つの処理から派生する</span></a></li><li><a href="#axis-analysis"><span class="toc-no">03</span><span>法令と公的資料から見た判断基準</span></a></li><li><a href="#evidence-base"><span class="toc-no">04</span><span>一次資料が示すことと、当委員会の評価を混同しない</span></a></li><li><a href="#audit-standard"><span class="toc-no">05</span><span>主体・目的・権限・文書の四点で止めて確認する</span></a></li><li><a href="#operating-model"><span class="toc-no">06</span><span>明示的オプトインとPTA自己徴収を一体で実装する</span></a></li><li><a href="#responsibility"><span class="toc-no">07</span><span>PTAの自治と、学校管理上の責任を分ける</span></a></li><li><a href="#sources-and-limits"><span class="toc-no">08</span><span>資料の権威、日付、判断範囲を示す</span></a></li><li><a href="#report-next-title"><span class="toc-no">09</span><span>根拠と実務を深掘りする</span></a></li></ol></nav>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-doc"/></svg>関連資料</h2><ul class="side-links"><li><a href="journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/matsuyama-pta-fee-unification-20261013.html">公会計化の名で、なぜPTA会費まで集めるのか<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/shiga-pta-audit-circular-reasoning-20261013.html">100の屁理屈と循環論法――滋賀県PTA住民監査請求は行政の急所を突いた<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal.html">論考一覧<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li></ul></section>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-tag"/></svg>関連する論点</h2><div class="chip-row"><a class="chip" href="membership.html">任意加入・退会</a><a class="chip" href="fee-collection.html">会費徴収</a><a class="chip" href="privacy.html">個人情報の利用</a><a class="chip" href="personnel.html">教職員の関与</a><a class="chip" href="facilities.html">学校施設・媒体</a><a class="chip" href="framework.html">学校とPTAの境界</a></div></section></aside><div class="article-main"><details class="toc-mobile"><summary>このページの目次（9項目）</summary><ol class="toc-list"><li><a href="#executive-conclusion">部分修正ではなく、内部事務の主体をそろえる</a></li><li><a href="#operation-chain">五つの問題は、一つの処理から派生する</a></li><li><a href="#axis-analysis">法令と公的資料から見た判断基準</a></li><li><a href="#evidence-base">一次資料が示すことと、当委員会の評価を混同しない</a></li><li><a href="#audit-standard">主体・目的・権限・文書の四点で止めて確認する</a></li><li><a href="#operating-model">明示的オプトインとPTA自己徴収を一体で実装する</a></li><li><a href="#responsibility">PTAの自治と、学校管理上の責任を分ける</a></li><li><a href="#sources-and-limits">資料の権威、日付、判断範囲を示す</a></li><li><a href="#report-next-title">根拠と実務を深掘りする</a></li></ol></details><div class="legacy report-editorial current-location-enabled" data-content-mode="prose" data-reviewed="2026-08-09" data-page-revision="report-20260809-3"><div class="legacy-body report-editorial current-location-enabled">
+
+
+<div class="legacy-main report-page-main" id="main-content">
+
 <div class="report-shell report-shell--document">
-<nav aria-label="このレポートの目次" class="report-toc">
+<nav aria-label="このレポートの目次" class="report-toc legacy-toc">
 <p class="report-toc-title">目次</p>
 <ol>
 <li><a href="#executive-conclusion">結論</a></li>
@@ -487,9 +500,10 @@
 </section>
 </article>
 </div>
-</main>
+</div>
 
-</div></div>
+</div></div></div></div><section class="readmore"><h2><svg aria-hidden="true"><use href="#i-book"/></svg>あわせて読みたい</h2><div class="readmore-grid"><a href="journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></section></div>
+</main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-org">

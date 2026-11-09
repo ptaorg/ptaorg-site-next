@@ -141,7 +141,7 @@
     background: var(--gold);
     border-color: var(--gold);
   }
-  .legacy main {
+  .legacy .legacy-main {
     max-width: 900px;
     margin: 0 auto;
     padding: 34px 22px 60px;
@@ -370,7 +370,7 @@
     .legacy .hero {
       padding: 36px 18px 32px;
     }
-    .legacy main {
+    .legacy .legacy-main {
       padding: 26px 16px 50px;
     }
     .legacy .body-card {

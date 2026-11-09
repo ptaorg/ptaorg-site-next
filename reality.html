@@ -76,7 +76,7 @@
   <script defer src="assets/app.js"></script><script defer src="assets/legacy.js"></script>
 </head>
 <body data-page="legacy" data-section="journal" data-root="">
-  <a class="skip-link" href="#main-content">本文へ移動</a>
+  <a class="skip-link" href="#main">本文へ移動</a>
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-logo" viewBox="0 0 40 36"><path d="M20 1 2 9.5V12h36V9.5Z" fill="currentColor"/><rect x="5" y="14" width="4" height="15" fill="currentColor"/><rect x="13" y="14" width="4" height="15" fill="currentColor"/><rect x="23" y="14" width="4" height="15" fill="currentColor"/><rect x="31" y="14" width="4" height="15" fill="currentColor"/><rect x="2" y="31" width="36" height="4" fill="currentColor"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
@@ -92,6 +92,11 @@
   <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 10h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4Zm10-14 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8L3 12Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="8.5" r="1.5" fill="currentColor"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V12M10 20V6M15 20v-9M20 20V9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 <div class="dev-strip"><div class="container">新サイト開発版｜<span data-index-date>2026-10-26時点の公開済み索引</span>を表示しています。公開前確認中の原本は掲載していません。</div></div>
@@ -152,8 +157,23 @@
     </nav>
   </div>
 </header>
-<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="journal.html">論考</a></li><li aria-current="page">学校とPTAの運用実例を点検する</li></ol></nav></div></div>
-<div class="legacy reality-editorial current-location-enabled" data-content-mode="prose" data-reviewed="2026-08-12"><div class="legacy-body reality-editorial current-location-enabled">
+<main id="main">
+<div class="container"><form class="search-panel search-panel-bar" action="explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>
+<section class="article-hero"><div class="container">
+<nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="journal.html">論考</a></li><li aria-current="page">学校とPTAの運用実例を点検する</li></ol></nav>
+<div class="article-hero-grid"><div class="article-hero-text">
+<span class="label">運用実例｜文書確認の入口</span>
+<h1>学校とPTAの運用実例を点検する</h1>
+<p class="page-lead">入会、会費、個人情報、教職員関与、施設利用。学校とPTAの境界で起きる事象を、印象ではなく文書と記録から確認するための読み方を整理します。</p>
+<p class="article-meta"><span><svg aria-hidden="true"><use href="#i-calendar"/></svg>改訂 2026-08-12</span><span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span><span class="label">論考</span></p>
+<p class="page-meta">最終確認日 2026年8月12日</p>
+</div>
+<div class="article-visual"><img src="assets/img/research-book.webp" alt="" width="278" height="157"></div>
+</div></div></section>
+<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>
+<div class="container"><div class="article-layout"><aside class="article-side"><nav class="side-box side-toc" aria-label="目次"><h2><svg aria-hidden="true"><use href="#i-list"/></svg>目次</h2><ol class="toc-list"><li><a href="#reality-intro-title"><span class="toc-no">01</span><span>再現例は、事実認定の材料ではなく確認質問を作るために使う</span></a></li><li><a href="#method-title"><span class="toc-no">02</span><span>先に事実を固定し、その後に根拠と評価を置く</span></a></li><li><a href="#issue1-title"><span class="toc-no">03</span><span>申込記録が見当たらないまま会員として扱われる</span></a></li><li><a href="#issue2-title"><span class="toc-no">04</span><span>学校徴収金とPTA会費が一つの請求に見える</span></a></li><li><a href="#issue3-title"><span class="toc-no">05</span><span>PTAから連絡が来た事実だけでは、情報の取得経路は分からない</span></a></li><li><a href="#issue4-title"><span class="toc-no">06</span><span>勤務時間中という一点だけでなく、具体的作業の位置付けを確認する</span></a></li><li><a href="#issue5-title"><span class="toc-no">07</span><span>校内にあるという事実と、使用根拠があることを分ける</span></a></li><li><a href="#cross-check-title"><span class="toc-no">08</span><span>五つの論点を、別々の問題として切り離さない</span></a></li><li><a href="#primary-sources-title"><span class="toc-no">09</span><span>条文・所管省庁資料から確認を始める</span></a></li><li><a href="#summary-title"><span class="toc-no">10</span><span>再現例に似ているかではなく、実物文書がつながるかを見る</span></a></li></ol></nav>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-doc"/></svg>関連資料</h2><ul class="side-links"><li><a href="journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/matsuyama-pta-fee-unification-20261013.html">公会計化の名で、なぜPTA会費まで集めるのか<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal/shiga-pta-audit-circular-reasoning-20261013.html">100の屁理屈と循環論法――滋賀県PTA住民監査請求は行政の急所を突いた<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li><li><a href="journal.html">論考一覧<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></li></ul></section>
+<section class="side-box"><h2><svg aria-hidden="true"><use href="#i-tag"/></svg>関連する論点</h2><div class="chip-row"><a class="chip" href="membership.html">任意加入・退会</a><a class="chip" href="fee-collection.html">会費徴収</a><a class="chip" href="privacy.html">個人情報の利用</a><a class="chip" href="personnel.html">教職員の関与</a><a class="chip" href="facilities.html">学校施設・媒体</a><a class="chip" href="framework.html">学校とPTAの境界</a></div></section></aside><div class="article-main"><details class="toc-mobile"><summary>このページの目次（10項目）</summary><ol class="toc-list"><li><a href="#reality-intro-title">再現例は、事実認定の材料ではなく確認質問を作るために使う</a></li><li><a href="#method-title">先に事実を固定し、その後に根拠と評価を置く</a></li><li><a href="#issue1-title">申込記録が見当たらないまま会員として扱われる</a></li><li><a href="#issue2-title">学校徴収金とPTA会費が一つの請求に見える</a></li><li><a href="#issue3-title">PTAから連絡が来た事実だけでは、情報の取得経路は分からない</a></li><li><a href="#issue4-title">勤務時間中という一点だけでなく、具体的作業の位置付けを確認する</a></li><li><a href="#issue5-title">校内にあるという事実と、使用根拠があることを分ける</a></li><li><a href="#cross-check-title">五つの論点を、別々の問題として切り離さない</a></li><li><a href="#primary-sources-title">条文・所管省庁資料から確認を始める</a></li><li><a href="#summary-title">再現例に似ているかではなく、実物文書がつながるかを見る</a></li></ol></details><div class="legacy reality-editorial current-location-enabled" data-content-mode="prose" data-reviewed="2026-08-12"><div class="legacy-body reality-editorial current-location-enabled">
 
 <!-- =========================================
      ヘッダー
@@ -162,21 +182,14 @@
 <!-- =========================================
      ヒーローセクション
      ========================================= -->
-<section class="reality-hero">
-<div class="wrap">
-<p class="reality-hero-kicker">運用実例｜文書確認の入口</p>
-<h1>学校とPTAの運用実例を点検する</h1>
-<p class="reality-hero-lead">入会、会費、個人情報、教職員関与、施設利用。学校とPTAの境界で起きる事象を、印象ではなく文書と記録から確認するための読み方を整理します。</p>
-<p class="reality-hero-meta">最終確認日　<time datetime="2026-08-12">2026年8月12日</time></p>
-</div>
-</section>
-<main id="main-content">
+
+<div class="legacy-main" id="main-content">
 <section aria-labelledby="reality-intro-title" class="reality-intro">
 <p class="section-label">このページの位置づけ</p>
 <h2 id="reality-intro-title">再現例は、事実認定の材料ではなく確認質問を作るために使う</h2>
 <p>このページに掲載する文面や金額は、複数の典型的な論点を説明するために作成した<strong>仮想の再現例</strong>です。特定の学校、PTA、自治体が実際に発出した文書ではありません。文面が似ているという理由だけで、個別の運用を適法・違法と評価することはできません。</p>
 <p>個別事案では、実際の案内、会則、申込記録、口座振替資料、利用目的、提供記録、校務分掌、職務命令、職専免記録、施設使用許可、会計記録を照合します。確認できた事実と、法令・規程を当てはめた評価を分けて記録します。</p>
-<nav aria-label="ページ内目次" class="page-index">
+<nav aria-label="ページ内目次" class="page-index legacy-toc">
 <a href="#method">共通手順</a>
 <a href="#issue1">入会</a>
 <a href="#issue2">会費</a>
@@ -411,12 +424,13 @@
 </div>
 </div>
 </section>
-</main>
+</div>
 <!-- =========================================
      フッター
      ========================================= -->
 
-</div></div>
+</div></div></div></div><section class="readmore"><h2><svg aria-hidden="true"><use href="#i-book"/></svg>あわせて読みたい</h2><div class="readmore-grid"><a href="journal/ichinomiya-pta-settlements-20261108.html">一宮市立小中学校のPTA決算書を読む<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="journal/pta-fee-delegation-origin-local-government-law-20261016.html">PTA会費はいつ「学校の仕事」になったのか――委任方式の成立史と地方自治法235…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a><a href="journal/school-pta-fee-public-duty-mic-mext-ppc-20261016.html">学校はなぜPTA会費を徴収できると考えてきたのか――総務省と文部科学省の対立、学…<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></section></div>
+</main>
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-org">

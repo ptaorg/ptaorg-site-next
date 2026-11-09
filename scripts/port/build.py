@@ -13,6 +13,8 @@ import hashlib, json, os, re, shutil, subprocess, sys, html as htmllib
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit, unquote, quote
 from bs4 import BeautifulSoup
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import frame
 
 ROOT = Path(__file__).resolve().parents[2]
 LEGACY = Path(sys.argv[1]).resolve()
@@ -60,6 +62,18 @@ def resolve(url, page_rel):
             return None
     return target, parts.query, parts.fragment, path.endswith('/') or path == ''
 
+ASCII_RENAME = {}   # legacy path -> output path (non-ASCII file names that GitHub web upload rejects)
+
+def out_name(target):
+    if target.startswith('source-pdfs/') and re.search(r'[^\x00-\x7f]', target):
+        d, name = os.path.split(target)
+        num = re.search(r'_(\d+)\.pdf$', name)
+        kind = '-soudan' if '相談受付記録' in name else ('-kaigiroku' if '会議録' in name else '')
+        new = f'{d}/{os.path.basename(d)}{kind}-{num.group(1) if num else hashlib.sha1(name.encode()).hexdigest()[:6]}.pdf'
+        ASCII_RENAME[target] = new
+        return new
+    return target
+
 def rewrite_url(url, page_rel, refs):
     r = resolve(url, page_rel)
     if r is None:
@@ -76,7 +90,7 @@ def rewrite_url(url, page_rel, refs):
             refs.add(target)
         elif (LEGACY / target.rstrip('/') / 'index.html').is_file():
             refs.add(target.rstrip('/') + '/index.html')
-    rel = os.path.relpath(out, str(PurePosixPath(page_rel).parent) or '.').replace('\\', '/')
+    rel = os.path.relpath(out_name(out), str(PurePosixPath(page_rel).parent) or '.').replace('\\', '/')
     if is_dir and out not in ('index.html',) and not rel.endswith('/'):
         rel += '/'
     if out == 'index.html' and target == '' and rel == 'index.html':
@@ -189,11 +203,18 @@ def rootify(fragment, prefix):
         return fragment
     return re.sub(r'(\s(?:href|src)=")(?!https?:|mailto:|tel:|#|/|data:)([^"]+)"', lambda m: f'{m.group(1)}{prefix}{m.group(2)}"', fragment)
 
+SEARCH = '''<div class="container"><form class="search-panel search-panel-bar" action="{p}explore.html" method="get" role="search"><div class="search-panel-title"><svg aria-hidden="true"><use href="#i-search"/></svg><div><h2>資料・記録を検索する</h2><p>全国の調査・通知・回答・学校資料を横断検索できます。</p></div></div><div class="search-panel-body"><div class="search-field"><label class="sr-only" for="site-q">キーワード</label><svg aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="site-q" name="q" placeholder="例：横浜市、学校徴収、個人情報、教育委員会回答" autocomplete="off"><button type="submit">検索</button></div><div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="municipality">自治体の調査</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option><option value="page">解説・論考ページ</option></select></label><label>論点<select name="topic"><option value="">すべて</option><option value="membership">任意加入・入会</option><option value="fee">会費徴収</option><option value="privacy">個人情報の利用・提供</option><option value="staff">教職員の関与</option><option value="facilities">学校施設の利用</option><option value="correction">行政の指導・是正</option></select></label></div></div><div class="search-panel-side"><a href="{p}explore.html">詳細検索<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></div></form></div>'''
 HEADER = (ROOT / 'partials/header.html').read_text(encoding='utf-8').strip()
 FOOTER = (ROOT / 'partials/footer.html').read_text(encoding='utf-8').strip()
+PINS = json.loads((ROOT / 'data/map-pins.json').read_text(encoding='utf-8'))
+REGIONS = {m['id']: m for m in json.loads((ROOT / 'data/research-map-index.json').read_text(encoding='utf-8'))['municipalities']}
+RESPONSES = {r['no']: r for r in json.loads((ROOT / 'data/board-responses.json').read_text(encoding='utf-8'))['responses']}
+JOURNAL = json.loads((ROOT / 'data/journal-index.json').read_text(encoding='utf-8'))['articles']
+TOPIC_PAGES = [('任意加入・退会', 'membership.html'), ('会費徴収', 'fee-collection.html'), ('個人情報の利用・提供', 'privacy.html'), ('教職員の関与', 'personnel.html'), ('学校施設・媒体', 'facilities.html'), ('学校とPTAの境界', 'framework.html'), ('法制度マップ', 'law-map.html')]
+ROLE_PAGES = [('保護者の方へ', 'guide-parent.html'), ('PTA役員の方へ', 'guide-pta.html'), ('学校・教育委員会の方へ', 'guide-board.html'), ('研究者・記者の方へ', 'guide-research.html'), ('教育委員会へ提出する資料', 'submit-to-board.html')]
 INDEX_DATE = json.loads((ROOT / 'data/research-map-index.json').read_text(encoding='utf-8')).get('updated', '')
 
-def page_shell(*, rel, title, desc, canonical, og_image, jsonld, css_links, inline_styles, body_cls, body_attrs, content, scripts, crumbs, section):
+def page_shell(*, rel, title, desc, canonical, og_image, jsonld, css_links, inline_styles, body_cls, body_attrs, content, scripts, crumbs, section, label, tb, map_info, toc, pairs, related, wide, date, pager):
     p = rel_prefix(rel)
     e = htmllib.escape
     head = [
@@ -216,31 +237,73 @@ def page_shell(*, rel, title, desc, canonical, og_image, jsonld, css_links, inli
         f'  <link rel="stylesheet" href="{p}assets/legacy-theme.css">',
         f'  <script defer src="{p}assets/app.js"></script><script defer src="{p}assets/legacy.js"></script>',
         '</head>']
-    crumb_html = '<li><a href="{}index.html">トップ</a></li>'.format(p)
-    for label, href in crumbs[:-1]:
-        crumb_html += f'<li><a href="{p}{href}">{e(label)}</a></li>' if href else f'<li>{e(label)}</li>'
-    crumb_html += f'<li aria-current="page">{e(crumbs[-1][0])}</li>'
     attrs = ''.join(f' {k}="{e(v)}"' for k, v in body_attrs)
-    has_main = re.search(r'<main\b', content) is not None
-    if has_main:
-        if not re.search(r'<main\b[^>]*\sid=', content):
-            content = re.sub(r'<main\b', '<main id="main"', content, count=1)
-        main_id = re.search(r'<main\b[^>]*\sid="([^"]+)"', content).group(1)
-        body_main = f'<div class="legacy {e(body_cls)}"{attrs}><div class="legacy-body {e(body_cls)}">\n{content}\n</div></div>'
+    hero = frame.hero_html(prefix=p, crumbs=crumbs, label=label, tb=tb, map_info=map_info, date=date, image=not wide)
+    if section in ('journal', 'topics'):
+        hero += '\n<div class="container"><p class="article-notice"><svg aria-hidden="true"><use href="#i-info"/></svg>本稿は当委員会による研究・検討資料です。個別の判断にあたっては、最新の法令・通知と原資料を確認してください。</p></div>'
+    side = '' if wide else frame.side_html(prefix=p, toc=toc, pairs=pairs, related=related, map_info=map_info)
+    legacy = f'<div class="legacy {e(body_cls)}"{attrs}><div class="legacy-body {e(body_cls)}">\n{content}\n</div></div>'
+    search = SEARCH.replace('{p}', p)
+    if side and map_info:
+        # region pages: hero with map, search, content left / info right (自治体別調査の型)
+        layout = f'{search}<div class="container"><div class="detail-layout region-layout"><div class="detail-main">{frame.toc_mobile(toc)}{legacy}</div><aside class="detail-side">{side}</aside></div>{pager}</div>'
+        body_main = f'<main id="main">\n{hero}\n{layout}\n</main>'
+    elif side:
+        # articles: search, hero, notice, table of contents left (研究・論考の型)
+        layout = f'<div class="container"><div class="article-layout"><aside class="article-side">{side}</aside><div class="article-main">{frame.toc_mobile(toc)}{legacy}</div></div>{pager}</div>'
+        body_main = f'<main id="main">\n{search}\n{hero}\n{layout}\n</main>'
     else:
-        main_id = 'main'
-        body_main = f'<main id="main" class="legacy {e(body_cls)}"{attrs}><div class="legacy-body {e(body_cls)}">\n{content}\n</div></main>'
+        layout = f'<div class="legacy-wide">{legacy}</div><div class="container">{pager}</div>'
+        body_main = f'<main id="main">\n{search}\n{hero}\n{layout}\n</main>'
+    main_id = 'main'
     header = rootify(HEADER, p).replace('<span data-index-date>公開済み索引</span>', f'<span data-index-date>{INDEX_DATE}時点の公開済み索引</span>' if INDEX_DATE else '<span data-index-date>公開済み索引</span>')
     body = [
         f'<body data-page="legacy" data-section="{section}" data-root="{p}">',
         f'  <a class="skip-link" href="#{main_id}">本文へ移動</a>',
         header,
-        f'<div class="legacy-crumbs"><div class="container"><nav class="breadcrumb" aria-label="パンくず"><ol>{crumb_html}</ol></nav></div></div>',
         body_main,
         rootify(FOOTER, p),
         *scripts,
         '</body>', '</html>']
     return '\n'.join(x for x in head if x) + '\n' + '\n'.join(body) + '\n'
+
+def sequences(pages):
+    by = {pg['rel']: pg for pg in pages}
+    groups = {}
+    jorder = [a['url'].replace('https://ptaorg.com/', '') for a in JOURNAL]
+    for pg in pages:
+        r = pg['rel']
+        if r.startswith('journal/') and r in jorder:
+            g = 'journal'
+        elif r.startswith('board-responses/'):
+            g = 'responses'
+        elif r.startswith('archive/'):
+            g = '/'.join(r.split('/')[:2])
+        elif r.startswith('research/'):
+            g = 'research'
+        elif r in [h for _, h in TOPIC_PAGES]:
+            g = 'topics'
+        elif r in [h for _, h in ROLE_PAGES]:
+            g = 'roles'
+        else:
+            g = None
+        if g:
+            groups.setdefault(g, []).append(r)
+    order = {'journal': lambda L: sorted(L, key=lambda r: -jorder.index(r)), 'topics': lambda L: [h for _, h in TOPIC_PAGES if h in L], 'roles': lambda L: [h for _, h in ROLE_PAGES if h in L]}
+    nav = {}
+    for g, L in groups.items():
+        L = order.get(g, sorted)(L)
+        for i, r in enumerate(L):
+            short = lambda x: by[x]['name'] if len(by[x]['name']) <= 30 else by[x]['name'][:28] + '…'
+            prev = (short(L[i - 1]), L[i - 1]) if i > 0 else None
+            nxt = (short(L[i + 1]), L[i + 1]) if i + 1 < len(L) else None
+            nav[r] = (prev, nxt)
+    out = {}
+    for pg in pages:
+        prev, nxt = nav.get(pg['rel'], (None, None))
+        rm = [(t, h) for t, h in pg['related'] if not h.startswith(('explore.html', 'municipality.html'))][:3]
+        out[pg['rel']] = (prev, nxt, rm)
+    return out
 
 def redirect_page(rel, target_url):
     p = rel_prefix(rel)
@@ -270,7 +333,6 @@ def main():
         soup = rewrite_html(d['html'], rel, refs)
         for el in soup.select('nav.loc-trail, nav.crumbs, nav.research-breadcrumb, nav.navlinks'):
             el.decompose()
-        content = str(soup)
         # stylesheets
         css_links = []
         for h in d.get('css') or []:
@@ -319,27 +381,75 @@ def main():
                     continue
                 scripts.append('<script>' + JS_ROOT_RE.sub(lambda m: '(window.__ROOT||"")+' + m.group(1), t) + '</script>')
         key, label, hub = section_for(rel)
-        h1 = BeautifulSoup(d['html'], 'html.parser').find('h1')
         title = clean_title(d.get('title'))
-        name = re.sub(r'\s+', ' ', h1.get_text(' ', strip=True)) if h1 else title
+        # legacy <main> becomes a div: the new page owns the single <main> landmark
+        for m in soup.find_all('main'):
+            m.name = 'div'
+            m['class'] = ['legacy-main'] + (m.get('class') or [])
+        tb = frame.extract_title_block(soup, title)
+        name = tb['h1'] or title
         if len(name) > 48:
             name = title if len(title) <= 48 else name[:46] + '…'
         crumbs = [(label, hub), (name, None)]
-        if rel.startswith('archive/') and rel.count('/') >= 2:
-            city = rel.split('/')[1]
-            if (LEGACY / 'archive' / city / 'index.html').is_file() and rel != f'archive/{city}/index.html':
-                cap = CAPTURE / f'archive__{city}__index.html.json'
-                cname = city
-                if cap.is_file():
-                    cname = clean_title(json.loads(cap.read_text(encoding='utf-8')).get('title')).split('｜')[0][:20]
-                crumbs = [(label, hub), (cname, f'archive/{city}/'), (name, None)]
+        map_info, related, pairs = None, [], frame.info_pairs(soup)
+        parts = rel.split('/')
+        region = None
+        if parts[0] in ('archive', 'research') and len(parts) >= 2:
+            slug = parts[1].replace('.html', '')
+            region = REGIONS.get(slug) or REGIONS.get('archive-' + slug)
+        if region:
+            pin = PINS['regions'].get(region['id']) or PINS['prefs'].get(region['prefecture'])
+            map_info = (region['prefecture'], pin, region['name'])
+            if parts[0] == 'archive':
+                if region.get('url'):
+                    related.append((f"{region['name']}の研究ノート", region['url'].lstrip('/')))
+                related.append((f"{region['name']}の調査（自治体別）", f"municipality.html?id={region['id']}"))
+                related.append((f"{region['name']}の他の学校", f"explore.html?tab=school&q={quote(region['name'])}"))
+                pairs = [('都道府県', region['prefecture']), ('自治体', region['name'])] + [p for p in pairs if p[0] != '自治体']
+            else:
+                related.append((f"{region['name']}の調査（自治体別）", f"municipality.html?id={region['id']}"))
+                related.append((f"{region['name']}の学校別資料", f"explore.html?tab=school&q={quote(region['name'])}"))
+            related.append(('全国資料館', 'national-archive.html'))
+        m = re.match(r'board-responses/(\d+)-', rel)
+        if m and int(m.group(1)) in RESPONSES:
+            r = RESPONSES[int(m.group(1))]
+            pin = PINS['responses'].get(str(int(m.group(1)))) or PINS['prefs'].get(r.get('prefecture', ''))
+            map_info = (r.get('prefecture', ''), pin, r['municipality'])
+            pairs = [('都道府県', r.get('prefecture', '')), ('回答元', r['municipality']), ('回答日', r.get('date') or '記載なし'), ('種別', (r.get('typeLabel') or '').replace('A:', '').replace('C:', ''))] + pairs
+            related = [('教育委員会回答データベース', 'board-responses.html'), (f"{r.get('prefecture', '')}の回答を探す", f"explore.html?tab=response&pref={quote(r.get('prefecture', ''))}"), ('照会書・申入書の文例', 'documents.html')]
+        if not related:
+            if key == 'topics':
+                related = [(t, h) for t, h in TOPIC_PAGES if h != rel]
+            elif key == 'roles':
+                related = [(t, h) for t, h in ROLE_PAGES if h != rel]
+            elif key == 'journal':
+                related = [(a['title'][:40] + ('…' if len(a['title']) > 40 else ''), a['url'].replace('https://ptaorg.com/', '')) for a in JOURNAL if not a['url'].endswith('/' + rel)][:5] + [('論考一覧', 'journal.html')]
+            elif key == 'database':
+                related = [('教育委員会回答データベース', 'board-responses.html'), ('行政資料', 'administrative-materials.html'), ('全国の資料を探す', 'explore.html')]
+            elif key == 'resources':
+                related = [('文例・提出書式', 'documents.html'), ('運営チェック', 'audit/'), ('教育委員会へ提出する資料', 'submit-to-board.html')]
+        related = [(t, h) for t, h in related if h.rstrip('/') != rel.replace('index.html', '').rstrip('/')]
+        date = ''
+        for j in d.get('jsonld') or []:
+            mm = re.search(r'"datePublished"\s*:\s*"(\d{4}-\d{2}-\d{2})', j)
+            if mm:
+                date = mm.group(1); break
+        if not date:
+            rv = dict(d.get('bodyAttrs') or []).get('data-reviewed', '')
+            if re.match(r'\d{4}-\d{2}-\d{2}$', rv):
+                date = '改訂 ' + rv
+        toc = frame.build_toc(soup) if not d.get('raw') else []
+        if len(toc) < 3:
+            toc = []
+        content = str(soup)
         canonical = d.get('canonical') or ('https://ptaorg.com/' + rel.replace('index.html', ''))
         og = d.get('ogImage') or ''
         pages_out.append(dict(rel=rel, title=title, desc=d.get('description', ''), canonical=canonical if canonical.startswith('http') else 'https://ptaorg.com' + canonical,
                               og_image=og if og.startswith('http') else ('https://ptaorg.com' + og if og.startswith('/') else og),
                               jsonld=d.get('jsonld') or [], css_links=css_links, inline_styles=inline_styles,
                               body_cls=d.get('bodyClass', ''), body_attrs=d.get('bodyAttrs') or [], content=content,
-                              scripts=scripts, crumbs=crumbs, section=key))
+                              scripts=scripts, crumbs=crumbs, section=key, label=label, tb=tb, map_info=map_info,
+                              toc=toc, pairs=pairs, related=related, wide=bool(d.get('raw')), date=date, name=name))
         all_refs |= refs
         report['ported'] += 1
     # shared inline styles become files
@@ -349,6 +459,7 @@ def main():
         if n >= 2:
             (ROOT / f'css/legacy-inline/{hsh}.css').write_text(prefix_css(txt), encoding='utf-8')
             shared[hsh] = True
+    seq_nav = sequences(pages_out)
     prefixed_cache = {}
     for pg in pages_out:
         links = list(pg['css_links'])
@@ -362,7 +473,9 @@ def main():
                 styles.append(prefixed_cache[hsh])
         html_out = page_shell(rel=pg['rel'], title=pg['title'], desc=pg['desc'], canonical=pg['canonical'], og_image=pg['og_image'],
                               jsonld=pg['jsonld'], css_links=links, inline_styles=styles, body_cls=pg['body_cls'], body_attrs=pg['body_attrs'],
-                              content=pg['content'], scripts=pg['scripts'], crumbs=pg['crumbs'], section=pg['section'])
+                              content=pg['content'], scripts=pg['scripts'], crumbs=pg['crumbs'], section=pg['section'],
+                              label=pg['label'], tb=pg['tb'], map_info=pg['map_info'], toc=pg['toc'], pairs=pg['pairs'], related=pg['related'], wide=pg['wide'],
+                              date=pg['date'], pager=frame.pager_html(prefix=rel_prefix(pg['rel']), prev=seq_nav[pg['rel']][0], nxt=seq_nav[pg['rel']][1], readmore=seq_nav[pg['rel']][2]))
         (ROOT / pg['rel']).write_text(html_out, encoding='utf-8')
     # copy referenced non-html files (and html files that are not ported pages, e.g. templates)
     ported = {pg['rel'] for pg in pages_out}
@@ -381,7 +494,7 @@ def main():
             more = set(); port_js(r, more); queue.extend(more - seen); continue
         if r.endswith('.css'):
             more = set(); port_css('/' + r, 'index.html', more); queue.extend(more - seen); continue
-        dst = ROOT / r
+        dst = ROOT / out_name(r)
         if dst.exists() and r.startswith('data/') and r.endswith('.json'):
             continue
         dst.parent.mkdir(parents=True, exist_ok=True)

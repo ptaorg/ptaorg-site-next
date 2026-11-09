@@ -616,7 +616,7 @@
     text-underline-offset: 0.18em;
     border-bottom: 0;
   }
-  .legacy .board-responses-editorial main a:hover {
+  .legacy .board-responses-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

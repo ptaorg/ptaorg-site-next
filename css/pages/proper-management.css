@@ -16,7 +16,7 @@
     display: none;
   }
 
-  .legacy.proper-management-editorial main {
+  .legacy.proper-management-editorial .legacy-main {
     background: var(--pm-paper);
   }
 
@@ -467,7 +467,7 @@
     text-underline-offset: 4px;
   }
 
-  .legacy.proper-management-editorial main a:hover {
+  .legacy.proper-management-editorial .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

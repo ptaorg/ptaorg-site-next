@@ -10,11 +10,11 @@
     color: var(--ri-ink);
   }
 
-  .legacy.ri-editorial main {
+  .legacy.ri-editorial .legacy-main {
     display: block;
   }
 
-  .legacy.ri-editorial main [id] {
+  .legacy.ri-editorial .legacy-main [id] {
     scroll-margin-top: 92px;
   }
 

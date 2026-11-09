@@ -32,6 +32,8 @@ const transform=parser(root=>{
     sel.prepend(parser.combinator({value:' '}));
     sel.prepend(parser.className({value:'__SCOPE__'}));
   });
+  // legacy <main> elements are rendered as div.legacy-main
+  root.walkTags(t=>{if(t.value.toLowerCase()==='main')t.replaceWith(parser.className({value:'legacy-main'}));});
 });
 export function prefixCss(css){
   const root=postcss.parse(css);

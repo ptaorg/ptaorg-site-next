@@ -11,12 +11,12 @@
     color: var(--ec-body);
   }
 
-  .legacy.ec-page main {
+  .legacy.ec-page .legacy-main {
     display: block;
     background: #fff;
   }
 
-  .legacy.ec-page main [id] {
+  .legacy.ec-page .legacy-main [id] {
     scroll-margin-top: 92px;
   }
 
@@ -171,14 +171,14 @@
     margin-bottom: 0;
   }
 
-  .legacy.ec-page main a {
+  .legacy.ec-page .legacy-main a {
     color: #0d5977;
     text-decoration-color: #9ab9c5;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
   }
 
-  .legacy.ec-page main a:hover,.legacy.ec-page main a:focus-visible {
+  .legacy.ec-page .legacy-main a:hover,.legacy.ec-page .legacy-main a:focus-visible {
     color: #8a4f00;
     text-decoration-color: currentColor;
   }
@@ -509,7 +509,7 @@
       break-inside: avoid;
     }
 
-    .legacy.ec-page main a {
+    .legacy.ec-page .legacy-main a {
       color: inherit;
     }
   }

@@ -11,7 +11,7 @@
     color: var(--cr-body);
   }
 
-  .legacy .case-reading-page main {
+  .legacy .case-reading-page .legacy-main {
     background: #fff;
   }
 
@@ -121,14 +121,14 @@
     line-height: 2.05;
   }
 
-  .legacy .case-reading-page main a {
+  .legacy .case-reading-page .legacy-main a {
     color: #0e5878;
     text-decoration-color: #9ebdca;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
   }
 
-  .legacy .case-reading-page main a:hover {
+  .legacy .case-reading-page .legacy-main a:hover {
     color: var(--cr-accent);
     text-decoration-color: var(--cr-accent);
   }

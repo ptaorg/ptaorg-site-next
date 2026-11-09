@@ -247,7 +247,7 @@
     border-top: 1px solid #dbe4ee;
   }
 
-  .legacy .submission-main main a:hover {
+  .legacy .submission-main .legacy-main a:hover {
     transform: none;
     box-shadow: none;
   }

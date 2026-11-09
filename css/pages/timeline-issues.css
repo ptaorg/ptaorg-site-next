@@ -11,7 +11,7 @@
     color: var(--ti-body);
   }
 
-  .legacy .ti-page main {
+  .legacy .ti-page .legacy-main {
     background: #fff;
   }
 
@@ -137,14 +137,14 @@
     line-height: 2.05;
   }
 
-  .legacy .ti-page main a {
+  .legacy .ti-page .legacy-main a {
     color: #0e5878;
     text-decoration-color: #9ebdca;
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
   }
 
-  .legacy .ti-page main a:hover {
+  .legacy .ti-page .legacy-main a:hover {
     color: var(--ti-accent);
     text-decoration-color: var(--ti-accent);
   }

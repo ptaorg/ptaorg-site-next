@@ -29,7 +29,7 @@
   .legacy .optin-priority-page .op-narrow {
     width: 100%;
   }
-  .legacy .optin-priority-page main > .op-wrap {
+  .legacy .optin-priority-page .legacy-main > .op-wrap {
     width: min(calc(100% - 48px), 900px);
   }
 
@@ -743,7 +743,7 @@
     .legacy .optin-priority-page .op-wrap {
       width: min(calc(100% - 32px), 1120px);
     }
-    .legacy .optin-priority-page main > .op-wrap,.legacy 
+    .legacy .optin-priority-page .legacy-main > .op-wrap,.legacy 
     .op-source .op-wrap {
       width: min(calc(100% - 32px), 900px);
     }
