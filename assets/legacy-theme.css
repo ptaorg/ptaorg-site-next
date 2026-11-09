@@ -195,3 +195,67 @@
     padding-bottom:18px!important;
   }
 }
+
+
+/* v0.9 — prevent the prose-mode reset from collapsing card interiors.
+   The migrated documents kept their borders but lost left/right padding. */
+#main .article-main .legacy-body :is(
+  .act-card,.stat-card,.thesis-card,.step-card,
+  .case-card,.resource-card,.research-card,.documents-card,
+  .related-link-card,.board-guide-card,.cat-doc-item,
+  .archive-school-card,.yokomusubi-card,.ref-item,
+  .cl20-item,.scope-item,.check-item,.principle
+){
+  box-sizing:border-box!important;
+  padding:24px 28px!important;
+  min-width:0!important;
+  overflow-wrap:break-word;
+}
+#main .article-main .legacy-body :is(
+  .act-grid,.stat-grid,.thesis-grid,.resource-grid,.card-grid,
+  .documents-grid,.related-links-grid
+){
+  gap:18px!important;
+}
+#main .article-main .legacy-body .act-card > :first-child,
+#main .article-main .legacy-body .stat-card > :first-child{margin-top:0!important}
+#main .article-main .legacy-body .act-card > :last-child,
+#main .article-main .legacy-body .stat-card > :last-child{margin-bottom:0!important}
+#main .article-main .legacy-body .act-card .num{
+  display:block;
+  margin:0 0 8px!important;
+  padding:0!important;
+}
+#main .article-main .legacy-body .act-card strong{
+  display:block;
+  margin:0 0 10px!important;
+}
+#main .article-main .legacy-body .act-card p{
+  margin:0!important;
+  line-height:1.85!important;
+}
+/* Keep all imported article roots flush with the text column rather than
+   applying the original centered 900px shell a second time. */
+#main .article-layout .article-main,
+#main .article-main > .legacy,
+#main .article-main > .legacy .legacy-body,
+#main .article-main > .legacy .legacy-main{
+  min-width:0!important;
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+#main .article-main > .legacy .legacy-main{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+@media(max-width:760px){
+  #main .article-main .legacy-body :is(
+    .act-card,.stat-card,.thesis-card,.step-card,
+    .case-card,.resource-card,.research-card,.documents-card,
+    .related-link-card,.board-guide-card,.cat-doc-item,
+    .archive-school-card,.yokomusubi-card,.ref-item,
+    .cl20-item,.scope-item,.check-item,.principle
+  ){padding:20px!important}
+}
