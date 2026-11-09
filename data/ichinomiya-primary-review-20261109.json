@@ -1,0 +1,1769 @@
+{
+  "title": "一宮市公開済みPTA総会・会計原本の頁別概観と学校別の法的確認台帳",
+  "reviewDate": "2026-11-09",
+  "basis": "原本取得後、変更せずSHA-256を既存の原本台帳と照合。42件全370頁を6面コンタクトシートで目視概観し、重要頁は個別拡大確認した。",
+  "sourceManifest": "https://github.com/ptaorg/ptaorg.github.io/blob/main/data/ichinomiya-original-pdf-sha256-20261109.json",
+  "totalSchools": 21,
+  "totalFiles": 42,
+  "totalPages": 370,
+  "totalBytes": 109632392,
+  "privacyConclusion": "全頁の低・中解像度の概観は完了したが、原本に成人役員・教職員の氏名等、黒塗りされていない情報を含むため、各ファイルの個人情報不存在・追加再配布の適法性は認定しない。写真等も含め個別追加精査が必要。",
+  "sourceAvailability": "原本42件は従前からGoogle Driveの anyone:reader が確認されたリンク。原本・共有設定・公開権限は変更していない。",
+  "separateConclusion": "資料の存在・予算記載・役員名簿の存在と、公立学校が当該団体事務を現に処理した事実や、その違法性は区別する。",
+  "scopeLimit": "一宮市立全61校の網羅検証ではなく、開示PDF原本21校42件のみ。",
+  "schools": [
+    {
+      "school": "宮西小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 4,
+          "accountingPages": "p2",
+          "accountingDescription": "積立金決算のみ（PTA会費決算は開示なし）",
+          "sourceUrl": "https://drive.google.com/file/d/1XXriX5lfJsYA6-x9hpdRCOmlCPLHtgYh/view",
+          "sha256": "acc70f9d9957f4bdb0f030199758fb7938e5ba51bf140d77e32dee291ec9dc16"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 8,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 会費決算／p3 積立金決算",
+          "sourceUrl": "https://drive.google.com/file/d/13Hwfr4bO9QHSXhugYtgK-ly-p_deNoD3/view",
+          "sha256": "e0b1a7cf6c96b4d110f57099259a433010ce30706afae5a1c88e1efa11a784cc"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "貴船小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 5,
+          "accountingPages": "p2",
+          "accountingDescription": "会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1BNc_UfyOJ-MwgHUV-Tk71JjB7D2W_A9p/view",
+          "sha256": "dd0e02041247b984c5081344cd44b888a90427826110cacd4e3ed120cf43a1de"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 5,
+          "accountingPages": "p2",
+          "accountingDescription": "会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1vlXLNzJuk43151jiYIfPoO5y2x4XJTxC/view",
+          "sha256": "0170cf0c71997530ee7af7d3c06131cfa3734a338ce1d42ebf415c89f3a0e007"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "浅野小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 8,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p3 PTA会計／p4 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1vdHG6I-z5T5Bn5axpcPDZY7I4HQr0j5c/view",
+          "sha256": "ca6068128698eeb1920cb58dd82e2fd8cda167a1ce43d7c63bcf8ccdb1d620fe"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 8,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p3 PTA会計／p4 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/12Ky2Gn8NgB6EQ-fYnTqUBjWjLD0f40ab/view",
+          "sha256": "aa0161979311574bf25e7f1458b85bb816ff21b2eecf8d765c2a32d8771390e4"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "丹陽西小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 10,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 PTA会計／p3 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1w4ljJtSc5l4-vvHQcBc2yNA9Rq1wJz6z/view",
+          "sha256": "e71cf0600fc9b755e8c56fd06053ffed4e2aa2723c62102bbd843198a104e96b"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 9,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 PTA会計／p3 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/18WmScmBf9wbDz6M2tS8eB_80E-efk3MA/view",
+          "sha256": "5b4ec095ffc8ed01dd83de32500c9029ddb51a3a1ef1e5a7a5f5288b0ffda8f4"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "丹陽南小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 10,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p4 PTA会計（横向き）／p3 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1f_Cb5pZEhNAQrnTscFaN4flsm3BoiAwe/view",
+          "sha256": "85ada4b5cb3e4b08c52bf6f8617c22e3cb83f82075dffead5ea9cb06a21a7e1e"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 9,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p3 PTA会計（横向き）／p4 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1sLQ9E3h0H4kLnPns5-BY_VOzyrtpd7GZ/view",
+          "sha256": "059024bc2ccb38966e34072bf9ad00e153c9e4fc43bfc5cf528e957a285330be"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "浅井南小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 6,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 会費会計／p3 特別会計",
+          "sourceUrl": "https://drive.google.com/file/d/16Ms_h1x44pP7t_s9byqCoInYZ88INe5q/view",
+          "sha256": "f12be46b01e39855478843c0ee238530e45d81b724bf0d84f9798d3ecc0d619f"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 6,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 会費会計／p3 特別会計",
+          "sourceUrl": "https://drive.google.com/file/d/12BSwOoXr2vWA_tjF_kKnCvv6ujKhMl6E/view",
+          "sha256": "4df15ab74805caf58714dce1984952086283d2f41d86f91b864774e2cf8278da"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "北方小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 7,
+          "accountingPages": "p3",
+          "accountingDescription": "PTA会計決算書",
+          "sourceUrl": "https://drive.google.com/file/d/19epvyTPxw30eN-zKLXWxOGq4Vt-7-2CH/view",
+          "sha256": "aa2347be8c28db94fcc12537280cd57498bd5f4306f6bc0d2fc5a443adb13af9"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 7,
+          "accountingPages": "p3",
+          "accountingDescription": "PTA会計決算書",
+          "sourceUrl": "https://drive.google.com/file/d/1iRlNQk_NbwDKF6C-gF1SlE-Q3btBow_1/view",
+          "sha256": "27812dfb12d83ea1aeaddb95e48f3a6cad51e789b521a0fdeb7fbe52866eb5d3"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "大和西小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 1,
+          "accountingPages": "単独ファイル",
+          "accountingDescription": "会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1UUq9w6s3yPn-mibTBC7gZkzh6LapGQzg/view",
+          "sha256": "76d25028aec53132d112cf5b8e53672ee51c33fa12d518520de8350c442b6051"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 1,
+          "accountingPages": "単独ファイル",
+          "accountingDescription": "会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1NawTE-ZW9Ec1JfkMBru1IKYkwtmfThzl/view",
+          "sha256": "ec93b229fe3ae8da8c5b7d3e2955324513cd248702f93a0d090e86a5df56bef9"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "今伊勢小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 10,
+          "accountingPages": "p3–p5",
+          "accountingDescription": "p3 会費／p4 協力費／p5 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1m7PMnKzl1mwRZLrrMPdj8Kq4MeLWjgje/view",
+          "sha256": "06bed0d68b2a0cd3ecfed02abc43adfe48093faa42445444d43e60411198d683"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 10,
+          "accountingPages": "p3–p5",
+          "accountingDescription": "p3 会費／p4 協力費／p5 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1N2UAO4p9vtY8pQrBcu-tj6AtZhuAeDOU/view",
+          "sha256": "e6800e2de98f8187d7e00493415c2f9b92531497eefaa1181c3656969f78ebdd"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "奥小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 10,
+          "accountingPages": "p2, p8",
+          "accountingDescription": "p2 PTA会計／p8 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1n0DMvalWl2yKhQpHUoxM48HEEd_BHW7V/view",
+          "sha256": "410a8566946e1e2446951efc879ca192cc5c54c2ae9f81c2f5f5084462415512"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 10,
+          "accountingPages": "p2, p8",
+          "accountingDescription": "p2 PTA会計／p8 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1y4b6pBVPgpIvBM1VDwWKUOzZ-OQHZiBk/view",
+          "sha256": "fbd988ad55f1013319faf68d40cf54d44d32771e48cbc282e775f9eb0f57ef97"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "萩原小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 11,
+          "accountingPages": "p2",
+          "accountingDescription": "会費会計・協力費会計",
+          "sourceUrl": "https://drive.google.com/file/d/1QZ6atPTTz8gvspBIMUm8OTCoSTuBCTuM/view",
+          "sha256": "95561bd8c410fea21f96ea9a31788a5d17993fa80c8be5a73bd16881af8d64d2"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 6,
+          "accountingPages": "p2",
+          "accountingDescription": "会費会計・協力費会計",
+          "sourceUrl": "https://drive.google.com/file/d/12apE6kZr7Avlw9M8e5AjRaTx_a4TvakL/view",
+          "sha256": "307bf8ef6936a89071eec59088099be6ce3175a24fbca09e851760b10bbe0a07"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "中島小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 13,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p3 PTA会計／p4 資源回収・同窓会",
+          "sourceUrl": "https://drive.google.com/file/d/1dZ2Z3bZ3OegNkgBdQGPu7xebWYU9lCuK/view",
+          "sha256": "784e3d3d8b1eefa098287c770c5ee19720a3d08c0e3b912ee4f9de854d96a07e"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 13,
+          "accountingPages": "p3, p4",
+          "accountingDescription": "p3 PTA会計／p4 資源回収・同窓会",
+          "sourceUrl": "https://drive.google.com/file/d/1TmRfeQ2sERQL5SvYC4X_MizO1_Em9-gb/view",
+          "sha256": "9f0ecaacc3adaa77665c737c62db2e4c369d2c3472ca76199c5d1fe8b2f6db0a"
+        }
+      ],
+      "confirmedSourceObservations": [
+        {
+          "years": [
+            "R6"
+          ],
+          "pages": [
+            10
+          ],
+          "type": "学校施設・会員協力費",
+          "finding": "PTA規約案第28条に「本会の事務所は一宮市立中島小学校に置くものとする」と記載。第24条には会費・協力費の負担基準を定める記載がある。",
+          "legalNote": "団体規約の記載だけで校長の施設使用許可、学校による事務執行、会費徴収実態は確定しない。学校施設の利用根拠と学校職員の関与を別途確認。"
+        },
+        {
+          "years": [
+            "R6"
+          ],
+          "pages": [
+            12
+          ],
+          "type": "団体個人情報規則",
+          "finding": "「PTA個人情報取扱規則（案）」にPTA役員名簿・会員名簿・行事記録等のデータベース、本人への利用目的明示、会費徴収・役員選出等の利用目的を規定。",
+          "legalNote": "団体の内部規則の存在は学校側の個人情報取得・提供・利用の根拠を創設しない。学校の所掌事務と実際の名簿の取得元・取扱いを別途確認。"
+        }
+      ],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "富士小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 7,
+          "accountingPages": "なし",
+          "accountingDescription": "議案2（決算）のページが開示文書に含まれていない",
+          "sourceUrl": "https://drive.google.com/file/d/1guCFr3uBjpkalOw3wBf_Ujfgh_4Jg2cv/view",
+          "sha256": "05832db87b28225772a06fd79f686026c97f9e3ec334382967a3a106a235ed1f"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 10,
+          "accountingPages": "p3–p5",
+          "accountingDescription": "p3 一般会計／p4 賛助会計／p5 特別会計",
+          "sourceUrl": "https://drive.google.com/file/d/19MSD024oVGw2r_5Rhe7MmWb3Ba1lv0ll/view",
+          "sha256": "1272d359f63d7b08377ff1f21463fd930e8faaf44e6273e48021b8887eb7a31c"
+        }
+      ],
+      "confirmedSourceObservations": [
+        {
+          "years": [
+            "R6"
+          ],
+          "pages": [
+            6
+          ],
+          "type": "会費予算・教職員区分",
+          "finding": "PTA会費予算579,000円。「1,500円×（P360＋T26）」と記載。",
+          "legalNote": "P/Tの略号と基礎数値、本人による入会申込記録、実徴収主体を確認する必要がある。学校が職務として徴収した事実はこの予算表だけでは確認できない。"
+        },
+        {
+          "years": [
+            "R7"
+          ],
+          "pages": [
+            9
+          ],
+          "type": "会費予算・教職員区分",
+          "finding": "PTA会費予算576,000円。「1,500円×（P320＋T24）」と記載。",
+          "legalNote": "職員の会員資格・支払意思と徴収方法の原資料による確認が必要。"
+        }
+      ],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "浅井中小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 9,
+          "accountingPages": "p4, p5",
+          "accountingDescription": "p4 PTA会費会計／p5 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1I1rqUgKmJnVxassrndrDDrspdMZi8ANh/view",
+          "sha256": "39406aad3313426e6c6fa9e96bd0869208fcdf9424969384ec991162c6544ff5"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 12,
+          "accountingPages": "p4, p5",
+          "accountingDescription": "p4 PTA会費会計／p5 資源回収",
+          "sourceUrl": "https://drive.google.com/file/d/1F0Na0uEAXaI20VjQ0BvS7PoxFphs55E8/view",
+          "sha256": "209e0ea40ccbed69d9842bd7a6ca2df5d12bbe15c3aab8afdaa348713c7c9ad7"
+        }
+      ],
+      "confirmedSourceObservations": [
+        {
+          "years": [
+            "R7"
+          ],
+          "pages": [
+            6
+          ],
+          "type": "役員選出・会計",
+          "finding": "PTA規約改訂に関する議案と役員募集への案内が掲載されている。",
+          "legalNote": "団体の役員選任・学校側関与の有無は個別資料と運用記録で判断。"
+        }
+      ],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "小信中島小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 20,
+          "accountingPages": "p16, p17",
+          "accountingDescription": "p16 PTA会計／p17 特別会計",
+          "sourceUrl": "https://drive.google.com/file/d/19jtun33mSRMk61pZU_911OM_Tn1Qsrzp/view",
+          "sha256": "bbb535da1c33062256ebb9abfd094fbf99c373cbc45873d1bc4bd93da74d2314"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 17,
+          "accountingPages": "p13, p14",
+          "accountingDescription": "p13 PTA会計／p14 特別会計",
+          "sourceUrl": "https://drive.google.com/file/d/17rVd-wyzAVHcYdkRsx6PrKcw9KveN-uG/view",
+          "sha256": "2103789c4d689ade4388ce99964fd6f5cd8a10d8c88d2cd4e68a1fb0f661c70f"
+        }
+      ],
+      "confirmedSourceObservations": [
+        {
+          "years": [
+            "R6"
+          ],
+          "pages": [
+            3
+          ],
+          "type": "会費規約改正",
+          "finding": "会則第3条の会費を「在学する児童の家庭数及び教職員1人につき年額3,000円」から「年額2,400円」に改定する議案と理由。",
+          "legalNote": "家族・教職員が当然に加入した事実や学校職員が代理徴収した事実はこの文言だけで確定しない。入会契約・実際の人数・徴収経路を確認。"
+        }
+      ],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "開明小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 8,
+          "accountingPages": "p4–p5",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/16fc7z8h7-C5sg2kSh7ngHq2lIkPer6b3/view",
+          "sha256": "c340773e5954ac4573cfc1ccdff6d30344fba797ab10103f7df202a8cf61eda8"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 8,
+          "accountingPages": "p4–p5",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/15V938jEbtvNF1rZdYKARJuORx8ywNaqn/view",
+          "sha256": "4785487c9bd63109d82d99e6990a444ff349ccfc86752b2ea3343035a80da1e7"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "木曽川西小",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 20,
+          "accountingPages": "p7",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1d6gCZcJsznReHoc0RIRI3WPV8gq5ES_A/view",
+          "sha256": "c65cff588d2ecd74ad6d7e8ffe25e4c7cfd5501f6fec0baa1c99c5c9018b3e9f"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 19,
+          "accountingPages": "p6",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1GLiumLNnnRzCN77L4z3vvM7a29Q_NJiQ/view",
+          "sha256": "dbc346d6993fec873f50fe69f0b9ed8ae385b010bdd2350ba2afcc176e155712"
+        }
+      ],
+      "confirmedSourceObservations": [
+        {
+          "years": [
+            "R6"
+          ],
+          "pages": [
+            19,
+            20
+          ],
+          "type": "役員選出",
+          "finding": "「役員選出のご案内（案）」の立候補・くじ引き・事前除外申請。妊娠を除外事由とし、くじ引き不参加時の代理抽選、選出後は原則辞退不可との記載。",
+          "legalNote": "これは団体内部の役員選出に関する文書である。学校が候補者名簿を取得・作成・配布・保管したか、妊娠等の事情を誰が収集したかは未確認。妊娠中の特定個人の情報が現に収集・流出した事実までは示さない。"
+        },
+        {
+          "years": [
+            "R7"
+          ],
+          "pages": [
+            18,
+            19
+          ],
+          "type": "役員選出",
+          "finding": "前年度と同様のくじ引き、妊婦を除外事由とする申請、代理抽選、選出後の原則辞退不可に関する案内。地区委員の選出結果を学校へ報告する旨の記載。",
+          "legalNote": "学校への報告について受領主体・用途・所掌事務・個人情報利用目的を確認。案内の存在だけで実施状況は確定しない。"
+        },
+        {
+          "years": [
+            "R7"
+          ],
+          "pages": [
+            11
+          ],
+          "type": "会費・規約",
+          "finding": "規約改正案に月額300円から200円への会費引下げが明記。",
+          "legalNote": "会費水準を示すだけで、学校による徴収や自動加入の証拠ではない。"
+        }
+      ],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "北部中",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 8,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 協力費／p3 生徒活動費",
+          "sourceUrl": "https://drive.google.com/file/d/1OLuE5TbpcFAqPTh9QkhlXuAg815DR-bm/view",
+          "sha256": "fa70067fd2a5e9e76e87394192e8d112a2dfe36995d8919ebe626951fdcb9966"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 7,
+          "accountingPages": "p2, p3",
+          "accountingDescription": "p2 協力費／p3 生徒活動費",
+          "sourceUrl": "https://drive.google.com/file/d/1AyEZQnwBS8HiwLR17DSyO5NlBkPKHZgZ/view",
+          "sha256": "c79f67cc21a3605e9142338d25a04af336f3aa5c4c12d1621f38193c5e214d34"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "南部中",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 5,
+          "accountingPages": "p2",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1pp1lpai5igf21UAd0wJVIZSwbWl6g_GX/view",
+          "sha256": "8dbce2519c342f50d418c838b182f5474d55c27d0f69a7e13b1fa89f6d9b9676"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 5,
+          "accountingPages": "p2",
+          "accountingDescription": "PTA会計決算報告",
+          "sourceUrl": "https://drive.google.com/file/d/1CIe-uTUtp9a0kpA45wC1CQ8BpcqsmdTI/view",
+          "sha256": "ca428e38bfe8dca86590b5dcb3f32ab6aef971264c3f758df178020561791dd0"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "葉栗中",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 8,
+          "accountingPages": "p2",
+          "accountingDescription": "PTA会計決算報告書",
+          "sourceUrl": "https://drive.google.com/file/d/1ld3ohjpG4xkBOPAawquydkezkXMJTCeu/view",
+          "sha256": "b4fad2c3f42b460a15077e416580a524e20087f3f51a8a53f47377f03e86535a"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 8,
+          "accountingPages": "p2",
+          "accountingDescription": "PTA会計決算報告書",
+          "sourceUrl": "https://drive.google.com/file/d/1DBjAE9GijR2VFATg9MLR3WMs1lj5Abol/view",
+          "sha256": "5b2562f3b9737dd3bb275b5bbef29b4ddcb888b7df161ee66f4e3c575113be2f"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    },
+    {
+      "school": "大和中",
+      "documentCount": 2,
+      "periods": [
+        {
+          "disclosureFolder": "R6",
+          "fiscalYear": "令和5年度",
+          "pdfPages": 7,
+          "accountingPages": "p3",
+          "accountingDescription": "PTA会費決算経過報告",
+          "sourceUrl": "https://drive.google.com/file/d/1x9ympDrdniTZ2TOtI1Vauu_4Gs94nM-t/view",
+          "sha256": "410518190011ea62900deffc58c2cd7e06f4bee29a64e94155522543f4fc8a11"
+        },
+        {
+          "disclosureFolder": "R7",
+          "fiscalYear": "令和6年度",
+          "pdfPages": 5,
+          "accountingPages": "p2",
+          "accountingDescription": "PTA会費決算経過報告",
+          "sourceUrl": "https://drive.google.com/file/d/1kPyG1nOoDVorF2MZtIGU1LWcM1u3fb3N/view",
+          "sha256": "61a5b8899eeac14d5c1f15ec5c4aa970c95594d4eba781240c14d2550590fe7d"
+        }
+      ],
+      "confirmedSourceObservations": [],
+      "subjectBoundary": "公立学校・教育委員会は公的主体、PTAは任意加入の私的団体。収録したPTA決算・規約・議案の存在だけで学校の公法上の権限は生じない。",
+      "dutyAllocation": "入退会・会費・未納・役員選出・団体会計は原則PTA固有の内部事務。",
+      "schoolAuthorityAssessment": "この42件の総会・決算資料だけでは、学校が団体固有事務を公務として実施できる具体的法令上の権限は確認できない。学校側の事実上の処理自体についても独立した記録による裏付けが必要。",
+      "dataUseAssessment": "学校側の所掌事務と権限の確認後に、個人情報保護法61条の利用目的、69条の目的外利用・提供制限等を個別検討する。本人同意は学校側の権限創設の代わりにはならない。",
+      "evidenceLimitations": "総会資料における予算・役員・個人情報取扱規則等は、その成立・実運用・学校実施・違法性を当然に証明しない。",
+      "followUpDocuments": [
+        "学校側が会員・児童・保護者・教職員の名簿をPTA目的で取得・使用・提供していたか",
+        "PTA固有事務を学校が公務として処理した場合の具体的所掌事務・権限",
+        "学校管理口座・学校徴収金・教職員業務時間での会費徴収や未納処理の有無",
+        "会員本人の入会意思と、学校による個人情報の利用目的・提供記録"
+      ]
+    }
+  ],
+  "fileReviews": [
+    {
+      "school": "宮西小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1XXriX5lfJsYA6-x9hpdRCOmlCPLHtgYh/view",
+      "sourceDriveFileId": "1XXriX5lfJsYA6-x9hpdRCOmlCPLHtgYh",
+      "sha256": "acc70f9d9957f4bdb0f030199758fb7938e5ba51bf140d77e32dee291ec9dc16",
+      "bytes": 928536,
+      "pdfPages": 4,
+      "accountingDescription": "積立金決算のみ（PTA会費決算は開示なし）",
+      "accountingPages": "p2",
+      "visualReviewPages": 4,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "宮西小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/13Hwfr4bO9QHSXhugYtgK-ly-p_deNoD3/view",
+      "sourceDriveFileId": "13Hwfr4bO9QHSXhugYtgK-ly-p_deNoD3",
+      "sha256": "e0b1a7cf6c96b4d110f57099259a433010ce30706afae5a1c88e1efa11a784cc",
+      "bytes": 2266622,
+      "pdfPages": 8,
+      "accountingDescription": "p2 会費決算／p3 積立金決算",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        4
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "貴船小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_令和6年度PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1BNc_UfyOJ-MwgHUV-Tk71JjB7D2W_A9p/view",
+      "sourceDriveFileId": "1BNc_UfyOJ-MwgHUV-Tk71JjB7D2W_A9p",
+      "sha256": "dd0e02041247b984c5081344cd44b888a90427826110cacd4e3ed120cf43a1de",
+      "bytes": 866263,
+      "pdfPages": 5,
+      "accountingDescription": "会計決算報告",
+      "accountingPages": "p2",
+      "visualReviewPages": 5,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        3
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "貴船小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_令和7年度PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1vlXLNzJuk43151jiYIfPoO5y2x4XJTxC/view",
+      "sourceDriveFileId": "1vlXLNzJuk43151jiYIfPoO5y2x4XJTxC",
+      "sha256": "0170cf0c71997530ee7af7d3c06131cfa3734a338ce1d42ebf415c89f3a0e007",
+      "bytes": 892579,
+      "pdfPages": 5,
+      "accountingDescription": "会計決算報告",
+      "accountingPages": "p2",
+      "visualReviewPages": 5,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅野小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1vdHG6I-z5T5Bn5axpcPDZY7I4HQr0j5c/view",
+      "sourceDriveFileId": "1vdHG6I-z5T5Bn5axpcPDZY7I4HQr0j5c",
+      "sha256": "ca6068128698eeb1920cb58dd82e2fd8cda167a1ce43d7c63bcf8ccdb1d620fe",
+      "bytes": 2142678,
+      "pdfPages": 8,
+      "accountingDescription": "p3 PTA会計／p4 資源回収",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        5
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅野小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/12Ky2Gn8NgB6EQ-fYnTqUBjWjLD0f40ab/view",
+      "sourceDriveFileId": "12Ky2Gn8NgB6EQ-fYnTqUBjWjLD0f40ab",
+      "sha256": "aa0161979311574bf25e7f1458b85bb816ff21b2eecf8d765c2a32d8771390e4",
+      "bytes": 2473446,
+      "pdfPages": 8,
+      "accountingDescription": "p3 PTA会計／p4 資源回収",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        5
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "丹陽西小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_令和6年度PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1w4ljJtSc5l4-vvHQcBc2yNA9Rq1wJz6z/view",
+      "sourceDriveFileId": "1w4ljJtSc5l4-vvHQcBc2yNA9Rq1wJz6z",
+      "sha256": "e71cf0600fc9b755e8c56fd06053ffed4e2aa2723c62102bbd843198a104e96b",
+      "bytes": 2615344,
+      "pdfPages": 10,
+      "accountingDescription": "p2 PTA会計／p3 資源回収",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "丹陽西小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_令和7年度PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/18WmScmBf9wbDz6M2tS8eB_80E-efk3MA/view",
+      "sourceDriveFileId": "18WmScmBf9wbDz6M2tS8eB_80E-efk3MA",
+      "sha256": "5b4ec095ffc8ed01dd83de32500c9029ddb51a3a1ef1e5a7a5f5288b0ffda8f4",
+      "bytes": 2384772,
+      "pdfPages": 9,
+      "accountingDescription": "p2 PTA会計／p3 資源回収",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 9,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "丹陽南小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_一宮市立丹陽南小学校PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1f_Cb5pZEhNAQrnTscFaN4flsm3BoiAwe/view",
+      "sourceDriveFileId": "1f_Cb5pZEhNAQrnTscFaN4flsm3BoiAwe",
+      "sha256": "85ada4b5cb3e4b08c52bf6f8617c22e3cb83f82075dffead5ea9cb06a21a7e1e",
+      "bytes": 3792318,
+      "pdfPages": 10,
+      "accountingDescription": "p4 PTA会計（横向き）／p3 資源回収",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "丹陽南小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_一宮市立丹陽南小学校PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1sLQ9E3h0H4kLnPns5-BY_VOzyrtpd7GZ/view",
+      "sourceDriveFileId": "1sLQ9E3h0H4kLnPns5-BY_VOzyrtpd7GZ",
+      "sha256": "059024bc2ccb38966e34072bf9ad00e153c9e4fc43bfc5cf528e957a285330be",
+      "bytes": 2947709,
+      "pdfPages": 9,
+      "accountingDescription": "p3 PTA会計（横向き）／p4 資源回収",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 9,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅井南小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/16Ms_h1x44pP7t_s9byqCoInYZ88INe5q/view",
+      "sourceDriveFileId": "16Ms_h1x44pP7t_s9byqCoInYZ88INe5q",
+      "sha256": "f12be46b01e39855478843c0ee238530e45d81b724bf0d84f9798d3ecc0d619f",
+      "bytes": 1909675,
+      "pdfPages": 6,
+      "accountingDescription": "p2 会費会計／p3 特別会計",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 6,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        4
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅井南小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/12BSwOoXr2vWA_tjF_kKnCvv6ujKhMl6E/view",
+      "sourceDriveFileId": "12BSwOoXr2vWA_tjF_kKnCvv6ujKhMl6E",
+      "sha256": "4df15ab74805caf58714dce1984952086283d2f41d86f91b864774e2cf8278da",
+      "bytes": 1939544,
+      "pdfPages": 6,
+      "accountingDescription": "p2 会費会計／p3 特別会計",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 6,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        4
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "北方小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/19epvyTPxw30eN-zKLXWxOGq4Vt-7-2CH/view",
+      "sourceDriveFileId": "19epvyTPxw30eN-zKLXWxOGq4Vt-7-2CH",
+      "sha256": "aa2347be8c28db94fcc12537280cd57498bd5f4306f6bc0d2fc5a443adb13af9",
+      "bytes": 2911445,
+      "pdfPages": 7,
+      "accountingDescription": "PTA会計決算書",
+      "accountingPages": "p3",
+      "visualReviewPages": 7,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "北方小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1iRlNQk_NbwDKF6C-gF1SlE-Q3btBow_1/view",
+      "sourceDriveFileId": "1iRlNQk_NbwDKF6C-gF1SlE-Q3btBow_1",
+      "sha256": "27812dfb12d83ea1aeaddb95e48f3a6cad51e789b521a0fdeb7fbe52866eb5d3",
+      "bytes": 2936854,
+      "pdfPages": 7,
+      "accountingDescription": "PTA会計決算書",
+      "accountingPages": "p3",
+      "visualReviewPages": 7,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "大和西小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_令和5年度 会計決算報告.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1UUq9w6s3yPn-mibTBC7gZkzh6LapGQzg/view",
+      "sourceDriveFileId": "1UUq9w6s3yPn-mibTBC7gZkzh6LapGQzg",
+      "sha256": "76d25028aec53132d112cf5b8e53672ee51c33fa12d518520de8350c442b6051",
+      "bytes": 332764,
+      "pdfPages": 1,
+      "accountingDescription": "会計決算報告",
+      "accountingPages": "単独ファイル",
+      "visualReviewPages": 1,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "大和西小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_令和6年度 会計決算報告.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1NawTE-ZW9Ec1JfkMBru1IKYkwtmfThzl/view",
+      "sourceDriveFileId": "1NawTE-ZW9Ec1JfkMBru1IKYkwtmfThzl",
+      "sha256": "ec93b229fe3ae8da8c5b7d3e2955324513cd248702f93a0d090e86a5df56bef9",
+      "bytes": 350311,
+      "pdfPages": 1,
+      "accountingDescription": "会計決算報告",
+      "accountingPages": "単独ファイル",
+      "visualReviewPages": 1,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "今伊勢小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_令和6年度PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1m7PMnKzl1mwRZLrrMPdj8Kq4MeLWjgje/view",
+      "sourceDriveFileId": "1m7PMnKzl1mwRZLrrMPdj8Kq4MeLWjgje",
+      "sha256": "06bed0d68b2a0cd3ecfed02abc43adfe48093faa42445444d43e60411198d683",
+      "bytes": 478229,
+      "pdfPages": 10,
+      "accountingDescription": "p3 会費／p4 協力費／p5 資源回収",
+      "accountingPages": "p3–p5",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "今伊勢小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_令和7年度PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1N2UAO4p9vtY8pQrBcu-tj6AtZhuAeDOU/view",
+      "sourceDriveFileId": "1N2UAO4p9vtY8pQrBcu-tj6AtZhuAeDOU",
+      "sha256": "e6800e2de98f8187d7e00493415c2f9b92531497eefaa1181c3656969f78ebdd",
+      "bytes": 3765912,
+      "pdfPages": 10,
+      "accountingDescription": "p3 会費／p4 協力費／p5 資源回収",
+      "accountingPages": "p3–p5",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "奥小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_令和6年度一宮市立奥小学校PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1n0DMvalWl2yKhQpHUoxM48HEEd_BHW7V/view",
+      "sourceDriveFileId": "1n0DMvalWl2yKhQpHUoxM48HEEd_BHW7V",
+      "sha256": "410a8566946e1e2446951efc879ca192cc5c54c2ae9f81c2f5f5084462415512",
+      "bytes": 3086636,
+      "pdfPages": 10,
+      "accountingDescription": "p2 PTA会計／p8 資源回収",
+      "accountingPages": "p2, p8",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "奥小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_令和7年度一宮市立奥小学校PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1y4b6pBVPgpIvBM1VDwWKUOzZ-OQHZiBk/view",
+      "sourceDriveFileId": "1y4b6pBVPgpIvBM1VDwWKUOzZ-OQHZiBk",
+      "sha256": "fbd988ad55f1013319faf68d40cf54d44d32771e48cbc282e775f9eb0f57ef97",
+      "bytes": 2966454,
+      "pdfPages": 10,
+      "accountingDescription": "p2 PTA会計／p8 資源回収",
+      "accountingPages": "p2, p8",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "萩原小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_令和6年度一宮市立萩原小学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1QZ6atPTTz8gvspBIMUm8OTCoSTuBCTuM/view",
+      "sourceDriveFileId": "1QZ6atPTTz8gvspBIMUm8OTCoSTuBCTuM",
+      "sha256": "95561bd8c410fea21f96ea9a31788a5d17993fa80c8be5a73bd16881af8d64d2",
+      "bytes": 727199,
+      "pdfPages": 11,
+      "accountingDescription": "会費会計・協力費会計",
+      "accountingPages": "p2",
+      "visualReviewPages": 11,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        6
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "萩原小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_令和7年度一宮市立萩原小学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/12apE6kZr7Avlw9M8e5AjRaTx_a4TvakL/view",
+      "sourceDriveFileId": "12apE6kZr7Avlw9M8e5AjRaTx_a4TvakL",
+      "sha256": "307bf8ef6936a89071eec59088099be6ce3175a24fbca09e851760b10bbe0a07",
+      "bytes": 340773,
+      "pdfPages": 6,
+      "accountingDescription": "会費会計・協力費会計",
+      "accountingPages": "p2",
+      "visualReviewPages": 6,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "中島小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_令和6年度　PTA・同窓会総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1dZ2Z3bZ3OegNkgBdQGPu7xebWYU9lCuK/view",
+      "sourceDriveFileId": "1dZ2Z3bZ3OegNkgBdQGPu7xebWYU9lCuK",
+      "sha256": "784e3d3d8b1eefa098287c770c5ee19720a3d08c0e3b912ee4f9de854d96a07e",
+      "bytes": 5548928,
+      "pdfPages": 13,
+      "accountingDescription": "p3 PTA会計／p4 資源回収・同窓会",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 13,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        12
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "中島小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_令和7年度　PTA・同窓会総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1TmRfeQ2sERQL5SvYC4X_MizO1_Em9-gb/view",
+      "sourceDriveFileId": "1TmRfeQ2sERQL5SvYC4X_MizO1_Em9-gb",
+      "sha256": "9f0ecaacc3adaa77665c737c62db2e4c369d2c3472ca76199c5d1fe8b2f6db0a",
+      "bytes": 4798363,
+      "pdfPages": 13,
+      "accountingDescription": "p3 PTA会計／p4 資源回収・同窓会",
+      "accountingPages": "p3, p4",
+      "visualReviewPages": 13,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "富士小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1guCFr3uBjpkalOw3wBf_Ujfgh_4Jg2cv/view",
+      "sourceDriveFileId": "1guCFr3uBjpkalOw3wBf_Ujfgh_4Jg2cv",
+      "sha256": "05832db87b28225772a06fd79f686026c97f9e3ec334382967a3a106a235ed1f",
+      "bytes": 1505656,
+      "pdfPages": 7,
+      "accountingDescription": "議案2（決算）のページが開示文書に含まれていない",
+      "accountingPages": "なし",
+      "visualReviewPages": 7,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        6
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        5
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "富士小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/19MSD024oVGw2r_5Rhe7MmWb3Ba1lv0ll/view",
+      "sourceDriveFileId": "19MSD024oVGw2r_5Rhe7MmWb3Ba1lv0ll",
+      "sha256": "1272d359f63d7b08377ff1f21463fd930e8faaf44e6273e48021b8887eb7a31c",
+      "bytes": 1749722,
+      "pdfPages": 10,
+      "accountingDescription": "p3 一般会計／p4 賛助会計／p5 特別会計",
+      "accountingPages": "p3–p5",
+      "visualReviewPages": 10,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        9
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅井中小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1I1rqUgKmJnVxassrndrDDrspdMZi8ANh/view",
+      "sourceDriveFileId": "1I1rqUgKmJnVxassrndrDDrspdMZi8ANh",
+      "sha256": "39406aad3313426e6c6fa9e96bd0869208fcdf9424969384ec991162c6544ff5",
+      "bytes": 3009463,
+      "pdfPages": 9,
+      "accountingDescription": "p4 PTA会費会計／p5 資源回収",
+      "accountingPages": "p4, p5",
+      "visualReviewPages": 9,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "浅井中小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1F0Na0uEAXaI20VjQ0BvS7PoxFphs55E8/view",
+      "sourceDriveFileId": "1F0Na0uEAXaI20VjQ0BvS7PoxFphs55E8",
+      "sha256": "209e0ea40ccbed69d9842bd7a6ca2df5d12bbe15c3aab8afdaa348713c7c9ad7",
+      "bytes": 3324596,
+      "pdfPages": 12,
+      "accountingDescription": "p4 PTA会費会計／p5 資源回収",
+      "accountingPages": "p4, p5",
+      "visualReviewPages": 12,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "小信中島小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/19jtun33mSRMk61pZU_911OM_Tn1Qsrzp/view",
+      "sourceDriveFileId": "19jtun33mSRMk61pZU_911OM_Tn1Qsrzp",
+      "sha256": "bbb535da1c33062256ebb9abfd094fbf99c373cbc45873d1bc4bd93da74d2314",
+      "bytes": 11423121,
+      "pdfPages": 20,
+      "accountingDescription": "p16 PTA会計／p17 特別会計",
+      "accountingPages": "p16, p17",
+      "visualReviewPages": 20,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        3
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "小信中島小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/17rVd-wyzAVHcYdkRsx6PrKcw9KveN-uG/view",
+      "sourceDriveFileId": "17rVd-wyzAVHcYdkRsx6PrKcw9KveN-uG",
+      "sha256": "2103789c4d689ade4388ce99964fd6f5cd8a10d8c88d2cd4e68a1fb0f661c70f",
+      "bytes": 4177625,
+      "pdfPages": 17,
+      "accountingDescription": "p13 PTA会計／p14 特別会計",
+      "accountingPages": "p13, p14",
+      "visualReviewPages": 17,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        9
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "開明小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/16fc7z8h7-C5sg2kSh7ngHq2lIkPer6b3/view",
+      "sourceDriveFileId": "16fc7z8h7-C5sg2kSh7ngHq2lIkPer6b3",
+      "sha256": "c340773e5954ac4573cfc1ccdff6d30344fba797ab10103f7df202a8cf61eda8",
+      "bytes": 2875693,
+      "pdfPages": 8,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p4–p5",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        6
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "開明小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/15V938jEbtvNF1rZdYKARJuORx8ywNaqn/view",
+      "sourceDriveFileId": "15V938jEbtvNF1rZdYKARJuORx8ywNaqn",
+      "sha256": "4785487c9bd63109d82d99e6990a444ff349ccfc86752b2ea3343035a80da1e7",
+      "bytes": 2169740,
+      "pdfPages": 8,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p4–p5",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        6
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "木曽川西小",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_木曽川西小学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1d6gCZcJsznReHoc0RIRI3WPV8gq5ES_A/view",
+      "sourceDriveFileId": "1d6gCZcJsznReHoc0RIRI3WPV8gq5ES_A",
+      "sha256": "c65cff588d2ecd74ad6d7e8ffe25e4c7cfd5501f6fec0baa1c99c5c9018b3e9f",
+      "bytes": 4796523,
+      "pdfPages": 20,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p7",
+      "visualReviewPages": 20,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        19,
+        20
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        8
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "木曽川西小",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_木曽川西小学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1GLiumLNnnRzCN77L4z3vvM7a29Q_NJiQ/view",
+      "sourceDriveFileId": "1GLiumLNnnRzCN77L4z3vvM7a29Q_NJiQ",
+      "sha256": "dbc346d6993fec873f50fe69f0b9ed8ae385b010bdd2350ba2afcc176e155712",
+      "bytes": 4647707,
+      "pdfPages": 19,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p6",
+      "visualReviewPages": 19,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [
+        11,
+        18,
+        19
+      ],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        7
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "北部中",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_一宮市立北部中学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1OLuE5TbpcFAqPTh9QkhlXuAg815DR-bm/view",
+      "sourceDriveFileId": "1OLuE5TbpcFAqPTh9QkhlXuAg815DR-bm",
+      "sha256": "fa70067fd2a5e9e76e87394192e8d112a2dfe36995d8919ebe626951fdcb9966",
+      "bytes": 2865289,
+      "pdfPages": 8,
+      "accountingDescription": "p2 協力費／p3 生徒活動費",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        4,
+        5
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "北部中",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_一宮市立北部中学校PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1AyEZQnwBS8HiwLR17DSyO5NlBkPKHZgZ/view",
+      "sourceDriveFileId": "1AyEZQnwBS8HiwLR17DSyO5NlBkPKHZgZ",
+      "sha256": "c79f67cc21a3605e9142338d25a04af336f3aa5c4c12d1621f38193c5e214d34",
+      "bytes": 2800754,
+      "pdfPages": 7,
+      "accountingDescription": "p2 協力費／p3 生徒活動費",
+      "accountingPages": "p2, p3",
+      "visualReviewPages": 7,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        4,
+        5
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "南部中",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1pp1lpai5igf21UAd0wJVIZSwbWl6g_GX/view",
+      "sourceDriveFileId": "1pp1lpai5igf21UAd0wJVIZSwbWl6g_GX",
+      "sha256": "8dbce2519c342f50d418c838b182f5474d55c27d0f69a7e13b1fa89f6d9b9676",
+      "bytes": 448886,
+      "pdfPages": 5,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p2",
+      "visualReviewPages": 5,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "南部中",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "2_PTA総会要項.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1CIe-uTUtp9a0kpA45wC1CQ8BpcqsmdTI/view",
+      "sourceDriveFileId": "1CIe-uTUtp9a0kpA45wC1CQ8BpcqsmdTI",
+      "sha256": "ca428e38bfe8dca86590b5dcb3f32ab6aef971264c3f758df178020561791dd0",
+      "bytes": 2898203,
+      "pdfPages": 5,
+      "accountingDescription": "PTA会計決算報告",
+      "accountingPages": "p2",
+      "visualReviewPages": 5,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "葉栗中",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_ PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1ld3ohjpG4xkBOPAawquydkezkXMJTCeu/view",
+      "sourceDriveFileId": "1ld3ohjpG4xkBOPAawquydkezkXMJTCeu",
+      "sha256": "b4fad2c3f42b460a15077e416580a524e20087f3f51a8a53f47377f03e86535a",
+      "bytes": 1882448,
+      "pdfPages": 8,
+      "accountingDescription": "PTA会計決算報告書",
+      "accountingPages": "p2",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [
+        3
+      ],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "葉栗中",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1DBjAE9GijR2VFATg9MLR3WMs1lj5Abol/view",
+      "sourceDriveFileId": "1DBjAE9GijR2VFATg9MLR3WMs1lj5Abol",
+      "sha256": "5b2562f3b9737dd3bb275b5bbef29b4ddcb888b7df161ee66f4e3c575113be2f",
+      "bytes": 1549553,
+      "pdfPages": 8,
+      "accountingDescription": "PTA会計決算報告書",
+      "accountingPages": "p2",
+      "visualReviewPages": 8,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "大和中",
+      "disclosureFolder": "R6",
+      "fiscalYear": "令和5年度",
+      "filename": "1_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1x9ympDrdniTZ2TOtI1Vauu_4Gs94nM-t/view",
+      "sourceDriveFileId": "1x9ympDrdniTZ2TOtI1Vauu_4Gs94nM-t",
+      "sha256": "410518190011ea62900deffc58c2cd7e06f4bee29a64e94155522543f4fc8a11",
+      "bytes": 2420218,
+      "pdfPages": 7,
+      "accountingDescription": "PTA会費決算経過報告",
+      "accountingPages": "p3",
+      "visualReviewPages": 7,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    },
+    {
+      "school": "大和中",
+      "disclosureFolder": "R7",
+      "fiscalYear": "令和6年度",
+      "filename": "1_PTA総会資料.pdf",
+      "sourceUrl": "https://drive.google.com/file/d/1kPyG1nOoDVorF2MZtIGU1LWcM1u3fb3N/view",
+      "sourceDriveFileId": "1kPyG1nOoDVorF2MZtIGU1LWcM1u3fb3N",
+      "sha256": "61a5b8899eeac14d5c1f15ec5c4aa970c95594d4eba781240c14d2550590fe7d",
+      "bytes": 1683841,
+      "pdfPages": 5,
+      "accountingDescription": "PTA会費決算経過報告",
+      "accountingPages": "p2",
+      "visualReviewPages": 5,
+      "visualMethod": "全頁6面コンタクトシート（約640px幅）の目視概観。本文の全ての細目を判読する審査ではない。",
+      "focusedFullResolutionPages": [],
+      "personalDataClearance": "未確定：個人名・学校教職員・役員等の残存を含め、高解像度の項目別審査が別途必要。",
+      "visiblePrivacyCautionPages": [],
+      "republishPDF": "行わない。既存のDrive原本へリンクする方式のみ。",
+      "schoolPublicLawAuthorityVerified": false
+    }
+  ]
+}

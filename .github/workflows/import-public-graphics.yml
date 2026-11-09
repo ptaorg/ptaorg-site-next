@@ -1,0 +1,47 @@
+name: Import public decorative graphics
+on:
+  push:
+    branches: [redesign/bc-public-data-20261108]
+    paths: [.github/workflows/import-public-graphics.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out draft redesign branch
+        uses: actions/checkout@v4
+        with:
+          ref: redesign/bc-public-data-20261108
+          persist-credentials: true
+      - name: Read pinned published source
+        uses: actions/checkout@v4
+        with:
+          repository: ptaorg/ptaorg.github.io
+          ref: a1deb9ff2580b37ac69bb56bef3089d73f82c75b
+          path: original
+          sparse-checkout: |
+            assets/img/building.png
+            assets/img/glasses-book.png
+          persist-credentials: false
+      - name: Copy only non-sensitive decorative graphics; check exact SHA-256
+        run: |
+          set -euo pipefail
+          install -d assets/img
+          for name in building.png glasses-book.png; do
+            test -s "original/assets/img/$name"
+            cp "original/assets/img/$name" "assets/img/$name"
+            test "$(sha256sum "original/assets/img/$name" | cut -d ' ' -f 1)" = "$(sha256sum "assets/img/$name" | cut -d ' ' -f 1)"
+          done
+          test "$(find assets/img -type f | wc -l)" -eq 2
+      - name: Commit onto draft branch only
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/img/building.png assets/img/glasses-book.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Import existing published decorative images byte for byte [skip ci]"
+            git push origin HEAD:redesign/bc-public-data-20261108
+          fi

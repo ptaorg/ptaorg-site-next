@@ -32,7 +32,7 @@
     [['stat-regions',regionCount],['stat-schools',schoolCount],['stat-responses',responseCount]].forEach(([id,n])=>{const e=document.getElementById(id);if(e)e.textContent=n.toLocaleString('ja-JP');});
     const state=document.getElementById('data-state');if(state)state.textContent=data.demo?'画面見本用の一部データ':'公開済みデータを同期済み';
     const note=document.getElementById('data-note');if(note)note.textContent=data.demo?'現在は画面確認用の抜粋データです。全件閲覧には公開データの同期が必要です。':`公開済みデータを読み込みました：${regionCount}地域・${schoolCount}校・${responseCount}回答。`;}
-  function matchingStrings(parts,q){return parts.some(x=>normalize(x).includes(q));}
+  function matchingStrings(parts,q){const text=parts.map(x=>normalize(x)).join(' ');return normalize(q).split(/\s+/).filter(Boolean).every(term=>text.includes(term));}
   function municipalityForSchool(s){return data.map.municipalities.find(m=>m.id===s.regionId);}
   function matchedRecords({query='',prefecture='',schoolType=''}) {
     const q=normalize(query);

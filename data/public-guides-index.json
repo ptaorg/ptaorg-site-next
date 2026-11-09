@@ -1,0 +1,290 @@
+{
+  "description": "17 public full-text legal, PPC, parental and source-reading pages migrated into next-generation site with original source provenance",
+  "source": "https://ptaorg.com/",
+  "pages": [
+    {
+      "id": "guide-01",
+      "title": "PPCの公立学校・PTA資料を61条・69条から読む",
+      "url": "https://ptaorg.com/ppc-points.html",
+      "description": "2026年3月の個人情報保護委員会資料を基に、所掌事務と利用目的、69条の利用・提供制限を検証する。",
+      "themes": [
+        "個人情報",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/ppc-points.html",
+      "sourceBlobSha": "ccfe013054423003b06be0d8b735d425bf236901",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-02",
+      "title": "個人情報保護委員会資料17ページの詳細解説",
+      "url": "https://ptaorg.com/ppc-school-pta-personal-data.html",
+      "description": "公立学校とPTA間の個人情報のやりとりに関する公表資料をページ単位で検討する。",
+      "themes": [
+        "個人情報"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/ppc-school-pta-personal-data.html",
+      "sourceBlobSha": "27b628983a6ad987b99bc44b7caaa8b929b73c75",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-03",
+      "title": "任意加入とオプトインの法的整理",
+      "url": "https://ptaorg.com/pta-membership-optin.html",
+      "description": "加入の申込みと承諾、オプトアウト、自動加入と学校名簿に関する論点。",
+      "themes": [
+        "任意加入",
+        "個人情報"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/pta-membership-optin.html",
+      "sourceBlobSha": "4ffdce232d9c20a837884aafb14515f15ceeffa2",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-04",
+      "title": "学校と外部団体の境界――学校管理実務ガイド",
+      "url": "https://ptaorg.com/guide-board.html",
+      "description": "公立学校の所掌事務、会費徴収、個人情報、教職員のPTA事務を検証する。",
+      "themes": [
+        "学校との境界",
+        "教職員"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-board.html",
+      "sourceBlobSha": "c40ef7cbfbd268de2ea5c44336656d0f5e35f918",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-05",
+      "title": "教育委員会の確認責任",
+      "url": "https://ptaorg.com/education-board-responsibility.html",
+      "description": "私的団体と公立学校の行為を分け、学校側への指導・監督責任を考える。",
+      "themes": [
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/education-board-responsibility.html",
+      "sourceBlobSha": "48ac82b762236ba086dd1788da2d6250b0a97771",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-06",
+      "title": "PTA運営の法的構造と是正基準",
+      "url": "https://ptaorg.com/report.html",
+      "description": "学校の事務の帰属と公法上の権限、委任や同意の位置付けを検討する。",
+      "themes": [
+        "学校との境界",
+        "会費徴収"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/report.html",
+      "sourceBlobSha": "65cc752e6fa1119a05617867203fd05481d3538b",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-07",
+      "title": "公文書・行政回答の読み方（研究者・記者向け）",
+      "url": "https://ptaorg.com/guide-research.html",
+      "description": "一次資料・公表資料・法的分析を区別し、文書名・日付・該当ページから検証する。",
+      "themes": [
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-research.html",
+      "sourceBlobSha": "3d2322488ac959973467b995304780fd4d409aa1",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-08",
+      "title": "行政資料・通知資料の原文一覧",
+      "url": "https://ptaorg.com/administrative-materials.html",
+      "description": "個人情報保護委員会、文部科学省、自治体の公表資料への参照を集める。",
+      "themes": [
+        "個人情報",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/administrative-materials.html",
+      "sourceBlobSha": "2ae45234415a327cd1709cb720341af38630b72a",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-09",
+      "title": "独立した任意団体の運営ガイド",
+      "url": "https://ptaorg.com/guide-pta.html",
+      "description": "入退会、会計、名簿、役員選出を学校事務と切り離して説明する。",
+      "themes": [
+        "任意加入",
+        "会費徴収"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイト公開原文。主本文を移植し、画像やPDFは元の公開URLを参照。原文の版はsourceBlobShaで記録。",
+      "destination": "guides/guide-pta.html",
+      "sourceBlobSha": "b07d6c308c7dbdb36852bbbb42ecf50dac4f0986",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-10",
+      "title": "PTAの会員資格・任意加入と入退会",
+      "url": "https://ptaorg.com/membership.html",
+      "description": "学校への入学とPTAへの加入を区別し、入退会の根拠を検証する。",
+      "themes": [
+        "任意加入",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/membership.html",
+      "sourceBlobSha": "ac8fef12c65fc63518b5537d87a3fd657cf1517e",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-11",
+      "title": "学校とPTAの個人情報・名簿提供",
+      "url": "https://ptaorg.com/privacy.html",
+      "description": "学校が保有する名簿や保護者情報の利用・提供と法令上の権限を検証する。",
+      "themes": [
+        "個人情報",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/privacy.html",
+      "sourceBlobSha": "65ed44ef4197e1591f3f94e0909df0082b763400",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-12",
+      "title": "PTA会費と学校徴収金を分けて確認する",
+      "url": "https://ptaorg.com/fee-collection.html",
+      "description": "会費債権の帰属、学校側の所掌事務、会計処理と個人情報利用を区別する。",
+      "themes": [
+        "会費徴収",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/fee-collection.html",
+      "sourceBlobSha": "1a8b4abff03d90521bcef1d69145ab493b4a737c",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-13",
+      "title": "教職員のPTA事務と職務専念義務",
+      "url": "https://ptaorg.com/personnel.html",
+      "description": "教職員の会費徴収・団体事務・学校の校務分掌と地方公務員法を検討する。",
+      "themes": [
+        "教職員",
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/personnel.html",
+      "sourceBlobSha": "525a2f642878e73c8dc80af2b11f4fead78fa361",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-14",
+      "title": "学校施設の利用と公私の境界",
+      "url": "https://ptaorg.com/facilities.html",
+      "description": "公立学校施設、校内配布、学校連絡媒体の外部団体利用と権限を検討する。",
+      "themes": [
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/facilities.html",
+      "sourceBlobSha": "edf3d9a11d1d1d1e6543414a05d71c777f63cc9a",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-15",
+      "title": "保護者向け：加入・会費・個人情報の確認",
+      "url": "https://ptaorg.com/guide-parent.html",
+      "description": "保護者が入会、学校徴収、個人情報利用を文書から確認するための実務解説。",
+      "themes": [
+        "任意加入",
+        "個人情報"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/guide-parent.html",
+      "sourceBlobSha": "e08311a601a1e7348bb5c129f5465ecebddd7576",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-16",
+      "title": "PTA運営の法制度マップ",
+      "url": "https://ptaorg.com/law-map.html",
+      "description": "学校法令、民法、個人情報保護法、地方公務員法、地方自治法を横断して検証する。",
+      "themes": [
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/law-map.html",
+      "sourceBlobSha": "ca671df5045ebf39d00fc5f12c8d9199b6817980",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    },
+    {
+      "id": "guide-17",
+      "title": "学校とPTAの法的グランドフレームワーク",
+      "url": "https://ptaorg.com/framework.html",
+      "description": "主体分離と学校の所掌事務・権限を軸に、制度上の課題を整理する。",
+      "themes": [
+        "学校との境界"
+      ],
+      "publisher": "PTA適正化推進委員会",
+      "type": "解説",
+      "scope": "全国",
+      "original": "現行サイトで公開済みの主本文を元の表現で移行。画像やPDFは元の公開URLを参照。",
+      "destination": "guides/framework.html",
+      "sourceBlobSha": "fc1c6f6363987a9b8e6f026c1cb4b6e26960748e",
+      "migrationStatus": "本文・見出し・表・図版参照を移行済み"
+    }
+  ],
+  "migrationUpdated": "2026-11-09"
+}

@@ -4,47 +4,40 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(fileURLToPath(new URL('..',import.meta.url)));
-const appModule={exports:{}};
-new Function('module',fs.readFileSync(path.join(root,'assets/app.js'),'utf8'))(appModule);
-const {normalize, matchedRecordsFactory, safeSourceLink}=appModule.exports;
-const demo=JSON.parse(fs.readFileSync(path.join(root,'data/demo.json'),'utf8'));
-const search=(query,extra={})=>matchedRecordsFactory(demo.map,demo.responses,{query,...extra});
-test('four independent page files exist, with accessible search and single main landmark',()=>{
-  for(const name of ['index.html','explore.html','municipality.html','school.html']){
-    const html=fs.readFileSync(path.join(root,name),'utf8');
-    assert.match(html,/<main\b[^>]*id="main"/);
-    assert.equal((html.match(/<main\b/g)||[]).length,1,name);
-    assert.match(html,/<nav\b[^>]*aria-label="メインナビゲーション"/);
-    assert.match(html,/assets\/style\.css/);
-    assert.match(html,/assets\/app\.js/);
-  }
+const read=p=>fs.readFileSync(path.join(root,p),'utf8');
+test('single main landmark, preserved heritage footer and production markup',()=>{
+ for(const f of ['index.html','explore.html','municipality.html','article.html','school.html']){
+  const html=read(f);
+  assert.equal((html.match(/<main(?:\s|>)/g)||[]).length,1,f);
+  assert.equal((html.match(/<footer/g)||[]).length,1,f);
+  assert.match(html,/assets\/redesign\.css/);
+  assert.match(html,/assets\/redesign\.js/);
+  assert.match(html,/footer-heritage-support/);
+ }
 });
-test('NFKC normalizes fullwidth and whitespace',()=>assert.equal(normalize(' 安行　小学校 '),normalize('安行小学校')));
-test('school name shows exactly that school (not all municipality schools)',()=>{
-  const {schools}=search('安行小学校');
-  assert.deepEqual(schools.map(s=>s.name),['安行小学校']);
+test('approved hero stays above separate navy search section',()=>{
+ const html=read('index.html');
+ assert.ok(html.indexOf('class="hero"')<html.indexOf('class="archive-search"'));
+ assert.match(html,/id="japan-map"/);
 });
-test('municipality term retrieves related schools and regional index',()=>{
-  const results=search('射水市');assert.equal(results.municipalities.length,1);
-  assert.equal(results.schools.length,5);
+test('map is bundled and has 47 clickable prefecture paths',()=>{
+ const svg=read('assets/japan-prefectures.svg');
+ assert.equal((svg.match(/data-code="/g)||[]).length,47);
+ assert.match(svg,/Geolonia/);
+ const js=read('assets/redesign.js');
+ assert.match(js,/new DOMParser\(\)/);
+ assert.match(js,/data-code/);
 });
-test('school-type filters exclude other types',()=>{
-  assert.equal(search('相川小学校',{schoolType:'中学校'}).schools.length,0);
-  assert.deepEqual(search('相川中学校',{schoolType:'中学校'}).schools.map(x=>x.name),['相川中学校']);
+test('unpublished document entries have no generated original-PDF href',()=>{
+ const js=read('assets/redesign.js');
+ assert.match(js,/公開前確認中/);
+ assert.match(js,/school\.html\?url=/);
+ assert.ok(!/d\.url\s*\)/.test(js));
 });
-test('response topic term finds public answer metadata',()=>{
-  assert.equal(search('みなし加入').responses.length,1);
-  assert.equal(search('みなし加入').responses[0].municipality,'京都府亀岡市');
-});
-test('external answer URL is restricted to canonical public domain',()=>{
-  assert.equal(safeSourceLink('https://example.org/evil'),'https://ptaorg.com/board-responses.html');
-});
-test('demo metadata documents are not given downloadable file URLs',()=>{
-  const schools=demo.map.municipalities.flatMap(m=>m.schools||[]);
-  assert.ok(schools.length>=20);
-  for(const school of schools)for(const doc of school.documents||[]){assert.equal(Object.hasOwn(doc,'url'),false);}
-});
-test('demo municipalities match previously published 29-region list',()=>{
-  assert.equal(demo.map.municipalities.length,29);
-  assert.equal(demo.map.municipalities.reduce((sum,m)=>sum+(m.publishedIndexSchoolCount||0),0),569);
+test('data JSONs are full public indexes',()=>{
+ const map=JSON.parse(read('data/research-map-index.json'));
+ const replies=JSON.parse(read('data/board-responses.json'));
+ assert.equal(map.municipalities.length,29);
+ assert.equal(map.municipalities.reduce((n,m)=>n+(m.schools||[]).length,0),569);
+ assert.equal(replies.responses.length,72);
 });

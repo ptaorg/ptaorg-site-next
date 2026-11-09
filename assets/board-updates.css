@@ -1,0 +1,28 @@
+
+.board-updates-hero{background:#eef5fa;padding:16px 0 34px;border-bottom:1px solid #d8e4ee}
+.board-updates-hero h1{font-size:clamp(27px,3vw,37px);color:var(--deep);margin:13px 0}
+.board-updates-hero p{max-width:1050px;color:#425f75}
+.board-updates-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:24px 0}
+.board-updates-metrics>div{padding:15px 18px;border:1px solid #d5e3ee;border-radius:5px;background:#f7fafc}
+.board-updates-metrics strong{display:block;font-size:29px;font-family:var(--serif);color:#153f60}
+.board-updates-metrics span{display:block;font-size:12px;color:#536a7d}
+.board-updates-notice{background:#f5f7f9;border-left:4px solid #4e799a;padding:14px 17px;font-size:13px;line-height:1.9}
+.board-updates-controls{display:flex;align-items:flex-end;flex-wrap:wrap;gap:15px;margin:28px 0}
+.board-updates-controls label{display:flex;gap:6px;flex-direction:column;font-size:13px;font-weight:700}
+.board-updates-controls input,.board-updates-controls select{border:1px solid #bacbd9;border-radius:5px;padding:10px 12px;min-width:240px;max-width:100%;background:#fff}
+.board-updates-controls #board-update-count{font-size:13px;color:#536a7d;margin:0 0 8px}
+.board-updates-list{display:grid;gap:12px}
+.board-update-item{border:1px solid #d7e3ed;border-radius:6px;padding:18px 22px;scroll-margin-top:22px;overflow-wrap:anywhere}
+.board-update-heading{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.board-update-heading h2{font-size:20px;margin:0 0 0 auto;color:#163c5b}
+.board-update-heading h2 small{font-size:12px;color:#60788a}
+.board-update-kind{background:#edf4fa;border-radius:4px;font-size:11px;padding:4px 7px;color:#285375}
+.board-update-date{font-size:12px;color:#617789}
+.board-update-item p{font-size:13px;line-height:1.8;margin:9px 0}
+.board-update-meta{color:#60758a}
+.board-update-limit{background:#f5f7f8;border-radius:4px;padding:10px}
+.board-update-source{border-top:1px solid #e0e9f0;padding-top:9px;color:#60778c}
+.board-updates-foot{margin:35px 0 55px;padding-top:20px;border-top:1px solid #d4e1ea}
+.board-updates-foot h2{font-size:22px}
+.board-updates-foot p{line-height:1.9}
+@media(max-width:700px){.board-updates-metrics{gap:6px}.board-updates-metrics>div{padding:9px}.board-updates-metrics strong{font-size:22px}.board-updates-metrics span{font-size:10px}.board-updates-controls input,.board-updates-controls select{min-width:0;width:100%}.board-updates-controls label{width:100%}.board-update-item{padding:14px}.board-update-heading h2{width:100%;margin-left:0}}

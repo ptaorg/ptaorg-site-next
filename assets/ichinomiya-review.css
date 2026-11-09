@@ -1,0 +1,41 @@
+
+.ich-review-header{background:linear-gradient(105deg,#eff6fb,#f9fcff);padding:13px 0 33px;border-bottom:1px solid var(--line)}
+.ich-review-header h1{font-size:clamp(27px,3vw,37px);line-height:1.45;color:var(--deep);margin:10px 0 12px}
+.ich-review-header p{max-width:930px;color:#415b72;margin:0}
+.ich-review-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0}
+.ich-review-metrics>div{background:#f2f7fb;border:1px solid #d4e0eb;border-radius:6px;padding:13px 18px}
+.ich-review-metrics strong,.ich-review-metrics span{display:block}
+.ich-review-metrics strong{font-family:var(--serif);font-size:26px;color:var(--deep)}
+.ich-review-metrics span{font-size:12px;color:var(--muted)}
+.ich-review-method{padding:19px 24px;border:1px solid #d2e0ec;border-left:4px solid #32658b;border-radius:6px;line-height:1.9}
+.ich-review-method h2{font-size:22px;margin:0 0 10px}
+.ich-review-method p:last-child{margin-bottom:0}
+.ich-review-focus{margin:45px 0 26px}
+.ich-review-focus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ich-review-focus-grid article{padding:19px 22px;border:1px solid var(--line);border-radius:6px;min-width:0}
+.ich-review-focus-grid h3{font-family:var(--serif);font-size:20px;color:var(--deep);margin:8px 0}
+.ich-review-focus-grid p{font-size:14px;line-height:1.75;margin:0 0 12px}
+.ich-review-focus-grid small{display:block;color:var(--muted);font-size:12px}
+.ich-review-index{margin:34px 0 42px}
+.ich-review-search{display:flex;gap:14px;align-items:center;margin-bottom:15px}
+.ich-review-search label{font-size:13px;font-weight:700}
+.ich-review-search input{width:min(100%,460px);padding:9px 12px;border:1px solid #b9cad8;border-radius:5px}
+.ich-school-item{border:1px solid var(--line);border-radius:6px;margin:9px 0;background:#fff;scroll-margin-top:20px}
+.ich-school-item summary{display:flex;gap:12px;align-items:center;padding:12px 17px;cursor:pointer;list-style:none}
+.ich-school-item summary::-webkit-details-marker{display:none}
+.ich-school-item summary::before{content:"+";display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;border:1px solid #b9ccdc;border-radius:3px;font-weight:700;color:#416580}
+.ich-school-item[open] summary::before{content:"−"}
+.ich-school-item summary strong{color:var(--deep);font-size:16px}
+.ich-school-item summary span{font-size:12px;color:var(--muted)}
+.ich-school-item-body{border-top:1px solid var(--line);padding:16px 18px 20px;font-size:13px}
+.ich-school-item-body p{margin-bottom:10px}
+.ich-school-item-body h3{font-size:16px;margin:18px 0 7px}
+.ich-school-item-body .ich-review-source{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;padding:9px 0;border-bottom:1px dashed #d5e2ea}
+.ich-school-item-body .ich-review-source a{font-weight:700;text-decoration:underline;overflow-wrap:anywhere}
+.ich-school-item-body .ich-review-source span{font-size:12px;color:var(--muted)}
+.ich-school-item-body .ich-observation{border-left:3px solid #d3e3ee;padding:6px 12px;margin:10px 0;background:#f7fafd}
+.ich-school-item-body .ich-observation strong{color:#154869}
+.ich-school-item-body .ich-review-limits{background:#f5f7f8;padding:11px 14px;border-radius:4px}
+.ich-review-end{padding:5px 0 58px}
+.ich-review-end h2{font-size:22px}
+@media(max-width:700px){.ich-review-metrics{gap:6px}.ich-review-metrics>div{padding:9px}.ich-review-metrics strong{font-size:21px}.ich-review-metrics span{font-size:10px}.ich-review-focus-grid{grid-template-columns:1fr}.ich-review-search{display:block}.ich-review-search input{display:block;margin-top:6px}.ich-school-item summary{padding:12px 10px;gap:7px;flex-wrap:wrap}.ich-school-item-body{padding:12px}.ich-review-method{padding:15px 16px}}
