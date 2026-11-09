@@ -61,7 +61,7 @@
     var description=document.querySelector('meta[name="description"]');
     if(description)description.setAttribute('content',item.summary);
     var canonical=document.querySelector('link[rel="canonical"]');
-    if(canonical)canonical.setAttribute('href',(window.__ROOT||"")+'document.html?id='+encodeURIComponent(item.id));
+    if(canonical)canonical.setAttribute('href','https://ptaorg.com/document.html?id='+encodeURIComponent(item.id));
     text('breadcrumbCurrent',item.title);
     text('documentTitle','【行政資料】'+item.title);
     text('documentLocation',location);
