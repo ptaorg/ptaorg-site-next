@@ -560,3 +560,6 @@ svg{width:1em;height:1em;flex:none}
 @media (max-width:1040px){
   .article-layout{grid-template-columns:minmax(0,1fr);gap:24px}
 }
+
+/* Give standard pages more horizontal room, without changing mobile gutters. */
+:root{--container:1400px}
