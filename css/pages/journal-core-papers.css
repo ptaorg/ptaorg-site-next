@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for journal/core-papers.html */
   .legacy .core-note {
     border-left: 6px solid #d4af37;
@@ -33,4 +33,3 @@
     line-height: 1.8;
     color: #475569;
   }
-}

@@ -1,6 +1,4 @@
-@layer site, editorial, interactions, document, feature, page;
 
-@layer site {
   @import url("document.css?v=20260719");
 
   /* ===================================================
@@ -5786,7 +5784,6 @@
       height: 38px;
     }
   }
-}
 
 /* Expandable site search: compact launcher in the header, readable panel below it. */
 @media (min-width: 861px) {

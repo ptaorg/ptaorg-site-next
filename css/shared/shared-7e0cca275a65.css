@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 3 pages. Extracted from duplicated inline CSS. */
   .legacy .breadcrumb-bar {
     background: #fff;
@@ -72,4 +72,3 @@
     box-shadow: none;
     border-radius: 0;
   }
-}

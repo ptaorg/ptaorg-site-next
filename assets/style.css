@@ -508,3 +508,17 @@ svg{width:1em;height:1em;flex:none}
 .article-main,.article-side,.detail-main,.detail-side{min-width:0}
 @media (max-width:1040px){.article-layout,.home-columns,.detail-layout{grid-template-columns:minmax(0,1fr)}}
 .article-side .side-box,.detail-side .side-box{overflow-wrap:anywhere}
+
+/* v0.5 header: never wrap nav labels */
+.nav-trigger,.nav-search,.nav-cta{white-space:nowrap}
+@media (max-width:1320px){.brand-type small{display:none}.nav-trigger{padding:10px 9px;font-size:.84rem}}
+@media (max-width:1180px) and (min-width:1041px){.nav-search span{display:none}.nav-trigger{padding:10px 6px;font-size:.8rem}.nav-cta{padding:10px 12px;font-size:.8rem}.brand-type strong{font-size:1.1rem}}
+.dev-note{font-size:.72rem;color:#A9B7C8}
+/* dark legacy panels converted to light by legacy.js */
+#main .legacy-body .is-dark-panel{background:#FBF6E9!important;background-image:none!important;color:var(--ink)!important;border:0!important;border-left:4px solid #C9A227!important;box-shadow:none!important;border-radius:0 6px 6px 0!important}
+#main .legacy-body .is-dark-panel :is(p,li,span,strong,em,h2,h3,h4,dt,dd,small,div){color:var(--ink)!important}
+#main .legacy-body .is-dark-panel a{color:var(--link)!important}
+.home-bottom-space{height:56px}.home-columns{padding-bottom:8px}
+
+#main .legacy-body .fix-contrast{color:var(--ink)!important;-webkit-text-fill-color:currentColor}
+#main .legacy-body a.fix-contrast{color:var(--link)!important}

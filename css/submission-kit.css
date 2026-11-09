@@ -1,4 +1,4 @@
-@layer feature {
+
   .legacy .submission-main {
     background: #fff;
     color: #1f2f3f;
@@ -279,4 +279,3 @@
       font-size: 0.86rem;
     }
   }
-}

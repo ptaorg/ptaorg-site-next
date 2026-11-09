@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for documents.html */
   /* Page-specific styles for documents.html */
   .legacy .doc-index {
@@ -330,4 +330,3 @@
       grid-template-columns: 1fr;
     }
   }
-}

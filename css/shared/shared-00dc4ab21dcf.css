@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 3 pages. Extracted from duplicated inline CSS. */
   .legacy .fee-editorial .issue-hero-inner {
     grid-template-columns: 1fr;
@@ -47,4 +47,3 @@
     border-radius: 0;
     box-shadow: none;
   }
-}

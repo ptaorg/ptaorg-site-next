@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy .ti-page {
     --ti-ink: #10283e;
     --ti-body: #27394b;
@@ -555,4 +555,3 @@
       color: inherit;
     }
   }
-}

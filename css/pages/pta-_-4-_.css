@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for PTA運営適正化ガイドブック_第4版_改訂本文.html */
   /* Page-specific styles for PTA運営適正化ガイドブック_第4版_改訂本文.html */
   .legacy * {
@@ -736,4 +736,3 @@
   .legacy .guidebook-editorial .flow-num {
     border-radius: 2px;
   }
-}

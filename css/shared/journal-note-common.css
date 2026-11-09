@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 7 pages. Extracted from duplicated inline CSS. */
   .legacy .chapter-flow {
     border: 1px solid #c7d7eb;
@@ -12,4 +12,3 @@
     margin: 10px 0 0;
     padding-left: 1.4em;
   }
-}

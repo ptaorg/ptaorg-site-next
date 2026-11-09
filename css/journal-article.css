@@ -1,4 +1,4 @@
-@layer feature {
+
   .legacy .journal-article-main {
     background: #f6f8fb;
   }
@@ -326,4 +326,3 @@
       padding: 16px;
     }
   }
-}

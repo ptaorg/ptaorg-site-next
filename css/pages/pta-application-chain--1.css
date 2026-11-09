@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for pta-application-chain.html */
   .legacy {
     --navy: #061b33;
@@ -746,4 +746,3 @@
       box-shadow: none;
     }
   }
-}

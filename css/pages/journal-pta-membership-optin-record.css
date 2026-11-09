@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for journal/pta-membership-optin-record.html */
   .legacy .optin-reason-article .journal-article-hero {
     position: relative;
@@ -371,4 +371,3 @@
       margin-top: 42px;
     }
   }
-}

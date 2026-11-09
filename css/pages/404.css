@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for 404.html */
   .legacy {
     min-height: 100vh;
@@ -72,4 +72,3 @@
       width: 100%;
     }
   }
-}

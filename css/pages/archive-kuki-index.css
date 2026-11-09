@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for archive/kuki/index.html */
   .legacy {
     --navy: #0b2a4a;
@@ -174,7 +174,6 @@
       padding: 38px 0;
     }
   }
-}
 
   /* Simplified primary navigation: keep the six core destinations accessible on small screens. */
   @media (max-width: 900px) {

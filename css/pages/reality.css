@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy .reality-editorial {
     --reality-ink: #17283b;
     --reality-navy: #0f2a46;
@@ -588,4 +588,3 @@
       scroll-behavior: auto !important;
     }
   }
-}

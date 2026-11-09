@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for timeline.html */
   /* ===== タイムライン ===== */
   .legacy .tl-outer {
@@ -230,4 +230,3 @@
       grid-template-columns: 1fr;
     }
   }
-}

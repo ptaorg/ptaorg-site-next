@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for guideline.html */
   /* Page-specific styles for guideline.html */
   /* ===== ガイドライン共通 ===== */
@@ -526,4 +526,3 @@
       width: min(calc(100% - 30px), 920px);
     }
   }
-}

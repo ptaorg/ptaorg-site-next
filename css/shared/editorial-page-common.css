@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 10 pages. Extracted from duplicated inline CSS. */
   .legacy,.legacy {
     overflow-x: hidden;
@@ -117,4 +117,3 @@
       padding-bottom: 52px;
     }
   }
-}

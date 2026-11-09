@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for starter-kit/downloads.html */
   .legacy .download-grid {
     display: grid;
@@ -59,4 +59,3 @@
     font-size: 0.72rem;
     font-weight: 900;
   }
-}

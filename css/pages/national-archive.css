@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for national-archive.html */
   /* Page-specific styles for national-archive.html */
   .legacy {
@@ -1315,7 +1315,6 @@
       font-size: 0.8rem;
     }
   }
-}
 
   /* Simplified primary navigation: keep the six core destinations accessible on small screens. */
   @media (max-width: 900px) {

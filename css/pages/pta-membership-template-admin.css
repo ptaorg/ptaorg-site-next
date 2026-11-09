@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for pta-membership-template-admin.html */
   .legacy {
     --ink: #172a3a;
@@ -158,4 +158,3 @@
       padding: 24px 0;
     }
   }
-}

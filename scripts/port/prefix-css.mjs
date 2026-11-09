@@ -37,6 +37,8 @@ const transform=parser(root=>{
 });
 export function prefixCss(css){
   const root=postcss.parse(css);
+  // @layer !important beats unlayered !important; unwrap so the theme layer can win
+  root.walkAtRules(/^layer$/i,at=>{if(at.nodes&&at.nodes.length)at.replaceWith(at.nodes);else at.remove();});
   root.walkRules(rule=>{
     let p=rule.parent;while(p){if(p.type==='atrule'&&/keyframes$/i.test(p.name))return;p=p.parent;}
     try{rule.selector=transform.processSync(rule.selector).replace(/\.__SCOPE__/g,SCOPE);}catch{/* leave unparsable selector */}

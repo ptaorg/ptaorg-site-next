@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for framework.html */
   .legacy .support-strip {
     background: linear-gradient(90deg, #0a192f 0%, #1e3a5f 58%, #2d5a8e 100%);
@@ -162,4 +162,3 @@
   .legacy .thesis-page .fw-thesis-box strong {
     color: #f6d778 !important;
   }
-}

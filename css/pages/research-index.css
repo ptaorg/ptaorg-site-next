@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy.ri-editorial {
     --ri-ink: #182635;
     --ri-muted: #5b6875;
@@ -334,4 +334,3 @@
       padding: 16px;
     }
   }
-}

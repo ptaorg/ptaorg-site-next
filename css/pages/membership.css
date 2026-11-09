@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for membership.html */
   /* Page-specific styles for membership.html */
   .legacy {
@@ -1006,11 +1006,10 @@
     border-left: 0;
     border-right: 0;
   }
-}
 
-@layer page {
-  /* 2026-08-12: text-first administrative reading layout */
-  .legacy .membership-editorial {
+/* 2026-08-12: text-first administrative reading layout */
+
+.legacy .membership-editorial {
     --membership-ink: #182635;
     --membership-muted: #5b6875;
     --membership-navy: #17324d;
@@ -1021,7 +1020,7 @@
     color: var(--membership-ink);
   }
 
-  .legacy .membership-editorial .issue-hero {
+.legacy .membership-editorial .issue-hero {
     padding: clamp(58px, 7vw, 88px) 0 clamp(54px, 6vw, 76px);
     background: var(--membership-paper);
     color: var(--membership-ink);
@@ -1029,23 +1028,23 @@
     border-bottom: 1px solid #d8d4c9;
   }
 
-  .legacy .membership-editorial .issue-hero::before {
+.legacy .membership-editorial .issue-hero::before {
     width: 5px;
     inset: 0 auto 0 0;
     background: var(--membership-gold);
   }
 
-  .legacy .membership-editorial .issue-hero::after {
+.legacy .membership-editorial .issue-hero::after {
     display: none;
   }
 
-  .legacy .membership-editorial .issue-hero-inner {
+.legacy .membership-editorial .issue-hero-inner {
     width: min(calc(100% - 48px), 920px);
     max-width: 920px;
     display: block;
   }
 
-  .legacy .membership-editorial .issue-hero-eyebrow {
+.legacy .membership-editorial .issue-hero-eyebrow {
     display: block;
     width: fit-content;
     margin: 0 0 20px;
@@ -1059,7 +1058,7 @@
     letter-spacing: 0.12em;
   }
 
-  .legacy .membership-editorial .issue-hero h1 {
+.legacy .membership-editorial .issue-hero h1 {
     max-width: 15em;
     margin: 0 0 22px;
     color: var(--membership-navy);
@@ -1068,7 +1067,7 @@
     letter-spacing: -0.035em;
   }
 
-  .legacy .membership-editorial .issue-hero p {
+.legacy .membership-editorial .issue-hero p {
     max-width: 43rem;
     margin: 0;
     color: #354657;
@@ -1076,7 +1075,7 @@
     line-height: 2;
   }
 
-  .legacy .membership-index {
+.legacy .membership-index {
     width: min(calc(100% - 48px), 1040px);
     margin: 0 auto;
     padding: 17px 0;
@@ -1088,41 +1087,41 @@
     font-size: 0.82rem;
   }
 
-  .legacy .membership-index span {
+.legacy .membership-index span {
     color: var(--membership-muted);
     font-weight: 700;
     letter-spacing: 0.08em;
   }
 
-  .legacy .membership-index a {
+.legacy .membership-index a {
     color: var(--membership-navy);
     text-decoration: none;
     border-bottom: 1px solid transparent;
   }
 
-  .legacy .membership-index a:hover,.legacy 
+.legacy .membership-index a:hover,.legacy 
   .membership-index a:focus-visible {
     border-bottom-color: currentColor;
   }
 
-  .legacy .membership-editorial .issue-content {
+.legacy .membership-editorial .issue-content {
     width: min(calc(100% - 48px), 920px);
     max-width: 920px;
     padding: 22px 0 86px;
   }
 
-  .legacy .membership-editorial .issue-section {
+.legacy .membership-editorial .issue-section {
     scroll-margin-top: 96px;
     padding: clamp(46px, 6vw, 68px) 0;
     border-bottom: 1px solid var(--membership-line);
   }
 
-  .legacy .membership-editorial .membership-principle {
+.legacy .membership-editorial .membership-principle {
     padding-top: 42px;
     border-top: 0;
   }
 
-  .legacy .membership-editorial .issue-section h2 {
+.legacy .membership-editorial .issue-section h2 {
     max-width: 24em;
     margin: 0 0 24px;
     color: var(--membership-navy);
@@ -1131,7 +1130,7 @@
     letter-spacing: -0.018em;
   }
 
-  .legacy .membership-editorial .issue-section h3 {
+.legacy .membership-editorial .issue-section h3 {
     margin: 40px 0 14px;
     padding: 0 0 9px;
     border: 0;
@@ -1141,7 +1140,7 @@
     line-height: 1.55;
   }
 
-  .legacy .membership-editorial .issue-section p {
+.legacy .membership-editorial .issue-section p {
     max-width: 76ch;
     margin: 0 0 18px;
     color: var(--membership-ink);
@@ -1149,23 +1148,23 @@
     line-height: 2;
   }
 
-  .legacy .membership-editorial .issue-section a,.legacy 
+.legacy .membership-editorial .issue-section a,.legacy 
   .membership-editorial .u-f202dd4558 a {
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
   }
 
-  .legacy .membership-editorial .membership-principle h2 {
+.legacy .membership-editorial .membership-principle h2 {
     font-size: clamp(1.42rem, 2.5vw, 1.8rem);
   }
 
-  .legacy .membership-editorial .membership-principle p:first-of-type {
+.legacy .membership-editorial .membership-principle p:first-of-type {
     color: var(--membership-navy);
     font-size: clamp(1.02rem, 1.5vw, 1.1rem);
     font-weight: 600;
   }
 
-  .legacy .membership-editorial .law-quote-block {
+.legacy .membership-editorial .law-quote-block {
     margin: 28px 0;
     padding: 20px 0 20px 24px;
     border: 0;
@@ -1174,19 +1173,19 @@
     background: transparent;
   }
 
-  .legacy .membership-editorial .law-quote-block .lq-label {
+.legacy .membership-editorial .law-quote-block .lq-label {
     margin-bottom: 9px;
     color: var(--membership-muted);
     font-size: 0.76rem;
     letter-spacing: 0.06em;
   }
 
-  .legacy .membership-editorial .law-quote-block p {
+.legacy .membership-editorial .law-quote-block p {
     font-size: 0.95rem;
     line-height: 1.95;
   }
 
-  .legacy .membership-editorial .alert-block {
+.legacy .membership-editorial .alert-block {
     display: grid;
     grid-template-columns: 30px minmax(0, 1fr);
     gap: 14px;
@@ -1195,23 +1194,23 @@
     border-top: 1px solid var(--membership-line);
   }
 
-  .legacy .membership-editorial .alert-icon {
+.legacy .membership-editorial .alert-icon {
     font-size: 1.05rem;
     filter: grayscale(1);
   }
 
-  .legacy .membership-editorial .domino-chain {
+.legacy .membership-editorial .domino-chain {
     margin: 28px 0 0;
     border-top: 2px solid var(--membership-navy);
   }
 
-  .legacy .membership-editorial .domino-item {
+.legacy .membership-editorial .domino-item {
     grid-template-columns: 44px minmax(0, 1fr);
     gap: 16px;
     padding: 22px 0;
   }
 
-  .legacy .membership-editorial .domino-dot,.legacy 
+.legacy .membership-editorial .domino-dot,.legacy 
   .membership-editorial .domino-dot.illegal,.legacy 
   .membership-editorial .domino-dot.warning,.legacy 
   .membership-editorial .domino-dot.result {
@@ -1223,43 +1222,43 @@
     font-size: 0.8rem;
   }
 
-  .legacy .membership-editorial .domino-body strong {
+.legacy .membership-editorial .domino-body strong {
     margin-bottom: 7px;
     color: var(--membership-navy);
     font-size: 1rem;
   }
 
-  .legacy .membership-editorial .domino-body p {
+.legacy .membership-editorial .domino-body p {
     color: #425264;
     font-size: 0.92rem;
     line-height: 1.85;
   }
 
-  .legacy .membership-editorial .domino-law {
+.legacy .membership-editorial .domino-law {
     margin-top: 8px;
     color: var(--membership-muted);
     font-size: 0.74rem;
   }
 
-  .legacy .membership-editorial .law-breakdown-grid,.legacy 
+.legacy .membership-editorial .law-breakdown-grid,.legacy 
   .membership-editorial .conclusion-grid,.legacy 
   .membership-editorial .three-set {
     margin: 28px 0;
     border-top: 2px solid var(--membership-navy);
   }
 
-  .legacy .membership-editorial .law-breakdown-card,.legacy 
+.legacy .membership-editorial .law-breakdown-card,.legacy 
   .membership-editorial .conclusion-card,.legacy 
   .membership-editorial .three-set-item {
     position: static;
     padding: 22px 0;
   }
 
-  .legacy .membership-editorial .law-breakdown-card::before {
+.legacy .membership-editorial .law-breakdown-card::before {
     display: none;
   }
 
-  .legacy .membership-editorial .lbc-domain,.legacy 
+.legacy .membership-editorial .lbc-domain,.legacy 
   .membership-editorial .cc-num {
     margin-bottom: 6px;
     color: var(--membership-muted) !important;
@@ -1267,7 +1266,7 @@
     letter-spacing: 0.06em;
   }
 
-  .legacy .membership-editorial .lbc-law,.legacy 
+.legacy .membership-editorial .lbc-law,.legacy 
   .membership-editorial .cc-title,.legacy 
   .membership-editorial .ts-title {
     margin-bottom: 8px;
@@ -1275,7 +1274,7 @@
     font-size: 1rem;
   }
 
-  .legacy .membership-editorial .lbc-issue,.legacy 
+.legacy .membership-editorial .lbc-issue,.legacy 
   .membership-editorial .cc-body,.legacy 
   .membership-editorial .ts-body {
     color: #435263;
@@ -1284,7 +1283,7 @@
     line-height: 1.85;
   }
 
-  .legacy .membership-editorial .lbc-verdict {
+.legacy .membership-editorial .lbc-verdict {
     display: block;
     width: fit-content;
     margin-top: 10px;
@@ -1292,7 +1291,7 @@
     font-size: 0.74rem;
   }
 
-  .legacy .membership-editorial .ts-num {
+.legacy .membership-editorial .ts-num {
     display: block;
     width: auto;
     height: auto;
@@ -1303,20 +1302,20 @@
     font-size: 1rem;
   }
 
-  .legacy .membership-editorial .case-block {
+.legacy .membership-editorial .case-block {
     margin: 25px 0;
     padding: 24px 0;
     border-top: 2px solid var(--membership-navy);
   }
 
-  .legacy .membership-editorial .case-block-head {
+.legacy .membership-editorial .case-block-head {
     display: grid;
     grid-template-columns: 92px minmax(0, 1fr);
     gap: 18px;
     margin: 0 0 13px;
   }
 
-  .legacy .membership-editorial .case-badge,.legacy 
+.legacy .membership-editorial .case-badge,.legacy 
   .membership-editorial .ynf-label {
     margin: 0;
     color: var(--membership-muted);
@@ -1324,16 +1323,16 @@
     letter-spacing: 0.05em;
   }
 
-  .legacy .membership-editorial .case-name {
+.legacy .membership-editorial .case-name {
     color: var(--membership-navy);
     font-size: 1rem;
   }
 
-  .legacy .membership-editorial .case-body {
+.legacy .membership-editorial .case-body {
     padding: 0;
   }
 
-  .legacy .membership-editorial .case-point {
+.legacy .membership-editorial .case-point {
     display: grid;
     grid-template-columns: 18px minmax(0, 1fr);
     gap: 8px;
@@ -1345,18 +1344,18 @@
     color: #3e4d5c;
   }
 
-  .legacy .membership-editorial .case-point::before {
+.legacy .membership-editorial .case-point::before {
     content: "—";
     color: var(--membership-gold);
   }
 
-  .legacy .membership-editorial .source-note {
+.legacy .membership-editorial .source-note {
     margin-top: 16px;
     color: var(--membership-muted);
     font-size: 0.86rem;
   }
 
-  .legacy .roster-table {
+.legacy .roster-table {
     width: 100%;
     margin: 30px 0 28px;
     border-collapse: collapse;
@@ -1370,14 +1369,14 @@
     line-height: 1.65;
   }
 
-  .legacy .roster-table caption {
+.legacy .roster-table caption {
     padding: 0 0 10px;
     color: var(--membership-muted);
     font-size: 0.78rem;
     text-align: left;
   }
 
-  .legacy .roster-table th,.legacy 
+.legacy .roster-table th,.legacy 
   .roster-table td {
     padding: 14px 16px;
     border-top: 1px solid #aebbc6;
@@ -1385,7 +1384,7 @@
     vertical-align: top;
   }
 
-  .legacy .roster-table thead th {
+.legacy .roster-table thead th {
     border-top: 2px solid var(--membership-navy);
     background: #eef2f5;
     color: var(--membership-navy);
@@ -1393,40 +1392,40 @@
     font-weight: 700;
   }
 
-  .legacy .roster-table tbody th {
+.legacy .roster-table tbody th {
     width: 20%;
     background: transparent;
     color: var(--membership-navy);
     font-weight: 800;
   }
 
-  .legacy .membership-editorial .roster-key {
+.legacy .membership-editorial .roster-key {
     margin: 32px 0 10px;
     padding: 22px 0 22px 24px;
     border-left: 4px solid var(--membership-gold);
     color: var(--membership-navy);
   }
 
-  .legacy .membership-editorial .yokohama-notice-feature {
+.legacy .membership-editorial .yokohama-notice-feature {
     margin-top: 34px;
     padding: 28px 0;
     border-top: 2px solid var(--membership-navy);
   }
 
-  .legacy .membership-editorial .yokohama-notice-feature h4 {
+.legacy .membership-editorial .yokohama-notice-feature h4 {
     margin: 8px 0 12px;
     color: var(--membership-navy);
     font-size: clamp(1.08rem, 2vw, 1.28rem);
     line-height: 1.55;
   }
 
-  .legacy .membership-editorial .ynf-points {
+.legacy .membership-editorial .ynf-points {
     margin: 18px 0;
     padding: 0;
     border-top: 1px solid var(--membership-line);
   }
 
-  .legacy .membership-editorial .ynf-points li {
+.legacy .membership-editorial .ynf-points li {
     padding: 10px 0;
     border: 0;
     border-bottom: 1px solid var(--membership-line);
@@ -1437,22 +1436,22 @@
     font-weight: 600;
   }
 
-  .legacy .membership-editorial .ynf-actions {
+.legacy .membership-editorial .ynf-actions {
     gap: 7px 22px;
   }
 
-  .legacy .membership-editorial .membership-sources {
+.legacy .membership-editorial .membership-sources {
     border-bottom: 0;
   }
 
-  .legacy .source-register {
+.legacy .source-register {
     margin: 30px 0 0;
     padding: 0;
     list-style: none;
     border-top: 2px solid var(--membership-navy);
   }
 
-  .legacy .source-register li {
+.legacy .source-register li {
     display: grid;
     grid-template-columns: 110px minmax(0, 1fr);
     gap: 18px;
@@ -1460,26 +1459,26 @@
     border-bottom: 1px solid var(--membership-line);
   }
 
-  .legacy .source-kind {
+.legacy .source-kind {
     color: var(--membership-muted);
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.06em;
   }
 
-  .legacy .source-register a {
+.legacy .source-register a {
     color: var(--membership-navy);
     font-weight: 700;
   }
 
-  .legacy .membership-editorial .source-register p {
+.legacy .membership-editorial .source-register p {
     margin: 5px 0 0;
     color: #566473;
     font-size: 0.85rem;
     line-height: 1.75;
   }
 
-  .legacy .membership-related {
+.legacy .membership-related {
     display: grid;
     grid-template-columns: 110px minmax(0, 1fr);
     gap: 18px;
@@ -1489,24 +1488,24 @@
     border-bottom: 1px solid var(--membership-line);
   }
 
-  .legacy .membership-related span,.legacy 
+.legacy .membership-related span,.legacy 
   .source-updated {
     color: var(--membership-muted) !important;
     font-size: 0.76rem !important;
     letter-spacing: 0.04em;
   }
 
-  .legacy .membership-editorial .u-f202dd4558 {
+.legacy .membership-editorial .u-f202dd4558 {
     padding: 72px 0 82px;
     border-top: 1px solid var(--membership-line);
     background: #f7f8f8;
   }
 
-  .legacy .membership-editorial .u-9a9e41516c {
+.legacy .membership-editorial .u-9a9e41516c {
     width: min(calc(100% - 48px), 920px);
   }
 
-  .legacy .membership-editorial .u-f202dd4558 .section-kicker {
+.legacy .membership-editorial .u-f202dd4558 .section-kicker {
     display: block;
     margin-bottom: 10px;
     color: var(--membership-muted);
@@ -1514,47 +1513,47 @@
     letter-spacing: 0.1em;
   }
 
-  .legacy .membership-editorial .u-f202dd4558 .section-title {
+.legacy .membership-editorial .u-f202dd4558 .section-title {
     margin: 0;
     color: var(--membership-navy);
     font-family: "Noto Serif JP", serif;
     font-size: clamp(1.65rem, 3vw, 2.2rem);
   }
 
-  .legacy .membership-editorial .issue-content + section > div > div:last-child {
+.legacy .membership-editorial .issue-content + section > div > div:last-child {
     display: flex;
   }
 
-  .legacy .membership-editorial .u-9cb8fb5324 {
+.legacy .membership-editorial .u-9cb8fb5324 {
     margin-top: 28px;
     border: 0 !important;
     border-top: 2px solid var(--membership-navy) !important;
     border-radius: 0 !important;
   }
 
-  .legacy .membership-editorial .u-9cb8fb5324 details {
+.legacy .membership-editorial .u-9cb8fb5324 details {
     border-bottom: 1px solid var(--membership-line);
   }
 
-  .legacy .membership-editorial .u-880ef74740 {
+.legacy .membership-editorial .u-880ef74740 {
     gap: 28px;
     padding: 20px 0;
     color: var(--membership-navy);
     line-height: 1.65;
   }
 
-  .legacy .membership-editorial .u-ae1840af47 {
+.legacy .membership-editorial .u-ae1840af47 {
     padding: 0 0 22px;
     background: transparent;
     color: #405060;
     line-height: 1.95;
   }
 
-  .legacy .membership-editorial details[open] .u-2524841df6 {
+.legacy .membership-editorial details[open] .u-2524841df6 {
     transform: rotate(180deg);
   }
 
-  @media (max-width: 760px) {
+@media (max-width: 760px) {
     .legacy .membership-editorial .issue-hero-inner {
       width: min(calc(100% - 36px), 920px);
     }
@@ -1665,7 +1664,6 @@
       font-size: 0.93rem;
     }
   }
-}
 
 
 /* 2026-09-20: membership.html current prose layout.

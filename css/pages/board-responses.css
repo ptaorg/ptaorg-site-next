@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for board-responses.html */
   /* Page-specific styles for board-responses.html */
   .legacy .compact-hero-section {
@@ -675,5 +675,3 @@
       box-shadow: none !important;
     }
   }
-
-}

@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 3 pages. Extracted from duplicated inline CSS. */
   .legacy .return-nav {
     background: #eef3fa;
@@ -50,4 +50,3 @@
       width: 100%;
     }
   }
-}

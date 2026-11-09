@@ -1,4 +1,4 @@
-@layer document {
+
   /* Site-wide open content layout.
    Cards are reserved for controls and genuinely self-contained interactive UI. */
   .legacy {
@@ -346,4 +346,3 @@
     border-radius: 0;
     box-shadow: none;
   }
-}

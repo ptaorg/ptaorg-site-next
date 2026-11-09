@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 3 pages. Extracted from duplicated inline CSS. */
   .legacy .source-box {
     border: 1px solid #dbe4ee;
@@ -31,4 +31,3 @@
     border-radius: 10px;
     padding: 12px 14px;
   }
-}

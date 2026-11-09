@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy .km-page {
     background: #ffffff;
     color: #1d2c3b;
@@ -307,4 +307,3 @@
       gap: 10px;
     }
   }
-}

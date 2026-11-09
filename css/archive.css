@@ -1,4 +1,4 @@
-@layer feature {
+
   /* An existing school's municipal research link should be discoverable without
      changing school data, assessment text, or document publication status. */
   .legacy .archive-school-page .archive-research-note {
@@ -355,4 +355,3 @@
       content: "";
     }
   }
-}

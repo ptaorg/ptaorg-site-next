@@ -1,4 +1,4 @@
-@layer interactions {
+
   /* Interaction and compatibility rules shared across the public site. */
   /* PTA site visual consistency — Chromium audit revision 2026-07-11 */
   .legacy {
@@ -752,4 +752,3 @@
     gap: 0;
     border-top: 2px solid #17324f;
   }
-}

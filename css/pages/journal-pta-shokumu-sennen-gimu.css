@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy .article35-page { background: #fff; color: #172033; }
   .legacy .article35-wrap { width: min(100% - 36px, 960px); margin-inline: auto; }
   .legacy .article35-hero { border-bottom: 1px solid #d9e2ec; background: linear-gradient(180deg,#f6f9fc 0%,#fff 100%); padding: 66px 0 54px; }
@@ -111,5 +111,3 @@
     .legacy .article35-transcript-block { padding: 18px 16px; }
     .legacy .article35-pdf-preview iframe { min-height: 560px; }
   }
-
-}

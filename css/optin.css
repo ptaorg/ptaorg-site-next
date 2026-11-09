@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy {
     --op-navy: #17345c;
     --op-navy-deep: #0a192f;
@@ -786,7 +786,6 @@
       grid-template-columns: 36px 1fr;
     }
   }
-}
 
 
   /* scope heading filled panel */

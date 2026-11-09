@@ -90,6 +90,7 @@ def build_toc(soup):
                 h['id'] = hid
         else:
             hid = h['id']
+        t = re.sub(r'^(?:第?[0-9０-９]+[章節]?|[0-9０-９]+\s*[/／.．、)）])\s*', '', t) or t
         heads.append((hid, t if len(t) <= 40 else t[:38] + '…'))
     # legacy in-body tables of contents duplicate the generated one
     if len(heads) >= 3:

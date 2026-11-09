@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 2 pages. Extracted from duplicated inline CSS. */
   .legacy {
     --navy: #061b33;
@@ -779,4 +779,3 @@
       width: 100%;
     }
   }
-}

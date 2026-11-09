@@ -1,4 +1,4 @@
-@layer feature {
+
   /* PTA適正化推進委員会 提出用書式 */
 
   .legacy .form-page {
@@ -252,4 +252,3 @@
       border: 1px solid #999;
     }
   }
-}

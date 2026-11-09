@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for guide-parent.html */
   /* Page-specific styles for guide-parent.html */
   .legacy .parent-page {
@@ -1419,4 +1419,3 @@
       grid-row: 2;
     }
   }
-}

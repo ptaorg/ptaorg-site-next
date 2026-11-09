@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy {
     --ppc-navy: #12365b;
     --ppc-blue: #087aa6;
@@ -535,4 +535,3 @@
       padding: 25px 0;
     }
   }
-}

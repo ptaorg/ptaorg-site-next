@@ -1,4 +1,4 @@
-@layer page {
+
   /* 2026-08-12: source-led administrative reading layout */
   .legacy .research-editorial {
     --research-ink: #182635;
@@ -403,4 +403,3 @@
       gap: 10px;
     }
   }
-}

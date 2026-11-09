@@ -1,4 +1,4 @@
-@layer page {
+
   /* Page-specific styles for pta-application-chain-action-kit.html */
   .legacy {
     margin: 0;
@@ -94,4 +94,3 @@
       break-after: avoid;
     }
   }
-}

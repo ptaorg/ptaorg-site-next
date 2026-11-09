@@ -1,4 +1,4 @@
-@layer page {
+
   /* Consolidated page styles for edu-board-separation.html */
   /* Page-specific styles for edu-board-separation.html */
   .legacy .page-hero {
@@ -833,4 +833,3 @@
       transform: rotate(90deg);
     }
   }
-}

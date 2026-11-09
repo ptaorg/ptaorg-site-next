@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 2 pages. Extracted from duplicated inline CSS. */
   .legacy {
     margin: 0;
@@ -40,4 +40,3 @@
     text-align: center;
     font-size: 13px;
   }
-}

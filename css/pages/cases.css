@@ -1,4 +1,4 @@
-@layer page {
+
   /* Long-form case analysis: prose first, with tables used only for exact comparisons. */
   .legacy .cases-editorial .report-layout-section {
     display: block;
@@ -326,4 +326,3 @@
       padding-inline: 4px;
     }
   }
-}

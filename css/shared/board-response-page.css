@@ -1,4 +1,4 @@
-@layer page {
+
   /* Shared by 72 pages. Extracted from duplicated inline CSS. */
   .legacy {
     --navy: #1e3a5f;
@@ -377,4 +377,3 @@
       padding: 20px 16px;
     }
   }
-}

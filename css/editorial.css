@@ -1,4 +1,4 @@
-@layer editorial {
+
   /* refine.css reset */
   .legacy {
     --color-primary: #1e3a5f;
@@ -901,4 +901,3 @@
       -webkit-overflow-scrolling: touch;
     }
   }
-}

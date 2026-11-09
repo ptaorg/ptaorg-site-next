@@ -1,4 +1,4 @@
-@layer page {
+
   .legacy .case-reading-page {
     --cr-ink: #10283e;
     --cr-body: #293b4c;
@@ -495,4 +495,3 @@
       color: inherit;
     }
   }
-}
