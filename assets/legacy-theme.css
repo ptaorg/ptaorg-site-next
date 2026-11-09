@@ -1,0 +1,37 @@
+/* Theme layer for ported pages: loaded after the scoped legacy CSS.
+   Aligns legacy page bodies with the new design (type, color, heroes) without touching body text. */
+.legacy-crumbs{background:#fff;border-bottom:1px solid var(--line)}
+.legacy-crumbs .breadcrumb ol{padding:12px 0}
+.legacy{font-family:var(--sans)!important;color:var(--ink);background:#fff!important;font-size:1rem;line-height:1.9;min-height:0!important;margin:0!important;padding-top:0!important;display:block}
+.legacy h1,.legacy h2{font-family:var(--serif)!important;letter-spacing:.01em}
+.legacy a{text-underline-offset:.2em}
+
+/* Heroes: white background, ink text, no photo/gradient (design: page heading = label → h1 → lead) */
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero,.essay-hero,.edu-hero,.law-hero,.report-hero,.board-hero,.doc-hero){
+  background:#fff!important;background-image:none!important;color:var(--ink)!important;box-shadow:none!important;min-height:0!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;
+  padding-top:28px!important;padding-bottom:28px!important;margin-top:0!important;text-align:left!important}
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero,.essay-hero,.edu-hero,.law-hero,.report-hero,.board-hero,.doc-hero) :is(h1,h2,h3,p,span,div,small,li,strong,em,time,dt,dd){color:inherit!important;text-shadow:none!important}
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero)::before,
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero)::after{display:none!important}
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero) h1{font-size:clamp(1.65rem,3.2vw,2.25rem)!important;line-height:1.45!important;font-weight:700!important;color:var(--ink)!important;margin:6px 0 10px!important}
+.legacy h1{color:var(--ink)}
+.legacy :is(.page-kicker,.archive-kicker,.journal-eyebrow,.section-kicker,.lead-kicker,.hero-kicker,.kicker,.eyebrow){display:inline-block;font-size:.75rem!important;font-weight:700!important;letter-spacing:0!important;text-transform:none!important;color:var(--navy)!important;background:var(--tint)!important;padding:3px 10px!important;border-radius:3px;border:0!important}
+.legacy :is(.hero-slideshow,.hero-slide,.hero-bg,.hero-photo,.page-hero__bg,.hero-image){display:none!important}
+
+/* hero inner wrappers carry their own large padding/min-height */
+.legacy :is(.hero,.page-hero,.archive-hero,.journal-article-hero,.compact-hero-section,.reality-hero,.compliance-hero,.contact-hero,.support-hero,.audit-hero,.form-hero,.privacy-hero,.fee-page-hero,.page-banner,header.hero,section.hero,.research-hero) > *{padding-top:0!important;padding-bottom:0!important;min-height:0!important;margin-top:0!important}
+.legacy :is(.hero-inner,.page-hero__inner,.page-hero-inner,.hero-content,.hero-text){min-height:0!important;padding-top:0!important;padding-bottom:0!important}
+
+/* Section headings: one style site-wide (serif, ink, navy rule) instead of legacy filled boxes */
+.legacy-body :is(main,section,article,.wrap,.wrap-narrow,div) > h2:not([class*="hero"]){background:none!important;color:var(--ink)!important;box-shadow:none!important;border:0!important;border-bottom:2px solid var(--navy)!important;border-radius:0!important;padding:0 0 8px!important;display:block!important;font-size:clamp(1.25rem,2.2vw,1.5rem)!important;line-height:1.5!important}
+.legacy-body h2::before,.legacy-body h2::after{display:none!important}
+.legacy-body h3{color:var(--ink)}
+.legacy-body{background:#fff}
+
+/* Body defaults: readable measure and new tokens */
+.legacy table{font-size:.92rem}
+.legacy :is(blockquote,.law-quote){border-left-color:var(--navy)}
+.legacy img{max-width:100%;height:auto}
+.legacy .scroll-top-button{display:none!important}
+.legacy :is(.support-strip,.loc-trail,.current-location-breadcrumb){display:none!important}
+@media print{.legacy-crumbs{display:none}}
