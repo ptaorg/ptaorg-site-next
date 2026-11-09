@@ -121,11 +121,20 @@
         <button type="button" role="tab" class="tab" data-tab="page" aria-selected="false">解説・論考ページ<span id="count-page">—</span></button>
       </div>
 
+      <div class="explore-grid">
       <section class="results-section" aria-labelledby="result-title">
         <div class="results-head"><h2 id="result-title">検索結果</h2><span class="result-count" id="result-count" aria-live="polite">読み込み中</span></div>
         <div id="results" class="result-list" aria-live="polite"></div>
         <div id="empty-results" class="empty-state" hidden><h3>一致する資料がありません</h3><p>学校名の一部や自治体名だけで試すか、条件を解除してください。</p></div>
       </section>
+      <aside class="explore-map" aria-label="検索結果の地図">
+        <details open class="map-card"><summary><svg aria-hidden="true"><use href="#i-pin"/></svg>地図で見る<span class="map-count" data-map-count></span></summary>
+          <div class="list-map" data-explore-map role="img" aria-label="検索結果の所在地を示した日本地図"></div>
+          <p class="map-legend"><span class="legend-pin"></span>自治体の調査<span class="legend-pin school"></span>学校の資料（数字は校数）<span class="legend-pin resp"></span>教育委員会の回答</p>
+          <p class="map-note">ピンは自治体の概略位置です。押すとその資料へ移動します。</p>
+        </details>
+      </aside>
+      </div>
     </div>
   </main>
 <!-- chrome:footer -->

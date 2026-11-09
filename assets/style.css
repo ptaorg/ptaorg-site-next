@@ -522,3 +522,28 @@ svg{width:1em;height:1em;flex:none}
 
 #main .legacy-body .fix-contrast{color:var(--ink)!important;-webkit-text-fill-color:currentColor}
 #main .legacy-body a.fix-contrast{color:var(--link)!important}
+
+/* list maps (search results, response DB, archive, research index) */
+.explore-grid{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:28px;align-items:start}
+.explore-map{position:sticky;top:12px;padding-top:22px}
+.map-card{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.map-card summary{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--tint);font-family:var(--serif);font-weight:700;cursor:pointer;list-style:none}
+.map-card summary::-webkit-details-marker{display:none}
+.map-card summary svg{width:1.1em;height:1.1em;color:var(--navy)}
+.map-count{margin-left:auto;font-family:var(--sans);font-size:.78rem;font-weight:500;color:var(--ink-sub)}
+.list-map{aspect-ratio:1/0.9;background:#F7F9FB;display:flex;align-items:center;justify-content:center}
+.list-map svg{width:100%;height:100%}
+.list-map .prefecture{fill:var(--map-off);stroke:#fff;stroke-width:1.2}
+.list-map .prefecture.has-data{fill:#BFD0E2}
+.list-map .boundary-line{stroke:#C9D1DB}
+.list-map svg a:hover path{filter:brightness(1.25)}
+.map-pin-school{fill:var(--navy);stroke:#fff}
+.pin-count{font-family:var(--sans);font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none}
+.map-legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 2px;font-size:.74rem;color:var(--ink-sub);margin:8px 14px 0}
+.legend-pin.school{background:var(--navy)}
+.map-note{font-size:.74rem;color:var(--ink-faint);margin:4px 14px 12px}
+.list-map-block{margin:22px 0 6px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+.list-map-block h2{display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--tint);font-family:var(--serif);font-size:1.1rem;margin:0}
+.list-map-block h2 svg{width:1.1em;height:1.1em;color:var(--navy)}
+.list-map-block .list-map{aspect-ratio:auto;height:min(560px,70vw)}
+@media (max-width:1040px){.explore-grid{grid-template-columns:minmax(0,1fr)}.explore-map{position:static;order:-1;padding-top:16px}}

@@ -244,6 +244,15 @@ def page_shell(*, rel, title, desc, canonical, og_image, jsonld, css_links, inli
     side = '' if wide else frame.side_html(prefix=p, toc=toc, pairs=pairs, related=related, map_info=map_info)
     legacy = f'<div class="legacy {e(body_cls)}"{attrs}><div class="legacy-body {e(body_cls)}">\n{content}\n</div></div>'
     search = SEARCH.replace('{p}', p)
+    LIST_MAPS = {'board-responses.html': ('responses', '教育委員会の回答（全国）', '緑のピンが回答のあった自治体・都道府県です。押すとその回答ページへ移動します。'),
+                 'national-archive.html': ('schools', '学校別資料のある自治体', 'ピンの数字はその自治体で登録している学校の数です。押すと学校の一覧へ移動します。'),
+                 'research-index.html': ('regions', '自治体別の研究', 'ピンを押すとその自治体の調査ページへ移動します。')}
+    listmap = ''
+    if rel in LIST_MAPS:
+        kind, ttl, note = LIST_MAPS[rel]
+        listmap = (f'<div class="container"><section class="list-map-block"><h2><svg aria-hidden="true"><use href="#i-pin"/></svg>{ttl}を地図で見る<span class="map-count" data-map-count></span></h2>'
+                   f'<div class="list-map" data-list-map="{kind}" role="img" aria-label="{ttl}の所在地を示した日本地図"></div>'
+                   f'<p class="map-note">{note} 位置は自治体の概略位置です。</p></section></div>')
     if side and map_info:
         # region pages: hero with map, search, content left / info right (自治体別調査の型)
         layout = f'{search}<div class="container"><div class="detail-layout region-layout"><div class="detail-main">{frame.toc_mobile(toc)}{legacy}</div><aside class="detail-side">{side}</aside></div>{pager}</div>'
@@ -251,10 +260,10 @@ def page_shell(*, rel, title, desc, canonical, og_image, jsonld, css_links, inli
     elif side:
         # articles: search, hero, notice, table of contents left (研究・論考の型)
         layout = f'<div class="container"><div class="article-layout"><aside class="article-side">{side}</aside><div class="article-main">{frame.toc_mobile(toc)}{legacy}</div></div>{pager}</div>'
-        body_main = f'<main id="main">\n{search}\n{hero}\n{layout}\n</main>'
+        body_main = f'<main id="main">\n{search}\n{hero}\n{listmap}\n{layout}\n</main>'
     else:
         layout = f'<div class="legacy-wide">{legacy}</div><div class="container">{pager}</div>'
-        body_main = f'<main id="main">\n{search}\n{hero}\n{layout}\n</main>'
+        body_main = f'<main id="main">\n{search}\n{hero}\n{listmap}\n{layout}\n</main>'
     main_id = 'main'
     header = rootify(HEADER, p).replace('<span data-index-date>公開済み索引</span>', f'<span data-index-date>{INDEX_DATE}時点の公開済み索引</span>' if INDEX_DATE else '<span data-index-date>公開済み索引</span>')
     body = [

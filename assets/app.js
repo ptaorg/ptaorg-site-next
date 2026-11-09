@@ -129,6 +129,48 @@
       if(pin.length===2&&pin.every(Number.isFinite))addPin(svg,pin[0],pin[1],size*0.012,'map-pin',`${el.dataset.mapLabel||pref}（概略位置）`,null,el.dataset.mapLabel||'');
     }catch{el.remove();}
   }
+  /* list map: whole Japan with grouped pins; items = [{key,xy,kind,count,title,href,onClick}] */
+  async function drawPinMap(el,items){
+    if(!el)return;
+    if(!el.querySelector('svg')){el.innerHTML=await getSvg();}
+    const svg=el.querySelector('svg');svg.querySelectorAll('.pin-layer').forEach(n=>n.remove());
+    const layer=document.createElementNS(NS,'g');layer.setAttribute('class','pin-layer');svg.append(layer);
+    const prefsOn=new Set(items.map(i=>i.pref).filter(Boolean));
+    svg.querySelectorAll('.prefecture').forEach(g=>g.classList.toggle('has-data',prefsOn.has(PREFS[g.dataset.code-1])));
+    // zoom to the area that has pins (keeps a minimum size so a single city still shows its surroundings)
+    let scale=1;
+    if(items.length){const xs=items.map(i=>i.xy[0]),ys=items.map(i=>i.xy[1]);const x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+      const w=Math.max(x1-x0,180)*1.25+60,h=Math.max(y1-y0,180)*1.25+80;const size=Math.max(w,h/0.9);scale=Math.max(0.45,Math.min(1,size/900));
+      svg.setAttribute('viewBox',`${(x0+x1)/2-size/2} ${(y0+y1)/2-size*0.9/2-15} ${size} ${size*0.9}`);svg.setAttribute('preserveAspectRatio','xMidYMid meet');}
+    else svg.setAttribute('viewBox','0 0 1000 1000');
+    const order={response:0,school:1,region:2};
+    for(const it of [...items].sort((a,b)=>(order[a.kind]??3)-(order[b.kind]??3))){
+      const cls=it.kind==='response'?'map-pin-resp':it.kind==='school'?'map-pin-school':'map-pin';
+      const R=(it.kind==='response'?5.2:6.6)*scale;
+      const g=addPin(layer,it.xy[0],it.xy[1],R,cls,it.title,it.href||null,null);
+      if(it.count>1){const tx=document.createElementNS(NS,'text');tx.setAttribute('x',it.xy[0]);tx.setAttribute('y',it.xy[1]-R*3+R*0.55);tx.setAttribute('font-size',String(R*1.45));tx.setAttribute('class','pin-count');tx.textContent=it.count>99?'99+':String(it.count);g.append(tx);g.querySelector('circle')?.remove();}
+      if(it.onClick){g.style.cursor='pointer';g.addEventListener('click',e=>{e.preventDefault();it.onClick();});}
+    }
+    const note=el.parentElement&&el.parentElement.querySelector('[data-map-count]');if(note)note.textContent=`地図上の地点：${items.length}`;
+  }
+  function pinsForResults(r,pins,act){
+    const out=[];const want=k=>act==='all'||act===k;
+    if(want('response'))for(const x of r.responses){const xy=pins.responses[String(x.no)]||pins.prefs[x.prefecture];if(xy)out.push({kind:'response',xy,pref:x.prefecture,title:`${respTitle(x)}`,href:safeSourceLink(x.url)});}
+    if(want('municipality'))for(const m of r.municipalities){const xy=pins.regions[m.id]||pins.prefs[m.prefecture];if(xy)out.push({kind:'region',xy,pref:m.prefecture,title:`${m.name}：自治体の調査`,href:regionLink(m.id)});}
+    if(want('school')){const by=new Map();for(const s of r.schools){const k=s.regionId;if(!by.has(k))by.set(k,[]);by.get(k).push(s);}
+      for(const [id,list] of by){const m=data.map.municipalities.find(x=>x.id===id);if(!m)continue;const xy=pins.regions[id]||pins.prefs[m.prefecture];if(xy)out.push({kind:'school',xy,pref:m.prefecture,count:list.length,title:`${m.name}：学校の資料 ${list.length}校`,href:`explore.html?tab=school&q=${encodeURIComponent(m.name)}`});}}
+    return out;
+  }
+  async function renderListMaps(){
+    const els=[...document.querySelectorAll('[data-list-map]')];if(!els.length)return;
+    const pins=await getPins();
+    for(const el of els){const kind=el.dataset.listMap;const r={responses:[],municipalities:[],schools:[]};
+      if(kind==='responses')r.responses=data.responses.responses||[];
+      if(kind==='regions')r.municipalities=data.map.municipalities;
+      if(kind==='schools')r.schools=allSchools();
+      const act=kind==='responses'?'response':kind==='regions'?'municipality':'school';
+      await drawPinMap(el,pinsForResults(r,pins,act));}
+  }
   async function renderMap(){
     const box=document.querySelector('[data-japan-map]');const grid=document.querySelector('[data-pref-grid]');
     const active=prefsWithData();const count=p=>data.map.municipalities.filter(m=>m.prefecture===p).length;
@@ -177,6 +219,7 @@
     return `<article class="result-row"><span class="row-icon">${icon('book')}</span><div class="row-body">${label('ページ','analysis')}<h3><a href="${href}">${esc(p.title)}</a></h3><p>${esc(p.desc)}</p></div><a class="row-go" href="${href}" aria-label="${esc(p.title)}">${icon('chevron')}</a></article>`;
   }
   function renderExplorer(){
+    const mc=document.querySelector('.explore-map details');if(mc&&window.innerWidth<1040)mc.removeAttribute('open');
     const form=document.getElementById('explore-form');const q=document.getElementById('query');const pref=document.getElementById('prefecture');const type=document.getElementById('school-type');const topic=document.getElementById('topic');
     const tabs=[...document.querySelectorAll('[data-tab]')];const out=document.getElementById('results');const empty=document.getElementById('empty-results');
     PREFS.filter(p=>prefsWithData().includes(p)).forEach(p=>pref.add(new Option(p,p)));
@@ -194,6 +237,8 @@
       out.innerHTML=items.slice(0,max).join('');
       if(items.length>max){const b=document.createElement('div');b.className='more-results';b.innerHTML=`<button class="button button-secondary" type="button">さらに表示（残り${items.length-max}件）</button>`;b.querySelector('button').addEventListener('click',()=>{max+=60;draw();});out.append(b);}
       empty.hidden=items.length!==0;
+      const mapEl=document.querySelector('[data-explore-map]');
+      if(mapEl)getPins().then(pins=>drawPinMap(mapEl,pinsForResults(r,pins,active==='page'?'none':active)));
     }
     form.addEventListener('submit',e=>{e.preventDefault();max=30;draw();});
     [q,pref,type,topic].forEach(el=>el.addEventListener(el===q?'input':'change',()=>{max=30;draw();}));
@@ -334,7 +379,9 @@
   }
   async function init(){
     chrome();
-    if(document.body.dataset.page==='legacy'){document.querySelectorAll('[data-map]').forEach(renderMapEl);tocSpy();return;}
+    if(document.body.dataset.page==='legacy'){document.querySelectorAll('[data-map]').forEach(renderMapEl);tocSpy();
+      if(document.querySelector('[data-list-map]')){try{data=await loadData();await renderListMaps();}catch(e){console.error(e);}}
+      return;}
     try{data=await loadData();fillSelects();writeCounts();const p=document.body.dataset.page;
       if(p==='home')renderHome();if(p==='explore')renderExplorer();if(p==='municipality')renderMunicipality();if(p==='school')renderSchool();
     }catch(e){console.error('Failed to load public site data:',e);const t=document.getElementById('data-note')||document.getElementById('municipality-root')||document.getElementById('school-root');if(t)t.textContent='データを読み込めませんでした。HTTPサーバー経由で開いてください。';}
