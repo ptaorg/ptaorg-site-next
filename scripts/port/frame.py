@@ -136,7 +136,7 @@ def hero_html(*, prefix, crumbs, label, tb, map_info, date='', image=True):
     if map_info:
         visual = f'<div class="article-visual article-visual-map">{map_block(map_info)}</div>'
     elif image:
-        visual = f'<div class="article-visual"><img src="{prefix}assets/img/research-book.webp" alt="" width="278" height="157"></div>'
+        visual = '<div class="article-visual paper-ornament" aria-hidden="true"></div>'
     else:
         visual = ''
     meta = []

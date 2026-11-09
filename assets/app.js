@@ -315,7 +315,7 @@
             ${legal.length?`<ol class="analysis-list">${legal.map(l=>`<li><strong>${esc(l.title)}</strong><p>${esc(l.text)}</p></li>`).join('')}</ol>`:''}
             ${(m.unknowns||[]).length?`<div class="notice notice-unknown"><strong>未確認の事項</strong><ul>${m.unknowns.map(u=>`<li>${esc(u)}</li>`).join('')}</ul></div>`:''}
             ${writings.length?`<h3>関連する論考</h3><ul class="plain-links">${writings.map(a=>`<li><a href="${esc(localLink(a.url))}">${esc(a.title)}</a></li>`).join('')}</ul>`:''}
-            <article class="feature feature-wide"><div><span class="label">基本的な検討方法</span><h3><a href="framework.html">学校と外部団体の境界をどう確認するか</a></h3><p>主体・事務の帰属・学校の公法上の権限・個人情報・教職員の関与を順に検討する。</p><a class="text-link" href="framework.html">論考を見る${icon('chevron')}</a></div><img src="assets/img/research-book.webp" alt="" width="278" height="157"></article>
+            <article class="feature feature-wide"><div><span class="label">基本的な検討方法</span><h3><a href="framework.html">学校と外部団体の境界をどう確認するか</a></h3><p>主体・事務の帰属・学校の公法上の権限・個人情報・教職員の関与を順に検討する。</p><a class="text-link" href="framework.html">論考を見る${icon('chevron')}</a></div><div class="paper-ornament feature-ornament" aria-hidden="true"></div></article>
           </section>
         </div>
         <aside class="detail-side">

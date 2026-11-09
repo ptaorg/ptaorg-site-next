@@ -9,7 +9,7 @@
 - 公開済みデータ（29地域・569校・72回答）と論考索引 `data/journal-index.json` を同梱。件数・最新論考はすべてデータから表示し、手書きの数値は置かない。
 - 自治体ページは研究ノートの `summary / system / timeline / legal / unknowns / sources` をそのまま表示。データが無い項目は「未登録」と明示する。
 - 日本地図は Geolonia「japanese-prefectures」（GFDL）。`assets/map/` に同梱。
-- 写真2点（`assets/img/`）はデザイン見本から切り出した仮素材。公開前に権利の確認できる写真へ差し替える。
+- トップと論考見出しの装飾はCSSで描画しています。
 
 ## v0.3 全ページ移植
 
