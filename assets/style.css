@@ -547,3 +547,16 @@ svg{width:1em;height:1em;flex:none}
 .list-map-block h2 svg{width:1.1em;height:1.1em;color:var(--navy)}
 .list-map-block .list-map{aspect-ratio:auto;height:min(560px,70vw)}
 @media (max-width:1040px){.explore-grid{grid-template-columns:minmax(0,1fr)}.explore-map{position:static;order:-1;padding-top:16px}}
+
+
+/* v0.6 — spacious reading layout across migrated article pages */
+@media (min-width:1041px){
+  .container:has(> .article-layout){max-width:1600px;padding-left:clamp(20px,2.4vw,40px);padding-right:clamp(20px,2.4vw,40px)}
+  .article-layout{grid-template-columns:260px minmax(0,1fr);column-gap:clamp(28px,3vw,48px)}
+}
+.article-main{min-width:0;width:100%;max-width:none}
+.article-main .legacy,.article-main .legacy-body{width:100%;max-width:none}
+.article-main .legacy-body :is(.pdf-grid,.archive-grid,.meta-grid){min-width:0}
+@media (max-width:1040px){
+  .article-layout{grid-template-columns:minmax(0,1fr);gap:24px}
+}
