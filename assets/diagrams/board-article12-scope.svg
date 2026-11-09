@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-labelledby="title desc">
+  <title id="title">社会教育法第12条の規律対象と分離措置の対象</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="584" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="64" y="74" font-size="30" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">社会教育法第12条の規律対象と分離措置の対象</tspan></text>
+  <text x="64" y="110" font-size="19" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">第12条が禁じるのはPTAの自治への不当な介入。分離措置の対象は学校側の管理資源であり、規律の対象が異なる</tspan></text>
+  <rect x="70" y="150" width="545" height="330" rx="18" fill="#f1eefb" stroke="#8a75c9" stroke-width="3"/>
+  <rect x="665" y="150" width="545" height="330" rx="18" fill="#e9f1f8" stroke="#0b3a67" stroke-width="3"/>
+  <rect x="70" y="150" width="545" height="78" rx="18" fill="#8a75c9"/>
+  <rect x="665" y="150" width="545" height="78" rx="18" fill="#0b3a67"/>
+  <text x="342" y="184" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="342" dy="0">PTAの自治</tspan></text>
+  <text x="342" y="212" font-size="18" font-weight="500" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="342" dy="0">第12条が介入を禁じる領域</tspan></text>
+  <text x="937" y="184" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="937" dy="0">学校の管理資源</tspan></text>
+  <text x="937" y="212" font-size="18" font-weight="500" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="937" dy="0">教育委員会・学校の責任＝分離措置の対象</tspan></text>
+  <rect x="98" y="240" width="489" height="38" rx="8" fill="#ffffff" stroke="#8a75c9" stroke-width="1"/>
+  <text x="118" y="266" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">事業内容・活動方針</tspan></text>
+  <rect x="98" y="290" width="489" height="38" rx="8" fill="#ffffff" stroke="#8a75c9" stroke-width="1"/>
+  <text x="118" y="316" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">総会の議決</tspan></text>
+  <rect x="98" y="340" width="489" height="38" rx="8" fill="#ffffff" stroke="#8a75c9" stroke-width="1"/>
+  <text x="118" y="366" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">役員人事</tspan></text>
+  <rect x="98" y="390" width="489" height="38" rx="8" fill="#ffffff" stroke="#8a75c9" stroke-width="1"/>
+  <text x="118" y="416" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">規約の制定・改廃</tspan></text>
+  <rect x="693" y="235" width="489" height="36" rx="8" fill="#ffffff" stroke="#0b3a67" stroke-width="1"/>
+  <text x="713" y="260" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">学校施設の目的外使用許可</tspan></text>
+  <rect x="693" y="279" width="489" height="36" rx="8" fill="#ffffff" stroke="#0b3a67" stroke-width="1"/>
+  <text x="713" y="304" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">学校保有個人情報の管理</tspan></text>
+  <rect x="693" y="323" width="489" height="36" rx="8" fill="#ffffff" stroke="#0b3a67" stroke-width="1"/>
+  <text x="713" y="348" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">学校徴収金の取扱い</tspan></text>
+  <rect x="693" y="367" width="489" height="36" rx="8" fill="#ffffff" stroke="#0b3a67" stroke-width="1"/>
+  <text x="713" y="392" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">教職員の服務監督</tspan></text>
+  <rect x="693" y="411" width="489" height="36" rx="8" fill="#ffffff" stroke="#0b3a67" stroke-width="1"/>
+  <text x="713" y="436" font-size="19" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">学校連絡ツールの利用</tspan></text>
+  <rect x="70" y="502" width="1140" height="50" rx="12" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="640" y="533" font-size="21" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">分離措置は右側（学校側の管理）の問題であり、第12条の干渉には当たらない</tspan></text>
+  <rect x="70" y="562" width="1140" height="38" rx="10" fill="#eef7f0" stroke="#3b7f4b" stroke-width="1"/>
+  <text x="640" y="587" font-size="18" font-weight="600" fill="#3b7f4b" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">第11条：分離後も、PTAの求めに応じた専門的技術的指導・助言という協力関係は残る</tspan></text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" width="1280" height="480" role="img" aria-labelledby="title desc">
+  <title id="title">段階的分離の標準工程</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="424" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <rect x="34" y="28" width="1212" height="70" rx="18" fill="#0b3a67"/>
+  <text x="64" y="73" font-size="28" font-weight="700" fill="#ffffff" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">段階的分離の標準工程</tspan></text>
+  <text x="64" y="128" font-size="20" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">調査から定着まで。期限を切り、文書と実態の双方で確認する</tspan></text>
+  <rect x="70" y="168" width="262" height="150" rx="16" fill="#ffffff" stroke="#0b3a67" stroke-width="3"/>
+  <circle cx="104" cy="204" r="20" fill="#0b3a67"/>
+  <text x="104" y="211" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="104" dy="0">1</tspan></text>
+  <text x="136" y="211" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="136" dy="0">実態把握</tspan></text>
+  <text x="94" y="254" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="94" dy="0">全校へ学校別実態調査票</tspan><tspan x="94" dy="28">文書と実態の双方を確認</tspan></text>
+  <rect x="366" y="168" width="262" height="150" rx="16" fill="#ffffff" stroke="#0b3a67" stroke-width="3"/>
+  <circle cx="400" cy="204" r="20" fill="#0b3a67"/>
+  <text x="400" y="211" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="400" dy="0">2</tspan></text>
+  <text x="432" y="211" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="432" dy="0">方針提示</tspan></text>
+  <text x="390" y="254" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="390" dy="0">通知の発出と校長会説明</tspan><tspan x="390" dy="28">分離基準と優先順位を明示</tspan></text>
+  <rect x="662" y="168" width="262" height="150" rx="16" fill="#ffffff" stroke="#0b3a67" stroke-width="3"/>
+  <circle cx="696" cy="204" r="20" fill="#0b3a67"/>
+  <text x="696" y="211" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="696" dy="0">3</tspan></text>
+  <text x="728" y="211" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="728" dy="0">移行</tspan></text>
+  <text x="686" y="254" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="686" dy="0">年度替わりを目途に</tspan><tspan x="686" dy="28">期限付き改善計画を提出</tspan></text>
+  <rect x="958" y="168" width="262" height="150" rx="16" fill="#ffffff" stroke="#0b3a67" stroke-width="3"/>
+  <circle cx="992" cy="204" r="20" fill="#0b3a67"/>
+  <text x="992" y="211" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="992" dy="0">4</tspan></text>
+  <text x="1024" y="211" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1024" dy="0">確認と定着</tspan></text>
+  <text x="982" y="254" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="982" dy="0">報告徴取・条件見直し</tspan><tspan x="982" dy="28">翌年度入学手続で再確認</tspan></text>
+  <line x1="328" y1="243" x2="370" y2="243" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="624" y1="243" x2="666" y2="243" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="920" y1="243" x2="962" y2="243" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="118" y="356" width="1044" height="64" rx="12" fill="#fff7df" stroke="#d4a72c" stroke-width="2"/>
+  <text x="640" y="384" font-size="19" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">移行期間中であっても、入会申込記録が確認できない保護者への</tspan></text>
+  <text x="640" y="410" font-size="19" font-weight="700" fill="#b34b4b" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">新たな会費請求・役員選出・免除審査への組み込みは、直ちに止めることができる</tspan></text>
+</svg>

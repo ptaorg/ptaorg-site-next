@@ -15,15 +15,17 @@
     {id:'correction',label:'行政の指導・是正',themes:['制度是正・改善事例','住民監査請求','情報公開・審査請求'],topics:['教委指導・是正']}
   ];
   const SITE = 'https://ptaorg.com';
-  const localLink = p => typeof p === 'string' && /^\/(?:archive|research|journal|assets\/docs)\/[\w./-]+(?:\.html|\.pdf|\/)$/.test(p) ? SITE + p : SITE + '/';
+  const ROOT = (typeof document!=='undefined'&&document.body&&document.body.dataset.root)||'';
+  // same-site paths stay inside this site (relative to the page)
+  const localLink = p => {if(typeof p!=='string')return ROOT+'index.html';const q=p.replace(/^https?:\/\/(?:www\.)?ptaorg\.(?:com|github\.io)/,'');return /^\/(?:archive|research|journal|board-responses|assets\/docs|assets\/documents)\/[\w./%-]+(?:\.html|\.pdf|\/)$/.test(q)?ROOT+q.slice(1):ROOT+'index.html';};
   const schoolLink = p => `school.html?url=${encodeURIComponent(p)}`;
   const regionLink = id => `municipality.html?id=${encodeURIComponent(id)}`;
-  function safeSourceLink(url){try{const x=new URL(url,SITE);return x.origin===SITE?x.href:SITE+'/board-responses.html';}catch{return SITE+'/board-responses.html';}}
+  function safeSourceLink(url){try{const x=new URL(url,SITE);return x.origin===SITE?ROOT+(x.pathname.slice(1)||'index.html')+x.hash:ROOT+'board-responses.html';}catch{return ROOT+'board-responses.html';}}
   const fmtDate = d => {const s=String(d||'').trim();const m=s.match(/^(\d{4})[\/.-](\d{1,2})(?:[\/.-](\d{1,2}))?$/);if(m)return [m[1],m[2].padStart(2,'0'),m[3]&&m[3].padStart(2,'0')].filter(Boolean).join('-');return s.replace(/\s+/g,'');};
   let data = {map:{municipalities:[]},responses:{responses:[]},journal:{articles:[]},demo:true};
 
   /* ---------- data ---------- */
-  async function loadJSON(path){const r=await fetch(path,{cache:'no-cache'});if(!r.ok)throw Error(`Data unavailable: ${path}`);return r.json();}
+  async function loadJSON(path){const r=await fetch(ROOT+path,{cache:'no-cache'});if(!r.ok)throw Error(`Data unavailable: ${path}`);return r.json();}
   async function loadData(){
     const [fm,fr,fj]=await Promise.allSettled([loadJSON('data/research-map-index.json'),loadJSON('data/board-responses.json'),loadJSON('data/journal-index.json')]);
     const needDemo=!(fm.status==='fulfilled'&&Array.isArray(fm.value.municipalities))||!(fr.status==='fulfilled'&&Array.isArray(fr.value.responses));
@@ -46,6 +48,7 @@
   };
 
   /* ---------- search ---------- */
+  const sitePages = () => (typeof window!=='undefined'&&Array.isArray(window.PTA_SITE_SEARCH_INDEX)?window.PTA_SITE_SEARCH_INDEX:[]).map(([title,url,desc])=>({title:String(title||'').replace(/\s*[｜|]\s*PTA適正化推進委員会.*$/,''),url:String(url||''),desc:String(desc||'')})).filter(p=>p.title&&p.url);
   const has = (parts,q) => parts.some(x=>normalize(x).includes(q));
   function matchedRecords({query='',prefecture='',schoolType='',topic=''}){
     const q=normalize(query);const t=topicById(topic);
@@ -65,7 +68,8 @@
       // Metadata only; the full answer text is read on the canonical page.
       return !q||has([r.municipality,r.prefecture,...(r.topics||[]),r.date],q);
     });
-    return {municipalities,schools,responses};
+    const pages=(!q||schoolType||prefecture||t)?[]:sitePages().filter(p=>has([p.title,p.desc],q));
+    return {municipalities,schools,responses,pages};
   }
 
   /* ---------- shared UI ---------- */
@@ -100,7 +104,7 @@
     const note=document.querySelector('[data-pref-note]');if(note)note.textContent=`公開索引のある都道府県：${active.length}／47`;
     if(!box)return;
     try{
-      const svg=await (await fetch('assets/map/japan-prefectures.svg')).text();
+      const svg=await (await fetch(ROOT+'assets/map/japan-prefectures.svg')).text();
       box.innerHTML=svg.replace(/^<\?xml[^>]*>\s*/,'');
       box.querySelectorAll('.prefecture').forEach(g=>{
         const name=PREFS[Number(g.dataset.code)-1];if(!name)return;
@@ -134,20 +138,24 @@
     const href=esc(safeSourceLink(r.url));
     return `<article class="result-row"><span class="row-icon">${icon('doc')}</span><div class="row-body">${label('教育委員会の回答','response')}<h3><a href="${href}">${esc(respTitle(r))}</a></h3><div class="meta"><span>${icon('calendar')}${esc(fmtDate(r.date)||'日付記載なし')}</span>${r.typeLabel?`<span>${esc(r.typeLabel.replace(/^[A-Z]:/,''))}</span>`:''}</div><div class="tag-row">${(r.topics||[]).slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div><a class="row-go" href="${href}" aria-label="${esc(r.municipality)}の回答原文">${icon('out')}</a></article>`;
   }
+  function rowPage(p){
+    const href=esc(p.url.replace(/^\//,''));
+    return `<article class="result-row"><span class="row-icon">${icon('book')}</span><div class="row-body">${label('ページ','analysis')}<h3><a href="${href}">${esc(p.title)}</a></h3><p>${esc(p.desc)}</p></div><a class="row-go" href="${href}" aria-label="${esc(p.title)}">${icon('chevron')}</a></article>`;
+  }
   function renderExplorer(){
     const form=document.getElementById('explore-form');const q=document.getElementById('query');const pref=document.getElementById('prefecture');const type=document.getElementById('school-type');const topic=document.getElementById('topic');
     const tabs=[...document.querySelectorAll('[data-tab]')];const out=document.getElementById('results');const empty=document.getElementById('empty-results');
     PREFS.filter(p=>prefsWithData().includes(p)).forEach(p=>pref.add(new Option(p,p)));
     const u=new URL(location.href);q.value=u.searchParams.get('q')||'';pref.value=u.searchParams.get('pref')||'';type.value=u.searchParams.get('type')||'';topic.value=u.searchParams.get('topic')||'';
-    let active=u.searchParams.get('tab')||'all';if(!['all','municipality','school','response'].includes(active))active='all';let max=30;
+    let active=u.searchParams.get('tab')||'all';if(!['all','municipality','school','response','page'].includes(active))active='all';let max=30;
     const sync=()=>{const p=new URLSearchParams();if(q.value.trim())p.set('q',q.value.trim());if(pref.value)p.set('pref',pref.value);if(topic.value)p.set('topic',topic.value);if(type.value)p.set('type',type.value);if(active!=='all')p.set('tab',active);history.replaceState(null,'',`explore.html${p.toString()?'?'+p:''}`);};
     function draw(){
       sync();const r=matchedRecords({query:q.value,prefecture:pref.value,schoolType:type.value,topic:topic.value});
-      const c={municipality:r.municipalities.length,school:r.schools.length,response:r.responses.length};c.all=c.municipality+c.school+c.response;
+      const c={municipality:r.municipalities.length,school:r.schools.length,response:r.responses.length,page:r.pages.length};c.all=c.municipality+c.school+c.response+c.page;
       Object.entries(c).forEach(([k,n])=>{document.getElementById('count-'+k).textContent=n.toLocaleString('ja-JP');});
       tabs.forEach(t=>{const on=t.dataset.tab===active;t.setAttribute('aria-selected',String(on));t.classList.toggle('is-active',on);});
       const want=k=>active==='all'||active===k;
-      const items=[...(want('municipality')?r.municipalities.map(v=>rowMunicipality(v)):[]),...(want('response')?r.responses.map(v=>rowResponse(v)):[]),...(want('school')?r.schools.map(v=>rowSchool(v)):[])];
+      const items=[...(want('municipality')?r.municipalities.map(v=>rowMunicipality(v)):[]),...(want('page')?r.pages.map(v=>rowPage(v)):[]),...(want('response')?r.responses.map(v=>rowResponse(v)):[]),...(want('school')?r.schools.map(v=>rowSchool(v)):[])];
       document.getElementById('result-count').textContent=`${items.length.toLocaleString('ja-JP')}件`;
       out.innerHTML=items.slice(0,max).join('');
       if(items.length>max){const b=document.createElement('div');b.className='more-results';b.innerHTML=`<button class="button button-secondary" type="button">さらに表示（残り${items.length-max}件）</button>`;b.querySelector('button').addEventListener('click',()=>{max+=60;draw();});out.append(b);}
@@ -164,7 +172,7 @@
   /* ---------- municipality ---------- */
   async function prefMap(target,prefName){
     try{
-      const svgText=await (await fetch('assets/map/japan-prefectures.svg')).text();
+      const svgText=await (await fetch(ROOT+'assets/map/japan-prefectures.svg')).text();
       target.innerHTML=svgText.replace(/^<\?xml[^>]*>\s*/,'');
       const svg=target.querySelector('svg');const code=PREFS.indexOf(prefName)+1;const g=svg.querySelector(`.prefecture[data-code="${code}"]`);
       if(!g)return;g.classList.add('is-target');
@@ -228,7 +236,7 @@
             ${legal.length?`<ol class="analysis-list">${legal.map(l=>`<li><strong>${esc(l.title)}</strong><p>${esc(l.text)}</p></li>`).join('')}</ol>`:''}
             ${(m.unknowns||[]).length?`<div class="notice notice-unknown"><strong>未確認の事項</strong><ul>${m.unknowns.map(u=>`<li>${esc(u)}</li>`).join('')}</ul></div>`:''}
             ${writings.length?`<h3>関連する論考</h3><ul class="plain-links">${writings.map(a=>`<li><a href="${esc(localLink(a.url))}">${esc(a.title)}</a></li>`).join('')}</ul>`:''}
-            <article class="feature feature-wide"><div><span class="label">基本的な検討方法</span><h3><a href="https://ptaorg.com/framework.html">学校と外部団体の境界をどう確認するか</a></h3><p>主体・事務の帰属・学校の公法上の権限・個人情報・教職員の関与を順に検討する。</p><a class="text-link" href="https://ptaorg.com/framework.html">論考を見る${icon('chevron')}</a></div><img src="assets/img/research-book.webp" alt="" width="278" height="157"></article>
+            <article class="feature feature-wide"><div><span class="label">基本的な検討方法</span><h3><a href="framework.html">学校と外部団体の境界をどう確認するか</a></h3><p>主体・事務の帰属・学校の公法上の権限・個人情報・教職員の関与を順に検討する。</p><a class="text-link" href="framework.html">論考を見る${icon('chevron')}</a></div><img src="assets/img/research-book.webp" alt="" width="278" height="157"></article>
           </section>
         </div>
         <aside class="detail-side">
@@ -239,10 +247,10 @@
             <li><a href="#responses">${icon('doc')}原資料（${primary.length}件）${icon('chevron')}</a></li>
             <li><a href="#analysis">${icon('book')}論考・分析（${writings.length}件）${icon('chevron')}</a></li></ul></section>
           <section class="side-box"><h2>${icon('link')}参考リンク</h2><ul class="side-links">
-            ${m.url?`<li><a href="${esc(localLink(m.url))}">${esc(m.name)}の研究ノート（現行サイト）${icon('out')}</a></li>`:''}
-            ${m.catalogUrl?`<li><a href="${esc(safeSourceLink(m.catalogUrl))}">資料目録（現行サイト）${icon('out')}</a></li>`:''}
-            <li><a href="https://ptaorg.com/national-archive.html">全国資料館（現行サイト）${icon('out')}</a></li>
-            <li><a href="https://ptaorg.com/board-responses.html">教育委員会回答DB（現行サイト）${icon('out')}</a></li></ul>
+            ${m.url?`<li><a href="${esc(localLink(m.url))}">${esc(m.name)}の研究ノート${icon('chevron')}</a></li>`:''}
+            ${m.catalogUrl?`<li><a href="${esc(safeSourceLink(m.catalogUrl))}">資料目録${icon('chevron')}</a></li>`:''}
+            <li><a href="national-archive.html">全国資料館${icon('chevron')}</a></li>
+            <li><a href="board-responses.html">教育委員会回答データベース${icon('chevron')}</a></li></ul>
             ${(m.comparisons||[]).length?`<h3 class="side-sub">比較する自治体</h3><ul class="side-links">${m.comparisons.map(cid=>{const c=data.map.municipalities.find(x=>x.id===cid);return c?`<li><a href="${regionLink(c.id)}">${esc(c.name)}${icon('chevron')}</a></li>`:'';}).join('')}</ul>`:''}
           </section>
         </aside>
@@ -276,7 +284,7 @@
       </div>
       <aside class="detail-side">
         <section class="side-box"><h2>${icon('pin')}学校の基本情報</h2><dl class="info-table"><dt>都道府県</dt><dd>${esc(s.regionPrefecture)}</dd><dt>自治体</dt><dd><a href="${regionLink(s.regionId)}">${esc(s.regionName)}</a></dd><dt>学校種別</dt><dd>${esc(s.type||'未記載')}</dd><dt>登録文書</dt><dd>${docs.length}件</dd></dl></section>
-        <section class="side-box"><h2>${icon('link')}参考リンク</h2><ul class="side-links"><li><a href="${regionLink(s.regionId)}">${esc(s.regionName)}の調査${icon('chevron')}</a></li><li><a href="${esc(localLink(s.url))}">現行サイトの学校ページ${icon('out')}</a></li></ul>
+        <section class="side-box"><h2>${icon('link')}参考リンク</h2><ul class="side-links"><li><a href="${regionLink(s.regionId)}">${esc(s.regionName)}の調査${icon('chevron')}</a></li><li><a href="${esc(localLink(s.url))}">学校別資料ページ${icon('chevron')}</a></li></ul>
           ${peers.length?`<h3 class="side-sub">${esc(s.regionName)}の他の学校</h3><ul class="side-links">${peers.map(p=>`<li><a href="${schoolLink(p.url)}">${esc(p.name)}${icon('chevron')}</a></li>`).join('')}<li><a href="explore.html?tab=school&q=${encodeURIComponent(s.regionName)}">すべて見る${icon('chevron')}</a></li></ul>`:''}
         </section>
       </aside>
@@ -285,6 +293,7 @@
 
   async function init(){
     chrome();
+    if(document.body.dataset.page==='legacy')return;
     try{data=await loadData();fillSelects();writeCounts();const p=document.body.dataset.page;
       if(p==='home')renderHome();if(p==='explore')renderExplorer();if(p==='municipality')renderMunicipality();if(p==='school')renderSchool();
     }catch(e){console.error('Failed to load public site data:',e);const t=document.getElementById('data-note')||document.getElementById('municipality-root')||document.getElementById('school-root');if(t)t.textContent='データを読み込めませんでした。HTTPサーバー経由で開いてください。';}

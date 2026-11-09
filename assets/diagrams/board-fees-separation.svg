@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 730" width="1280" height="730" role="img" aria-labelledby="title desc">
+  <title id="title">PTA会費と学校徴収金の経路分離</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="674" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="64" y="74" font-size="30" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">PTA会費と学校徴収金の経路分離</tspan></text>
+  <text x="64" y="110" font-size="19" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">同じ通知・同じ口座・同じ未納管理で扱う限り、保護者の誤認と学校保有情報の目的外利用が続く</tspan></text>
+  <rect x="70" y="140" width="1140" height="200" rx="18" fill="#fff1f1" stroke="#b34b4b" stroke-width="3"/>
+  <rect x="70" y="140" width="1140" height="50" rx="18" fill="#b34b4b"/>
+  <text x="640" y="173" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">現在の混在経路</tspan></text>
+  <rect x="120" y="212" width="300" height="86" rx="12" fill="#ffffff" stroke="#b34b4b" stroke-width="2"/>
+  <text x="270" y="248" font-size="19" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="270" dy="0">学校納入金通知に</tspan><tspan x="270" dy="27">PTA会費を混在</tspan></text>
+  <rect x="490" y="212" width="300" height="86" rx="12" fill="#ffffff" stroke="#b34b4b" stroke-width="2"/>
+  <text x="640" y="248" font-size="19" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">学校徴収金と</tspan><tspan x="640" dy="27">同一の口座振替</tspan></text>
+  <rect x="860" y="212" width="300" height="86" rx="12" fill="#ffffff" stroke="#b34b4b" stroke-width="2"/>
+  <text x="1010" y="248" font-size="19" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1010" dy="0">学校職員が未納管理</tspan><tspan x="1010" dy="27">督促・会計資料作成</tspan></text>
+  <line x1="420" y1="255" x2="490" y2="255" stroke="#b34b4b" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="790" y1="255" x2="860" y2="255" stroke="#b34b4b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="640" y="326" font-size="18" font-weight="600" fill="#b34b4b" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">「学校に支払うべき費用」との誤認、目的外利用、公的労務の無償提供の問題が生じる</tspan></text>
+  <line x1="640" y1="348" x2="640" y2="398" stroke="#0b3a67" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="676" y="380" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="676" dy="0">分離</tspan></text>
+  <rect x="70" y="408" width="1140" height="276" rx="18" fill="#eef7f0" stroke="#3b7f4b" stroke-width="3"/>
+  <rect x="70" y="408" width="1140" height="50" rx="18" fill="#3b7f4b"/>
+  <text x="640" y="441" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">分離後の二系統</tspan></text>
+  <rect x="96" y="484" width="150" height="60" rx="10" fill="#e9f1f8" stroke="#0b3a67" stroke-width="2"/>
+  <text x="171" y="521" font-size="20" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="171" dy="0">学校徴収金</tspan></text>
+  <rect x="286" y="484" width="266" height="60" rx="10" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="419" y="521" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="419" dy="0">学校（設置者）名義の通知</tspan></text>
+  <rect x="612" y="484" width="266" height="60" rx="10" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="745" y="521" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="745" dy="0">学校徴収金として管理</tspan></text>
+  <rect x="938" y="484" width="266" height="60" rx="10" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="1071" y="521" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1071" dy="0">学校・教育委員会が責任</tspan></text>
+  <line x1="246" y1="514" x2="290" y2="514" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="552" y1="514" x2="612" y2="514" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="878" y1="514" x2="938" y2="514" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="96" y="570" width="150" height="60" rx="10" fill="#ffffff" stroke="#3b7f4b" stroke-width="2"/>
+  <text x="171" y="607" font-size="20" font-weight="700" fill="#3b7f4b" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="171" dy="0">PTA会費</tspan></text>
+  <rect x="286" y="570" width="266" height="60" rx="10" fill="#ffffff" stroke="#3b7f4b" stroke-width="2"/>
+  <text x="419" y="607" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="419" dy="0">PTA名義で会員にのみ請求</tspan></text>
+  <rect x="612" y="570" width="266" height="60" rx="10" fill="#ffffff" stroke="#3b7f4b" stroke-width="2"/>
+  <text x="745" y="607" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="745" dy="0">PTA口座で受領</tspan></text>
+  <rect x="938" y="570" width="266" height="60" rx="10" fill="#ffffff" stroke="#3b7f4b" stroke-width="2"/>
+  <text x="1071" y="607" font-size="18" font-weight="600" fill="#172033" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1071" dy="0">PTA自身が会計・督促</tspan></text>
+  <line x1="246" y1="600" x2="290" y2="600" stroke="#3b7f4b" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="552" y1="600" x2="612" y2="600" stroke="#3b7f4b" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="878" y1="600" x2="938" y2="600" stroke="#3b7f4b" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="640" y="662" font-size="19" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">入会申込記録が確認できない保護者は、会費請求・口座引落しの対象にしない</tspan></text>
+</svg>

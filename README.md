@@ -11,6 +11,29 @@
 - 日本地図は Geolonia「japanese-prefectures」（GFDL）。`assets/map/` に同梱。
 - 写真2点（`assets/img/`）はデザイン見本から切り出した仮素材。公開前に権利の確認できる写真へ差し替える。
 
+## v0.3 全ページ移植
+
+現行 `ptaorg/ptaorg.github.io` の公開ページを、URL構成を変えずにこのサイトへ移しました。
+
+- 移植したページ：777件（論考・論点・立場別ガイド・教育委員会回答72件・学校別資料569件・研究ノート・書式・キットなど）。転送ページ12件は転送スタブとして置いた。
+- 本文は削らない。旧サイトのヘッダー・ナビ・フッター・応援帯・パンくず・「現在地」表示だけを外し、新しいヘッダー・パンくず・フッターで包む。
+- 旧CSSは `.legacy` 配下に閉じ込めて（`scripts/port/prefix-css.mjs`）、新しいヘッダー・フッターに影響しないようにした。その上に `assets/legacy-theme.css` で見出し・ヒーロー・書体を新デザインへ揃える。
+- 旧サイトのJavaScriptが実行時に差し込んでいた本文（FAQ、注記、図など）は、Chromiumで描画した後の状態を取り込んだ。地図・検索・ビューアなど自分で中身を作るページ（13件）は原本HTMLとそのスクリプトを使う。
+- `/…` と `https://ptaorg.com/…` へのリンクはサイト内の相対リンクに書き換えた。旧サイトにも無いファイルへのリンクだけは ptaorg.com のまま残る。
+- `canonical` は ptaorg.com 側の各ページを指したまま（切替前の重複評価を避けるため）。
+- 移植しなかったもの：旧トップ（新トップに置換）、文字化けファイル名の重複ページ、`ai-system/` `tools/` `scripts/` `source-candidates/` `parts/`（内部用）。`pta-open-system/` のテンプレートは参照されたものだけ原本のままコピー。
+- 全文検索：「全国の資料を探す」に「解説・論考ページ」タブを追加（旧サイトの検索索引を使用）。
+
+再生成（旧サイトを更新した後）:
+
+```bash
+(cd ../ptaorg.github.io && python3 -m http.server 8800) &
+npm i --prefix /tmp/porttools playwright postcss postcss-selector-parser
+node scripts/port/capture.mjs ../ptaorg.github.io /tmp/capture
+python3 scripts/port/build.py ../ptaorg.github.io /tmp/capture --node-path /tmp/porttools/node_modules
+npm test
+```
+
 ## 画面
 
 | URL | 用途 |
