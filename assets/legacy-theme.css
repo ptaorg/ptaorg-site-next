@@ -85,3 +85,40 @@
 #main .legacy-body .meta-card :is(.lb,.vl){display:block!important;width:auto!important;text-align:left!important;writing-mode:horizontal-tb!important}
 #main .legacy-body .meta-grid{border:0!important}
 #main .legacy-wide{overflow-x:auto}
+
+
+/* v0.6 — restore card breathing room lost when legacy .legacy selectors were unwrapped */
+#main .article-main .legacy-body :is(.pdf-card,.doc-card,.article-card,.archive-material-item,.archive-evidence-card,.archive-box,.meta-card,.research-region,.survey-record,.board-update-record,.case-block){
+  box-sizing:border-box!important;
+  min-width:0;
+  padding:22px 24px!important;
+  margin-bottom:18px!important;
+  overflow-wrap:break-word;
+}
+#main .article-main .legacy-body :is(.pdf-card,.doc-card,.article-card,.archive-material-item,.archive-evidence-card,.archive-box,.meta-card) > :first-child{margin-top:0!important}
+#main .article-main .legacy-body :is(.pdf-card,.doc-card,.article-card,.archive-material-item,.archive-evidence-card) > :last-child{margin-bottom:0!important}
+#main .article-main .legacy-body .pdf-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))!important;
+  gap:20px!important;
+  align-items:stretch;
+  margin:24px 0!important;
+}
+#main .article-main .legacy-body .pdf-card{
+  display:flex!important;
+  flex-direction:column;
+  gap:12px;
+}
+#main .article-main .legacy-body .pdf-card h3{margin:0!important;line-height:1.6!important}
+#main .article-main .legacy-body .pdf-card p{margin:0 0 8px!important;line-height:1.85!important}
+#main .article-main .legacy-body .pdf-card a{align-self:flex-start;margin-top:auto}
+#main .article-main .legacy-body .pdf-icon{line-height:1.2;margin:0 0 4px!important}
+#main .article-main .legacy-body :is(.archive-grid,.meta-grid){
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))!important;
+  gap:18px!important;
+}
+#main .article-main .legacy-body :is(.wrap,.wrap-narrow,.container,.inner,.page-body,.journal-article-wrap,.essay-shell,.research-main){min-width:0!important;max-width:none!important}
+@media(max-width:760px){
+  #main .article-main .legacy-body :is(.pdf-card,.doc-card,.article-card,.archive-material-item,.archive-evidence-card,.archive-box,.meta-card,.research-region,.survey-record,.board-update-record,.case-block){padding:18px 20px!important}
+  #main .article-main .legacy-body .pdf-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
+}
