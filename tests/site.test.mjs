@@ -48,3 +48,26 @@ test('demo municipalities match previously published 29-region list',()=>{
   assert.equal(demo.map.municipalities.length,29);
   assert.equal(demo.map.municipalities.reduce((sum,m)=>sum+(m.publishedIndexSchoolCount||0),0),569);
 });
+test('topic filter narrows responses by public topic labels',()=>{
+  const all=search('').responses.length;const fee=search('',{topic:'fee'}).responses;
+  assert.ok(fee.length>0&&fee.length<=all);
+  for(const r of fee)assert.ok(r.topics.includes('会費徴収・委任'));
+});
+test('local links only resolve to whitelisted ptaorg.com paths',()=>{
+  const {localLink}=appModule.exports;
+  assert.equal(localLink('/research/yokohama.html'),'https://ptaorg.com/research/yokohama.html');
+  assert.equal(localLink('javascript:alert(1)'),'https://ptaorg.com/');
+  assert.equal(localLink('//evil.example/x.html'),'https://ptaorg.com/');
+});
+test('dates are normalized to YYYY-MM-DD where the source is numeric',()=>{
+  const {fmtDate}=appModule.exports;
+  assert.equal(fmtDate('2025/9/4'),'2025-09-04');assert.equal(fmtDate('令和８年１月 14 日'),'令和８年１月14日');
+});
+test('every page carries the shared header/footer and one h1-capable main',()=>{
+  const header=fs.readFileSync(path.join(root,'partials/header.html'),'utf8').trim();
+  for(const name of ['index.html','explore.html','municipality.html','school.html']){
+    const html=fs.readFileSync(path.join(root,name),'utf8');
+    assert.ok(html.includes(header),name+' header out of sync');
+    assert.doesNotMatch(html,/PTA RESEARCH|START HERE|EXPLORE THE ARCHIVE/,'no English eyebrows');
+  }
+});

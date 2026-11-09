@@ -1,96 +1,294 @@
-/* PTA制度・運用研究 | site-next prototype
-   Public data only. No privileged credentials, unpublished attachments, or live production mutation. */
+/* PTA適正化推進委員会 | site-next
+   Public data only. No credentials, unpublished attachments, or production writes. */
 (() => {
   'use strict';
   const normalize = value => String(value || '').normalize('NFKC').replace(/\s+/g, '').toLocaleLowerCase('ja');
-  const cleanText = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const localLink = path => typeof path === 'string' && /^\/(?:archive|research)\/[a-z0-9_/-]+(?:\.html|\/)$/.test(path) ? `https://ptaorg.com${path}` : 'https://ptaorg.com/';
-  const localSchoolLink = path => `school.html?url=${encodeURIComponent(path)}`;
-  const localRegionLink = id => `municipality.html?id=${encodeURIComponent(id)}`;
-  const esc = cleanText;
-  let data = { map: {municipalities:[]}, responses:{responses:[]}, demo:true };
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const icon = (id, cls='') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+  const PREFS = ['北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'];
+  const TOPICS = [
+    {id:'membership',label:'任意加入・入会',themes:['PTA任意加入','入会申込書・加入意思確認'],topics:['入会意思確認','みなし加入']},
+    {id:'fee',label:'会費徴収',themes:['PTA会費の学校徴収','委任契約による公務化','地方自治法235条の4','PTA自己徴収化'],topics:['会費徴収・委任']},
+    {id:'privacy',label:'個人情報の利用・提供',themes:['学校保有個人情報の利用・提供'],topics:['個人情報・名簿']},
+    {id:'staff',label:'教職員の関与',themes:['教職員のPTA事務従事','職務専念義務免除・兼職承認','学校管理規則・要綱による校務化'],topics:['教職員関与']},
+    {id:'facilities',label:'学校施設の利用',themes:[],topics:['学校施設利用']},
+    {id:'correction',label:'行政の指導・是正',themes:['制度是正・改善事例','住民監査請求','情報公開・審査請求'],topics:['教委指導・是正']}
+  ];
+  const SITE = 'https://ptaorg.com';
+  const localLink = p => typeof p === 'string' && /^\/(?:archive|research|journal|assets\/docs)\/[\w./-]+(?:\.html|\.pdf|\/)$/.test(p) ? SITE + p : SITE + '/';
+  const schoolLink = p => `school.html?url=${encodeURIComponent(p)}`;
+  const regionLink = id => `municipality.html?id=${encodeURIComponent(id)}`;
+  function safeSourceLink(url){try{const x=new URL(url,SITE);return x.origin===SITE?x.href:SITE+'/board-responses.html';}catch{return SITE+'/board-responses.html';}}
+  const fmtDate = d => {const s=String(d||'').trim();const m=s.match(/^(\d{4})[\/.-](\d{1,2})(?:[\/.-](\d{1,2}))?$/);if(m)return [m[1],m[2].padStart(2,'0'),m[3]&&m[3].padStart(2,'0')].filter(Boolean).join('-');return s.replace(/\s+/g,'');};
+  let data = {map:{municipalities:[]},responses:{responses:[]},journal:{articles:[]},demo:true};
 
-  function menu() {
-    const button = document.querySelector('[data-menu-button]'); const nav = document.getElementById('global-nav');
-    if (!button || !nav) return;
-    button.addEventListener('click', () => {const open = nav.classList.toggle('open'); button.setAttribute('aria-expanded',String(open));});
-    nav.addEventListener('click', event => {if (event.target.closest('a')) {nav.classList.remove('open');button.setAttribute('aria-expanded','false');}});
+  /* ---------- data ---------- */
+  async function loadJSON(path){const r=await fetch(path,{cache:'no-cache'});if(!r.ok)throw Error(`Data unavailable: ${path}`);return r.json();}
+  async function loadData(){
+    const [fm,fr,fj]=await Promise.allSettled([loadJSON('data/research-map-index.json'),loadJSON('data/board-responses.json'),loadJSON('data/journal-index.json')]);
+    const needDemo=!(fm.status==='fulfilled'&&Array.isArray(fm.value.municipalities))||!(fr.status==='fulfilled'&&Array.isArray(fr.value.responses));
+    const demo=needDemo?await loadJSON('data/demo.json'):null;
+    const map=fm.status==='fulfilled'&&Array.isArray(fm.value.municipalities)?fm.value:demo.map;
+    const responses=fr.status==='fulfilled'&&Array.isArray(fr.value.responses)?fr.value:demo.responses;
+    const journal=fj.status==='fulfilled'&&Array.isArray(fj.value.articles)?fj.value:{articles:[]};
+    return {map,responses,journal,demo:needDemo};
   }
-  async function loadJSON(path) {const resp=await fetch(path,{cache:'no-cache'});if(!resp.ok)throw Error(`Data unavailable: ${path}`);return resp.json();}
-  async function loadData() {
-    const [fullMap,fullResponses] = await Promise.allSettled([loadJSON('data/research-map-index.json'),loadJSON('data/board-responses.json')]);
-    const demo = await loadJSON('data/demo.json');
-    const map = fullMap.status==='fulfilled' && Array.isArray(fullMap.value.municipalities) ? fullMap.value : demo.map;
-    const responses = fullResponses.status==='fulfilled' && Array.isArray(fullResponses.value.responses) ? fullResponses.value : demo.responses;
-    return {map,responses,demo:map===demo.map || responses===demo.responses};
-  }
-  function allSchools() { return data.map.municipalities.flatMap(m => (m.schools||[]).map(s=>({...s, regionId:m.id,regionName:m.name,regionPrefecture:m.prefecture}))); }
-  function uniquePrefectures() {return [...new Set(data.map.municipalities.map(m=>m.prefecture))].sort((a,b)=>a.localeCompare(b,'ja'));}
-  function getStatus(doc){return String(doc?.status||'確認状況未記載');}
-  function sourceStatus(s){const states=(s.documents||[]).map(getStatus); return states.includes('公開前確認中')?'公開前確認中':states[0]||'未確認';}
-  function writeCounts(){const regionCount=data.map.municipalities.length,schoolCount=allSchools().length, responseCount=data.responses.responses.length;
-    [['stat-regions',regionCount],['stat-schools',schoolCount],['stat-responses',responseCount]].forEach(([id,n])=>{const e=document.getElementById(id);if(e)e.textContent=n.toLocaleString('ja-JP');});
-    const state=document.getElementById('data-state');if(state)state.textContent=data.demo?'画面見本用の一部データ':'公開済みデータを同期済み';
-    const note=document.getElementById('data-note');if(note)note.textContent=data.demo?'現在は画面確認用の抜粋データです。全件閲覧には公開データの同期が必要です。':`公開済みデータを読み込みました：${regionCount}地域・${schoolCount}校・${responseCount}回答。`;}
-  function matchingStrings(parts,q){return parts.some(x=>normalize(x).includes(q));}
-  function municipalityForSchool(s){return data.map.municipalities.find(m=>m.id===s.regionId);}
-  function matchedRecords({query='',prefecture='',schoolType=''}) {
-    const q=normalize(query);
-    const municipalities=data.map.municipalities.filter(m=> (!prefecture||m.prefecture===prefecture) && !schoolType && (!q || matchingStrings([m.name,m.prefecture,`${m.prefecture}${m.name}`,...(m.themes||[])],q)));
+  const allSchools = () => data.map.municipalities.flatMap(m=>(m.schools||[]).map(s=>({...s,regionId:m.id,regionName:m.name,regionPrefecture:m.prefecture})));
+  const prefsWithData = () => [...new Set(data.map.municipalities.map(m=>m.prefecture))];
+  const status = doc => String(doc?.status||'確認状況未記載');
+  const schoolStatus = s => {const st=(s.documents||[]).map(status);return st.includes('公開前確認中')?'公開前確認中':st[0]||'未確認';};
+  const topicById = id => TOPICS.find(t=>t.id===id);
+  const respBase = r => String(r.municipality||'').replace(/（[^）]*）$/,'').replace(/(教育委員会|教育庁)$/,'');
+  const respTitle = r => /教育庁$/.test(r.municipality||'')?`${r.municipality}の回答`:`${respBase(r)}教育委員会の回答`;
+  const responsesFor = m => {
+    const linked=(m.boardResponses||[]).map(b=>b.url);
+    return (data.responses.responses||[]).filter(r=>linked.includes(r.url)||(normalize(respBase(r)).endsWith(normalize(m.name))&&(!r.prefecture||r.prefecture===m.prefecture)));
+  };
+
+  /* ---------- search ---------- */
+  const has = (parts,q) => parts.some(x=>normalize(x).includes(q));
+  function matchedRecords({query='',prefecture='',schoolType='',topic=''}){
+    const q=normalize(query);const t=topicById(topic);
+    const themeHit=m=>!t||(m.themes||[]).some(x=>t.themes.includes(x));
+    const municipalities=data.map.municipalities.filter(m=>(!prefecture||m.prefecture===prefecture)&&!schoolType&&themeHit(m)&&(!q||has([m.name,m.prefecture,`${m.prefecture}${m.name}`,...(m.aliases||[]),...(m.themes||[])],q)));
+    const regionById=Object.fromEntries(data.map.municipalities.map(m=>[m.id,m]));
     const schools=allSchools().filter(s=>{
-      if(prefecture && s.regionPrefecture!==prefecture)return false;
-      if(schoolType && s.type!==schoolType)return false;
-      if(!q)return true;
-      return matchingStrings([s.name,s.regionName,s.regionPrefecture,`${s.regionPrefecture}${s.regionName}`,...(s.documents||[]).map(d=>d.title)],q);
+      if(prefecture&&s.regionPrefecture!==prefecture)return false;
+      if(schoolType&&s.type!==schoolType)return false;
+      if(t&&!themeHit(regionById[s.regionId]||{}))return false;
+      return !q||has([s.name,s.regionName,s.regionPrefecture,`${s.regionPrefecture}${s.regionName}`,...(s.documents||[]).map(d=>d.title)],q);
     });
     const responses=(data.responses.responses||[]).filter(r=>{
       if(schoolType)return false;
-      if(prefecture && r.prefecture!==prefecture)return false;
-      if(!q)return true;
-      // Match source metadata only. Full long answer text is read at the canonical source page.
-      return matchingStrings([r.municipality,r.prefecture,...(r.topics||[]),r.date],q);
+      if(prefecture&&r.prefecture!==prefecture)return false;
+      if(t&&!(r.topics||[]).some(x=>t.topics.includes(x)))return false;
+      // Metadata only; the full answer text is read on the canonical page.
+      return !q||has([r.municipality,r.prefecture,...(r.topics||[]),r.date],q);
     });
     return {municipalities,schools,responses};
   }
-  function tags(labels){return (labels||[]).slice(0,3).map(x=>`<span class="tag">${esc(x)}</span>`).join('');}
-  function cardM(m){return `<article class="result-card"><div><span class="kind">自治体・制度研究</span><h3><a href="${localRegionLink(m.id)}">${esc(m.prefecture)} ${esc(m.name)}</a></h3><p>${esc((m.summary||[])[0]||`${m.name}の資料・学校別索引を確認できます。`)}</p><div class="tag-row"><span class="tag">学校索引 ${(m.schools||[]).length}校</span>${tags(m.themes)}</div></div><a class="result-side" aria-label="${esc(m.name)}の詳細" href="${localRegionLink(m.id)}">↗</a></article>`;}
-  function cardS(s){return `<article class="result-card"><div><span class="kind school">学校別一次資料</span><h3><a href="${localSchoolLink(s.url)}">${esc(s.name)}</a></h3><p>${esc(s.regionPrefecture)} ${esc(s.regionName)} ／ ${esc(s.type||'学校種別未記載')}</p><div class="tag-row"><span class="tag">文書 ${(s.documents||[]).length}件</span><span class="tag">${esc(sourceStatus(s))}</span></div></div><a class="result-side" aria-label="${esc(s.name)}の詳細" href="${localSchoolLink(s.url)}">↗</a></article>`;}
-  function cardR(r){return `<article class="result-card"><div><span class="kind response">教育委員会回答</span><h3><a href="${esc(safeSourceLink(r.url))}" target="_blank" rel="noopener noreferrer">${esc(r.municipality)}</a></h3><p>${esc(r.date||'回答日付未確認')} ／ 公開済み回答の原文は現行サイトで確認できます。</p><div class="tag-row">${tags(r.topics)}</div></div><a class="result-side" aria-label="${esc(r.municipality)}の回答原文" href="${esc(safeSourceLink(r.url))}" target="_blank" rel="noopener noreferrer">↗</a></article>`;}
-  function safeSourceLink(url){try{const x=new URL(url,'https://ptaorg.com');return x.origin==='https://ptaorg.com' ? x.href : 'https://ptaorg.com/board-responses.html';}catch{return 'https://ptaorg.com/board-responses.html';}}
+
+  /* ---------- shared UI ---------- */
+  function chrome(){
+    const btn=document.querySelector('[data-menu-button]');const nav=document.getElementById('global-nav');
+    if(btn&&nav)btn.addEventListener('click',()=>{const open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));});
+    const triggers=[...document.querySelectorAll('.nav-trigger')];
+    const closeAll=except=>triggers.forEach(t=>{if(t!==except){t.setAttribute('aria-expanded','false');t.parentElement.classList.remove('is-open');}});
+    triggers.forEach(t=>t.addEventListener('click',e=>{e.stopPropagation();const open=t.getAttribute('aria-expanded')!=='true';closeAll(t);t.setAttribute('aria-expanded',String(open));t.parentElement.classList.toggle('is-open',open);}));
+    document.addEventListener('click',e=>{if(!e.target.closest('.nav-item'))closeAll();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'){const o=triggers.find(t=>t.getAttribute('aria-expanded')==='true');closeAll();if(o)o.focus();}});
+    const section=document.body.dataset.section;const cur=section&&document.querySelector(`.nav-trigger[data-nav="${section}"]`);if(cur)cur.classList.add('is-current');
+  }
+  function fillSelects(){
+    document.querySelectorAll('[data-pref-select]').forEach(sel=>PREFS.filter(p=>prefsWithData().includes(p)).forEach(p=>sel.add(new Option(p,p))));
+    document.querySelectorAll('[data-topic-select]').forEach(sel=>TOPICS.forEach(t=>sel.add(new Option(t.label,t.id))));
+  }
+  function writeCounts(){
+    const n={regions:data.map.municipalities.length,schools:allSchools().length,responses:data.responses.responses.length};
+    document.querySelectorAll('[data-stat]').forEach(e=>{const v=n[e.dataset.stat];if(v!=null)e.textContent=v.toLocaleString('ja-JP');});
+    const d=data.map.updated;document.querySelectorAll('[data-index-date]').forEach(e=>{e.textContent=data.demo?'画面確認用の抜粋データ':(d?`${d}時点の公開済み索引`:'公開済み索引');});
+    const note=document.getElementById('data-note');
+    if(note)note.textContent=data.demo?'画面確認用の抜粋データを表示しています。全件は scripts/sync-public-data.mjs で同期します。':`公開済み索引：${n.regions}地域・${n.schools.toLocaleString('ja-JP')}校・教育委員会回答${n.responses}件${d?`（${d}時点）`:''}。件数は索引の登録数で、文書本体の公開数ではありません。`;
+  }
+  const label = (text,kind='') => `<span class="label ${kind?'label-'+kind:''}">${esc(text)}</span>`;
+
+  /* ---------- home ---------- */
+  async function renderMap(){
+    const box=document.querySelector('[data-japan-map]');const grid=document.querySelector('[data-pref-grid]');
+    const active=prefsWithData();const count=p=>data.map.municipalities.filter(m=>m.prefecture===p).length;
+    if(grid){grid.innerHTML=PREFS.map(p=>active.includes(p)?`<a class="pref is-active" href="explore.html?pref=${encodeURIComponent(p)}" title="${esc(p)}：${count(p)}地域">${esc(p)}</a>`:`<span class="pref">${esc(p)}</span>`).join('');}
+    const note=document.querySelector('[data-pref-note]');if(note)note.textContent=`公開索引のある都道府県：${active.length}／47`;
+    if(!box)return;
+    try{
+      const svg=await (await fetch('assets/map/japan-prefectures.svg')).text();
+      box.innerHTML=svg.replace(/^<\?xml[^>]*>\s*/,'');
+      box.querySelectorAll('.prefecture').forEach(g=>{
+        const name=PREFS[Number(g.dataset.code)-1];if(!name)return;
+        const t=document.createElementNS('http://www.w3.org/2000/svg','title');t.textContent=active.includes(name)?`${name}（${count(name)}地域）`:name;g.prepend(t);
+        if(active.includes(name)){g.classList.add('has-data');g.addEventListener('click',()=>{location.href=`explore.html?pref=${encodeURIComponent(name)}`;});}
+      });
+    }catch(e){box.textContent='地図を読み込めませんでした。右の一覧から選択できます。';}
+  }
+  function renderHome(){
+    renderMap();
+    const list=document.querySelector('[data-region-list]');
+    if(list){
+      const ranked=[...data.map.municipalities].sort((a,b)=>(b.summary?1:0)-(a.summary?1:0)||(b.schools||[]).length-(a.schools||[]).length).slice(0,8);
+      list.innerHTML=ranked.map(m=>{const sub=(m.themes||[]).slice(0,3).join('・')||`学校別資料 ${(m.schools||[]).length}校`;return `<li><a href="${regionLink(m.id)}"><strong>${esc(m.name)}</strong><span>${esc(sub)}</span>${icon('chevron')}</a></li>`;}).join('');
+    }
+    const news=document.querySelector('[data-journal-list]');
+    if(news){const items=(data.journal.articles||[]).slice(0,5);
+      news.innerHTML=items.length?items.map(a=>`<li><time datetime="${esc(a.published||a.modified||'')}">${esc(a.published||a.modified||'')}</time><a href="${esc(safeSourceLink(a.url))}">${esc(a.title)}</a></li>`).join(''):'<li>論考データが同期されていません。</li>';}
+  }
+
+  /* ---------- explore ---------- */
+  function rowMunicipality(m){
+    const n=(m.schools||[]).length;const rs=responsesFor(m).length;
+    return `<article class="result-row"><span class="row-icon">${icon('home')}</span><div class="row-body">${label('自治体の調査','region')}<h3><a href="${regionLink(m.id)}">${esc(m.prefecture===m.name?m.name:m.prefecture+' '+m.name)}</a></h3><p>${esc((m.summary||[])[0]||'学校別資料の索引のみ登録されています。')}</p><div class="meta">${n?`<span>学校索引 ${n}校</span>`:''}${rs?`<span>教育委員会回答 ${rs}件</span>`:''}${m.updated?`<span>${icon('calendar')}${esc(m.updated)}</span>`:''}</div></div><a class="row-go" href="${regionLink(m.id)}" aria-label="${esc(m.name)}の調査">${icon('chevron')}</a></article>`;
+  }
+  function rowSchool(s){
+    const st=schoolStatus(s);
+    return `<article class="result-row"><span class="row-icon">${icon('folder')}</span><div class="row-body">${label('学校の資料','school')}<h3><a href="${schoolLink(s.url)}">${esc(s.name)}</a></h3><div class="meta"><span>${icon('pin')}${esc(s.regionPrefecture)} ${esc(s.regionName)}</span><span>${esc(s.type||'学校種別未記載')}</span><span>文書 ${(s.documents||[]).length}件</span>${label(st,st==='公開前確認中'?'caution':'')}</div></div><a class="row-go" href="${schoolLink(s.url)}" aria-label="${esc(s.name)}の資料">${icon('chevron')}</a></article>`;
+  }
+  function rowResponse(r){
+    const href=esc(safeSourceLink(r.url));
+    return `<article class="result-row"><span class="row-icon">${icon('doc')}</span><div class="row-body">${label('教育委員会の回答','response')}<h3><a href="${href}">${esc(respTitle(r))}</a></h3><div class="meta"><span>${icon('calendar')}${esc(fmtDate(r.date)||'日付記載なし')}</span>${r.typeLabel?`<span>${esc(r.typeLabel.replace(/^[A-Z]:/,''))}</span>`:''}</div><div class="tag-row">${(r.topics||[]).slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div><a class="row-go" href="${href}" aria-label="${esc(r.municipality)}の回答原文">${icon('out')}</a></article>`;
+  }
   function renderExplorer(){
-    const form=document.getElementById('explore-form');const query=document.getElementById('query');const pref=document.getElementById('prefecture');const schoolType=document.getElementById('school-type');const tabs=[...document.querySelectorAll('[data-tab]')];const output=document.getElementById('results');const empty=document.getElementById('empty-results');
-    uniquePrefectures().forEach(x=>pref.add(new Option(x,x)));
-    const url=new URL(location.href);query.value=url.searchParams.get('q')||'';pref.value=url.searchParams.get('pref')||'';schoolType.value=url.searchParams.get('type')||'';
-    let active=url.searchParams.get('tab')||'all';if(!['all','municipality','school','response'].includes(active))active='all';let max=30;
-    const sync=()=>{const params=new URLSearchParams();if(query.value.trim())params.set('q',query.value.trim());if(pref.value)params.set('pref',pref.value);if(schoolType.value)params.set('type',schoolType.value);if(active!=='all')params.set('tab',active);history.replaceState(null,'',`explore.html${params.toString()?'?'+params:''}`);};
-    function draw(){sync();const result=matchedRecords({query:query.value,prefecture:pref.value,schoolType:schoolType.value});const counts={municipality:result.municipalities.length,school:result.schools.length,response:result.responses.length};counts.all=counts.municipality+counts.school+counts.response;
-      Object.entries(counts).forEach(([k,n])=>{document.getElementById('count-'+k).textContent=n;});tabs.forEach(t=>{const on=t.dataset.tab===active;t.setAttribute('aria-pressed',String(on));t.classList.toggle('is-active',on);});
-      const items=[...(active==='all'||active==='municipality'?result.municipalities.map(m=>({kind:'municipality',value:m})):[]),...(active==='all'||active==='school'?result.schools.map(s=>({kind:'school',value:s})):[]),...(active==='all'||active==='response'?result.responses.map(r=>({kind:'response',value:r})):[])];
-      document.getElementById('result-count').textContent=`${items.length}件見つかりました`;
-      const batch=items.slice(0,max);output.innerHTML=batch.map(i=>i.kind==='municipality'?cardM(i.value):i.kind==='school'?cardS(i.value):cardR(i.value)).join('');
-      if(items.length>max){const bar=document.createElement('div');bar.className='more-results';bar.innerHTML=`<button class="button button-outline" type="button">さらに表示（${items.length-max}件）</button>`;bar.querySelector('button').addEventListener('click',()=>{max+=60;draw();});output.append(bar);}
+    const form=document.getElementById('explore-form');const q=document.getElementById('query');const pref=document.getElementById('prefecture');const type=document.getElementById('school-type');const topic=document.getElementById('topic');
+    const tabs=[...document.querySelectorAll('[data-tab]')];const out=document.getElementById('results');const empty=document.getElementById('empty-results');
+    PREFS.filter(p=>prefsWithData().includes(p)).forEach(p=>pref.add(new Option(p,p)));
+    const u=new URL(location.href);q.value=u.searchParams.get('q')||'';pref.value=u.searchParams.get('pref')||'';type.value=u.searchParams.get('type')||'';topic.value=u.searchParams.get('topic')||'';
+    let active=u.searchParams.get('tab')||'all';if(!['all','municipality','school','response'].includes(active))active='all';let max=30;
+    const sync=()=>{const p=new URLSearchParams();if(q.value.trim())p.set('q',q.value.trim());if(pref.value)p.set('pref',pref.value);if(topic.value)p.set('topic',topic.value);if(type.value)p.set('type',type.value);if(active!=='all')p.set('tab',active);history.replaceState(null,'',`explore.html${p.toString()?'?'+p:''}`);};
+    function draw(){
+      sync();const r=matchedRecords({query:q.value,prefecture:pref.value,schoolType:type.value,topic:topic.value});
+      const c={municipality:r.municipalities.length,school:r.schools.length,response:r.responses.length};c.all=c.municipality+c.school+c.response;
+      Object.entries(c).forEach(([k,n])=>{document.getElementById('count-'+k).textContent=n.toLocaleString('ja-JP');});
+      tabs.forEach(t=>{const on=t.dataset.tab===active;t.setAttribute('aria-selected',String(on));t.classList.toggle('is-active',on);});
+      const want=k=>active==='all'||active===k;
+      const items=[...(want('municipality')?r.municipalities.map(v=>rowMunicipality(v)):[]),...(want('response')?r.responses.map(v=>rowResponse(v)):[]),...(want('school')?r.schools.map(v=>rowSchool(v)):[])];
+      document.getElementById('result-count').textContent=`${items.length.toLocaleString('ja-JP')}件`;
+      out.innerHTML=items.slice(0,max).join('');
+      if(items.length>max){const b=document.createElement('div');b.className='more-results';b.innerHTML=`<button class="button button-secondary" type="button">さらに表示（残り${items.length-max}件）</button>`;b.querySelector('button').addEventListener('click',()=>{max+=60;draw();});out.append(b);}
       empty.hidden=items.length!==0;
     }
-    form.addEventListener('submit',ev=>ev.preventDefault());[query,pref,schoolType].forEach(el=>el.addEventListener(el===query?'input':'change',()=>{max=30;draw();}));
+    form.addEventListener('submit',e=>{e.preventDefault();max=30;draw();});
+    [q,pref,type,topic].forEach(el=>el.addEventListener(el===q?'input':'change',()=>{max=30;draw();}));
     tabs.forEach(t=>t.addEventListener('click',()=>{active=t.dataset.tab;max=30;draw();}));
-    document.getElementById('clear-filters').addEventListener('click',()=>{query.value='';pref.value='';schoolType.value='';active='all';max=30;draw();query.focus();});draw();
+    document.getElementById('clear-filters').addEventListener('click',()=>{q.value='';pref.value='';type.value='';topic.value='';active='all';max=30;draw();q.focus();});
+    const copy=document.getElementById('copy-url');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);copy.textContent='コピーしました';}catch{copy.textContent='URLをコピーできませんでした';}setTimeout(()=>{copy.textContent='検索条件をコピー';},2000);});
+    draw();
   }
-  function section(title,body,id){return `<section class="detail-section" id="${id}"><h2>${esc(title)}</h2>${body}</section>`;}
-  function renderMunicipality(){const id=new URL(location.href).searchParams.get('id')||'';const root=document.getElementById('municipality-root');const m=data.map.municipalities.find(x=>x.id===id);if(!m){root.innerHTML='<div class="empty-state"><h1>自治体が見つかりません</h1><p>全国検索から選び直してください。</p><a class="button button-dark" href="explore.html">全国検索に戻る</a></div>';return;}
-    document.title=`${m.name}のPTA制度・学校別資料 | PTA制度・運用研究`;document.getElementById('crumb-municipality').textContent=m.name;
-    const related=(data.responses.responses||[]).filter(r=>normalize(r.municipality).includes(normalize(m.name)) && (!r.prefecture||r.prefecture===m.prefecture)).slice(0,12);
-    const summaries=(m.summary||[]).map(t=>`<p class="summary-paragraph">${esc(t)}</p>`).join('');
-    const schools=(m.schools||[]).map(s=>`<article class="detail-card"><div class="detail-card-top"><div><h3><a href="${localSchoolLink(s.url)}">${esc(s.name)} ↗</a></h3><p>${esc(s.type||'学校')} ／ 文書${(s.documents||[]).length}件</p></div><span class="small-status ${sourceStatus(s)==='公開前確認中'?'pending':''}">${esc(sourceStatus(s))}</span></div></article>`).join('');
-    const responseItems=related.map(r=>`<article class="detail-card"><h3><a href="${esc(safeSourceLink(r.url))}" target="_blank" rel="noopener noreferrer">${esc(r.municipality)}の公開回答 ↗</a></h3><p>${esc(r.date||'日付未確認')} ／ ${esc((r.topics||[]).slice(0,4).join('・'))}</p></article>`).join('');
-    const sourceLink=m.url?`<a class="button button-outline" href="${localLink(m.url)}" target="_blank" rel="noopener noreferrer">既存研究ノートを読む ↗</a>`:'';
-    root.innerHTML=`<header class="detail-heading"><div class="detail-eyebrow"><span>自治体研究</span><span>${esc(m.prefecture)}</span></div><h1>${esc(m.name)}のPTA資料</h1><p class="detail-lead">学校別文書・公開済み教育委員会回答・制度研究を、自治体単位で確認できます。資料の掲載状況と制度の評価は別々に示します。</p><div class="detail-actions"><a class="button button-dark" href="explore.html?q=${encodeURIComponent(m.name)}">${esc(m.name)}の検索結果へ →</a>${sourceLink}</div></header><div class="detail-grid"><div>${section('調査・研究の概要',summaries||'<p>既存研究データでの説明は準備中です。学校別資料と原本所在を確認してください。</p>','summary')}${section(`登録された学校（${(m.schools||[]).length}校）`,schools||'<p>この索引には学校別資料が登録されていません。自治体の制度資料・行政回答をご確認ください。</p>','schools')}${section('公開されている教育委員会回答',responseItems||'<p>この自治体に対応する公開済み回答は、現在の検索データでは確認できません。回答が存在しないことを意味するものではありません。</p>','responses')}</div><aside class="detail-aside"><div class="aside-box"><strong>この自治体の情報</strong><p>都道府県：${esc(m.prefecture)}</p><p>学校索引：${(m.schools||[]).length}校</p><p>関連する公開回答：${related.length}件</p></div><div class="aside-box"><strong>関連ページ</strong><a href="explore.html">全国資料を探す →</a><a href="https://ptaorg.com/national-archive.html" target="_blank" rel="noopener noreferrer">既存の全国資料館 ↗</a><a href="https://ptaorg.com/board-responses.html" target="_blank" rel="noopener noreferrer">教育委員会回答DB ↗</a></div><div class="notice-box">掲載状況は、原本の公開許可や資料内容の適法性判断を意味しません。公開前確認中の原本へのリンクは作成しません。</div></aside></div>`;
+
+  /* ---------- municipality ---------- */
+  async function prefMap(target,prefName){
+    try{
+      const svgText=await (await fetch('assets/map/japan-prefectures.svg')).text();
+      target.innerHTML=svgText.replace(/^<\?xml[^>]*>\s*/,'');
+      const svg=target.querySelector('svg');const code=PREFS.indexOf(prefName)+1;const g=svg.querySelector(`.prefecture[data-code="${code}"]`);
+      if(!g)return;g.classList.add('is-target');
+      const r=g.getBoundingClientRect();const m=svg.getScreenCTM();if(!m||!r.width)return;const inv=m.inverse();
+      const pt=(x,y)=>{const p=svg.createSVGPoint();p.x=x;p.y=y;return p.matrixTransform(inv);};
+      const a=pt(r.left,r.top),b=pt(r.right,r.bottom);const w=b.x-a.x,h=b.y-a.y;const size=Math.max(w,h)*2.4+40;
+      svg.setAttribute('viewBox',`${a.x+w/2-size*0.62} ${a.y+h/2-size/2} ${size*1.24} ${size}`);svg.setAttribute('preserveAspectRatio','xMidYMid slice');
+    }catch{target.remove();}
   }
-  function renderSchool(){const url=new URL(location.href).searchParams.get('url')||'';const root=document.getElementById('school-root');const s=allSchools().find(x=>x.url===url);if(!s){root.innerHTML='<div class="empty-state"><h1>学校が見つかりません</h1><p>全国検索から学校名を探してください。</p><a class="button button-dark" href="explore.html">学校を探す</a></div>';return;}
-    document.title=`${s.name}のPTA一次資料 | PTA制度・運用研究`;document.getElementById('crumb-region').textContent=s.regionName;document.getElementById('crumb-region').href=localRegionLink(s.regionId);document.getElementById('crumb-school').textContent=s.name;
-    const documents=(s.documents||[]).map(d=>`<li><div><strong>${esc(d.title||'資料名未確認')}</strong></div><span class="small-status ${getStatus(d)==='公開前確認中'?'pending':''}">${esc(getStatus(d))}</span></li>`).join('');
-    root.innerHTML=`<header class="detail-heading"><div class="detail-eyebrow"><span>学校別一次資料</span><span>${esc(s.regionPrefecture)} ${esc(s.regionName)}</span></div><h1>${esc(s.name)}</h1><p class="detail-lead">学校に関係する文書の所在と確認状況です。公開前確認中の資料を、公開済み原本として取り扱わないようにしています。</p><div class="detail-actions"><a class="button button-dark" href="${localRegionLink(s.regionId)}">${esc(s.regionName)}の資料一覧へ →</a><a class="button button-outline" href="${localLink(s.url)}" target="_blank" rel="noopener noreferrer">現行の学校ページを確認 ↗</a></div></header><div class="detail-grid"><div>${section('資料の登録状況',`<ul class="doc-list">${documents||'<li>登録文書なし</li>'}</ul>`,'documents')}${section('資料の読み方','<div class="notice-box">文書の登録、原本の公開、文書の内容確認、法的評価は別の段階です。この試作画面は登録情報を示しており、適法・違法の判断を自動的には行いません。</div>','method')}</div><aside class="detail-aside"><div class="aside-box"><strong>学校の基本情報</strong><p>自治体：${esc(s.regionName)}</p><p>学校種別：${esc(s.type||'未記載')}</p><p>登録文書：${(s.documents||[]).length}件</p></div><div class="aside-box"><strong>あわせて見る</strong><a href="${localRegionLink(s.regionId)}">自治体の研究・回答 →</a><a href="explore.html?q=${encodeURIComponent(s.regionName)}">${esc(s.regionName)}の他校を探す →</a><a href="https://ptaorg.com/board-responses.html" target="_blank" rel="noopener noreferrer">全国の行政回答 ↗</a></div></aside></div>`;
+  function renderMunicipality(){
+    const id=new URL(location.href).searchParams.get('id')||'';const root=document.getElementById('municipality-root');
+    const m=data.map.municipalities.find(x=>x.id===id);
+    if(!m){root.innerHTML=`<div class="container"><div class="empty-state"><h1>自治体が見つかりません</h1><p>全国の資料検索から選び直してください。</p><a class="button button-primary" href="explore.html?tab=municipality">自治体の一覧へ</a></div></div>`;return;}
+    const isPref=m.name===m.prefecture;document.title=`${m.name}｜自治体別調査｜PTA適正化推進委員会`;
+    const resp=responsesFor(m);const schools=m.schools||[];const sources=m.sources||[];const articles=m.articles||[];const legal=m.legal||[];
+    const primary=sources.filter(s=>s.kind==='primary');const writings=[...new Map([...articles,...sources.filter(s=>s.kind==='article')].map(a=>[a.url,a])).values()];
+    const lead=m.summary?'任意加入、会費徴収、個人情報の取扱いについて、教育委員会の通知・回答と学校の資料を整理し、関連する分析とともに掲載しています。':'学校別資料の索引を登録しています。この地域の研究ノートはまだ作成していません。';
+    const stat=(ic,lab,n,href)=>`<a class="stat-tile" href="${href}">${icon(ic)}<span><small>${lab}</small><strong>${n}<em>件</em></strong></span></a>`;
+    const srcRow=(s,kind)=>{const href=esc(s.url&&s.url.startsWith('http')?safeSourceLink(s.url):localLink(s.url));const pdf=/\.pdf$/i.test(s.url||'');
+      return `<li class="doc-row"><span class="doc-kind">${label(kind==='response'?'回答':pdf?'PDF':kind==='primary'?'原資料':'論考',kind==='response'?'response':kind==='primary'?'primary':'analysis')}</span><div class="doc-main"><a href="${href}">${esc(s.title)}</a><div class="meta">${s.date?`<span>${icon('calendar')}${esc(fmtDate(s.date))}</span>`:''}${s.publisher?`<span>${esc(s.publisher)}</span>`:''}${s.topics?s.topics.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join(''):''}</div></div><a class="doc-open" href="${href}">${pdf?'PDFを開く':'原文を見る'}${icon('out')}</a></li>`;};
+    const respRows=resp.map(r=>srcRow({title:respTitle(r),url:r.url,date:r.date,publisher:respBase(r)+'教育委員会',topics:r.topics},'response')).join('');
+    const primRows=primary.map(s=>srcRow(s,'primary')).join('');
+    const SHOW=12;
+    const schoolRows=schools.map((s,i)=>{const st=schoolStatus(s);return `<tr${i>=SHOW?' class="is-extra" hidden':''}><th scope="row"><a href="${schoolLink(s.url)}">${esc(s.name)}</a></th><td>${esc(s.type||'—')}</td><td>${(s.documents||[]).length}件</td><td>${label(st,st==='公開前確認中'?'caution':'')}</td></tr>`;}).join('');
+    root.innerHTML=`
+    <section class="page-hero">
+      <div class="page-hero-map" aria-hidden="true" data-pref-map></div>
+      <div class="container">
+        <nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="explore.html?tab=municipality">全国調査</a></li>${isPref?'':`<li><a href="explore.html?pref=${encodeURIComponent(m.prefecture)}">${esc(m.prefecture)}</a></li>`}<li aria-current="page">${esc(m.name)}</li></ol></nav>
+        <span class="label">自治体別調査</span>
+        <h1>${esc(m.name)}</h1>
+        <p class="page-lead">${lead}</p>
+      </div>
+    </section>
+    <div class="container">
+      <form class="search-panel search-panel-local" action="explore.html" method="get" role="search">
+        <div class="search-panel-title">${icon('search')}<div><h2>資料・記録を検索する</h2><p>${esc(m.name)}に関する回答・学校資料・<br class="pc-only">論考を検索できます。</p></div></div>
+        <div class="search-panel-body"><div class="search-field"><label class="sr-only" for="local-q">キーワード</label>${icon('search')}<input type="search" id="local-q" name="q" value="${esc(m.name)}" autocomplete="off"><button type="submit">検索</button></div>
+          <div class="search-filters"><label>資料種別<select name="tab"><option value="">すべての資料</option><option value="school">学校の資料</option><option value="response">教育委員会の回答</option></select></label><label>論点<select name="topic" data-topic-select><option value="">すべて</option></select></label></div></div>
+        <div class="search-panel-side"><a href="explore.html">詳細検索${icon('chevron')}</a></div>
+      </form>
+      <nav class="page-tabs" aria-label="このページの構成"><a href="#overview" class="is-active">概要</a><a href="#responses">行政回答・原資料</a><a href="#schools">学校別資料</a><a href="#analysis">関連する法的分析</a></nav>
+      <div class="detail-layout">
+        <div class="detail-main">
+          <section class="detail-section" id="overview"><h2>${icon('list')}調査の概要</h2>
+            ${(m.summary||[]).map(t=>`<p>${esc(t)}</p>`).join('')||'<p>この地域は学校別資料の索引のみを登録しています。教育委員会の回答や研究ノートが登録された時点で、ここに概要を掲載します。</p>'}
+            <div class="stat-tiles">${stat('doc','行政の回答',resp.length,'#responses')}${stat('folder','学校の資料',schools.length,'#schools')}${stat('scale','原資料',primary.length,'#responses')}${stat('book','論考・分析',writings.length,'#analysis')}</div>
+            ${(m.themes||[]).length?`<div class="theme-row"><span>主な論点</span>${m.themes.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}
+            ${(m.system||[]).length?`<h3>制度の整理</h3>${m.system.map(t=>`<p>${esc(t)}</p>`).join('')}`:''}
+            ${(m.timeline||[]).length?`<h3>経過</h3><ol class="timeline">${m.timeline.map(t=>`<li><time>${esc(fmtDate(t.date))}</time><div><strong>${esc(t.title)}</strong><p>${esc(t.text||'')}</p></div></li>`).join('')}</ol>`:''}
+          </section>
+          <section class="detail-section" id="responses"><div class="section-head"><h2>${icon('list')}行政回答・原資料</h2>${resp.length?`<a class="more-link" href="explore.html?tab=response&q=${encodeURIComponent(m.name)}">一覧を見る${icon('chevron')}</a>`:''}</div>
+            <p class="section-lead">${esc(m.name)}教育委員会の回答・通知と、PTAの取扱いに関する原資料です。</p>
+            ${respRows||primRows?`<ul class="doc-list">${respRows}${primRows}</ul>`:'<p class="empty-line">現在の索引には、この地域の公開済み回答・原資料が登録されていません。存在しないことを意味するものではありません。</p>'}
+          </section>
+          <section class="detail-section" id="schools"><div class="section-head"><h2>${icon('folder')}学校別資料</h2>${schools.length?`<a class="more-link" href="explore.html?tab=school&q=${encodeURIComponent(m.name)}">一覧を見る${icon('chevron')}</a>`:''}</div>
+            <p class="section-lead">${esc(m.name)}内の学校におけるPTAの規約・案内・会費等の資料の登録状況です。</p>
+            ${schools.length?`<div class="table-wrap"><table class="index-table"><thead><tr><th scope="col">学校名</th><th scope="col">種別</th><th scope="col">文書</th><th scope="col">状況</th></tr></thead><tbody>${schoolRows}</tbody></table></div>${schools.length>SHOW?`<button class="button button-secondary" type="button" data-show-all>すべて表示（${schools.length}校）</button>`:''}`:`<a class="row-link" href="explore.html?tab=school&pref=${encodeURIComponent(m.prefecture)}">${icon('folder')}<strong>学校資料の掲載一覧（0件）</strong><span>${esc(m.prefecture)}の学校資料を探す</span>${icon('chevron')}</a>`}
+          </section>
+          <section class="detail-section" id="analysis"><h2>${icon('scale')}関連する法的分析</h2>
+            ${legal.length?`<ol class="analysis-list">${legal.map(l=>`<li><strong>${esc(l.title)}</strong><p>${esc(l.text)}</p></li>`).join('')}</ol>`:''}
+            ${(m.unknowns||[]).length?`<div class="notice notice-unknown"><strong>未確認の事項</strong><ul>${m.unknowns.map(u=>`<li>${esc(u)}</li>`).join('')}</ul></div>`:''}
+            ${writings.length?`<h3>関連する論考</h3><ul class="plain-links">${writings.map(a=>`<li><a href="${esc(localLink(a.url))}">${esc(a.title)}</a></li>`).join('')}</ul>`:''}
+            <article class="feature feature-wide"><div><span class="label">基本的な検討方法</span><h3><a href="https://ptaorg.com/framework.html">学校と外部団体の境界をどう確認するか</a></h3><p>主体・事務の帰属・学校の公法上の権限・個人情報・教職員の関与を順に検討する。</p><a class="text-link" href="https://ptaorg.com/framework.html">論考を見る${icon('chevron')}</a></div><img src="assets/img/research-book.webp" alt="" width="278" height="157"></article>
+          </section>
+        </div>
+        <aside class="detail-side">
+          <section class="side-box"><h2>${icon('pin')}${esc(m.name)}の基本情報</h2><dl class="info-table"><dt>都道府県</dt><dd>${esc(m.prefecture)}</dd><dt>自治体</dt><dd>${esc(m.name)}</dd>${m.type?`<dt>区分</dt><dd>${esc(m.type)}</dd>`:''}<dt>学校索引</dt><dd>${schools.length}校</dd>${m.updated?`<dt>索引更新</dt><dd>${esc(m.updated)}</dd>`:''}</dl><p class="side-note">※ 数は当委員会の公開索引への登録数です。自治体の学校総数ではありません。</p></section>
+          <section class="side-box"><h2>${icon('search')}この自治体の資料を探す</h2><ul class="side-links">
+            <li><a href="#responses">${icon('folder')}行政回答・通知（${resp.length}件）${icon('chevron')}</a></li>
+            <li><a href="#schools">${icon('folder')}学校の資料（${schools.length}校）${icon('chevron')}</a></li>
+            <li><a href="#responses">${icon('doc')}原資料（${primary.length}件）${icon('chevron')}</a></li>
+            <li><a href="#analysis">${icon('book')}論考・分析（${writings.length}件）${icon('chevron')}</a></li></ul></section>
+          <section class="side-box"><h2>${icon('link')}参考リンク</h2><ul class="side-links">
+            ${m.url?`<li><a href="${esc(localLink(m.url))}">${esc(m.name)}の研究ノート（現行サイト）${icon('out')}</a></li>`:''}
+            ${m.catalogUrl?`<li><a href="${esc(safeSourceLink(m.catalogUrl))}">資料目録（現行サイト）${icon('out')}</a></li>`:''}
+            <li><a href="https://ptaorg.com/national-archive.html">全国資料館（現行サイト）${icon('out')}</a></li>
+            <li><a href="https://ptaorg.com/board-responses.html">教育委員会回答DB（現行サイト）${icon('out')}</a></li></ul>
+            ${(m.comparisons||[]).length?`<h3 class="side-sub">比較する自治体</h3><ul class="side-links">${m.comparisons.map(cid=>{const c=data.map.municipalities.find(x=>x.id===cid);return c?`<li><a href="${regionLink(c.id)}">${esc(c.name)}${icon('chevron')}</a></li>`:'';}).join('')}</ul>`:''}
+          </section>
+        </aside>
+      </div>
+    </div>`;
+    root.querySelectorAll('[data-topic-select]').forEach(sel=>TOPICS.forEach(t=>sel.add(new Option(t.label,t.id))));
+    const all=root.querySelector('[data-show-all]');if(all)all.addEventListener('click',()=>{root.querySelectorAll('tr.is-extra').forEach(tr=>{tr.hidden=false;});all.remove();});
+    const tabs=[...root.querySelectorAll('.page-tabs a')];tabs.forEach(a=>a.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('is-active',x===a));}));
+    if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)tabs.forEach(x=>x.classList.toggle('is-active',x.getAttribute('href')==='#'+e.target.id));}),{rootMargin:'-30% 0px -60% 0px'});root.querySelectorAll('.detail-section').forEach(s=>io.observe(s));}
+    prefMap(root.querySelector('[data-pref-map]'),m.prefecture);
   }
-  async function init(){menu();try{data=await loadData();writeCounts();const page=document.body.dataset.page;if(page==='explore')renderExplorer();if(page==='municipality')renderMunicipality();if(page==='school')renderSchool();}catch(error){console.error('Failed to load public site data:',error);const target=document.getElementById('data-note')||document.getElementById('municipality-root')||document.getElementById('school-root')||document.getElementById('data-state');if(target)target.textContent='データを読み込めませんでした。ローカルサーバー経由で開いてください。';}}
-  if(typeof module!=='undefined'&&module.exports)module.exports={normalize,matchedRecordsFactory:(map,responses,query)=>{data={map,responses};return matchedRecords(query)},safeSourceLink};
+
+  /* ---------- school ---------- */
+  function renderSchool(){
+    const url=new URL(location.href).searchParams.get('url')||'';const root=document.getElementById('school-root');const s=allSchools().find(x=>x.url===url);
+    if(!s){root.innerHTML=`<div class="container"><div class="empty-state"><h1>学校が見つかりません</h1><p>全国の資料検索から学校名を探してください。</p><a class="button button-primary" href="explore.html?tab=school">学校の一覧へ</a></div></div>`;return;}
+    document.title=`${s.name}｜学校別資料｜PTA適正化推進委員会`;
+    const docs=s.documents||[];const peers=allSchools().filter(x=>x.regionId===s.regionId&&x.url!==s.url).slice(0,6);
+    root.innerHTML=`
+    <section class="page-hero page-hero-plain"><div class="container">
+      <nav class="breadcrumb" aria-label="パンくず"><ol><li><a href="index.html">トップ</a></li><li><a href="explore.html?tab=school">学校の資料</a></li><li><a href="${regionLink(s.regionId)}">${esc(s.regionName)}</a></li><li aria-current="page">${esc(s.name)}</li></ol></nav>
+      <span class="label">学校別資料</span><h1>${esc(s.name)}</h1>
+      <p class="page-lead">${esc(s.regionPrefecture)}${esc(s.regionName===s.regionPrefecture?'':s.regionName)}の${esc(s.type||'学校')}。PTA関係文書の登録状況を示します。</p>
+    </div></section>
+    <div class="container"><div class="detail-layout">
+      <div class="detail-main">
+        <section class="detail-section"><h2>${icon('folder')}登録文書（${docs.length}件）</h2>
+          <ul class="doc-list">${docs.map(d=>{const st=status(d);return `<li class="doc-row"><span class="doc-kind">${label(/\.pdf$/i.test(d.title||'')?'PDF':/\.(m4a|mp3|wav)$/i.test(d.title||'')?'音声':'文書','primary')}</span><div class="doc-main"><strong>${esc(d.title||'資料名未確認')}</strong></div>${label(st,st==='公開前確認中'?'caution':'')}</li>`;}).join('')||'<li class="empty-line">登録文書はありません。</li>'}</ul>
+          <div class="notice notice-caution"><strong>状況表示の意味</strong><p>文書の登録、原本の公開、内容の確認、法的評価は別の段階です。「公開前確認中」の原本は、このサイトではリンクを作成しません。この画面は登録情報を示すもので、適法・違法を判断するものではありません。</p></div>
+        </section>
+      </div>
+      <aside class="detail-side">
+        <section class="side-box"><h2>${icon('pin')}学校の基本情報</h2><dl class="info-table"><dt>都道府県</dt><dd>${esc(s.regionPrefecture)}</dd><dt>自治体</dt><dd><a href="${regionLink(s.regionId)}">${esc(s.regionName)}</a></dd><dt>学校種別</dt><dd>${esc(s.type||'未記載')}</dd><dt>登録文書</dt><dd>${docs.length}件</dd></dl></section>
+        <section class="side-box"><h2>${icon('link')}参考リンク</h2><ul class="side-links"><li><a href="${regionLink(s.regionId)}">${esc(s.regionName)}の調査${icon('chevron')}</a></li><li><a href="${esc(localLink(s.url))}">現行サイトの学校ページ${icon('out')}</a></li></ul>
+          ${peers.length?`<h3 class="side-sub">${esc(s.regionName)}の他の学校</h3><ul class="side-links">${peers.map(p=>`<li><a href="${schoolLink(p.url)}">${esc(p.name)}${icon('chevron')}</a></li>`).join('')}<li><a href="explore.html?tab=school&q=${encodeURIComponent(s.regionName)}">すべて見る${icon('chevron')}</a></li></ul>`:''}
+        </section>
+      </aside>
+    </div></div>`;
+  }
+
+  async function init(){
+    chrome();
+    try{data=await loadData();fillSelects();writeCounts();const p=document.body.dataset.page;
+      if(p==='home')renderHome();if(p==='explore')renderExplorer();if(p==='municipality')renderMunicipality();if(p==='school')renderSchool();
+    }catch(e){console.error('Failed to load public site data:',e);const t=document.getElementById('data-note')||document.getElementById('municipality-root')||document.getElementById('school-root');if(t)t.textContent='データを読み込めませんでした。HTTPサーバー経由で開いてください。';}
+  }
+  if(typeof module!=='undefined'&&module.exports)module.exports={normalize,TOPICS,PREFS,safeSourceLink,localLink,fmtDate,matchedRecordsFactory:(map,responses,query)=>{data={map,responses,journal:{articles:[]}};return matchedRecords(query);}};
   if(typeof document!=='undefined')document.addEventListener('DOMContentLoaded',init);
 })();
