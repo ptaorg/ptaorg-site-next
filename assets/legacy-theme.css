@@ -122,3 +122,76 @@
   #main .article-main .legacy-body :is(.pdf-card,.doc-card,.article-card,.archive-material-item,.archive-evidence-card,.archive-box,.meta-card,.research-region,.survey-record,.board-update-record,.case-block){padding:18px 20px!important}
   #main .article-main .legacy-body .pdf-grid{grid-template-columns:minmax(0,1fr)!important;gap:16px!important}
 }
+
+
+/* v0.7 — imported documents must fill the available article column.
+   Original narrow wrappers and centered root shells previously survived. */
+#main .article-main > .legacy,
+#main .article-main > .legacy .legacy-body,
+#main .article-main > .legacy .legacy-main,
+#main .article-main > .legacy .legacy-main > section {
+  box-sizing:border-box!important;
+  display:block;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+#main .article-main .legacy-body :is(
+  .wrap,.wrap-narrow,.container,.inner,.page-body,
+  .journal-article-wrap,.essay-shell,.research-main,
+  .container-narrow,.content-wrap,.article-body
+){
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+#main .article-main .legacy-body .legacy-main > section{
+  padding-top:26px!important;
+  padding-bottom:26px!important;
+}
+#main .article-main .legacy-body :is(
+  .thesis-lead-section,.thesis-section,.pdf-section,.soudan-section
+) > :is(.wrap,.wrap-narrow,.container) {
+  margin-inline:0!important;
+}
+/* Restore padding stripped from cards by the migration reset. */
+#main .article-main .legacy-body .thesis-lead {
+  background:#fff!important;
+  border:1px solid var(--line)!important;
+  border-top:5px solid var(--gold-line)!important;
+  border-radius:12px!important;
+  box-shadow:var(--shadow)!important;
+  padding:28px 32px!important;
+  margin-bottom:22px!important;
+}
+#main .article-main .legacy-body .thesis-lead > h2{
+  margin:0 0 16px!important;
+}
+#main .article-main .legacy-body .thesis-lead > p {
+  max-width:none!important;
+}
+#main .article-main .legacy-body :is(
+  .thesis-grid,.cards-grid,.card-grid,.resource-grid,.steps-grid
+){
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr))!important;
+  gap:20px!important;
+}
+#main .article-main .legacy-body :is(
+  .thesis-card,.step-card,.case-card,.resource-card,.research-card
+){
+  min-width:0!important;
+  padding:22px 24px!important;
+  overflow-wrap:break-word;
+}
+@media(max-width:760px){
+  #main .article-main .legacy-body .thesis-lead{padding:20px!important}
+  #main .article-main .legacy-body .legacy-main > section{
+    padding-top:18px!important;
+    padding-bottom:18px!important;
+  }
+}
