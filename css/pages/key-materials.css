@@ -1,0 +1,310 @@
+@layer page {
+  .legacy .km-page {
+    background: #ffffff;
+    color: #1d2c3b;
+  }
+
+  .legacy .km-wrap {
+    width: min(calc(100% - 40px), 980px);
+    margin-inline: auto;
+  }
+
+  .legacy .km-hero {
+    padding: 68px 0 0;
+    background: #f6f3ed;
+    border-top: 4px solid #d45d24;
+    border-bottom: 1px solid #ddd6ca;
+    color: #10283e;
+  }
+
+  .legacy .km-kicker,.legacy 
+  .km-section-label,.legacy 
+  .km-source-type,.legacy 
+  .km-priority-label {
+    margin: 0;
+    color: #b64b1c;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+
+  .legacy .km-hero h1 {
+    max-width: 820px;
+    margin: 13px 0 18px;
+    color: #10283e;
+    font-family: "Noto Serif JP", serif;
+    font-size: clamp(2.25rem, 5vw, 3.65rem);
+    font-weight: 900;
+    letter-spacing: 0.015em;
+    line-height: 1.32;
+  }
+
+  .legacy .km-lead {
+    max-width: 790px;
+    margin: 0;
+    color: #31465a;
+    font-size: clamp(1rem, 1.9vw, 1.12rem);
+    font-weight: 500;
+    line-height: 2;
+  }
+
+  .legacy .km-toc {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: 48px;
+    border-top: 1px solid #cec5b8;
+  }
+
+  .legacy .km-toc a {
+    min-width: 0;
+    padding: 16px 18px 18px;
+    border-right: 1px solid #cec5b8;
+    color: #173f60;
+    font-size: 0.91rem;
+    font-weight: 800;
+    line-height: 1.45;
+    text-decoration: none;
+  }
+
+  .legacy .km-toc a:first-child {
+    border-left: 1px solid #cec5b8;
+  }
+
+  .legacy .km-toc a:hover,.legacy 
+  .km-toc a:focus-visible,.legacy 
+  .km-links a:hover,.legacy 
+  .km-links a:focus-visible,.legacy 
+  .km-priority-links a:hover,.legacy 
+  .km-priority-links a:focus-visible {
+    color: #a73f16;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.22em;
+  }
+
+  .legacy .km-toc span {
+    display: block;
+    margin-bottom: 4px;
+    color: #b64b1c;
+    font-family: "Noto Serif JP", serif;
+    font-size: 0.78rem;
+  }
+
+  .legacy .km-content {
+    padding: 64px 0 92px;
+  }
+
+  .legacy .km-intro {
+    max-width: 840px;
+  }
+
+  .legacy .km-intro h2 {
+    margin: 10px 0 20px;
+    color: #173f60;
+    font-family: "Noto Serif JP", serif;
+    font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+    line-height: 1.5;
+  }
+
+  .legacy .km-intro > p:not(.km-section-label),.legacy 
+  .km-priority p,.legacy 
+  .km-source-body > p:not(.km-source-type),.legacy 
+  .km-source li,.legacy 
+  .km-note {
+    color: #2e4052;
+    line-height: 1.95;
+  }
+
+  .legacy .km-intro > p:not(.km-section-label) {
+    margin: 0 0 14px;
+  }
+
+  .legacy .km-priority {
+    margin-top: 38px;
+    padding: 28px 0 30px;
+    border-top: 1px solid #d8dfe5;
+    border-bottom: 1px solid #d8dfe5;
+  }
+
+  .legacy .km-priority h3 {
+    margin: 8px 0 12px;
+    color: #173f60;
+    font-family: "Noto Serif JP", serif;
+    font-size: clamp(1.22rem, 2.6vw, 1.55rem);
+    line-height: 1.55;
+  }
+
+  .legacy .km-priority p:not(.km-priority-label) {
+    margin: 0;
+  }
+
+  .legacy .km-priority-links,.legacy 
+  .km-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 24px;
+  }
+
+  .legacy .km-priority-links {
+    margin-top: 17px;
+  }
+
+  .legacy .km-priority-links a,.legacy 
+  .km-links a {
+    color: #15527e;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-color: #9bb8ca;
+    text-underline-offset: 0.2em;
+  }
+
+  .legacy .km-priority-links a::after,.legacy 
+  .km-links a::after {
+    content: " →";
+    color: #b64b1c;
+    text-decoration: none;
+  }
+
+  .legacy .km-list {
+    margin-top: 72px;
+    border-top: 2px solid #173f60;
+  }
+
+  .legacy .km-source {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 28px;
+    padding: 52px 0 54px;
+    border-bottom: 1px solid #d8dfe5;
+    scroll-margin-top: 108px;
+  }
+
+  .legacy .km-source-index {
+    padding-top: 1px;
+    color: #c7a48f;
+    font-family: "Noto Serif JP", serif;
+    font-size: 2.65rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .legacy .km-source-type {
+    margin-bottom: 8px;
+  }
+
+  .legacy .km-source h2 {
+    margin: 0 0 17px;
+    color: #173f60;
+    font-family: "Noto Serif JP", serif;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    line-height: 1.55;
+  }
+
+  .legacy .km-source-body > p:not(.km-source-type) {
+    margin: 0 0 18px;
+  }
+
+  .legacy .km-source h3 {
+    margin: 27px 0 9px;
+    color: #173f60;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .legacy .km-source ul {
+    margin: 0;
+    padding-left: 1.45em;
+  }
+
+  .legacy .km-source li + li {
+    margin-top: 4px;
+  }
+
+  .legacy .km-links {
+    margin-top: 22px;
+  }
+
+  .legacy .km-note {
+    margin: 42px 0 0;
+    padding: 24px 0;
+    border-top: 1px solid #d45d24;
+    border-bottom: 1px solid #d45d24;
+  }
+
+  .legacy .km-note strong {
+    color: #9f3f18;
+  }
+
+  @media (max-width: 760px) {
+    .legacy .km-hero {
+      padding-top: 48px;
+    }
+
+    .legacy .km-toc {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 36px;
+    }
+
+    .legacy .km-toc a {
+      border-top: 1px solid #cec5b8;
+    }
+
+    .legacy .km-toc a:nth-child(odd) {
+      border-left: 1px solid #cec5b8;
+    }
+
+    .legacy .km-toc a:nth-child(even) {
+      border-right: 1px solid #cec5b8;
+    }
+
+    .legacy .km-toc a:first-child,.legacy 
+    .km-toc a:nth-child(2) {
+      border-top: 0;
+    }
+
+    .legacy .km-toc a:last-child {
+      grid-column: 1 / -1;
+    }
+
+    .legacy .km-content {
+      padding: 50px 0 72px;
+    }
+
+    .legacy .km-list {
+      margin-top: 58px;
+    }
+
+    .legacy .km-source {
+      grid-template-columns: 1fr;
+      gap: 13px;
+      padding: 42px 0 44px;
+      scroll-margin-top: 82px;
+    }
+
+    .legacy .km-source-index {
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .legacy .km-wrap {
+      width: min(calc(100% - 28px), 980px);
+    }
+
+    .legacy .km-hero h1 {
+      font-size: 2.1rem;
+    }
+
+    .legacy .km-toc a {
+      padding: 14px 12px 16px;
+      font-size: 0.84rem;
+    }
+
+    .legacy .km-priority-links,.legacy 
+    .km-links {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}

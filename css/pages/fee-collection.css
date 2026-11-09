@@ -1,0 +1,721 @@
+/* fee-collection.html: PTA fee and school-charge collection review */
+.legacy.fee-editorial {
+  --fee-ink: #202f3f;
+  --fee-navy: #0b2a4a;
+  --fee-navy-2: #18466f;
+  --fee-muted: #5c6d7e;
+  --fee-line: #d5dee7;
+  --fee-line-strong: #9eacba;
+  --fee-gold: #bd9228;
+  --fee-paper: #fff;
+  --fee-soft: #f3f6f9;
+  color: var(--fee-ink);
+  background: var(--fee-paper);
+}
+
+.legacy.fee-editorial .page-hero {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 84% 16%, rgba(189, 146, 40, 0.18), transparent 30rem),
+    linear-gradient(128deg, #081e34 0%, #0c3154 58%, #164a76 100%);
+  border-top: 3px solid var(--fee-gold);
+  border-bottom: 0;
+}
+
+.legacy.fee-editorial .page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.legacy.fee-editorial .page-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 40px), 960px);
+  max-width: none;
+  margin-inline: auto;
+  padding: clamp(62px, 8vw, 92px) 0 clamp(54px, 7vw, 78px);
+}
+
+.legacy.fee-editorial .page-hero-kicker {
+  display: block;
+  width: fit-content;
+  margin: 0 0 16px;
+  padding: 0 0 7px;
+  color: #f1d477;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(241, 212, 119, 0.72);
+  border-radius: 0;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: none;
+}
+
+.legacy.fee-editorial .page-hero h1 {
+  max-width: 18em;
+  margin: 0;
+  color: #fff;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(2rem, 5vw, 3.45rem);
+  font-weight: 900;
+  line-height: 1.32;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.legacy.fee-editorial .page-hero h1 em {
+  color: #f1d477;
+  font-style: normal;
+}
+
+.legacy.fee-editorial .page-hero-inner > p:not(.fee-meta) {
+  max-width: 76ch;
+  margin: 26px 0 0;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(1.04rem, 1.8vw, 1.18rem);
+  font-weight: 600;
+  line-height: 1.95;
+}
+
+.legacy.fee-editorial .fee-hero-note {
+  max-width: 76ch;
+  margin: 26px 0 0;
+  padding: 4px 0 4px 22px;
+  color: rgba(255, 255, 255, 0.88);
+  border-left: 4px solid var(--fee-gold);
+  font-size: 0.96rem;
+  line-height: 1.95;
+}
+
+.legacy.fee-editorial .fee-meta {
+  max-width: none;
+  margin: 24px 0 0;
+  padding-top: 16px;
+  color: rgba(255, 255, 255, 0.68);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 0.76rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.legacy.fee-editorial .fee-doc {
+  display: block;
+  width: min(calc(100% - 40px), 920px);
+  max-width: none;
+  margin-inline: auto;
+  padding: 54px 0 96px;
+}
+
+.legacy.fee-editorial .fee-doc > section {
+  margin: 0;
+  padding: 54px 0 62px;
+  color: var(--fee-ink);
+  background: var(--fee-paper);
+  border: 0;
+  border-top: 1px solid var(--fee-line);
+  border-radius: 0;
+  box-shadow: none;
+  scroll-margin-top: 104px;
+}
+
+.legacy.fee-editorial .fee-doc > section:first-child {
+  border-top: 2px solid var(--fee-navy);
+}
+
+.legacy.fee-editorial .section-kicker {
+  display: block !important;
+  width: auto;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #7d672a;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.74rem;
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  text-transform: none;
+}
+
+.legacy.fee-editorial .fee-doc h2 {
+  position: static;
+  margin: 0 0 28px;
+  padding: 0 0 16px;
+  color: var(--fee-navy);
+  border: 0;
+  border-bottom: 2px solid var(--fee-navy);
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: clamp(1.52rem, 3vw, 2.05rem);
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.legacy.fee-editorial .fee-doc h2::before {
+  display: none;
+}
+
+.legacy.fee-editorial .fee-doc h3 {
+  margin: 34px 0 14px;
+  padding: 0;
+  color: var(--fee-navy-2);
+  border: 0;
+  font-size: 1.18rem;
+  font-weight: 900;
+  line-height: 1.65;
+}
+
+.legacy.fee-editorial .fee-doc :where(p, li, td, th, summary) {
+  color: var(--fee-ink);
+  font-size: 1rem;
+  line-height: 1.98;
+}
+
+.legacy.fee-editorial .fee-doc > section > p {
+  max-width: none;
+  margin: 0 0 18px;
+}
+
+.legacy.fee-editorial .fee-doc a {
+  color: #075ca3;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(7, 92, 163, 0.34);
+  text-underline-offset: 4px;
+}
+
+.legacy.fee-editorial .fee-doc a:hover {
+  color: #003f73;
+  text-decoration-color: currentcolor;
+}
+
+.legacy.fee-editorial .fee-verdict,.legacy.fee-editorial .fee-law-note,.legacy.fee-editorial .fee-inference {
+  margin: 28px 0;
+  padding: 22px 25px;
+  background: var(--fee-soft);
+  border: 0;
+  border-left: 4px solid var(--fee-navy-2);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legacy.fee-editorial .fee-inference {
+  background: #fffdf4;
+  border-left-color: var(--fee-gold);
+}
+
+.legacy.fee-editorial :where(.fee-verdict, .fee-law-note, .fee-inference) p {
+  max-width: none;
+  margin: 0;
+  line-height: 1.98;
+}
+
+.legacy.fee-editorial :where(.fee-verdict, .fee-law-note, .fee-inference) strong {
+  color: var(--fee-navy);
+}
+
+.legacy.fee-editorial .fee-keyline {
+  max-width: none;
+  margin: 28px 0 0;
+  padding: 3px 0 3px 20px;
+  border-left: 4px solid var(--fee-gold);
+}
+
+.legacy.fee-editorial .fee-keyline strong {
+  color: var(--fee-navy);
+}
+
+.legacy.fee-editorial .fee-test-order,.legacy.fee-editorial .fee-documents,.legacy.fee-editorial .fee-route,.legacy.fee-editorial .fee-transition,.legacy.fee-editorial .fee-mext-points {
+  margin: 28px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--fee-line);
+  list-style: none;
+  counter-reset: fee-step;
+}
+
+.legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) > li {
+  position: relative;
+  min-height: 62px;
+  margin: 0;
+  padding: 22px 0 22px 58px;
+  border-bottom: 1px solid var(--fee-line);
+  counter-increment: fee-step;
+}
+
+.legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) > li::before {
+  content: counter(fee-step, decimal-leading-zero);
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 38px;
+  color: #8b6e20;
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.03rem;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) strong {
+  display: block;
+  margin: 0;
+  color: var(--fee-navy);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) span {
+  display: block;
+  margin-top: 5px;
+  color: var(--fee-muted);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+.legacy.fee-editorial .fee-table-wrap {
+  max-width: 100%;
+  margin: 28px 0;
+  overflow-x: auto;
+  border-top: 2px solid var(--fee-navy);
+  border-bottom: 1px solid var(--fee-line-strong);
+  -webkit-overflow-scrolling: touch;
+}
+
+.legacy.fee-editorial .fee-table-wrap:focus-visible {
+  outline: 3px solid rgba(7, 92, 163, 0.35);
+  outline-offset: 4px;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) th {
+  color: var(--fee-navy);
+  font-weight: 900;
+  text-align: left;
+  vertical-align: top;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) thead th {
+  padding: 13px 14px;
+  background: #f1f4f7;
+  border: 0;
+  border-bottom: 1px solid var(--fee-line-strong);
+  font-size: 0.83rem;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody th,.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody td {
+  padding: 15px 14px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--fee-line);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody th {
+  width: 20%;
+  font-size: 0.9rem;
+}
+
+.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody td {
+  color: var(--fee-ink);
+  font-size: 0.91rem;
+  line-height: 1.82;
+}
+
+.legacy.fee-editorial .fee-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 28px 0;
+  border-top: 1px solid var(--fee-line);
+  border-bottom: 1px solid var(--fee-line);
+}
+
+.legacy.fee-editorial .fee-path {
+  min-width: 0;
+  margin: 0;
+  padding: 26px 30px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legacy.fee-editorial .fee-path:nth-child(odd) {
+  border-right: 1px solid var(--fee-line);
+}
+
+.legacy.fee-editorial .fee-path:nth-child(-n + 2) {
+  border-bottom: 1px solid var(--fee-line);
+}
+
+.legacy.fee-editorial .fee-paths-two .fee-path {
+  border-bottom: 0;
+}
+
+.legacy.fee-editorial .fee-path-label {
+  margin: 0 0 9px;
+  color: #7d672a;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+.legacy.fee-editorial .fee-path h3 {
+  margin: 0 0 10px;
+  color: var(--fee-navy);
+  font-size: 1.04rem;
+  line-height: 1.65;
+}
+
+.legacy.fee-editorial .fee-path p:last-child {
+  margin: 0;
+  color: var(--fee-muted);
+  font-size: 0.92rem;
+  line-height: 1.88;
+}
+
+.legacy.fee-editorial .fee-sources {
+  margin: 28px 0 0;
+  padding: 0;
+  border-top: 2px solid var(--fee-navy);
+  list-style: none;
+}
+
+.legacy.fee-editorial .fee-sources li {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.82fr) minmax(0, 1.4fr);
+  gap: 8px 28px;
+  margin: 0;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--fee-line);
+}
+
+.legacy.fee-editorial .fee-sources strong {
+  grid-row: 1 / span 2;
+  color: var(--fee-navy);
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.legacy.fee-editorial .fee-sources span {
+  color: var(--fee-muted);
+  font-size: 0.91rem;
+  line-height: 1.82;
+}
+
+.legacy.fee-editorial .fee-sources a {
+  width: fit-content;
+  font-size: 0.87rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.legacy.fee-editorial .fee-action-line {
+  margin: 30px 0 0 !important;
+}
+
+.legacy.fee-editorial .fee-action {
+  display: inline-block;
+  padding: 12px 18px;
+  color: #fff !important;
+  background: var(--fee-navy);
+  border: 1px solid var(--fee-navy);
+  text-decoration: none !important;
+  font-size: 0.91rem;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.legacy.fee-editorial .fee-action:hover {
+  color: #fff !important;
+  background: var(--fee-navy-2);
+}
+
+.legacy.fee-editorial .fee-faq-list {
+  margin: 28px 0 0;
+  border-top: 2px solid var(--fee-navy);
+}
+
+.legacy.fee-editorial .fee-faq-list details {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--fee-line);
+  border-radius: 0;
+}
+
+.legacy.fee-editorial .fee-faq-list summary {
+  position: relative;
+  padding: 20px 38px 20px 0;
+  color: var(--fee-navy);
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.legacy.fee-editorial .fee-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.legacy.fee-editorial .fee-faq-list summary::after {
+  content: "＋";
+  position: absolute;
+  top: 20px;
+  right: 3px;
+  color: #7d672a;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.legacy.fee-editorial .fee-faq-list details[open] summary::after {
+  content: "−";
+}
+
+.legacy.fee-editorial .fee-faq-list details p {
+  max-width: none;
+  margin: 0;
+  padding: 0 36px 22px 0;
+  color: var(--fee-muted);
+  font-size: 0.94rem;
+  line-height: 1.9;
+}
+
+@media (max-width: 760px) {
+  .legacy.fee-editorial .page-hero-inner {
+    width: min(calc(100% - 30px), 960px);
+    padding-block: 48px 44px;
+  }
+
+  .legacy.fee-editorial .page-hero-kicker {
+    font-size: 0.69rem;
+  }
+
+  .legacy.fee-editorial .page-hero h1 {
+    font-size: clamp(1.86rem, 10vw, 2.55rem);
+    line-height: 1.37;
+  }
+
+  .legacy.fee-editorial .page-hero-inner > p:not(.fee-meta) {
+    margin-top: 22px;
+    font-size: 0.98rem;
+    line-height: 1.9;
+  }
+
+  .legacy.fee-editorial .fee-hero-note {
+    margin-top: 22px;
+    padding-left: 16px;
+    font-size: 0.91rem;
+  }
+
+  .legacy.fee-editorial .fee-meta {
+    font-size: 0.7rem;
+  }
+
+  .legacy.fee-editorial .fee-doc {
+    width: min(calc(100% - 30px), 920px);
+    padding-block: 38px 70px;
+  }
+
+  .legacy.fee-editorial .fee-doc > section {
+    padding-block: 44px 50px;
+  }
+
+  .legacy.fee-editorial .fee-doc h2 {
+    margin-bottom: 23px;
+    padding-bottom: 14px;
+    font-size: 1.46rem;
+  }
+
+  .legacy.fee-editorial .fee-doc h3 {
+    margin-top: 30px;
+    font-size: 1.08rem;
+  }
+
+  .legacy.fee-editorial .fee-doc :where(p, li, td, th, summary) {
+    font-size: 0.96rem;
+    line-height: 1.94;
+  }
+
+  .legacy.fee-editorial :where(.fee-verdict, .fee-law-note, .fee-inference) {
+    padding: 19px 17px 19px 20px;
+  }
+
+  .legacy.fee-editorial .fee-keyline {
+    padding-left: 16px;
+  }
+
+  .legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) > li {
+    padding: 21px 0 21px 45px;
+  }
+
+  .legacy.fee-editorial :where(.fee-test-order, .fee-documents, .fee-route, .fee-transition, .fee-mext-points) > li::before {
+    top: 21px;
+    width: 32px;
+    font-size: 0.9rem;
+  }
+
+  .legacy.fee-editorial .fee-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .legacy.fee-editorial .fee-path,.legacy.fee-editorial .fee-path:nth-child(odd),.legacy.fee-editorial .fee-path:nth-child(-n + 2),.legacy.fee-editorial .fee-paths-two .fee-path {
+    padding: 22px 0;
+    border: 0;
+    border-bottom: 1px solid var(--fee-line);
+  }
+
+  .legacy.fee-editorial .fee-path:last-child,.legacy.fee-editorial .fee-paths-two .fee-path:last-child {
+    border-bottom: 0;
+  }
+
+  .legacy.fee-editorial .fee-sources li {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 20px 0;
+  }
+
+  .legacy.fee-editorial .fee-sources strong {
+    grid-row: auto;
+  }
+
+  .legacy.fee-editorial .fee-table-wrap {
+    overflow: visible;
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table),.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody,.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tr,.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) th,.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) td {
+    display: block;
+    width: 100%;
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table) {
+    table-layout: fixed;
+    white-space: normal;
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table) thead {
+    display: none;
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody tr {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--fee-line);
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody th,.legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody td {
+    width: 100%;
+    padding: 5px 0;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .legacy.fee-editorial :where(.fee-comparison, .fee-check-table) tbody th {
+    margin-bottom: 4px;
+    font-size: 0.98rem;
+  }
+
+  .legacy.fee-editorial .fee-comparison td:nth-child(2)::before,.legacy.fee-editorial .fee-comparison td:nth-child(3)::before,.legacy.fee-editorial .fee-comparison td[data-label]::before,.legacy.fee-editorial .fee-check-table td:nth-child(2)::before,.legacy.fee-editorial .fee-check-table td:nth-child(3)::before {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--fee-muted);
+    font-size: 0.68rem;
+    font-weight: 900;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
+  .legacy.fee-editorial .fee-comparison td:nth-child(2)::before {
+    content: "学校が扱う教育活動関係費";
+  }
+
+  .legacy.fee-editorial .fee-comparison td:nth-child(3)::before {
+    content: "PTA会費";
+  }
+
+  .legacy.fee-editorial .fee-comparison td[data-label]::before {
+    content: attr(data-label);
+  }
+
+  .legacy.fee-editorial .fee-check-table td:nth-child(2)::before {
+    content: "確認する文書・事実";
+  }
+
+  .legacy.fee-editorial .fee-check-table td:nth-child(3)::before {
+    content: "未整理の兆候";
+  }
+
+  .legacy.fee-editorial .fee-faq-list summary {
+    padding-right: 32px;
+    font-size: 0.96rem;
+  }
+
+  .legacy.fee-editorial .fee-faq-list details p {
+    padding-right: 0;
+  }
+
+  .legacy.fee-editorial .fee-action {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media print {
+  .legacy.fee-editorial .support-strip,.legacy.fee-editorial .site-header,.legacy.fee-editorial .mobile-overlay,.legacy.fee-editorial .footer,.legacy.fee-editorial .fee-action-line {
+    display: none !important;
+  }
+
+  .legacy.fee-editorial .page-hero {
+    color: #000;
+    background: #fff;
+    border-top: 0;
+    border-bottom: 2px solid #000;
+  }
+
+  .legacy.fee-editorial .page-hero::after {
+    display: none;
+  }
+
+  .legacy.fee-editorial .page-hero :where(h1, h1 em, p, .fee-hero-note, .fee-meta, .page-hero-kicker) {
+    color: #000;
+    border-color: #777;
+  }
+
+  .legacy.fee-editorial .fee-doc {
+    width: 100%;
+    padding: 0;
+  }
+
+  .legacy.fee-editorial .fee-doc > section {
+    break-inside: auto;
+  }
+
+  .legacy.fee-editorial :where(.fee-verdict, .fee-law-note, .fee-inference, .fee-path, table, details) {
+    break-inside: avoid;
+  }
+}

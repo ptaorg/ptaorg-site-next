@@ -1,0 +1,739 @@
+@layer page {
+  /* Consolidated page styles for PTA運営適正化ガイドブック_第4版_改訂本文.html */
+  /* Page-specific styles for PTA運営適正化ガイドブック_第4版_改訂本文.html */
+  .legacy * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .legacy {
+    font-family:
+      "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 14px;
+    line-height: 1.95;
+    color: #222;
+    background: #fff;
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 40px 50px;
+  }
+  .legacy a {
+    color: #1a4a8a;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+  .legacy a:hover {
+    color: #c0392b;
+  }
+
+  .legacy .cover {
+    text-align: center;
+    border: 3px double #1a4a8a;
+    padding: 50px 30px 44px;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .legacy .cover-kamon {
+    font-size: 40px;
+    color: #1a4a8a;
+    margin-bottom: 18px;
+  }
+  .legacy .cover-label {
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.3em;
+    margin-bottom: 6px;
+  }
+  .legacy .cover-org {
+    font-size: 13px;
+    color: #1a4a8a;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    margin-bottom: 28px;
+  }
+  .legacy .cover-title {
+    font-family: "Noto Serif JP", "Yu Mincho", serif;
+    font-size: 26px;
+    color: #1a4a8a;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .legacy .cover-subtitle {
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  .legacy .cover-tag {
+    display: inline-block;
+    border: 1px solid #1a4a8a;
+    color: #1a4a8a;
+    font-size: 11px;
+    padding: 3px 12px;
+    letter-spacing: 0.15em;
+    margin: 0 4px;
+  }
+  .legacy .cover-edition {
+    position: absolute;
+    bottom: 14px;
+    right: 20px;
+    font-size: 11px;
+    color: #666;
+  }
+
+  .legacy .section-break {
+    border-top: 2px solid #1a4a8a;
+    margin: 52px 0 36px;
+    padding-top: 36px;
+  }
+  .legacy .section-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1a4a8a;
+    color: #1a4a8a;
+  }
+  .legacy h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1a4a8a;
+    margin: 40px 0 14px;
+    padding: 9px 14px;
+    border-left: 5px solid #1a4a8a;
+    background: #f0f4ff;
+    line-height: 1.55;
+  }
+  .legacy h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 28px 0 10px;
+    padding-left: 12px;
+    border-left: 3px solid #5b7ec9;
+    color: #1a3060;
+  }
+  .legacy p {
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+  .legacy p.lead {
+    font-size: 15px;
+    line-height: 2.05;
+    margin-bottom: 18px;
+  }
+  .legacy a {
+    color: #1a4a8a;
+  }
+
+  .legacy .toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px dotted #ccc;
+  }
+  .legacy .toc-num {
+    font-weight: 700;
+    min-width: 36px;
+    color: #1a4a8a;
+    font-size: 13px;
+  }
+  .legacy .toc-text {
+    flex: 1;
+    font-size: 13px;
+  }
+  .legacy .toc-sub {
+    display: flex;
+    align-items: baseline;
+    padding: 4px 0 4px 36px;
+    border-bottom: 1px dotted #eee;
+    font-size: 12px;
+    color: #444;
+  }
+  .legacy .toc-kana {
+    min-width: 28px;
+    color: #666;
+    font-size: 11px;
+  }
+
+  .legacy .law-cite {
+    background: #f8f5e8;
+    border-left: 4px solid #c8a800;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 12.5px;
+    color: #333;
+    line-height: 1.85;
+  }
+  .legacy .law-cite-title {
+    font-weight: 700;
+    color: #7a6200;
+    margin-bottom: 5px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  .legacy .law-cite-link {
+    font-size: 11px;
+    color: #1a4a8a;
+    margin-top: 6px;
+    display: block;
+  }
+
+  .legacy .principle-box {
+    border: 3px solid #1a4a8a;
+    border-radius: 4px;
+    padding: 20px 26px;
+    margin: 22px 0;
+    background: #e8efff;
+    text-align: center;
+  }
+  .legacy .principle-box p {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a3060;
+    line-height: 1.85;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .legacy .risk-box {
+    border: 3px solid #c0392b;
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 22px 0;
+    background: #fff0f0;
+  }
+  .legacy .risk-box-title {
+    font-weight: 700;
+    font-size: 13px;
+    background: #c0392b;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 14px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+  .legacy .risk-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .legacy .risk-item::before {
+    content: "⚠";
+    margin-right: 8px;
+    color: #c0392b;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .legacy .case-box {
+    border: 2px solid #8b5e00;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #fffbf0;
+  }
+  .legacy .case-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #8b5e00;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+  .legacy .case-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .legacy .case-item::before {
+    content: "▶";
+    margin-right: 8px;
+    color: #8b5e00;
+    flex-shrink: 0;
+    font-size: 10px;
+    margin-top: 4px;
+  }
+
+  .legacy .social-box {
+    border: 2px solid #6a1a6a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #fbf0fb;
+  }
+  .legacy .social-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #6a1a6a;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .mext-box {
+    border: 2px solid #1a6a1a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f0fbf0;
+  }
+  .legacy .mext-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #1a6a1a;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .judgment-box {
+    border: 2px solid #5a3a00;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #fdf6ee;
+  }
+  .legacy .judgment-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #5a3a00;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .paradox-box {
+    border: 2px solid #1a4a8a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f0f4ff;
+  }
+  .legacy .paradox-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #1a4a8a;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .ppc-box {
+    border: 2px solid #1a5a6a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f0fafb;
+  }
+  .legacy .ppc-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #1a5a6a;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .check-box {
+    border: 1.5px solid #1a4a8a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f5f8ff;
+  }
+  .legacy .check-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #1a4a8a;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+  }
+  .legacy .check-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 7px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .legacy .check-item::before {
+    content: "□";
+    margin-right: 10px;
+    color: #1a4a8a;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .legacy .notice-box {
+    border: 2px solid #c0392b;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    background: #fff8f8;
+  }
+  .legacy .notice-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #c0392b;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .info-box {
+    border: 1.5px solid #2980b9;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin: 18px 0;
+    background: #f0f7ff;
+  }
+  .legacy .info-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    background: #2980b9;
+    color: #fff;
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy .division-box {
+    display: flex;
+    gap: 0;
+    margin: 18px 0;
+    border: 1.5px solid #999;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .legacy .division-col {
+    flex: 1;
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+  .legacy .division-col:first-child {
+    background: #f5f8ff;
+    border-right: 1px solid #ccc;
+  }
+  .legacy .division-col:last-child {
+    background: #fff8f8;
+  }
+  .legacy .division-col-title {
+    font-weight: 700;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  .legacy .div-ok {
+    color: #1a6a1a;
+  }
+  .legacy .div-ng {
+    color: #c0392b;
+  }
+
+  .legacy .flow-box {
+    border: 1.5px solid #1a4a8a;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f0f5ff;
+  }
+  .legacy .flow-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #1a4a8a;
+    margin-bottom: 14px;
+  }
+  .legacy .flow-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .legacy .flow-num {
+    font-weight: 700;
+    color: #fff;
+    background: #1a4a8a;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .legacy .flow-arrow {
+    text-align: center;
+    color: #1a4a8a;
+    font-size: 16px;
+    margin: 4px 0 4px 34px;
+  }
+
+  .legacy .qa-item {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 16px;
+  }
+  .legacy .qa-q {
+    font-weight: 700;
+    color: #1a4a8a;
+    margin-bottom: 6px;
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+  }
+  .legacy .qa-q-label {
+    background: #1a4a8a;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+  }
+  .legacy .qa-a {
+    padding-left: 16px;
+    border-left: 3px solid #ccd8f0;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .legacy .qa-a-label {
+    font-weight: 700;
+    color: #c0392b;
+    margin-right: 6px;
+  }
+
+  .legacy ul.list {
+    margin: 8px 0 14px 1.5em;
+    list-style: none;
+  }
+  .legacy ul.list li {
+    margin-bottom: 6px;
+    font-size: 13px;
+    padding-left: 1em;
+    position: relative;
+  }
+  .legacy ul.list li::before {
+    content: "・";
+    position: absolute;
+    left: -0.2em;
+    color: #1a4a8a;
+  }
+
+  .legacy .form-example {
+    border: 1px solid #999;
+    padding: 18px 20px;
+    margin: 18px 0;
+    font-size: 13px;
+  }
+  .legacy .form-example-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  .legacy .form-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+  .legacy .form-label {
+    min-width: 120px;
+    color: #555;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .legacy .form-line {
+    flex: 1;
+    border-bottom: 1px solid #999;
+    min-height: 20px;
+  }
+  .legacy .form-note {
+    font-size: 11px;
+    color: #555;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dotted #ccc;
+  }
+
+  .legacy .rule-box {
+    border: 1px solid #aaa;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-size: 13px;
+    background: #fafafa;
+  }
+  .legacy .rule-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  .legacy .rule-article {
+    margin-bottom: 10px;
+  }
+  .legacy .rule-article-num {
+    font-weight: 700;
+    color: #1a4a8a;
+  }
+
+  .legacy .ref-box {
+    border: 1px solid #bbb;
+    background: #f9f9f9;
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-size: 12px;
+  }
+  .legacy .ref-box-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dotted #ccc;
+  }
+  .legacy .ref-item {
+    margin-bottom: 7px;
+    padding-left: 1em;
+    position: relative;
+    line-height: 1.75;
+  }
+  .legacy .ref-item::before {
+    content: "▷";
+    position: absolute;
+    left: 0;
+    color: #999;
+    font-size: 10px;
+    top: 3px;
+  }
+
+  .legacy strong {
+    font-weight: 700;
+  }
+  .legacy em.warn {
+    font-style: normal;
+    font-weight: 700;
+    color: #c0392b;
+  }
+  .legacy em.blue {
+    font-style: normal;
+    font-weight: 700;
+    color: #1a4a8a;
+  }
+  .legacy em.green {
+    font-style: normal;
+    font-weight: 700;
+    color: #1a6a1a;
+  }
+
+  @media print {
+    .legacy {
+      padding: 20px 30px;
+    }
+    .legacy .section-break {
+      page-break-before: always;
+      border-top: none;
+    }
+    .legacy h2 {
+      page-break-after: avoid;
+    }
+    .legacy .check-box,.legacy 
+    .notice-box,.legacy 
+    .case-box,.legacy 
+    .risk-box {
+      page-break-inside: avoid;
+    }
+  }
+  @media (max-width: 600px) {
+    .legacy {
+      padding: 20px 18px;
+    }
+    .legacy .division-box {
+      flex-direction: column;
+    }
+    .legacy .division-col:first-child {
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  /* Page-specific styles for PTA運営適正化ガイドブック_第4版_改訂本文.html */
+  .legacy .guidebook-editorial .cover-tag {
+    display: none;
+  }
+  .legacy .guidebook-editorial .principle-box,.legacy 
+  .guidebook-editorial .risk-box,.legacy 
+  .guidebook-editorial .case-box,.legacy 
+  .guidebook-editorial .social-box,.legacy 
+  .guidebook-editorial .mext-box,.legacy 
+  .guidebook-editorial .judgment-box,.legacy 
+  .guidebook-editorial .paradox-box,.legacy 
+  .guidebook-editorial .ppc-box,.legacy 
+  .guidebook-editorial .check-box,.legacy 
+  .guidebook-editorial .notice-box,.legacy 
+  .guidebook-editorial .info-box,.legacy 
+  .guidebook-editorial .flow-box {
+    background: #fff;
+    border: 0;
+    border-left: 3px solid #1a4a8a;
+    border-radius: 0;
+    padding: 16px 0 16px 20px;
+  }
+  .legacy .guidebook-editorial .risk-box-title,.legacy 
+  .guidebook-editorial .case-box-title,.legacy 
+  .guidebook-editorial .social-box-title,.legacy 
+  .guidebook-editorial .mext-box-title,.legacy 
+  .guidebook-editorial .judgment-box-title,.legacy 
+  .guidebook-editorial .paradox-box-title,.legacy 
+  .guidebook-editorial .ppc-box-title,.legacy 
+  .guidebook-editorial .check-box-title,.legacy 
+  .guidebook-editorial .notice-box-title,.legacy 
+  .guidebook-editorial .info-box-title {
+    display: block;
+    padding: 0 0 7px;
+    background: transparent;
+    color: #1a3060;
+    letter-spacing: 0.04em;
+  }
+  .legacy .guidebook-editorial .risk-item::before,.legacy 
+  .guidebook-editorial .case-item::before {
+    content: "—";
+    color: #64748b;
+  }
+  .legacy .guidebook-editorial .flow-num {
+    border-radius: 2px;
+  }
+}

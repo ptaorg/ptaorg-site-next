@@ -1,0 +1,595 @@
+/* proper-management.html: administrative brief / text-first layout */
+  .legacy.proper-management-editorial {
+    --pm-ink: #202f3f;
+    --pm-navy: #0b2a4a;
+    --pm-navy-2: #18466f;
+    --pm-muted: #5c6d7e;
+    --pm-line: #d5dee7;
+    --pm-gold: #bd9228;
+    --pm-paper: #fff;
+    --pm-soft: #f3f6f9;
+    color: var(--pm-ink);
+    background: var(--pm-paper);
+  }
+
+  .legacy.proper-management-editorial .breadcrumb-bar {
+    display: none;
+  }
+
+  .legacy.proper-management-editorial main {
+    background: var(--pm-paper);
+  }
+
+  .legacy.proper-management-editorial .pm-hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(circle at 84% 16%, rgba(189, 146, 40, 0.18), transparent 30rem),
+      linear-gradient(128deg, #081e34 0%, #0c3154 58%, #164a76 100%);
+    border-top: 3px solid var(--pm-gold);
+    border-bottom: 0;
+  }
+
+  .legacy.proper-management-editorial .pm-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .legacy.proper-management-editorial .pm-hero-inner {
+    position: relative;
+    z-index: 1;
+    width: min(calc(100% - 40px), 960px);
+    max-width: none;
+    margin-inline: auto;
+    padding: clamp(62px, 8vw, 92px) 0 clamp(54px, 7vw, 78px);
+  }
+
+  .legacy.proper-management-editorial .pm-kicker {
+    display: block;
+    width: fit-content;
+    margin: 0 0 16px;
+    padding: 0 0 7px;
+    color: #f1d477;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(241, 212, 119, 0.72);
+    border-radius: 0;
+    font-size: 0.76rem;
+    font-weight: 900;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy.proper-management-editorial .pm-title {
+    max-width: 17em;
+    margin: 0;
+    color: #fff;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(2rem, 5vw, 3.45rem);
+    font-weight: 900;
+    line-height: 1.32;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  .legacy.proper-management-editorial .pm-title span {
+    color: #f1d477;
+  }
+
+  .legacy.proper-management-editorial .pm-lead {
+    max-width: 76ch;
+    margin: 26px 0 0;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: clamp(1.04rem, 1.8vw, 1.18rem);
+    font-weight: 600;
+    line-height: 1.95;
+  }
+
+  .legacy.proper-management-editorial .pm-hero-note {
+    max-width: 76ch;
+    margin: 26px 0 0;
+    padding: 4px 0 4px 22px;
+    color: rgba(255, 255, 255, 0.88);
+    background: transparent;
+    border: 0;
+    border-left: 4px solid var(--pm-gold);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.96rem;
+    line-height: 1.95;
+  }
+
+  .legacy.proper-management-editorial .pm-meta {
+    max-width: none;
+    margin: 24px 0 0;
+    padding-top: 16px;
+    color: rgba(255, 255, 255, 0.68);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 0.76rem;
+    line-height: 1.7;
+  }
+
+  .legacy.proper-management-editorial .pm-wrap {
+    width: min(calc(100% - 40px), 920px);
+    max-width: none;
+    margin-inline: auto;
+    padding: 54px 0 96px;
+  }
+
+  .legacy.proper-management-editorial .pm-section,.legacy.proper-management-editorial .pm-link-band {
+    margin: 0;
+    padding: 54px 0 62px;
+    background: var(--pm-paper);
+    border: 0;
+    border-top: 1px solid var(--pm-line);
+    border-radius: 0;
+    color: var(--pm-ink);
+    scroll-margin-top: 104px;
+  }
+
+  .legacy.proper-management-editorial .pm-section:first-child {
+    border-top: 2px solid var(--pm-navy);
+  }
+
+  .legacy.proper-management-editorial .pm-section-number {
+    max-width: none;
+    margin: 0 0 10px;
+    padding: 0;
+    color: #7d672a;
+    font-size: 0.74rem;
+    font-weight: 900;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+  }
+
+  .legacy.proper-management-editorial .pm-section h2,.legacy.proper-management-editorial .pm-link-band h2 {
+    margin: 0 0 28px;
+    padding: 0 0 16px;
+    color: var(--pm-navy);
+    border: 0;
+    border-bottom: 2px solid var(--pm-navy);
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.55rem, 3vw, 2.08rem);
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  .legacy.proper-management-editorial .pm-section h3 {
+    margin: 34px 0 14px;
+    color: var(--pm-navy-2);
+    font-size: 1.18rem;
+    font-weight: 900;
+    line-height: 1.65;
+  }
+
+  .legacy.proper-management-editorial .pm-section p,.legacy.proper-management-editorial .pm-section li,.legacy.proper-management-editorial .pm-section td,.legacy.proper-management-editorial .pm-link-band p {
+    color: var(--pm-ink);
+    font-size: 1.01rem;
+    line-height: 2;
+  }
+
+  .legacy.proper-management-editorial .pm-section p,.legacy.proper-management-editorial .pm-link-band p {
+    max-width: none;
+    margin: 0 0 18px;
+  }
+
+  .legacy.proper-management-editorial .pm-section a,.legacy.proper-management-editorial .pm-link-band a {
+    color: #075ca3;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(7, 92, 163, 0.32);
+    text-underline-offset: 4px;
+  }
+
+  .legacy.proper-management-editorial .pm-section a:hover,.legacy.proper-management-editorial .pm-section a:focus-visible,.legacy.proper-management-editorial .pm-link-band a:hover,.legacy.proper-management-editorial .pm-link-band a:focus-visible {
+    color: #9b4b00;
+    text-decoration-color: currentColor;
+  }
+
+  .legacy.proper-management-editorial .pm-definition {
+    margin: 0 0 30px;
+    padding: 26px 0;
+    color: var(--pm-navy);
+    border-top: 2px solid var(--pm-navy);
+    border-bottom: 1px solid var(--pm-line);
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.22rem, 2.7vw, 1.72rem);
+    font-weight: 900;
+    line-height: 1.72;
+  }
+
+  .legacy.proper-management-editorial .pm-definition em {
+    color: #9b4b00;
+    font-style: normal;
+  }
+
+  .legacy.proper-management-editorial .pm-conclusion {
+    margin: 30px 0 0;
+    padding: 22px 24px 22px 28px;
+    background: var(--pm-soft);
+    border: 0;
+    border-left: 5px solid var(--pm-gold);
+  }
+
+  .legacy.proper-management-editorial .pm-conclusion p {
+    margin: 0;
+    color: var(--pm-navy);
+    font-size: 1.04rem;
+    line-height: 1.95;
+  }
+
+  .legacy.proper-management-editorial .pm-conclusion strong {
+    color: var(--pm-navy);
+    font-weight: 900;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary {
+    margin: 30px 0;
+    border-top: 2px solid var(--pm-navy);
+    border-bottom: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row:last-child {
+    border-bottom: 0;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-label {
+    color: var(--pm-navy);
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1.7;
+    letter-spacing: 0.08em;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row strong,.legacy.proper-management-editorial .pm-boundary-row span {
+    display: block;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row strong {
+    margin-bottom: 7px;
+    color: var(--pm-navy);
+    font-size: 1.04rem;
+    line-height: 1.7;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row span {
+    color: #3b4d5f;
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+
+  .legacy.proper-management-editorial .pm-boundary-row--stop {
+    background: linear-gradient(90deg, rgba(189, 146, 40, 0.09), transparent 74%);
+  }
+
+  .legacy.proper-management-editorial .pm-keyline {
+    margin: 28px 0 0;
+    padding: 4px 0 4px 22px;
+    border-left: 4px solid var(--pm-gold);
+  }
+
+  .legacy.proper-management-editorial .pm-keyline strong {
+    color: var(--pm-navy);
+  }
+
+  .legacy.proper-management-editorial figure {
+    margin: 28px 0 34px;
+    padding: 22px 0;
+    border-top: 1px solid var(--pm-line);
+    border-bottom: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: pmrule;
+    border-top: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list li {
+    position: relative;
+    margin: 0;
+    padding: 25px 0 25px 58px;
+    background: var(--pm-paper);
+    border: 0;
+    border-bottom: 1px solid var(--pm-line);
+    border-radius: 0;
+    box-shadow: none;
+    counter-increment: pmrule;
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list li::before {
+    content: counter(pmrule, decimal-leading-zero);
+    position: absolute;
+    top: 27px;
+    left: 0;
+    display: block;
+    width: auto;
+    height: auto;
+    color: #806921;
+    background: transparent;
+    border-radius: 0;
+    font-size: 0.82rem;
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list strong,.legacy.proper-management-editorial .pm-rule-list span {
+    display: block;
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list strong {
+    margin-bottom: 7px;
+    color: var(--pm-navy);
+    font-size: 1.04rem;
+    line-height: 1.7;
+  }
+
+  .legacy.proper-management-editorial .pm-rule-list span {
+    color: #3b4d5f;
+    font-size: 0.97rem;
+    line-height: 1.95;
+  }
+
+  .legacy.proper-management-editorial .pm-steps {
+    display: block;
+    margin: 0;
+    border-top: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial .pm-step {
+    margin: 0;
+    padding: 23px 0;
+    background: var(--pm-paper);
+    border: 0;
+    border-bottom: 1px solid var(--pm-line);
+    border-radius: 0;
+  }
+
+  .legacy.proper-management-editorial .pm-step strong,.legacy.proper-management-editorial .pm-step span {
+    display: block;
+  }
+
+  .legacy.proper-management-editorial .pm-step strong {
+    margin-bottom: 7px;
+    color: var(--pm-navy);
+    font-size: 1.04rem;
+    line-height: 1.7;
+  }
+
+  .legacy.proper-management-editorial .pm-step span {
+    color: #3b4d5f;
+    font-size: 0.97rem;
+    line-height: 1.95;
+  }
+
+  .legacy.proper-management-editorial .pm-table-wrap {
+    width: 100%;
+    margin: 26px 0 0;
+    overflow-x: auto;
+    border-top: 2px solid var(--pm-navy);
+    border-bottom: 1px solid var(--pm-line);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .legacy.proper-management-editorial .pm-table {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-collapse: collapse;
+    border-radius: 0;
+    background: var(--pm-paper);
+    box-shadow: none;
+  }
+
+  .legacy.proper-management-editorial .pm-table th,.legacy.proper-management-editorial .pm-table td {
+    padding: 17px 18px;
+    border: 0;
+    border-bottom: 1px solid var(--pm-line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .legacy.proper-management-editorial .pm-table tr:last-child th,.legacy.proper-management-editorial .pm-table tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .legacy.proper-management-editorial .pm-table th {
+    width: 132px;
+    color: var(--pm-navy);
+    background: var(--pm-soft);
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1.75;
+    white-space: nowrap;
+  }
+
+  .legacy.proper-management-editorial .pm-table td {
+    color: #34475a;
+    font-size: 0.96rem;
+    line-height: 1.9;
+  }
+
+  .legacy.proper-management-editorial .pm-link-band {
+    padding-bottom: 0;
+  }
+
+  .legacy.proper-management-editorial .pm-actions {
+    display: block;
+    margin: 20px 0 0;
+    border-top: 1px solid var(--pm-line);
+  }
+
+  .legacy.proper-management-editorial .pm-actions a,.legacy.proper-management-editorial .pm-actions a.secondary {
+    display: block;
+    width: auto;
+    margin: 0;
+    padding: 17px 0;
+    color: #075ca3;
+    background: var(--pm-paper);
+    border: 0;
+    border-bottom: 1px solid var(--pm-line);
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.75;
+    text-align: left;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .legacy.proper-management-editorial main a:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  @media (max-width: 720px) {
+    .legacy.proper-management-editorial .pm-hero-inner,.legacy.proper-management-editorial .pm-wrap {
+      width: min(calc(100% - 28px), 920px);
+    }
+
+    .legacy.proper-management-editorial .pm-hero-inner {
+      padding-block: 46px 52px;
+    }
+
+    .legacy.proper-management-editorial .pm-title {
+      max-width: none;
+      font-size: clamp(1.85rem, 9vw, 2.5rem);
+    }
+
+    .legacy.proper-management-editorial .pm-lead {
+      margin-top: 20px;
+      font-size: 0.99rem;
+      line-height: 1.9;
+    }
+
+    .legacy.proper-management-editorial .pm-hero-note {
+      margin-top: 22px;
+      padding-left: 16px;
+      font-size: 0.93rem;
+    }
+
+    .legacy.proper-management-editorial .pm-meta {
+      font-size: 0.7rem;
+    }
+
+    .legacy.proper-management-editorial .pm-wrap {
+      padding-block: 38px 70px;
+    }
+
+    .legacy.proper-management-editorial .pm-section,.legacy.proper-management-editorial .pm-link-band {
+      padding-block: 44px 50px;
+    }
+
+    .legacy.proper-management-editorial .pm-section h2,.legacy.proper-management-editorial .pm-link-band h2 {
+      margin-bottom: 23px;
+      padding-bottom: 14px;
+      font-size: 1.48rem;
+    }
+
+    .legacy.proper-management-editorial .pm-section p,.legacy.proper-management-editorial .pm-section li,.legacy.proper-management-editorial .pm-link-band p {
+      font-size: 0.97rem;
+      line-height: 1.95;
+    }
+
+    .legacy.proper-management-editorial .pm-definition {
+      padding-block: 22px;
+      font-size: 1.18rem;
+    }
+
+    .legacy.proper-management-editorial .pm-conclusion {
+      padding: 20px 17px 20px 21px;
+    }
+
+    .legacy.proper-management-editorial .pm-conclusion p {
+      font-size: 0.98rem;
+    }
+
+    .legacy.proper-management-editorial .pm-boundary-row {
+      grid-template-columns: 1fr;
+      gap: 7px;
+      padding: 20px 0;
+    }
+
+    .legacy.proper-management-editorial .pm-boundary-label {
+      font-size: 0.72rem;
+    }
+
+    .legacy.proper-management-editorial .pm-boundary-row--stop {
+      padding-inline: 12px;
+    }
+
+    .legacy.proper-management-editorial .pm-keyline {
+      padding-left: 16px;
+    }
+
+    .legacy.proper-management-editorial .pm-rule-list li {
+      padding: 22px 0 22px 46px;
+    }
+
+    .legacy.proper-management-editorial .pm-rule-list li::before {
+      top: 24px;
+    }
+
+    .legacy.proper-management-editorial .pm-rule-list strong,.legacy.proper-management-editorial .pm-step strong {
+      font-size: 1rem;
+    }
+
+    .legacy.proper-management-editorial .pm-table-wrap {
+      overflow: visible;
+    }
+
+    .legacy.proper-management-editorial .pm-table,.legacy.proper-management-editorial .pm-table tbody,.legacy.proper-management-editorial .pm-table tr,.legacy.proper-management-editorial .pm-table th,.legacy.proper-management-editorial .pm-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .legacy.proper-management-editorial .pm-table tr {
+      padding: 17px 0 19px;
+      border-bottom: 1px solid var(--pm-line);
+    }
+
+    .legacy.proper-management-editorial .pm-table tr:last-child {
+      border-bottom: 0;
+    }
+
+    .legacy.proper-management-editorial .pm-table th,.legacy.proper-management-editorial .pm-table td {
+      padding: 0;
+      border: 0;
+      background: var(--pm-paper);
+      white-space: normal;
+    }
+
+    .legacy.proper-management-editorial .pm-table th {
+      margin-bottom: 7px;
+    }
+  }
