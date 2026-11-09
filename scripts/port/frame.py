@@ -31,7 +31,8 @@ def extract_title_block(soup, fallback_title):
         if anc.name == 'header' or HERO_CLS.search(cls):
             hero = anc
     scope = hero if hero is not None else h1.parent
-    title = _text(h1)
+    title = _text(h1) or fallback_title
+    heading_id = h1.get('id', '')
     kicker = ''
     before = set(id(x) for x in h1.find_all_previous())
     for el in scope.find_all(True):
@@ -70,7 +71,7 @@ def extract_title_block(soup, fallback_title):
             hero.decompose()
         else:
             hero['class'] = (hero.get('class') or []) + ['legacy-hero-rest']
-    return {'kicker': kicker, 'h1': title, 'lead': lead, 'meta': meta}
+    return {'kicker': kicker, 'h1': title, 'h1_id': heading_id, 'lead': lead, 'meta': meta}
 
 
 def build_toc(soup):
@@ -135,7 +136,7 @@ def hero_html(*, prefix, crumbs, label, tb, map_info, date='', image=True):
     if map_info:
         visual = f'<div class="article-visual article-visual-map">{map_block(map_info)}</div>'
     elif image:
-        visual = f'<div class="article-visual"><img src="{prefix}assets/img/research-book.webp" alt="" width="278" height="157"></div>'
+        visual = '<div class="article-visual paper-ornament" aria-hidden="true"></div>'
     else:
         visual = ''
     meta = []
@@ -143,10 +144,12 @@ def hero_html(*, prefix, crumbs, label, tb, map_info, date='', image=True):
         meta.append(f'<span><svg aria-hidden="true"><use href="#i-calendar"/></svg>{E(date)}</span>')
     meta.append('<span><svg aria-hidden="true"><use href="#i-pen"/></svg>PTA適正化推進委員会</span>')
     meta.append(f'<span class="label">{E(label)}</span>')
+    heading_id = tb.get('h1_id')
+    heading_attr = f' id="{E(heading_id)}"' if heading_id else ''
     out = [f'<section class="article-hero"><div class="container">',
            f'<nav class="breadcrumb" aria-label="パンくず"><ol>{crumb}</ol></nav>',
            f'<div class="article-hero-grid{" no-visual" if not visual else ""}"><div class="article-hero-text">',
-           f'<span class="label">{E(kick)}</span>', f'<h1>{E(tb["h1"])}</h1>']
+           f'<span class="label">{E(kick)}</span>', f'<h1{heading_attr}>{E(tb["h1"])}</h1>']
     if tb['lead']:
         out.append(f'<p class="page-lead">{E(tb["lead"])}</p>')
     out.append(f'<p class="article-meta">{"".join(meta)}</p>')

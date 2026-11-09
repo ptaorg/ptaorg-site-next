@@ -21,7 +21,7 @@ const pages=walk(src).filter(p=>!SKIP_DIRS.test(p+'/')&&!SKIP_DIRS.test(p)&&!SKI
 fs.mkdirSync(out,{recursive:true});
 
 const FILTER=`(doc,isLive)=>{
-  const REMOVE=['header.site-header','.mobile-overlay','#mobileOverlay','.support-strip','.skip-link','nav.breadcrumb','.breadcrumb','.breadcrumbs','.breadcrumb-bar','nav.current-location-breadcrumb','[class*="current-location"]','.scroll-top-button','footer.footer','footer.site-foot','footer.site-footer','footer.document-site-footer','footer.submit-footer','footer.essay-footer','header.submit-header','.mobile-menu','.search-results-dropdown','.header-search','.desktop-nav','.global-nav-v102','.global-footer','noscript','link','meta','title'];
+  const REMOVE=['header.site-header','.mobile-overlay','#mobileOverlay','.support-strip','.skip-link','nav.breadcrumb','.breadcrumb','.breadcrumbs','.breadcrumb-bar','nav.current-location-breadcrumb','[class*="current-location"]','.scroll-top-button','footer.footer','footer.site-foot','footer.site-footer','footer.document-site-footer','footer.submit-footer','footer.essay-footer','header.submit-header','.mobile-menu','.search-results-dropdown','.header-search','.desktop-nav','.global-nav-v102','.global-footer','noscript','link','meta'];
   const body=doc.body;
   const scripts=[];const styles=[];
   for(const s of [...doc.querySelectorAll('script')]){const t=s.getAttribute('type')||'';

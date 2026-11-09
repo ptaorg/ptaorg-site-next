@@ -62,18 +62,6 @@ def resolve(url, page_rel):
             return None
     return target, parts.query, parts.fragment, path.endswith('/') or path == ''
 
-ASCII_RENAME = {}   # legacy path -> output path (non-ASCII file names that GitHub web upload rejects)
-
-def out_name(target):
-    if target.startswith('source-pdfs/') and re.search(r'[^\x00-\x7f]', target):
-        d, name = os.path.split(target)
-        num = re.search(r'_(\d+)\.pdf$', name)
-        kind = '-soudan' if '相談受付記録' in name else ('-kaigiroku' if '会議録' in name else '')
-        new = f'{d}/{os.path.basename(d)}{kind}-{num.group(1) if num else hashlib.sha1(name.encode()).hexdigest()[:6]}.pdf'
-        ASCII_RENAME[target] = new
-        return new
-    return target
-
 def rewrite_url(url, page_rel, refs):
     r = resolve(url, page_rel)
     if r is None:
@@ -90,7 +78,7 @@ def rewrite_url(url, page_rel, refs):
             refs.add(target)
         elif (LEGACY / target.rstrip('/') / 'index.html').is_file():
             refs.add(target.rstrip('/') + '/index.html')
-    rel = os.path.relpath(out_name(out), str(PurePosixPath(page_rel).parent) or '.').replace('\\', '/')
+    rel = os.path.relpath(out, str(PurePosixPath(page_rel).parent) or '.').replace('\\', '/')
     if is_dir and out not in ('index.html',) and not rel.endswith('/'):
         rel += '/'
     if out == 'index.html' and target == '' and rel == 'index.html':
@@ -503,7 +491,7 @@ def main():
             more = set(); port_js(r, more); queue.extend(more - seen); continue
         if r.endswith('.css'):
             more = set(); port_css('/' + r, 'index.html', more); queue.extend(more - seen); continue
-        dst = ROOT / out_name(r)
+        dst = ROOT / r
         if dst.exists() and r.startswith('data/') and r.endswith('.json'):
             continue
         dst.parent.mkdir(parents=True, exist_ok=True)
