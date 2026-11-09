@@ -1,0 +1,53 @@
+@layer page {
+  /* Shared by 3 pages. Extracted from duplicated inline CSS. */
+  .legacy .return-nav {
+    background: #eef3fa;
+    padding: 0 24px 56px;
+    text-align: center;
+  }
+  .legacy .return-nav .wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .legacy .return-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 11px 22px;
+    border: 2px solid var(--navy);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    font-weight: 900;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(18, 52, 90, 0.1);
+  }
+  .legacy .return-button:hover {
+    background: var(--navy);
+    color: #fff;
+  }
+  @media (max-width: 560px) {
+    .legacy .explainer-grid,.legacy 
+    .visual-sticky,.legacy 
+    .visual-panel,.legacy 
+    .step-list {
+      min-width: 0;
+    }
+    .legacy .visual-sticky,.legacy 
+    .visual-panel,.legacy 
+    .step-list {
+      width: 100%;
+    }
+    .legacy .stage {
+      width: 100%;
+      max-width: 500px;
+    }
+    .legacy .return-nav {
+      padding: 0 16px 42px;
+    }
+    .legacy .return-button {
+      width: 100%;
+    }
+  }
+}

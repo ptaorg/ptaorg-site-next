@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 460" width="1280" height="460" role="img" aria-labelledby="title desc">
+  <title id="title">入会申込記録の欠落から広がる連鎖</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="404" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <rect x="34" y="28" width="1212" height="70" rx="18" fill="#0b3a67"/>
+  <text x="64" y="73" font-size="28" font-weight="700" fill="#ffffff" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">入会申込記録の欠落から広がる違法・不適切運用の連鎖</tspan></text>
+  <text x="64" y="128" font-size="20" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">最初の書類不備が、会費・役員・名簿・教職員関与へ連鎖する</tspan></text>
+  <rect x="64" y="188" width="168" height="118" rx="16" fill="#fff7df" stroke="#d4a72c" stroke-width="3"/>
+  <circle cx="94" cy="218" r="18" fill="#d4a72c"/>
+  <text x="94" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="94" dy="0">1</tspan></text>
+  <text x="82" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="82" dy="0">入会申込</tspan><tspan x="82" dy="27">記録がない</tspan></text>
+  <rect x="267" y="188" width="168" height="118" rx="16" fill="#fff7df" stroke="#d4a72c" stroke-width="3"/>
+  <circle cx="297" cy="218" r="18" fill="#d4a72c"/>
+  <text x="297" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="297" dy="0">2</tspan></text>
+  <text x="285" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="285" dy="0">会員根拠が</tspan><tspan x="285" dy="27">確認できない</tspan></text>
+  <rect x="470" y="188" width="168" height="118" rx="16" fill="#fff1f1" stroke="#b34b4b" stroke-width="3"/>
+  <circle cx="500" cy="218" r="18" fill="#b34b4b"/>
+  <text x="500" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="500" dy="0">3</tspan></text>
+  <text x="488" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="488" dy="0">会費請求・役員選出</tspan><tspan x="488" dy="27">名簿作成が不安定化</tspan></text>
+  <rect x="673" y="188" width="168" height="118" rx="16" fill="#fff1f1" stroke="#b34b4b" stroke-width="3"/>
+  <circle cx="703" cy="218" r="18" fill="#b34b4b"/>
+  <text x="703" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="703" dy="0">4</tspan></text>
+  <text x="691" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="691" dy="0">学校名簿・徴収金</tspan><tspan x="691" dy="27">連絡ツールへ依存</tspan></text>
+  <rect x="876" y="188" width="168" height="118" rx="16" fill="#f1eefb" stroke="#8a75c9" stroke-width="3"/>
+  <circle cx="906" cy="218" r="18" fill="#8a75c9"/>
+  <text x="906" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="906" dy="0">5</tspan></text>
+  <text x="894" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="894" dy="0">個人情報・職専義務</tspan><tspan x="894" dy="27">施設利用と衝突</tspan></text>
+  <rect x="1079" y="188" width="168" height="118" rx="16" fill="#e9f1f8" stroke="#0b3a67" stroke-width="3"/>
+  <circle cx="1109" cy="218" r="18" fill="#0b3a67"/>
+  <text x="1109" y="225" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1109" dy="0">6</tspan></text>
+  <text x="1097" y="258" font-size="19" font-weight="600" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="1097" dy="0">教育委員会の</tspan><tspan x="1097" dy="27">分離措置が必要</tspan></text>
+  <line x1="228" y1="247" x2="271" y2="247" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="431" y1="247" x2="474" y2="247" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="634" y1="247" x2="677" y2="247" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="837" y1="247" x2="880" y2="247" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1040" y1="247" x2="1083" y2="247" stroke="#0b3a67" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="184" y="340" width="912" height="54" rx="12" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="640" y="374" font-size="21" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">学校がPTAの本来事務を補うほど、公私分離の問題として教育委員会の確認対象になる</tspan></text>
+</svg>

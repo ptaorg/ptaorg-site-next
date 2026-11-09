@@ -1,0 +1,559 @@
+/*
+ * Site-wide text-first presentation.
+ * Loaded last on every public HTML page by scripts/enhance-public-pages.js.
+ * Controls, forms, maps, source images and alert boxes remain framed.
+ */
+
+.legacy[data-content-mode="prose"] {
+  --prose-ink: #1f2d3d;
+  --prose-muted: #5d6b79;
+  --prose-line: #d7e0e9;
+  --prose-navy: #102a43;
+  background-color: #fff;
+  color: var(--prose-ink);
+}
+
+.legacy[data-content-mode="prose"] :where(p, li, dd) {
+  text-wrap: pretty;
+}
+
+.legacy[data-content-mode="prose"] :where(main, body > article, section) > p {
+  max-width: 78ch;
+}
+
+/* Information cards become continuous document rows. */
+.legacy[data-content-mode="prose"]
+  :where(
+    .card,
+    [class$="-card"],
+    [class*="-card "],
+    [class$="-item"],
+    [class*="-item "],
+    .case-block,
+    .archive-box,
+    .panel,
+    .editorial-panel,
+    .research-panel,
+    .source-lens-panel,
+    .support-panel,
+    .fee-panel,
+    .law-panel,
+    .essay-link-panel,
+    .ed-resource-panel
+  ):not(
+    header *,
+    footer *,
+    nav *,
+    form *,
+    .region-map-card,
+    .support-payment-card,
+    .journal-page .article-card,
+    .archive-editorial .card,
+    .archive-editorial .archive-count-item
+  ) {
+  margin: 0 !important;
+  padding: 1.35rem 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--prose-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.legacy[data-content-mode="prose"]
+  :where(
+    .card,
+    [class$="-card"],
+    [class*="-card "],
+    [class$="-item"],
+    [class*="-item "],
+    .case-block,
+    .archive-box,
+    .panel,
+    .editorial-panel,
+    .research-panel,
+    .source-lens-panel,
+    .support-panel,
+    .fee-panel,
+    .law-panel,
+    .essay-link-panel,
+    .ed-resource-panel
+  ):not(
+    header *,
+    footer *,
+    nav *,
+    form *,
+    .region-map-card,
+    .support-payment-card,
+    .journal-page .article-card,
+    .archive-editorial .card,
+    .archive-editorial .archive-count-item
+  ):hover {
+  background: transparent !important;
+  border-color: var(--prose-line) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Repeated card grids read from top to bottom instead of as a portal dashboard. */
+.legacy[data-content-mode="prose"]
+  :where([class$="-grid"], [class*="-grid "], .grid):not(header *, footer *, nav *, form *, .region-map, .map-grid, .hc-hero-grid) {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  border-top: 2px solid var(--prose-navy);
+}
+
+/* Compact facts retain a label/value relationship without floating cards. */
+.legacy[data-content-mode="prose"]
+  :where(.meta-card, .archive-box, .archive-evidence-card) {
+  display: grid !important;
+  grid-template-columns: minmax(8rem, 0.32fr) minmax(0, 1fr) !important;
+  gap: 0.8rem 1.2rem !important;
+  align-items: baseline;
+}
+
+.legacy[data-content-mode="prose"]
+  :where(.meta-card, .archive-box, .archive-evidence-card)
+  :where(.lb, .archive-label) {
+  color: var(--prose-muted) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.04em;
+}
+
+.legacy[data-content-mode="prose"] .archive-status-card {
+  border-left: 4px solid #b42318 !important;
+  padding-left: 1rem !important;
+}
+
+/* Source text is a quotation-like reading block, not a raised card. */
+.legacy[data-content-mode="prose"] .body-card {
+  white-space: pre-wrap;
+  border-left: 4px solid #d4af37 !important;
+  padding-left: 1.25rem !important;
+}
+
+/* Related links become a compact source list. */
+.legacy[data-content-mode="prose"] .rel-grid > a {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 !important;
+  padding: 1rem 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--prose-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Notes and alerts remain distinguishable, but lose the floating-card effect. */
+.legacy[data-content-mode="prose"]
+  :where(
+    .notice,
+    .note,
+    .notice-box,
+    .info-box,
+    .key-takeaway,
+    .conclusion-box,
+    .archive-assessment-note
+  ) {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Real source material and tools are intentionally left intact. */
+.legacy[data-content-mode="prose"]
+  :where(figure, table, form, .region-map-card, .support-payment-card, .cta-band) {
+  max-width: 100%;
+}
+
+/*
+ * These groups carry an actual side-by-side comparison. Keep the open,
+ * rule-based editorial treatment on desktop instead of flattening them with
+ * the generic repeated-grid rule above. They still stack on narrow screens.
+ */
+@media (min-width: 769px) {
+  .legacy[data-content-mode="prose"].personnel-editorial .scope-grid,.legacy[data-content-mode="prose"].facilities-editorial .safes,.legacy[data-content-mode="prose"].fee-editorial .transition-options {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    align-items: stretch;
+    border-top: 1px solid var(--prose-line) !important;
+    border-bottom: 1px solid var(--prose-line) !important;
+  }
+
+  .legacy[data-content-mode="prose"].fee-editorial .triple-problem {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    align-items: stretch;
+    border-top: 1px solid var(--prose-line) !important;
+    border-bottom: 1px solid var(--prose-line) !important;
+  }
+
+  .legacy[data-content-mode="prose"].personnel-editorial .scope-grid > *,.legacy[data-content-mode="prose"].facilities-editorial .safes > *,.legacy[data-content-mode="prose"].fee-editorial .transition-options > *,.legacy[data-content-mode="prose"].fee-editorial .triple-problem > * {
+    margin: 0 !important;
+    padding: 1.5rem 1.75rem !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .legacy[data-content-mode="prose"].personnel-editorial .scope-grid > * + *,.legacy[data-content-mode="prose"].facilities-editorial .safes > * + *,.legacy[data-content-mode="prose"].fee-editorial .transition-options > * + *,.legacy[data-content-mode="prose"].fee-editorial .triple-problem > * + * {
+    border-left: 1px solid var(--prose-line) !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .legacy[data-content-mode="prose"]
+    :where(.meta-card, .archive-box, .archive-evidence-card) {
+    grid-template-columns: 1fr !important;
+    gap: 0.25rem !important;
+  }
+}
+
+/*
+ * PTA school-processing case visuals are an actual comparison matrix.
+ * Do not let the generic prose-mode "flatten all *-grid classes" rule
+ * turn this 8-item matrix into a long vertical card stack.
+ */
+.legacy[data-content-mode="prose"] .psc-case-viz-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  border-top: 0 !important;
+}
+
+.legacy[data-content-mode="prose"] .psc-case-viz-step {
+  grid-column: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 10px 11px !important;
+  background: #fff !important;
+  border: 1px solid #cfd7de !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.legacy[data-content-mode="prose"] .psc-case-viz-step::after {
+  content: none !important;
+  display: none !important;
+}
+
+.legacy[data-content-mode="prose"] .psc-case-viz-state {
+  max-width: 100%;
+  white-space: normal !important;
+}
+
+@media (max-width: 760px) {
+  .legacy[data-content-mode="prose"] .psc-case-viz-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .legacy[data-content-mode="prose"] .psc-case-viz-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .legacy[data-content-mode="prose"] .psc-case-viz-step {
+    padding: 9px 8px !important;
+  }
+}
+
+@media print {
+  .legacy[data-content-mode="prose"]
+    :where(.card, [class$="-card"], [class*="-card "]) {
+    break-inside: avoid;
+  }
+}
+
+/* Site-wide reading highlights: heading rule + inline emphasis marker. */
+.legacy[data-content-mode="prose"] {
+  --prose-highlight-gold: #c89b18;
+  --prose-highlight-soft: rgba(212, 175, 55, 0.24);
+}
+
+.legacy[data-content-mode="prose"] main h3::after {
+  content: "";
+  display: block;
+  width: 4.75rem;
+  max-width: 42%;
+  height: 3px;
+  margin-top: 0.42rem;
+  background: var(--prose-highlight-gold);
+}
+
+.legacy[data-content-mode="prose"] main :where(
+  .support-payment-card,
+  .region-map-card,
+  .search-results-dropdown,
+  .psc-case-viz-step,
+  .psc-audit-head,
+  .psc-audit-meta
+) h3::after {
+  display: none;
+}
+
+.legacy[data-content-mode="prose"] main :where(p, li, dd) > strong {
+  background-image: linear-gradient(
+    to top,
+    var(--prose-highlight-soft) 0,
+    var(--prose-highlight-soft) 0.5em,
+    transparent 0.5em,
+    transparent 100%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.legacy[data-content-mode="prose"] main :where(
+  .psc-audit-status,
+  .psc-audit-badge,
+  .badge,
+  .tag,
+  .status,
+  .btn,
+  .button,
+  [class*="button"],
+  [class*="badge"],
+  [class*="status"]
+) strong {
+  background-image: none;
+}
+
+@media (max-width: 700px) {
+  .legacy[data-content-mode="prose"] main h3::after {
+    width: 3.75rem;
+    height: 2px;
+    margin-top: 0.34rem;
+  }
+}
+
+@media print {
+  .legacy[data-content-mode="prose"] main h3::after {
+    background: #666;
+  }
+  .legacy[data-content-mode="prose"] main :where(p, li, dd) > strong {
+    background-image: none;
+  }
+}
+
+/* Site-wide chapter heading labels: compact, text-width, and distinct from cards/tools. */
+.legacy[data-content-mode="prose"] main h2:not(:where(
+  .hero h2,
+  nav h2,
+  form h2,
+  dialog h2,
+  .card h2,
+  [class$="-card"] h2,
+  [class*="-card "] h2,
+  .panel h2,
+  [class$="-panel"] h2,
+  [class*="-panel "] h2,
+  .cta-band h2,
+  .support-payment-card h2,
+  .region-map-card h2,
+  .search-results-dropdown h2,
+  .document-error h2,
+  .psc-case-viz-step h2,
+  .psc-audit-head h2
+)) {
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 1.7rem 0 1rem;
+  padding: 7px 11px 8px;
+  border: 1px solid #17345c;
+  border-left: 3px solid var(--prose-highlight-gold, #c89b18);
+  border-radius: 2px;
+  background: var(--prose-navy, #102a43);
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(10, 25, 47, 0.08);
+  font-size: clamp(.98rem, 1.35vw, 1.14rem);
+  line-height: 1.32;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .legacy[data-content-mode="prose"] main h2:not(:where(
+    .hero h2,
+    nav h2,
+    form h2,
+    dialog h2,
+    .card h2,
+    [class$="-card"] h2,
+    [class*="-card "] h2,
+    .panel h2,
+    [class$="-panel"] h2,
+    [class*="-panel "] h2,
+    .cta-band h2,
+    .support-payment-card h2,
+    .region-map-card h2,
+    .search-results-dropdown h2,
+    .document-error h2,
+    .psc-case-viz-step h2,
+    .psc-audit-head h2
+  )) {
+    margin: 1.4rem 0 .85rem;
+    padding: 6px 9px 7px;
+    border-left-width: 3px;
+    font-size: .98rem;
+    line-height: 1.3;
+  }
+}
+
+@media print {
+  .legacy[data-content-mode="prose"] main h2:not(:where(
+    .hero h2,
+    nav h2,
+    form h2,
+    dialog h2,
+    .card h2,
+    [class$="-card"] h2,
+    [class*="-card "] h2,
+    .panel h2,
+    [class$="-panel"] h2,
+    [class*="-panel "] h2,
+    .cta-band h2,
+    .support-payment-card h2,
+    .region-map-card h2,
+    .search-results-dropdown h2,
+    .document-error h2,
+    .psc-case-viz-step h2,
+    .psc-audit-head h2
+  )) {
+    background: #fff !important;
+    color: #111 !important;
+    border-color: #777;
+    box-shadow: none;
+  }
+}
+
+/* Site-wide footer normalization */
+.legacy[data-content-mode="prose"] footer {
+  box-sizing: border-box !important;
+  margin-top: 48px !important;
+  padding: 0 20px !important;
+  border-top: 3px solid var(--prose-highlight-gold, #c89b18) !important;
+  background: #10233d !important;
+  color: #dbe6f2 !important;
+  box-shadow: none !important;
+}
+
+.legacy[data-content-mode="prose"] footer :where(
+  .footer-inner,
+  .essay-footer-inner,
+  .submit-footer-inner,
+  .foot-inner,
+  .footer-container
+) {
+  box-sizing: border-box !important;
+  width: min(100%, 1180px) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 30px 0 34px !important;
+  color: #dbe6f2 !important;
+}
+
+.legacy[data-content-mode="prose"] footer :where(p, li, span, small) {
+  color: #dbe6f2 !important;
+}
+
+.legacy[data-content-mode="prose"] footer :where(strong, .foot-brand, .submit-footer-title) {
+  color: #fff !important;
+}
+
+.legacy[data-content-mode="prose"] footer a {
+  color: #fff !important;
+  text-decoration-color: rgba(255,255,255,.48) !important;
+  text-underline-offset: 3px;
+}
+
+.legacy[data-content-mode="prose"] footer a:hover {
+  color: #f3d36a !important;
+  text-decoration-color: #f3d36a !important;
+}
+
+.legacy[data-content-mode="prose"] footer .footer-governance {
+  margin-top: 18px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid rgba(255,255,255,.16) !important;
+}
+
+@media (max-width: 640px) {
+  .legacy[data-content-mode="prose"] footer {
+    margin-top: 36px !important;
+    padding-inline: 16px !important;
+  }
+
+  .legacy[data-content-mode="prose"] footer :where(
+    .footer-inner,
+    .essay-footer-inner,
+    .submit-footer-inner,
+    .foot-inner,
+    .footer-container
+  ) {
+    padding: 24px 0 28px !important;
+  }
+}
+
+@media print {
+  .legacy[data-content-mode="prose"] footer {
+    border-top: 1px solid #777 !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .legacy[data-content-mode="prose"] footer * {
+    color: #111 !important;
+  }
+}
+
+
+
+/* Editorial panels are article sections, not tool/card panels. */
+.legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+  display: inline-block !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 1.7rem 0 1rem !important;
+  padding: 7px 11px 8px !important;
+  border: 1px solid #17345c !important;
+  border-left: 3px solid var(--prose-highlight-gold, #c89b18) !important;
+  border-radius: 2px !important;
+  background: var(--prose-navy, #102a43) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(10, 25, 47, 0.08) !important;
+  font-size: clamp(.98rem, 1.35vw, 1.14rem) !important;
+  line-height: 1.32 !important;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+    margin: 1.4rem 0 .85rem !important;
+    padding: 6px 9px 7px !important;
+    font-size: .98rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media print {
+  .legacy[data-content-mode="prose"] main .editorial-panel > h2 {
+    background: #fff !important;
+    color: #111 !important;
+    border-color: #777 !important;
+    box-shadow: none !important;
+  }
+}

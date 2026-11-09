@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" width="1280" height="520" role="img" aria-labelledby="title desc">
+  <title id="title">現在の混在運用と分離後の適正運用</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="464" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="64" y="74" font-size="30" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">混在運用から分離運用へ</tspan></text>
+  <text x="64" y="110" font-size="20" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">学校手続に埋め込まれたPTA事務を、PTA自身の手続へ戻す</tspan></text>
+  <rect x="70" y="145" width="490" height="285" rx="18" fill="#fff1f1" stroke="#b34b4b" stroke-width="3"/>
+  <rect x="720" y="145" width="490" height="285" rx="18" fill="#eef7f0" stroke="#3b7f4b" stroke-width="3"/>
+  <rect x="70" y="145" width="490" height="54" rx="18" fill="#b34b4b"/>
+  <rect x="720" y="145" width="490" height="54" rx="18" fill="#3b7f4b"/>
+  <text x="315" y="181" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="315" dy="0">現在の混在運用</tspan></text>
+  <text x="965" y="181" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="965" dy="0">分離後の適正運用</tspan></text>
+  <circle cx="98" cy="224" r="6" fill="#b34b4b"/>
+  <text x="118" y="231" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">入学式・学校説明会にPTA手続が混在</tspan></text>
+  <circle cx="98" cy="262" r="6" fill="#b34b4b"/>
+  <text x="118" y="269" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">入会申込記録が不十分</tspan></text>
+  <circle cx="98" cy="300" r="6" fill="#b34b4b"/>
+  <text x="118" y="307" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">学校徴収金とPTA会費を一体処理</tspan></text>
+  <circle cx="98" cy="338" r="6" fill="#b34b4b"/>
+  <text x="118" y="345" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">学校名簿・学校連絡ツールに依存</tspan></text>
+  <circle cx="98" cy="376" r="6" fill="#b34b4b"/>
+  <text x="118" y="383" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">教職員がPTA本来事務を処理</tspan></text>
+  <circle cx="748" cy="224" r="6" fill="#3b7f4b"/>
+  <text x="768" y="231" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="768" dy="0">学校手続とPTA手続を明確に分離</tspan></text>
+  <circle cx="748" cy="262" r="6" fill="#3b7f4b"/>
+  <text x="768" y="269" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="768" dy="0">PTA名義で任意加入を確認</tspan></text>
+  <circle cx="748" cy="300" r="6" fill="#3b7f4b"/>
+  <text x="768" y="307" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="768" dy="0">PTA会費はPTAが独自に請求・管理</tspan></text>
+  <circle cx="748" cy="338" r="6" fill="#3b7f4b"/>
+  <text x="768" y="345" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="768" dy="0">学校情報とPTA会員情報を分離</tspan></text>
+  <circle cx="748" cy="376" r="6" fill="#3b7f4b"/>
+  <text x="768" y="383" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="768" dy="0">学校関与は連絡調整に限定</tspan></text>
+  <line x1="590" y1="285" x2="690" y2="285" stroke="#0b3a67" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="640" y="257" font-size="22" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">分離</tspan></text>
+  <rect x="214" y="452" width="852" height="38" rx="10" fill="#ffffff" stroke="#0b3a67" stroke-width="2"/>
+  <text x="640" y="477" font-size="20" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">PTAを学校補助団体ではなく、会員の意思に基づく社会教育関係団体へ戻す</tspan></text>
+</svg>

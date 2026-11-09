@@ -37,7 +37,8 @@ test('response topic term finds public answer metadata',()=>{
   assert.equal(search('みなし加入').responses[0].municipality,'京都府亀岡市');
 });
 test('external answer URL is restricted to canonical public domain',()=>{
-  assert.equal(safeSourceLink('https://example.org/evil'),'https://ptaorg.com/board-responses.html');
+  assert.equal(safeSourceLink('https://example.org/evil'),'board-responses.html');
+  assert.equal(safeSourceLink('https://ptaorg.com/board-responses/01-mie.html'),'board-responses/01-mie.html');
 });
 test('demo metadata documents are not given downloadable file URLs',()=>{
   const schools=demo.map.municipalities.flatMap(m=>m.schools||[]);
@@ -53,11 +54,11 @@ test('topic filter narrows responses by public topic labels',()=>{
   assert.ok(fee.length>0&&fee.length<=all);
   for(const r of fee)assert.ok(r.topics.includes('会費徴収・委任'));
 });
-test('local links only resolve to whitelisted ptaorg.com paths',()=>{
+test('same-site links stay inside this site, others fall back to the top page',()=>{
   const {localLink}=appModule.exports;
-  assert.equal(localLink('/research/yokohama.html'),'https://ptaorg.com/research/yokohama.html');
-  assert.equal(localLink('javascript:alert(1)'),'https://ptaorg.com/');
-  assert.equal(localLink('//evil.example/x.html'),'https://ptaorg.com/');
+  assert.equal(localLink('/research/yokohama.html'),'research/yokohama.html');
+  assert.equal(localLink('javascript:alert(1)'),'index.html');
+  assert.equal(localLink('//evil.example/x.html'),'index.html');
 });
 test('dates are normalized to YYYY-MM-DD where the source is numeric',()=>{
   const {fmtDate}=appModule.exports;
@@ -69,5 +70,32 @@ test('every page carries the shared header/footer and one h1-capable main',()=>{
     const html=fs.readFileSync(path.join(root,name),'utf8');
     assert.ok(html.includes(header),name+' header out of sync');
     assert.doesNotMatch(html,/PTA RESEARCH|START HERE|EXPLORE THE ARCHIVE/,'no English eyebrows');
+  }
+});
+
+test('ported pages: every local link and asset resolves inside this site',()=>{
+  const ledger=JSON.parse(fs.readFileSync(path.join(root,'scripts/port/last-build.json'),'utf8'));
+  assert.ok(ledger.pages.length>700,'ported page count');
+  const broken=[];
+  for(const rel of ledger.pages){
+    const file=path.join(root,rel);const html=fs.readFileSync(file,'utf8');
+    assert.match(html,/class="site-header"/,rel);assert.match(html,/class="site-footer"/,rel);
+    for(const m of html.matchAll(/\s(?:href|src)="([^"#?][^"]*)"/g)){
+      const u=m[1];if(/^(?:[a-z]+:|\/\/|\$\{|'\+)/i.test(u)||u.includes('${')||u.includes("'+"))continue;
+      const p=decodeURIComponent(u.split(/[?#]/)[0]);const t=path.join(path.dirname(file),p);
+      if(!(fs.existsSync(t)&&(fs.statSync(t).isFile()||fs.existsSync(path.join(t,'index.html')))))broken.push(rel+' -> '+u);
+    }
+  }
+  assert.deepEqual(broken.slice(0,20),[]);
+});
+const splitTop=t=>{const out=[];let d=0,cur='';for(const ch of t){if(ch==='('||ch==='[')d++;if(ch===')'||ch===']')d--;if(ch===','&&d===0){out.push(cur);cur='';}else cur+=ch;}out.push(cur);return out;};
+test('legacy CSS is scoped and cannot style the new header/footer',()=>{
+  const ledger=JSON.parse(fs.readFileSync(path.join(root,'scripts/port/last-build.json'),'utf8'));
+  for(const css of ledger.css){
+    const text=fs.readFileSync(path.join(root,css),'utf8').replace(/@(?:font-face|keyframes)[^{]*\{(?:[^{}]|\{[^}]*\})*\}/g,'').replace(/\/\*[\s\S]*?\*\//g,'');
+    for(const m of text.matchAll(/(?:^|})\s*([^{}@]+)\{/g)){
+      for(const sel of splitTop(m[1])){const s=sel.trim();if(!s||/^(from|to|\d+%)$/.test(s))continue;
+        assert.ok(s.startsWith('.legacy'),css+': '+s);}
+    }
   }
 });

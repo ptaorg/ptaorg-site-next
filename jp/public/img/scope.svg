@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620" role="img" aria-labelledby="title desc">
+  <title id="title">学校が関与できる範囲と関与すべきでない範囲</title>
+  <desc id="desc">PTAと学校の分離原則を説明する行政資料向け図表</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#0b3a67"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="34" y="28" width="1212" height="564" rx="18" fill="#f6f8fb" stroke="#cfd8e6" stroke-width="2"/>
+  <text x="64" y="74" font-size="30" font-weight="700" fill="#0b3a67" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">学校が関与できる範囲・関与すべきでない範囲</tspan></text>
+  <text x="64" y="110" font-size="19" font-weight="500" fill="#5f6b7a" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="64" dy="0">学校が担えるのは連絡調整と条件確認。PTAの入会・会費・名簿・役員・会計はPTA自身が担う。</tspan></text>
+  <rect x="70" y="150" width="545" height="330" rx="18" fill="#eef7f0" stroke="#3b7f4b" stroke-width="3"/>
+  <rect x="665" y="150" width="545" height="330" rx="18" fill="#fff7df" stroke="#d4a72c" stroke-width="3"/>
+  <rect x="70" y="150" width="545" height="58" rx="18" fill="#3b7f4b"/>
+  <rect x="665" y="150" width="545" height="58" rx="18" fill="#d4a72c"/>
+  <text x="342" y="188" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="342" dy="0">学校が関与できる範囲</tspan></text>
+  <text x="937" y="188" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="937" dy="0">PTA自身が担う本来事務</tspan></text>
+  <rect x="98" y="218" width="489" height="34" rx="8" fill="#ffffff" stroke="#c7dfce" stroke-width="1"/>
+  <text x="118" y="242" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">学校とPTAの連絡調整</tspan></text>
+  <rect x="98" y="263" width="489" height="34" rx="8" fill="#ffffff" stroke="#c7dfce" stroke-width="1"/>
+  <text x="118" y="287" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">学校教育上必要な範囲での協議</tspan></text>
+  <rect x="98" y="308" width="489" height="34" rx="8" fill="#ffffff" stroke="#c7dfce" stroke-width="1"/>
+  <text x="118" y="332" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">施設利用許可に関する条件確認</tspan></text>
+  <rect x="98" y="353" width="489" height="34" rx="8" fill="#ffffff" stroke="#c7dfce" stroke-width="1"/>
+  <text x="118" y="377" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">児童生徒に不利益が出ないようにする管理</tspan></text>
+  <rect x="98" y="398" width="489" height="34" rx="8" fill="#ffffff" stroke="#c7dfce" stroke-width="1"/>
+  <text x="118" y="422" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="118" dy="0">学校行事との日程調整</tspan></text>
+  <rect x="693" y="208" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="232" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">入会意思確認の代行</tspan></text>
+  <rect x="693" y="247" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="271" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">PTA会費の徴収・督促・会計処理</tspan></text>
+  <rect x="693" y="286" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="310" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">役員選出・くじ引き・免除審査</tspan></text>
+  <rect x="693" y="325" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="349" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">PTA会員名簿の作成</tspan></text>
+  <rect x="693" y="364" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="388" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">学校連絡ツールによるPTA内部事務</tspan></text>
+  <rect x="693" y="403" width="489" height="32" rx="8" fill="#ffffff" stroke="#ead7a0" stroke-width="1"/>
+  <text x="713" y="427" font-size="18" font-weight="500" fill="#172033" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="713" dy="0">PTA内部文書の作成・配布・回収</tspan></text>
+  <rect x="236" y="520" width="808" height="48" rx="12" fill="#e9f1f8" stroke="#0b3a67" stroke-width="2"/>
+  <text x="640" y="551" font-size="21" font-weight="700" fill="#0b3a67" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP','Hiragino Sans',Meiryo,sans-serif"><tspan x="640" dy="0">結論：学校関与は連絡調整と条件確認に限定し、PTA本来事務はPTAへ戻す</tspan></text>
+</svg>
