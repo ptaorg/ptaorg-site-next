@@ -21,6 +21,19 @@ test('the home hero and navy search are separate sibling blocks',()=>{
  const heroAndSearch=h.slice(h.indexOf('<section class="hero">'),h.indexOf('<section class="archive-search"'));
  assert.ok(!heroAndSearch.includes('読み方'),'keep reading instructions out of the hero');
 });
+test('the homepage keeps the initially approved research-institution visual',()=>{
+ const home=read('index.html');
+ const css=read('assets/redesign.css');
+ assert.match(css,/url\("hero-architecture-approved\.jpg"\)/);
+ assert.doesNotMatch(css,/url\("img\/building\.png"\)/);
+ assert.match(css,/\.hero\{[^}]*min-height:415px/);
+ assert.match(css,/\.hero h1\{[^}]*font-family:var\(--serif\)/);
+ assert.match(css,/\.search-shell\{[^}]*background:linear-gradient/);
+ const nav=home.match(/<nav class="wrap quick-nav"[\s\S]*?<\/nav>/)?.[0]||'';
+ for(const title of ['全国調査','自治体・学校の資料','行政の回答','法的分析','論考'])
+  assert.ok(nav.includes('<strong>'+title+'</strong>'),title);
+ assert.equal((nav.match(/<strong>/g)||[]).length,5);
+});
 test('the source SVG has all prefectures with data-name and codes',()=>{
  const m=read('assets/japan-prefectures.svg');
  assert.equal((m.match(/data-code="/g)||[]).length,47);
