@@ -284,3 +284,38 @@
     grid-template-columns:minmax(0,1fr)!important;
   }
 }
+
+
+/* Minimal editorial reading treatment — 2026-11-27 preview. */
+#main .legacy,#main .legacy-body{line-height:2.05}
+#main .legacy-body h2{
+  border-left:0!important;
+  border-bottom:1px solid var(--line-strong)!important;
+  padding:0 0 15px!important;
+  margin-top:clamp(48px,5vw,78px)!important;
+  font-weight:600!important;
+}
+#main .legacy-body h3{
+  border-left:0!important;
+  padding-left:0!important;
+  margin-top:34px!important;
+  font-weight:600!important;
+}
+#main .legacy-body :is(.card,[class$="-card"],.archive-box,.archive-material-item,.archive-evidence-card,.meta-card,.faq-item,.doc-item,.article-card,.step,.principle,.check-item,.case-block,.survey-record,.board-update-record,.research-region,.editorial-panel){
+  background:transparent!important;
+  border-color:var(--line)!important;
+  border-radius:2px!important;
+  box-shadow:none!important;
+}
+#main .legacy-body :is(.note,.notice,.callout,.thesis-callout,.point,.key-point,.summary-box,.lead-box,.info-box){
+  border-left:2px solid var(--line-strong)!important;
+  background:var(--paper-alt)!important;
+  border-radius:0!important;
+}
+#main .legacy-body :is([class*="kicker"],[class*="eyebrow"],.section-label,.page-kicker,.label-sm){
+  background:transparent!important;
+  color:var(--ink-sub)!important;
+  border-radius:0!important;
+  padding:0!important;
+  letter-spacing:.06em!important;
+}
